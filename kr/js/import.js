@@ -1,0 +1,1 @@
+$('head').append('<link rel="stylesheet" type="text/css" href="/kr/css/common.css?ver=20210518v1" /><link rel="stylesheet" type="text/css" href="/kr/css/sub.css?ver=20210518v1" />');

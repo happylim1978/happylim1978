@@ -1,0 +1,1 @@
+$('head').append('<script type="text/javascript" src="/kr/js/default.js?ver=20210518v1"></script>');

@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>커뮤니티</title>
+	<link rel="stylesheet" href="../css/jquery-ui.min.css">
+	<link rel="stylesheet" href="../css/slick2.css">
+	<link rel="stylesheet" href="../css/com_sub.css">
+	<script src="../js/jquery-1.9.1.min.js"></script>
+	<script src="../js/jquery-ui.min.js"></script>
+	<script src="../js/slick.min2.js"></script>
+	<script src="../js/com_default.js"></script>
+</head>
+<body class="colorCode1">
+<!-- skip nav --><ul id="skip"><li><a href="#content">본문 바로가기</a></li></ul><!-- //skip nav -->
+
+<!-- wrap -->
+<div class="wrap">
+	<div class="communityWrap">
+		<div class="head" style="background-image:url('../images/community/sub/temp03.png');">
+			<div class="headIn">
+				<h1 class="view">프라모델 커뮤니티</h1>
+				<div class="btnClose"><button><span>닫기</span></button></div>
+			</div>
+			<div class="bg"></div>
+		</div>
+		<div class="conbox conboxSub">
+			<!-- 탭메뉴 -->
+			<div class="tabmenu">
+				<ul>
+					<li><a href="#">전체글</a></li>
+					<li><a href="#">목록</a></li>
+					<li class="on"><a href="#">글쓰기</a></li>
+					<li><a href="#">검색</a></li>
+				</ul>
+			</div>
+
+			<!-- 목록 -->
+			<div class="survey shadow">
+				<div class="listView">
+					<h2 class="h2">설문조사</h2>
+				</div>
+
+				<div class="requestForm">
+					<div class="table_form">
+						<table class="rwd">
+							<caption><span>커뮤니티 설문 입력</span></caption>
+							<tbody>
+								<tr>
+									<th><label for="tTitle">제목</label></th>
+									<td>
+										<input class="w100p" type="text" id="tTitle" placeholder="제목을 입력하세요" />
+									</td>
+								</tr>
+								<tr>
+									<th><label for="cal1">설문기간</label></th>
+									<td>
+										<div class="calWrap">
+											<span class="cal"><input class="text" type="text" id="cal1" readonly="readonly" title="설문기간 첫번째" /><button id="cal_btn1" type="button"></button></span>
+											<span class="bar">-</span>
+											<span class="cal"><input class="text" type="text" id="cal2" readonly="readonly" title="설문기간 두번째" /><button id="cal_btn2" type="button"></button></span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th><label for="tContent">설문배경</label></th>
+									<td>
+										<textarea class="textarea" id="tContent" rows="6 cols="10" placeholder="내용을 입력하세요"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<th><label for="ex_type1">질문유형</label></th>
+									<td>
+										<span class="select">
+											<select id="">
+												<option value="" selected="selected">선택형(Single Select)</option>
+												<option value="">복수 응답형(Multi Select)</option>
+												<option value="">주관식 단답형(Text Input)</option>
+											</select>
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<th><label for="tContent2">질문</label></th>
+									<td>
+										<textarea class="textarea" id="tContent2" rows="6" cols="10" placeholder="질문을 입력하세요"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<th><label for="answers">답변</label></th>
+									<td>
+										<div class="answerList">
+											<div class="answerbox"><span class="num">01</span><span><input type="text" class="text" title="질문1" placeholder="항목 이름을 입력해주세요" /></span></div>
+											<div class="answerbox"><span class="num">02</span><span><input type="text" class="text" title="질문2" placeholder="항목 이름을 입력해주세요" /></span></div>
+											<div class="answerbox"><span class="num">03</span><span><input type="text" class="text" title="질문3" placeholder="항목 이름을 입력해주세요" /></span></div>
+											<div class="answerbox"><span class="num">04</span><span><input type="text" class="text" title="질문4" placeholder="항목 이름을 입력해주세요" /></span></div>
+											<div class="answerbox"><span class="num">05</span><span><input type="text" class="text" title="질문5" placeholder="항목 이름을 입력해주세요" /></span></div>
+											<div class="answerbox answerOther">
+												<span class="num"></span><span>
+													<div class="checkWrap">
+														<div><input type="checkbox" class="checkbox" id="other_used" /><label for="other_used">기타 항목 사용</label></div>
+														<div><input type="checkbox" class="checkbox" id="other_name" /><label for="other_name">기타 항목 표시이름</label></div>
+													</div>
+													<input type="text" class="text" title="기타항목 이름" placeholder="기타 항목 이름을 입력해 주세요." />
+												</span>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="btnLine">
+					<div class="btn1">
+						<button class="buttonBtn btnType2">확인</button>
+					</div>
+					<div class="btn2">
+						<button class="buttonBtn btnType1">취소</button>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+	<div class="bottom">
+		<span class="bottomLine"></span>
+		<footer>
+			<div class="info">
+				<strong class="center"><span>HELP<span></span>DESK</span><a href="tel:15449001">1544-9001</a></strong>
+				<p class="code"><button class="button" type="button">QR Code Reader</button></p>
+				<span class="time">
+					평일 <time>08:00 ~ 20:00</time><span class="lb"></span>휴일 <time>09:00 ~ 18:00</time>
+					<span class="copyright">copyright by credu CO.LTD. All right reserved</span>
+				</span>
+			</div>
+			<p class="code"><button class="button" type="button">QR Code Reader</button></p>
+			<address>copyright by credu CO.LTD. All right reserved</address>
+		</footer>
+	</div>
+
+</div>
+<div class="goTop" id="go_top"><a href="#"><span>페이지상단으로 이동</span></a></div>
+<script>
+	function rePos (ele){
+		var $ui_left = $('#ui-datepicker-div');
+		var ui_left = $ui_left.outerWidth()/2 * (-1);
+
+		if( $(window).outerWidth() > 900 )
+		{
+			var ele_pos = ele.offset();
+			var ele_left = ele.prev('input').outerWidth();
+			var ele_pos_left = ele_pos.left - ele_left;
+			var ele_pos_top = ele_pos.top + ele.outerHeight();
+			$ui_left.css({
+				left : ele_pos_left + 'px',
+				top : ele_pos_top + 'px',
+				marginLeft : 0 + 'px'
+			});
+		}
+		else {
+			$ui_left.css({
+				left : 50 + '%',
+				marginLeft : ui_left + 'px'
+			});
+		}
+	}
+
+	$('#cal_btn1').on('click', function(){
+		getdate1();
+		rePos($(this));
+	});
+	$('#cal_btn2').on('click', function(){
+		getdate2();
+		rePos($(this));
+	});
+
+</script>
+</body>
+</html>
