@@ -1,0 +1,691 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="ko" xml:lang="ko">
+<head>
+<title>Ust inSighT</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta http-equiv="content-script-type" content="text/html"/>
+<meta http-equiv="content-style-type" content="text/css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+<link rel="icon" type="image/x-icon" href="?v=1"/>
+<link rel="shortcut_icon" type="image/x-icon" href=""/>
+<link rel="apple-touch-icon" href=""/>
+<link rel="apple-touch-icon-precomposed" href=""/>
+<link rel="stylesheet" href="https://seri.ust.ac.kr/css/jquery.mobile-1.4.5.min.css"/>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.mobile-default.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.mobile-1.4.5.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/common.css?ver=20200513"/>
+<link rel="stylesheet" type="text/css" href="./css/common_add.css"/>
+
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jqueryFunc.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/common.js?ver=20200518"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.flexslider.min.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/ns.js?v=210506"></script>
+
+
+<script type="text/javascript">
+
+		var gisMoblie = "N";
+</script>
+
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/panel.js"></script>
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/jquery.mCustomScrollbar.min.css"/>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/panel.css"/>
+<script type="text/javascript">
+	$(document).ready(function() {
+		if ($('#panel-left').length > 0) $('#panel-left').panelCtrl();
+		if ($('#panel-right').length > 0) $('#panel-right').panelCtrl();
+		//$('div:jqmData(role="panel") .panel').addClass('customScroll');
+		$('div:jqmData(role="panel") .panel').addClass('customScroll');
+	});
+
+	function panel(pos, option, idx1, idx2) {
+		$('#panel-'+pos).panelCtrl(option, idx1, idx2);
+	}
+</script>
+
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/sub.css"/>
+<link rel="stylesheet" type="text/css" href="./css/sub_add.css"/>
+
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/contList.css"/>
+<script type="text/javascript">
+$(document).ready(function() {
+
+});
+
+function charByteSize(ch) {
+	if (ch == null || ch.length == 0) {
+		return 0;
+	}
+	var charCode = ch.charCodeAt(0);
+	if (charCode <= 0x00007F) {
+		return 1;
+	} else if (charCode <= 0x0007FF) {
+		return 2;
+	} else if (charCode <= 0x00FFFF) {
+		return 3;
+	} else {
+		return 4;
+	}
+}
+
+function stringByteSize(str) {
+	if (str == null || str.length == 0) {
+		return 0;
+	}
+	var size = 0;
+
+	for (var i = 0; i < str.length; i++) {
+		size += charByteSize(str.charAt(i));
+	}
+	return size;
+}
+
+
+function onSubmit() {
+	if (!checkParameter($("#hotline_title"), null, "제목을 입력해 주세요.")){return;}
+	if (!checkParameter($("#hotline_title"), stringByteSize($("#hotline_title").val()) <= 200, "제목은 200자(한글 66자)를 초과할수 없습니다.")){return;}
+
+	if (!checkParameter($("#hotline_content"), null, "내용을 입력해 주세요.")){return;}
+	if (!checkParameter($("#hotline_content"), stringByteSize($("#hotline_content").val()) <= 2000, "내용은 2000자(한글 665자)를 초과할수 없습니다.")){return;}
+
+	if (!checkParameter($("#hotline_contact"), null, "연락처를 입력해 주세요.")){return;}
+
+	$.mobile.loading("show", {
+		text: ""
+		, textVisible: true
+		, theme: "b"
+		, html: '<div><div class="waitCommentDiv"><p class="comment">문의 메일 발송중.</p><p class="loading">잠시만 기다려 주세요.<img src="/images/common/ajax-loader.gif"/></p></div></div>'
+	});
+
+	$.post("/msHotLineB.html", $("#form_main").serialize()).done(function(data){
+		$.mobile.loading("hide");
+		try {
+			if(typeof(data) == "string"){
+				data = $.parseJSON(data);
+			}
+
+			if(data["msg"] != ""){
+				alert(data["msg"]);
+			}
+
+			if(data["result"] == "success"){
+				location.href = data["url"];
+			}else{
+
+			}
+		}catch(e){alert("문의 메일 발송에 실패 하였습니다[case 2].");}
+	}).fail(function(){
+		$.mobile.loading("hide");
+		alert("문의 메일 발송에 실패 하였습니다.");
+	});
+}
+
+</script>
+</head>
+<body>
+<div data-role="page">
+
+	<div data-role="panel" id="panel-left" data-position="left" data-position-fixed="true" data-display="overlay" data-swipe-close="false" data-dismissible="true">
+		<div class="panel">
+			<div class="panel-scroller">
+				<div class="closeBtn">
+					<div class="panel-tit">
+						<h1 class="h1">MENU</h1>
+					</div>
+					<div class="panel-head">
+						<p class="panel-msg">
+							[홍길동] 님은 <strong>1월 0편 학습</strong>하셨습니다.
+							&nbsp; &nbsp;<a href="/msMyStudyL.html" class="ui-link">자세히 보기</a>
+						</p>
+					</div>
+					<a href="javascript:panel('left', 'close')" data-role="button" data-shadow="false" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-corner-all" role="button"><div class="btn">닫기</div></a>
+				</div>
+				<div class="panel-service">
+					<div class="panel-tab">
+						<a href="/msAbout.html" class="tab1">MSP 소개</a>
+						<a href="/msNoticeL.html" class="tab2">공지사항</a>
+					</div>
+					<div class="panel-tab2">
+						<a href="/msMdaL.html" class="tab1"><span>What's New</span><em>보러가기</em></a>
+						<a href="" class="tab3"><span>AI Recommendation</span><em>보러가기</em></a>
+						<a href="/msBestL.html?p_gbn=M" class="tab2"><span>Best Contents</span><em>보러가기</em></a>
+					</div>
+				</div>
+				<!-- <div class="closeBtn">
+					<a href="javascript:panel('left', 'close')" data-role="button" data-shadow="false" data-iconpos="notext" class="ui-btn-right"><div class="btn">닫기</div></a>
+				</div> -->
+				<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set1">
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="About"><div>About</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							<div class="coltype lv2">
+								<h2 title="서비스 소개" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msAbout.html" class="ui-btn " target=""><div>서비스 소개</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="공지사항" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msNoticeL.html" class="ui-btn " target=""><div>공지사항</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="핫라인" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msHotLineN.html" class="ui-btn " target=""><div>핫라인</div></a></h2>
+							</div>
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="My Page"><div>My Page</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							<div class="coltype lv2">
+								<h2 title="학습현황" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMyStudyL.html" class="ui-btn " target=""><div>학습현황</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="콘텐츠 공유 내역" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMyShareL.html" class="ui-btn " target=""><div>콘텐츠 공유 내역</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="즐겨찾기" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMyContL.html" class="ui-btn " target=""><div>즐겨찾기</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="개인정보수정" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMyMimL.html" class="ui-btn " target=""><div>개인정보수정</div></a></h2>
+							</div>
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Global Leadership"><div>Global Leadership</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							
+							<div data-role="collapsible" class="collapsible02">
+								<h2>영어</h2>
+								<ul class="collapsible03">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>중국어</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>베트남어</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>일본어</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Character Education"><div>Character Education</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+
+							<div data-role="collapsible" class="collapsible02">
+								<h2>과학과 기술</h2>
+								<ul class="collapsible03">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>역사의 이해</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>인문교양</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>철학적 사고</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Medi Science"><div>Medi Science</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+
+							<div data-role="collapsible" class="collapsible02">
+								<h2>의과학</h2>
+								<ul class="collapsible03">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>바이오과학</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>뇌과학</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Liberal 101"><div>Liberal 101</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							<div class="coltype lv2">
+								<h2 title="전체보기" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMdaL.html?p_gmenu=04" class="ui-btn " target=""><div>전체보기</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="CIS 리포트" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMdaL.html?p_gmenu=0401" class="ui-btn " target=""><div>CIS 리포트</div></a></h2>
+							</div>
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Essential Courses"><div>Essential Courses</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							<div class="coltype lv2">
+								<h2 title="전체보기" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMdaL.html?p_gmenu=05" class="ui-btn " target=""><div>전체보기</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="AI가 바꾸는 미래 비즈니스" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMdaL.html?p_gmenu=0510" class="ui-btn " target=""><div>AI가 바꾸는 미래 비즈니스</div></a></h2>
+							</div>
+						</div>
+					</div>
+					<div class="coltype lv1">
+						<h2 title="HSMU Contents" class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+							<a href="/msMdaL.html?p_gmenu=1001" class="ui-btn  ui-btn-icon-left ui-icon-eye" target=""><div>HSMU Contents</div></a>
+						</h2>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div data-role="panel" id="panel-right" data-position="right" data-position-fixed="true" data-display="overlay" data-swipe-close="false">
+		<div class="panel">
+			<div class="panel-scroller">
+				<div class="closeBtn">
+					<a href="javascript:panel('right', 'close')" data-role="button" data-shadow="false" data-iconpos="notext" class="ui-btn-right"><div class="btn">닫기</div></a>
+				</div>
+				<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set1">
+					<div class="coltype lv1">
+						<h2 title="로그아웃" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msLogout.html" class="ui-btn  ui-btn-icon-left ui-icon-power" target=""><div>로그아웃</div></a></h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="panel" id="panel-right" data-position="right" data-position-fixed="true" data-display="overlay" data-swipe-close="false">
+		<div class="panel">
+			<div class="panel-scroller">
+				<div class="closeBtn">
+					<a href="javascript:panel('right', 'close')" data-role="button" data-shadow="false" data-iconpos="notext" class="ui-btn-right"><div class="btn">닫기</div></a>
+				</div>
+				<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set1">
+
+
+					<div class="coltype lv1">
+						<h2 title="로그아웃" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msLogout.html" class="ui-btn  ui-btn-icon-left ui-icon-power" target=""><div>로그아웃</div></a></h2>
+					</div>
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div data-role="header" class="btn2type">
+		<h1 class="logo"><a href="/index.html">화성의과학대학교</a></h1>
+		<div class="btn left">
+			<a href="javascript:panel('left', 'open')" class="menu" title="메뉴열기">메뉴열기</a>
+		</div>
+		<div class="btn right">
+			<a href="/msLogout.html" class="logout">로그아웃</a>
+			<a href="#" class="search" title="검색" onClick="$('#p_kwd').focus();">검색</a>
+		</div>
+		<div class="searchBar">
+			<div class="searchArea">
+				<form method="post">
+					<input type="hidden" id="search_url" value="/msSearchL.html"/>
+					<div class="search-textbox">
+						<input type="search" id="p_kwd" name="p_kwd" value="" data-theme="d" title="검색어 입력"/>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="mpinfo">
+		<div class="after">
+			홍길동님은 <strong>1월 0편</strong> 학습하셨습니다.
+		</div>
+	</div>
+
+	<div class="header">
+		<div class="header-out">
+			<div class="head-in">
+				<h1 class="lg"><a href="/index.html">화성의과학대학교</a></h1>
+				<div class="head-con">
+					<div class="head-other">
+						<div class="search-input">
+							<input type="text" class="text" title="검색어" data-role="none" id="p_hkwd" placeholder="검색어를 입력해주세요." onkeypress="if(event.keyCode==13) {main_headerSearch();}"/>
+						</div>
+						<div class="search">
+							<a href="#" class="dosearch">검색</a>
+						</div>
+						<div class="other-link">
+							<a href="/msMyStudyL.html">마이페이지</a>
+							<a href="/msLogout.html">로그아웃</a>
+							<a href="/msAbout.html">이용가이드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="h-des2">
+				<p class="msg">Dream the Best, Be the First, Medi-Science Park</p>
+				<p class="p-info">홍길동님의 학습현황: <strong>1월 0편</strong> 학습하셨습니다. <a href="/msMyStudyL.html">학습현황 자세히 보기  &gt;</a></p>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function(){
+			$('.search').on('click', function(){
+				if( $(this).closest('.head-other').hasClass('search-input-on') ) {
+					$(this).closest('.head-other').removeClass('search-input-on');
+				} else {
+					$(this).closest('.head-other').addClass('search-input-on');
+					$('#p_hkwd').focus();
+				}
+				return false;
+			});
+		});
+	</script>
+
+	<div class="con-wrap">
+		<div class="web-lnb" id="web-lnb">
+			<div class="scroll">
+				<ul class="lnb-item-list">
+					<li class="lnb-item">
+						<a href="/msMdaL.html">What's NEW</a>
+					</li>
+					<li class="lnb-item">
+						<a href="#">AI Recommendation</a>
+					</li>
+					<li class="lnb-item">
+						<a href="/msBestL.html?p_gbn=M">Best Contents</a>
+					</li>
+					<li class="lnb-item">
+						<a href="#">About</a>
+						<ul>
+							<li><a href="/msAbout.html">서비스 소개</a></li>
+							<!--li><a href="/msAbout.html?p_tab=1">이용안내</a></li-->
+							<li><a href="/msNoticeL.html">공지사항</a></li>
+							<!--li><a href="/msAbout.html?p_tab=3">FAQ</a></li-->
+							<li><a href="/msHotLineN.html">핫라인</a></li>
+						</ul>
+					</li>
+					<li class="lnb-item">
+						<a href="#">My Page</a>
+						<ul>
+							<li><a href="/msMyStudyL.html">학습현황</a></li>
+							<li><a href="/msMyShareL.html">콘텐츠 공유 내역</a></li>
+							<li><a href="/msMyContL.html">즐겨찾기</a></li>
+							<li><a href="/msMyMimL.html">개인정보수정</a></li>
+						</ul>
+					</li>
+					<li class="lnb-item">
+						<a href="#">Global Leadership</a>
+						<ul>
+							<li><a href="#">영어</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">중국어</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">베트남어</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">일본어</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="lnb-item">
+						<a href="#">Character Education</a>
+						<ul>
+							<li><a href="#">과학과 기술</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">역사의 이해</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">인문교양</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">철학적 사고</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="lnb-item">
+						<a href="#">Medi-Science</a>
+						<ul>
+							<li><a href="#">의과학</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">바이오과학</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">뇌과학</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="lnb-item">
+						<a href="#">Liberal 101</a>
+					</li>
+					<li class="lnb-item">
+						<a href="#">Essential Courses</a>
+					</li>
+					<li class="lnb-item">
+						<a href="#">HSMU Contents</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="sub-con side-con">
+			<div class="sub-con-in">
+				<div class="issue-box issue-box2">
+					<div class="title-wrap">
+						<ul class="nav">
+							<li><a href=''>About</a></li>
+							<li><i>&gt;</i><span>핫라인</span></li>
+						</ul>
+					</div>
+					<!-- sub-side-menu -->
+					<div class="sub-side-menu" id="sub-side-menu">
+						<div class="sub-side-menu-in">
+							<a href="/msAbout.html">서비스 소개</a>
+							<a href="/msNoticeL.html" >공지사항</a>
+							<a href="/msHotLineN.html" class="current">핫라인</a>
+							<!--a href="javascript:windowPopup('http://sub.sericeo.org/popup/popup_info.html','','800','700')">PC 환경설정 다운로드</a-->
+						</div>
+					</div>
+					<script>
+						// 메뉴 스크롤 있을때 path 감추기
+						$('.title-wrap .nav').addClass('menuHidden');
+						// 메뉴 스크롤 스크립트
+						$(window).on("load",function(){
+							var $subSideMenu = $('#sub-side-menu');
+							var _left = 0;
+							if($subSideMenu.width() < $subSideMenu.find('.current').offset().left + $subSideMenu.find('.current').width()) {
+								_left = Math.round(($subSideMenu.find('.current').offset().left + $subSideMenu.find('.current').width()) - $subSideMenu.width() + 5) * -1
+							}
+							leftValue = _left + 'px';
+							$subSideMenu.mCustomScrollbar({
+								axis:"x",
+								setLeft: leftValue,
+								theme:"dark-thin",
+								autoExpandScrollbar:true,
+								advanced:{autoExpandHorizontalScroll:true}
+							});
+						});
+					</script>
+					<!-- //sub-side-menu -->
+					<div class="contentArea">
+						<div class="sub-con-box">
+							<form id="form_main">
+							<input type="hidden" name="p_proc" value="save" />
+							<div class="table-box">
+								<table class="form" summary="분야 선택, 의견, 자주묻는 질문 Best" cellspacing="0">
+									<caption>핫라인 문의하기</caption>
+									<tbody>
+										<tr>
+											<th scope="row">분야를 선택해 주세요.</th>
+											<td>
+												<div class="check-wrap">
+													<span class="check-line">
+														<input data-role="none" type="radio" name="hotline_type" id="hotline_type_t1" value="t1" />
+														<label for="hotline_type_t1">서비스 이용에 문제가 있습니다.</label>
+													</span>
+													<span class="check-line">
+														<input data-role="none" type="radio" name="hotline_type" id="hotline_type_t2" value="t2" />
+														<label for="hotline_type_t2">계정 접속에 문제가 있습니다.</label>
+													</span>
+													<span class="check-line">
+														<input data-role="none" type="radio" name="hotline_type" id="hotline_type_t3" value="t3" />
+														<label for="hotline_type_t3">시정할 문제를 발견했습니다.</label>
+													</span>
+													<span class="check-line">
+														<input data-role="none" type="radio" name="hotline_type" id="hotline_type_t8" value="t8" checked="checked"/>
+														<label for="hotline_type_t8">기타</label>
+													</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">궁금한 점이나 의견을 <span class="br">남겨주세요.</span></th>
+											<td>
+												<div class="input-tit">
+													<label for="">제목</label>
+													<input data-role="none" type="text" name="hotline_title" id="hotline_title" placeholder="제목을 남겨주세요."/>
+												</div>
+												</br>
+												<div class="input-tit">
+													<label for="">연락처</label>
+													<input data-role="none" type="text" name="hotline_contact" id="hotline_contact" placeholder="답을 받으실 메일주소나 핸드폰 번호를 남겨주세요." />
+												</div>
+												<div class="textarea">
+													<textarea data-role="none" title="내용 입력" rows="" cols="" name="hotline_content" id="hotline_content" placeholder="내용을 입력해주세요."></textarea>
+													<button data-role="none" type="button" class="button" onclick="onSubmit()">완료</button>
+												</div>
+											</td>
+										</tr>
+										<!--tr>
+											<th scope="row">
+												자주 묻는 질문 Best!
+												<span class="btns"><a href="/msAbout.html?p_tab=3" class="btn btn-small1" style="padding:10px 30px !important;">FAQ</a></span>
+											</th>
+											<td>
+												<ul class="td-list">
+													<li><a href="/msAbout.html?p_tab=3">아이디/패스워드를 잊어버렸어요.</a></li>
+													<li><a href="/msAbout.html?p_tab=3">소리가 들리지 않거나 혹은 동영상이 자꾸 끊어져요.</a></li>
+													<li><a href="/msAbout.html?p_tab=3">사이트 접속 시 ‘페이지를 찾을 수 없습니다＇라고 나와요.</a></li>
+												</ul>
+											</td>
+										</tr-->
+									</tbody>
+								</table>
+							</div>
+							</form>
+							<h3 class="h3-1">전화하기</h3>
+							<p class="call">
+								이용시간 : 평일 8시~18시 / 전화 : <a href="tel:02-2143-8507">02-2143-8507</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="footer-in">
+			<ul class="link">
+				<li><a href="javascript:windowPopup('/msUse.html')">이용약관</a></li>
+				<li><a href="javascript:windowPopup('/msCopyright.html')">저작권정책</a></li>
+				<li><a href="javascript:windowPopup('/msPrivate.html')">개인정보처리방침</a></li>
+				<li><a href="javascript:windowPopup('/msErules.html','','400','200')">이메일주소 무단수집거부</a></li>
+			</ul>
+			<div class="contact">
+				<strong class="tit">이용문의</strong>
+				<span class="tel">02-2143-8507</span>
+			</div>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>

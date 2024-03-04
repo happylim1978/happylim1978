@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<!--[if IE 7]><html class="ie7" lang="ko"><![endif]-->
+<!--[if IE 8]><html class="ie8" lang="ko"><![endif]-->
+<!--[if gte IE 9]><!--><html lang="ko"><!--<![endif]-->
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+	<meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>관리자 통계</title>
+	<link rel="stylesheet" href="../css/admin_edu.css">
+	<link rel="stylesheet" href="../css/chart.css">
+	<link rel="stylesheet" href="../css/admin_edu_add.css">
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="../js/respond.min.js"></script>
+	<![endif]-->
+	<!--[if lte IE 8]><script src="../js/excanvas.min.js"></script><![endif]-->
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script src="../js/jquery.flot.js"></script>
+	<script src="../js/jquery.flot.pie.min.js"></script>
+	<script src="../js/jquery.flot.resize.min.js"></script>
+	<script src="../js/edu_admin_default.js"></script>
+</head>
+<body class="themeA">
+	<div class="wrap">
+		<header>
+			<h1>크래듀 교육 관리 서비스</h1>
+			<a href="#" class="backBtn"><span>이전</span></a>
+			<a href="#" class="menuBtn"><span>메뉴</span></a>
+		</header>
+		<section class="content">
+			<!-- 탭메뉴 -->
+			<div class="tabmenu">
+				<a href="#"><span class="step1">학습현황</span></a>
+				<a href="#" class="on"><span class="step2">운영보고서</span></a>
+			</div>
+			<!-- 학습현황 시작 -->
+			<div class="reportBox">
+				<div class="reportBoxHead">
+					<p class="copy"><span>8월 운영보고서 </span> 교육현황</p>
+					<span class="select3">
+						<select id="">
+							<option value="" selected="selected">페이지 선택</option>
+							<option value="">월 교육현황</option>
+							<option value="">종합현황</option>
+							<option value="">과정별 수료율</option>
+							<option value="">학습현황</option>
+							<option value="">과정랭킹</option>
+						</select>
+					</span>
+				</div>
+				<p class="periodBox">기간 : 2014.07.01 ~ 2014.08.31</p>
+				<!-- 학습자 인원 현황 -->
+				<div class="peopleCount noTitle">
+					<ul>
+						<li>
+							<p class="count">
+								<span class="num">163</span>
+								<span class="unit">개</span>
+							</p>
+							<span class="bar"></span>
+							<p class="info">입과과정</p>
+						</li>
+						<li>
+							<p class="count">
+								<span class="num">321</span>
+								<span class="unit">개</span>
+							</p>
+							<span class="bar"></span>
+							<p class="info">개설과정</p>
+						</li>
+						<li>
+							<p class="count">
+								<span class="num">249</span>
+								<span class="unit">명</span>
+							</p>
+							<span class="bar"></span>
+							<p class="info">인원</p>
+						</li>
+					</ul>
+				</div>
+				<!-- 그래프 영역 -->
+				<div class="graphCon">
+					<div class="tabmenu2">
+						<a href="#" class="on"><span class="bar"></span><em>그래프보기</em></a>
+						<a href="#"><span class="bar"></span><em>표보기</em></a>
+					</div>
+					<div class="graphbox">
+						<!-- 교육결과 -->
+						<div class="pieWrap">
+							<p class="tit2">교육결과 <span class="rate">수료율 : 90.4%</span></p>
+							<div class="pieChartWrap"><div id="pieChart1" class="piechart1"></div></div>
+						</div>
+
+						<!-- 설문만족도 -->
+						<div class="survey gLine">
+							<p class="tit2">설문 만족도</p>
+							<div class="chartWrap2"><div class="chart3" id="chart1"></div></div>
+						</div>
+
+						<!-- 학습자 분포도 -->
+						<div class="gLine">
+							<p class="tit2">성적분포도</p>
+							<div class="chart2" id="chart2"></div>
+						</div>
+
+						<!-- 교육결과 -->
+						<div class="pieWrap2 gLine">
+							<p class="tit2">교육비현황</p>
+							<div class="pieChartWrap"><div id="pieChart2" class="piechart2"></div></div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="footer">
+			<div class="person">
+				<div class="number1">
+					<a href="tel:0262629128">
+						<span class="name">교육컨설팅 문의 : 최승운 과장</span>
+						<span class="num">02-6262-9128</span>
+					</a>
+				</div>
+				<div class="number2">
+					<a href="tel:0262629018">
+						<span class="name">교육 운영 문의 : 김보민 사원</span>
+						<span class="num">02-6262-9018</span>
+					</a>
+				</div>
+				<p class="copy">
+					COPYRIGHT ⓒ 2014 CREDU. ALL RIGHT RESERVED.
+					<button type="button"><img src="../images/com/bg_logout.png" alt="로그아웃" /></button>
+				</p>
+			</div>
+		</footer>
+	</div>
+	<script type="text/javascript">
+
+	var pie_color = null, colors1 = [], colors2 = [], pie_color2 = [];
+	if( $('body').is('.themeA') ){
+		pie_color = '#00aeef';
+		colors1 = ['#8d3dd8', '#00aeef'];
+		colors2 = ['#00aeef','#8d3dd8'];
+		pie_color2 = ['#00aeef','#8d3dd8'];
+	};
+	if( $('body').is('.themeB') ){
+		pie_color = '#52be7f';
+		colors1 = ['#8d3dd8', '#52be7f'];
+		colors2 = ['#52be7f','#8d3dd8'];
+		pie_color2 = ['#52be7f','#8d3dd8'];
+	};
+	if( $('body').is('.themeC') ){
+		pie_color = '#fe634e';
+		colors1 = ['#8d3dd8', '#fe634e'];
+		colors2 = ['#fe634e','#8d3dd8'];
+		pie_color2 = ['#fe634e','#8d3dd8'];
+	};
+
+	//설문만족도 차트
+	var data = [
+					{data:[[2.8 ,8]], bars:{fillColor:colors1[0]}},
+					{data:[[2.5 ,20]], bars:{fillColor:colors1[1]}},
+					{data:[[4.1, 32]], bars:{fillColor:colors1[1]}},
+					{data:[[3.9 ,44]], bars:{fillColor:colors1[1]}},
+					{data:[[2.0 ,56]], bars:{fillColor:colors1[1]}},
+					{data:[[3.6 ,68]], bars:{fillColor:colors1[1]}},
+					{data:[[4.1 ,80]], bars:{fillColor:colors1[1]}},
+					{data:[[3.7 ,92]], bars:{fillColor:colors1[1]}}
+				]
+
+	var p = $.plot("#chart1", data,  {
+		bars: {
+			show: true,
+			align:'center',
+			barWidth: 5,
+			lineWidth : 0,
+			horizontal : true
+		},
+		xaxis : {
+			color:'#dcdcdc',
+			min : 0,
+			max : 5,
+			tickSize : 1,
+			tickDecimals : 0
+		},
+		yaxis: {
+			min:0,
+			max:100,
+			ticks: [[8,'종합'],[20,'시스템 만족도'],[32,'운영서비스 만족도'],[44,'조직성과 기여도'],[56,'현업 적용도'], [68,'학업 성취도'], [80,'추천 의향'], [92,'전반적 만족도']],
+			tickLength: 0
+		},
+		grid:{
+			borderWidth: {
+				top:0,
+				left:1,
+				bottom:1,
+				right:0
+			},
+			borderColor : '#dcdcdc'
+		},
+		shadowSize : 0
+	});
+
+	//성적분포도 차트
+	var data2 = [
+					{data:[[13, 20.3]], bars:{fillColor:colors2[0]}},
+					{data:[[38, 30.8]], bars:{fillColor:colors2[0]}},
+					{data:[[63, 23]], bars:{fillColor:colors2[1]}},
+					{data:[[88, 25.9]], bars:{fillColor:colors2[0]}},
+				]
+
+	var p2 = $.plot("#chart2", data2,  {
+		bars: {
+			show: true,
+			align:'center',
+			barWidth: 3,
+			lineWidth : 0
+		},
+		xaxis: {
+			min : 0,
+			max : 100,
+			ticks: [[13, '80미만'], [38, '80~89점'], [63, '90~94점'], [88, '95점 이상']],
+			tickLength: 0
+		},
+		yaxis : {
+			min : 0,
+			max : 100,
+			tickSize : 20
+		},
+		grid:{
+			borderWidth: {
+				top:0,
+				left:0,
+				bottom:2,
+				right:0
+			},
+			borderColor : '#dcdcdc'
+		},
+		shadowSize : 0
+	});
+
+	//교육결과 차트
+	 var data3 = [
+		{label:"수료", data:90.4},{label:"미수료", data:9.6}
+	]
+
+	var pie_options1 = {
+		colors: [pie_color, "#e3e3e3"],
+		series: {
+			pie: { 
+				show:true,
+				radius:0.6,
+				innerRadius:0.3,
+				label : {
+					show : true,
+					radius:0.75,
+					formatter: function(label, series){
+						return '<span>'+series.percent+'%</span>'
+					},
+				},
+				stroke:{
+					color:'#fff',
+					width : 0
+				}
+			}
+		},
+		legend : {
+			show : true,
+			noColumns : 0
+		}
+	};
+
+	$.plot("#pieChart1", data3, pie_options1);
+
+	//교육비 현황
+	 var data4 = [
+		{label:"실 교육비", data:79.0},{label:"환급금(예상)", data:21.0}
+	]
+
+	var pie_options2 = {
+		colors: [pie_color2[0], pie_color2[1]],
+		series: {
+			pie: { 
+				show:true,
+				radius:0.6,
+				innerRadius:0.3,
+				label : {
+					show : true,
+					radius:0.75,
+					formatter: function(label, series){
+						return '<span>'+series.percent+'%</span>'
+					},
+				},
+				stroke:{
+					color:'#fff',
+					width : 0
+				}
+			}
+		},
+		legend : {
+			show : true,
+			noColumns : 0
+		}
+	};
+
+	$.plot("#pieChart2", data4, pie_options2);
+
+
+	function graphLabel() {
+		$('.data-point-label').remove();
+		for(var j=0; j<data.length; j++)
+		{
+			$.each(p.getData()[j].data, function(i, el){
+			  var o = p.pointOffset({x: el[0], y: el[1]});
+			  $('<div class="data-point-label count'+(j+1)+'">' + el[0].toFixed(1) + '</div>').css( {
+				position: 'absolute',
+				left: o.left + 5,
+				top: o.top - 11
+			  }).appendTo(p.getPlaceholder());
+			});
+		}
+	}
+
+	function graphLabel2() {
+		$('.data-point-label2').remove();
+		for(var j=0; j<data2.length; j++)
+		{
+			$.each(p2.getData()[j].data, function(i, el){
+			  var o = p2.pointOffset({x: el[0], y: el[1]});
+			  $('<div class="data-point-label2 count'+(j+1)+'">' + el[1] + '%</div>').css( {
+				position: 'absolute',
+				left: o.left + 12,
+				top: o.top - 5
+			  }).appendTo(p2.getPlaceholder());
+			});
+		}
+	}
+
+	graphLabel();
+	graphLabel2();
+	$(window).on('resize', function(){
+		graphLabel();
+		graphLabel2();
+	});
+
+	</script>
+<div class="goTop" id="go_top"><a href="#"><span>페이지상단으로 이동</span></a></div>
+</body>
+</html>

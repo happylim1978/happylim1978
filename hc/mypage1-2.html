@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="ko" xml:lang="ko">
+	<head>
+		<title>i-나루</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta http-equiv="content-script-type" content="text/html"/>
+		<meta http-equiv="content-style-type" content="text/css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+		<link rel="icon" type="image/x-icon" href=""/>
+		<link rel="shortcut_icon" type="image/x-icon" href=""/>
+		<link rel="apple-touch-icon" href=""/>
+		<link rel="apple-touch-icon-precomposed" href=""/>
+		<link rel="stylesheet" href="https://inaru.sericeo.org/css/jquery.mobile-1.4.5.min.css"/>
+		<script type="text/javascript" src="https://inaru.sericeo.org/js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="https://inaru.sericeo.org/js/jquery.mobile-default.js"></script>
+		<script type="text/javascript" src="https://inaru.sericeo.org/js/jquery.mobile-1.4.5.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="https://inaru.sericeo.org/css/common.css"/>
+		<script type="text/javascript" src="https://inaru.sericeo.org/js/jqueryFunc.js"></script>
+		<script type="text/javascript" src="https://inaru.sericeo.org/js/common.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://inaru.sericeo.org/css/login.css"/>
+		<script type="text/javascript" src="https://inaru.sericeo.org/js/login.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="./css/common.css" />
+		<link rel="stylesheet" type="text/css" href="./css/sub.css" />
+		<link rel="stylesheet" type="text/css" href="./css/swiper-bundle.css" />
+		<script type="text/javascript" src="./js/swiper-bundle.min.js"></script>
+
+		<script type="text/javascript" src="./js/design.js"></script>
+	</head>
+	<body>
+		<div class="wrap">
+			<!-- pc header -->
+			<div class="header">
+				<div class="header-in">
+					<h1 class="logo">
+						<a href="">i-나루 SERICEO</a>
+					</h1>
+					<ul class="menu">
+						<li><a href="">특집</a></li>
+						<li><a href="">문화∙인문</a></li>
+						<li><a href="">기술∙트렌드</a></li>
+						<li><a href="">리더십∙소통</a></li>
+					</ul>
+					<div class="header-r">
+						<a href="" class="help">
+							<span>Help Desk</span>
+						</a>
+						<div class="search">
+							<input type="text" placeholder="인기검색어를 확인해보세요." data-role="none">
+							<button type="button" class="s-btn" data-role="none">검색</button>
+						</div>
+						<a href="" class="mypage"></a>
+					</div>
+				</div>
+			</div>
+			<!-- //pc header -->
+			<!-- mo header -->
+			<div class="header-wrap">
+				<div id="search-line" class="search-line">
+					<div class="search-line-in">
+						<input type="text" data-role="none">
+						<a href="" id="go-search" class="go-search">검색하기</a>
+					</div>
+				</div>
+				<div class="header">
+					<h1 class="logo"><a href="">i-나루 SERICEO</a></h1>
+					<div class="menu">
+						<a href="" class="search" id="search">검색</a>
+						<a href="" class="my">마이</a>
+					</div>
+				</div>
+				<script>
+					$(document).ready(function(){
+						$('#search').on('click', function(){
+							$('#search-line').addClass('search-line-on')
+							return false;
+						})
+						$('#go-search').on('click', function(){
+							$('#search-line').removeClass('search-line-on')
+							return false;
+						})
+					})
+		
+				</script>
+				<div class="p-info">
+					<span class="name">홍길동</span> 님, 11월 <strong>30시간 30분 학습</strong>
+				</div>
+			</div>
+			<div id="gnb" class="gnb">
+				<a href="">홈</a>
+				<a href="">특집</a>
+				<a href="">문화∙인문</a>
+				<a href="">기술∙트렌드</a>
+				<a href="">리더십∙소통</a>
+			</div>
+			<!-- //mo header -->
+			<div class="content">
+				<div class="sub-head">
+					<div class="conbox">
+						<!-- sub-head -->
+						<div class="search-box">
+							<div class="copy">
+								<h2>My page</h2>
+							</div>
+							<div class="info-search">
+								<p class="p-info">홍길동 님, <strong>11월 <span>30시간 30분</span> 학습</strong></p>
+								<div class="search-line">
+									<input type="text" placeholder="인기검색어를 확인해보세요." data-role="none">
+									<button class="go-search" data-role="none">검색</button>
+								</div>
+							</div>
+						</div>
+						<!-- //sub-head -->
+						<!-- sub-tab -->
+						<div class="sub-menu">
+							<div class="sub-menu-in swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="item">
+											<a href="">이용현황</a>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="item">
+											<a href="">콘텐츠 공유내역</a>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="item">
+											<a href="">즐겨찾기</a>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="item">
+											<a href="">개인정보수정</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<script>
+								$(document).ready(function(){
+									setMenu(1)
+								})
+							</script>
+						</div>
+						<!-- //sub-tab -->
+					</div>
+				</div>
+				<div class="sub-con-box">
+					<link rel="stylesheet" href="./css/jquery-ui.min.css">
+					<script src="./js/jquery-ui-datepicker.min.js"></script>
+					<div class="conbox sub-tab2">
+						<button type="button" data-role="none">월별 학습현황</button>
+						<button type="button" class="current" data-role="none">기간별 재생목록</button>
+					</div>
+					<div class="conbox check-line">
+						<span class="check-s-wrap">
+							<span class="check-s">
+								<input type="radio" name="period-check" id="set-3month" checked="checked" data-role="none"><label for="set-3month">최근 3개월</label>
+							</span>
+							<span class="check-s">
+								<input type="radio" name="period-check" id="set-today" data-role="none"><label for="set-today">오늘로 맞추기</label>
+							</span>
+						</span>
+						<div class="period-cover">
+							<div class="period-wrap">
+								<input type="text" id="beginDate" title="" data-role="none">
+								<span class="space">~</span>
+								<input type="text" id="endDate" title="" data-role="none">
+							</div>
+							<button type="button" class="view-list" data-role="none">조회</button>
+						</div>
+						<script>
+							$(document).ready(function(){
+								$('#beginDate').datepicker({
+									showOtherMonths: true,
+									buttonText: "Select date",
+									dayNamesMin : ['일', '월', '화', '수', '목', '금', '토'],
+									monthNames : ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+									maxDate : 0,
+									showButtonPanel: true,
+									closeText : '닫기',
+									dateFormat : 'yy-mm-dd'
+								});
+								$('#endDate').datepicker({
+									showOtherMonths: true,
+									buttonText: "Select date",
+									dayNamesMin : ['일', '월', '화', '수', '목', '금', '토'],
+									monthNames : ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+									maxDate : 0,
+									showButtonPanel: true,
+									closeText : '닫기',
+									dateFormat : 'yy-mm-dd'
+								});
+								let d = new Date();
+								let year = d.getFullYear();
+								let month = d.getMonth() + 1;
+								let day = d.getDate();
+								$('#beginDate').datepicker('setDate', `${year}-${month - 3}-${day}`)
+								$('#endDate').datepicker('setDate', `${year}-${month}-${day}`)
+
+								$('#set-today').on('change', function(){
+									$('#beginDate').datepicker('setDate', `${year}-${month}-${day}`)
+								})
+								$('#set-3month').on('change', function(){
+									$('#beginDate').datepicker('setDate', '-3m')
+								})
+							})
+						</script>
+					</div>
+					<div class="conbox table-wrap">
+						<div class="caution">
+							<div class="dates">
+								<span class="total-period-wrap">
+									<span class="total-period">총 학습기간</span>
+									<strong>2023.08.13 ~ 2023.09.12</strong>
+								</span>
+								<span class="total-wrap">
+									<span class="total-time">총 학습시간</span>
+									<strong>150분</strong>
+									<span class="total-count">총 학습편수</span>
+									<strong>23편</strong>
+								</span>
+							</div>
+							<p class="p1">
+								i-나루 SERICEO 다양한 콘텐츠를 통해 지식을 쌓으시도록 권장해 드리고 있습니다.<br>
+								동일 콘텐츠를 중복으로 시청하실 경우, 1회만 학습시간 및 편수가 반영됩니다.
+							</p>
+						</div>
+						<div class="table table-mo2">
+							<table cellspacing="0">
+								<caption>구분 학습시간 학습편수</caption>
+								<colgroup>
+									<col style="width:15%">
+									<col style="width:15%">
+									<col style="width:auto">
+									<col style="width:15%">
+									<col style="width:15%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th colspan="col">대분류</th>
+										<th colspan="col">프로그램</th>
+										<th colspan="col">콘텐츠</th>
+										<th colspan="col">학습일</th>
+										<th colspan="col">학습시간</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="cate">리더십∙소통</td>
+										<td class="section">[HR with Tech]</td>
+										<td class="subject"><a href="">스포츠 훈련에서 배우는 리더십 성공법칙</a></td>
+										<td class="day">2023.07.30</td>
+										<td class="time">37분 56초</td>
+									</tr>
+									<tr>
+										<td class="cate">리더십∙소통</td>
+										<td class="section">[HR with Tech]</td>
+										<td class="subject"><a href="">스포츠 훈련에서 배우는 리더십 성공법칙</a></td>
+										<td class="day">2023.07.30</td>
+										<td class="time">37분 56초</td>
+									</tr>
+								</tbody>
+							</table>
+							<a href="" class="more-go no-line">
+								더보기 <span class="current-value">12</span><span class="total">/26</span> <i></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<button type="button" id="go-top" class="go-top" data-role="none">go top</button>
+			</div>
+			<div class="footer">
+				<div class="footer-in">
+					<div class="footer-logo"><a href="">i-나루 SERICEO</a></div>
+					<ul class="footer-menu">
+						<li><a href="">이용약관</a></li>
+						<li><a href="">저작권정책</a></li>
+						<li><a href=""><strong>개인정보처리방침</strong></a></li>
+						<li><a href="">이메일무단수집거부</a></li>
+					</ul>
+					<div class="tel">
+						<p class="tel-num">
+							고객지원 <strong>02-2143-8507</strong>
+						</p>
+						<p class="tel-info">
+							고객 정보 보호를 위해 통화내용은 녹음될 수 있습니다.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

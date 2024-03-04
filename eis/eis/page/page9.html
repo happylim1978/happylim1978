@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> | EIS</title>
+	<link href="../../css/datepicker3.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/module.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/custom.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/popup.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="../../css/tip.css">
+	<link type="text/css" rel="stylesheet" href="../../css/admin.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_eis.css" />
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+	<script src="../../js/bootstrap-datepicker.js"></script>
+	<script src="../../js/locales/bootstrap-datepicker.kr.js"></script>
+	<script src="../../js/jquery.slimscroll.min.js"></script>
+	<script src="../../js/tip.js"></script>
+	<script src="../../js/admin_script.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../js/html5shiv.js"></script>
+		<script src="../../js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body><!-- 배경색 변경시 class="bg" -->
+<div id="wrap"><!-- 메인일 경우 class="main" -->
+
+	<!-- contents -->
+	<div class="content_wrap">
+		<a id="btn_folding_lnb" class="btn_folding_lnb" href="#">lnb control</a>
+		<div class="wrap_max">
+
+			<!-- EP title -->
+			<div class="cont_subtit fix">
+				<!-- 로케이션 -->
+				<ul class="breadcrumb">
+					<li>운영정보</li>
+					<li>CTI현황</li>
+					<li><strong>인바운드</strong></li>
+				</ul>
+				<!-- //로케이션 -->
+				
+				<!-- 제목 -->
+				<div class="tit_area ">
+					<div class="sub_tit">
+						<span class="tit_list">
+							<span class="tit">인바운드</span>
+						</span>
+					</div>
+				</div>
+				<!-- //제목 -->
+
+			</div>
+			<!--// EP title -->
+
+
+			<!-- cont -->
+			<div class="cont_wrap">
+
+				<div class="tab_module" id="tab1">
+					<div class="tab_navi">
+						<ul>
+							<li class="selected"><a href="#">기간별조회</a></li>
+							<li><a href="#">주별조회</a></li>
+						</ul>
+					</div>
+					<div class="tab_cons">
+						<div class="tab_article tab_article_on">
+
+							<!-- 기간검색영역 -->
+							<div class="tbl_search tbl_search2">
+								<table>
+									<tbody>
+										<tr>
+											<td class="calTd">
+												<div class="date_wrap">
+													<div class="date_input date" id="cal1">
+														<input type="text" style="width:160px;">
+														<a class="btn_calendar input-group-addon" href="#">
+															<i class="icons i_calendar">calendar</i>
+														</a>
+													</div>
+													<span>~</span>
+													<div class="date_input date" id="cal2">
+														<input type="text" style="width:160px;">
+														<a class="btn_calendar input-group-addon" href="#">
+															<i class="icons i_calendar">calendar</i>
+														</a>
+													</div>
+												</div>
+												<span class="btn_area">
+													<a href="#" class="btn_primary small"><span>조회</span></a>
+												</span>
+
+												<script>
+													$('#cal1').datepicker({
+														format: "yyyy.mm",
+														minViewMode: 1, //월력변환
+														language:'kr',
+														autoclose : true
+													})
+													.on('show', function(){$(this).addClass('active');})
+													.on('hide', function(){$(this).removeClass('active');})
+													;
+													$('#cal2').datepicker({
+														format: "yyyy.mm.dd",
+														language:'kr',
+														todayHighlight: true,
+														autoclose : true,
+														todayBtn : 'linked'
+													})
+													.on('show', function(){$(this).addClass('active');})
+													.on('hide', function(){$(this).removeClass('active');})
+													;
+												</script>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="tbl_search tbl_search2">
+								<table>
+									<tbody>
+										<tr>
+											<td class="calTd">
+												<div class="fix">
+													<div class="date_wrap fL">
+														<div class="date_input date" id="cal3">
+															<input type="text" style="width:160px;">
+															<a class="btn_calendar input-group-addon" href="#">
+																<i class="icons i_calendar">calendar</i>
+															</a>
+														</div>
+														<span>~</span>
+														<div class="date_input date" id="cal4">
+															<input type="text" style="width:160px;">
+															<a class="btn_calendar input-group-addon" href="#">
+																<i class="icons i_calendar">calendar</i>
+															</a>
+														</div>
+													</div>
+													<span class="btn_area fR">
+														<a href="#" class="btn_primary small"><span>조회</span></a>
+													</span>
+												</div>
+												<script>
+													$('#cal3').datepicker({
+														format: "yyyy.mm",
+														minViewMode: 1, //월력변환
+														language:'kr',
+														autoclose : true
+													})
+													.on('show', function(){$(this).addClass('active');})
+													.on('hide', function(){$(this).removeClass('active');})
+													;
+													$('#cal4').datepicker({
+														format: "yyyy.mm.dd",
+														language:'kr',
+														todayHighlight: true,
+														autoclose : true,
+														todayBtn : 'linked'
+													})
+													.on('show', function(){$(this).addClass('active');})
+													.on('hide', function(){$(this).removeClass('active');})
+													;
+												</script>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<!-- //기간검색영역 -->
+
+							<!-- tab -->
+							<div class="tab_module tab_module_sub" id="tab1_in">
+								<div class="tab_navi col12">
+									<ul>
+										<li class="selected"><a href="#">전체</a></li>
+										<li><a href="#">이러닝</a></li>
+										<li><a href="#">오픽</a></li>
+										<li><a href="#">전화외국어</a></li>
+										<li><a href="#">금융FN</a></li>
+										<li><a href="#">EBS</a></li>
+										<li><a href="#">강원랜드</a></li>
+										<li><a href="#">외국어BPO</a></li>
+										<li><a href="#">SERICEO</a></li>
+										<li><a href="#">SERIPro</a></li>
+										<li><a href="#">맞춤</a></li>
+										<li><a href="#">SERU&amp;U</a></li>
+									</ul>
+								</div>
+								<div class="tab_cons">
+									<div class="tab_article tab_article_on">
+
+										<div><img src="../../images/temp/graph4.gif" alt="" width="100%" /></div>
+										<br /><br />
+										<div class="row2 graphbox">
+											<div class="col6"><img src="../../images/temp/graph4.gif" alt="" width="100%" /></div>
+											<div class="col6"><img src="../../images/temp/graph4.gif" alt="" width="100%" /></div>
+										</div>
+										<br /><br />
+										<div class="row2 graphbox">
+											<div class="col" style="width:40%;"><img src="../../images/temp/graph4.gif" alt="" width="100%" /></div>
+											<div class="col" style="width:60%;"><img src="../../images/temp/graph4.gif" alt="" width="100%" /></div>
+										</div>
+										<br /><br />
+										<div class="row2 databox">
+											<div class="col" style="width:50%;">
+												<div class="tableTitWrap">
+													<p class="tableTit">제목</p>
+													<span class="addGrade">[단위 : 원]</span>
+												</div>
+												<div class="lineDiv">
+													<div class="tbl_type02">
+														<table style="border-right:0 none;">
+															<colgroup>
+																<col width="82">
+																<col width="91">
+																<col width="*">
+															</colgroup>
+															<thead>
+																<tr>
+																	<th scope="col">총금액</th>
+																	<th scope="col">발행구분</th>
+																	<th scope="col">비고</th>
+																</tr>
+															</thead>
+														</table>
+													</div>
+													<div class="tbl_type02">
+														<div class="scroll" style="height:150px;">
+															<table class="tableCenter">
+																<colgroup>
+																	<col width="82">
+																	<col width="91">
+																	<col width="*">
+																</colgroup>
+																<tbody>
+																	<tr>
+																		<td>2013.01.14</td>
+																		<td>12086402562</td>
+																		<td>청구</td>
+																	</tr>
+																	<tr>
+																		<td>2013.01.14</td>
+																		<td>12086402562</td>
+																		<td>청구</td>
+																	</tr>
+																	<tr>
+																		<td>2013.01.14</td>
+																		<td>12086402562</td>
+																		<td>청구</td>
+																	</tr>
+																	<tr>
+																		<td>2013.01.14</td>
+																		<td>12086402562</td>
+																		<td>청구</td>
+																	</tr>
+																	<tr>
+																		<td>2013.01.14</td>
+																		<td>12086402562</td>
+																		<td>청구</td>
+																	</tr>
+																	<tr>
+																		<td>2013.01.14</td>
+																		<td>12086402562</td>
+																		<td>청구</td>
+																	</tr>
+
+																</tbody>
+															</table>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col" style="width:50%;">
+												<p class="tableTit">제목</p>
+												<div class="lineDiv">
+													<div class="tbl_type02">
+														<table>
+															<colgroup>
+																<col width="82">
+																<col width="91">
+																<col width="*">
+															</colgroup>
+															<thead>
+																<tr>
+																	<th scope="col">총금액</th>
+																	<th scope="col">발행구분</th>
+																	<th scope="col">비고</th>
+																</tr>
+															</thead>
+														</table>
+													</div>
+													<div class="tbl_type02">
+														<div class="scroll" style="height:150px;">
+															<table class="tableCenter">
+																<colgroup>
+																	<col width="82">
+																	<col width="91">
+																	<col width="*">
+																</colgroup>
+																<tbody>
+																	<tr>
+																		<td>2013.01.14</td>
+																		<td>12086402562</td>
+																		<td>청구</td>
+																	</tr>
+																	<tr>
+																		<td>2013.01.14</td>
+																		<td>12086402562</td>
+																		<td>청구</td>
+																	</tr>
+																	<tr>
+																		<td>2013.01.14</td>
+																		<td>12086402562</td>
+																		<td>청구</td>
+																	</tr>
+																	<tr>
+																		<td>2013.01.14</td>
+																		<td>12086402562</td>
+																		<td>청구</td>
+																	</tr>
+																	<tr>
+																		<td>2013.01.14</td>
+																		<td>12086402562</td>
+																		<td>청구</td>
+																	</tr>
+																	<tr>
+																		<td>2013.01.14</td>
+																		<td>12086402562</td>
+																		<td>청구</td>
+																	</tr>
+
+																</tbody>
+															</table>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<br /><br />
+										<p class="desR mt20">[단위 : 건, %]</p>
+										<div class="tbl_type05 mt0">
+											<table class="tableData dataMiddle">
+												<thead class="fwn">
+													<tr>
+														<th scope="col">구분</th>
+														<th scope="col"><span class="tc8 uline">1주</span></th>
+														<th scope="col"><span class="tc8 uline">2주</span></th>
+														<th scope="col"><span class="tc8 uline">3주</span></th>
+														<th scope="col"><span class="tc8 uline">4주</span></th>
+														<th scope="col"><span class="tc8 uline">5주</span></th>
+														<th scope="col"><span class="tc8 uline">당월</span></th>
+														<th scope="col"><span class="tc8 uline">전월</span></th>
+														<th scope="col">증감</th>
+														<th scope="col"><span class="tc8 uline">전년</span></th>
+														<th scope="col">증감</th>
+													</tr>
+												</thead>
+												<tbody class="fwn">
+													<tr>
+														<th scope="row">학습인원</th>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>143,046</td>
+														<td>-143,046</td>
+														<td>594,796</td>
+														<td>-594,796</td>
+													</tr>
+													<tr>
+														<th scope="row">연결요청</th>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>143,046</td>
+														<td>-143,046</td>
+														<td>594,796</td>
+														<td>-594,796</td>
+													</tr>
+													<tr>
+														<th scope="row">연결성공</th>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>143,046</td>
+														<td>-143,046</td>
+														<td>594,796</td>
+														<td>-594,796</td>
+													</tr>
+													<tr>
+														<th scope="row">1차성공률</th>
+														<td>0%</td>
+														<td>0%</td>
+														<td>0%</td>
+														<td>0%</td>
+														<td>0%</td>
+														<td>0.00%</td>
+														<td>92.65%</td>
+														<td><span class="tc7">▼ 100.00%</span></td>
+														<td>91.11%</td>
+														<td><span class="tc7">▼ 98.34%</span></td>
+													</tr>
+													<tr>
+														<th scope="row">콜백건수</th>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>143,046</td>
+														<td>-143,046</td>
+														<td>594,796</td>
+														<td>-594,796</td>
+													</tr>
+													<tr>
+														<th scope="row">2차성공률</th>
+														<td>0%</td>
+														<td>0%</td>
+														<td>0%</td>
+														<td>0%</td>
+														<td>0%</td>
+														<td>0.00%</td>
+														<td>92.65%</td>
+														<td><span class="tc7">▼ 100.00%</span></td>
+														<td>91.11%</td>
+														<td><span class="tc7">▼ 98.34%</span></td>
+													</tr>
+
+												</tbody>
+											</table>
+										</div>
+
+										<div class="tbl_type05 mt20">
+											<table class="tableData dataMiddle">
+												<thead class="fwn">
+													<tr>
+														<th scope="col">구분</th>
+														<th scope="col"><span class="tc8 uline">1주</span></th>
+														<th scope="col"><span class="tc8 uline">2주</span></th>
+														<th scope="col"><span class="tc8 uline">3주</span></th>
+														<th scope="col"><span class="tc8 uline">4주</span></th>
+														<th scope="col"><span class="tc8 uline">5주</span></th>
+														<th scope="col"><span class="tc8 uline">당월</span></th>
+														<th scope="col"><span class="tc8 uline">전월</span></th>
+														<th scope="col">증감</th>
+														<th scope="col"><span class="tc8 uline">전년</span></th>
+														<th scope="col">증감</th>
+													</tr>
+												</thead>
+												<tbody class="fwn">
+													<tr>
+														<th scope="row">학습인원</th>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>143,046</td>
+														<td>-143,046</td>
+														<td>594,796</td>
+														<td>-594,796</td>
+													</tr>
+													<tr>
+														<th scope="row">연결요청</th>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>143,046</td>
+														<td>-143,046</td>
+														<td>594,796</td>
+														<td>-594,796</td>
+													</tr>
+													<tr>
+														<th scope="row">연결성공</th>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>143,046</td>
+														<td>-143,046</td>
+														<td>594,796</td>
+														<td>-594,796</td>
+													</tr>
+													<tr>
+														<th scope="row">1차성공률</th>
+														<td>0%</td>
+														<td>0%</td>
+														<td>0%</td>
+														<td>0%</td>
+														<td>0%</td>
+														<td>0.00%</td>
+														<td>92.65%</td>
+														<td><span class="tc7">▼ 100.00%</span></td>
+														<td>91.11%</td>
+														<td><span class="tc7">▼ 98.34%</span></td>
+													</tr>
+													<tr>
+														<th scope="row">콜백건수</th>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>0</td>
+														<td>143,046</td>
+														<td>-143,046</td>
+														<td>594,796</td>
+														<td>-594,796</td>
+													</tr>
+													<tr>
+														<th scope="row">2차성공률</th>
+														<td>0%</td>
+														<td>0%</td>
+														<td>0%</td>
+														<td>0%</td>
+														<td>0%</td>
+														<td>0.00%</td>
+														<td>92.65%</td>
+														<td><span class="tc7">▼ 100.00%</span></td>
+														<td>91.11%</td>
+														<td><span class="tc7">▼ 98.34%</span></td>
+													</tr>
+
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //tab -->
+
+							<br /><br />
+
+							<a href="#"><i class="i_file eis_excel">excel</i></a>
+							<span class="btn_area"><a href="#" class="btn_default"><i class="i_file eis_excel">excel</i> <span>다운로드</span></a></span>
+							<span class="btn_area"><a href="#" class="btn_basic"><i class="i_file eis_excel">excel</i> <span><strong>다운로드</strong></span></a></span>
+							<br /><br />
+							<img src="../../images/common/icon_excel.png" alt="엑셀" />
+							<img src="../../images/common/btn_excel_download1.gif" alt="엑셀다운로드" />
+							<img src="../../images/common/btn_excel_download2.gif" alt="엑셀다운로드" />
+							<br /><br />
+
+							<!-- menuAdminTable 클래스 추가 -->
+							<div class="tbl_type02 menuAdminTable">
+								<table class="tbl_typeA">
+									<tbody>
+										<tr>
+											<th class="txt_l">메뉴코드
+											</th><td class="txt_l2">
+												<input type="hidden" value="" id="p_hid_menu_cd" name="p_hid_menu_cd">
+												<input type="text" value="" style="width:100%" id="p_txt_menu_cd" name="p_txt_menu_cd">
+												<input type="text" value="" style="display:none" id="p_txt_menu_id" name="p_txt_menu_id"><!-- display:none -->
+												<input type="text" value="" style="display:none" id="p_txt_save_gubun" name="p_txt_save_gubun">
+											</td>
+										</tr>
+										<tr>
+											<th class="txt_l">프로그램명
+											</th><td class="txt_l2">
+												<input type="text" value="" id="p_txt_menu_name" name="p_txt_menu_name" style="width:100%">
+												
+											</td>
+										</tr>
+										<tr>
+											<th class="txt_l">메뉴경로
+											</th><td class="txt_l2"><input type="text" id="p_txt_menu_path" value="" style="width:100%" name="p_txt_menu_path"></td>
+										</tr>
+										<tr>
+											<th class="txt_l">상위메뉴
+											</th><td class="txt_l2">
+												<input type="hidden" class="input_read" readonly="" value="0" style="width:100%" id="p_txt_high_menu_cd" name="p_txt_high_menu_cd">
+												<span id="div_high_menu_cd">
+													<select id="p_cb_high_menu_cd" style="width:100%" name="p_cb_high_menu_cd"><option value="">선택하세요.</option><option value="0">+-- 0 / EIS메뉴</option><option value="MT">+-- MT / 경영정보</option><option value="MT.1">+--+-- MT.1 / 실적회의(매출)</option><option value="MT.1.1">+--+--+-- MT.1.1 / 메인</option><option value="MT.1.2">+--+--+-- MT.1.2 / 부서별매출(시너지)</option><option value="MT.1.3">+--+--+-- MT.1.3 / 사업유형별매출</option><option value="MT.1.4">+--+--+-- MT.1.4 / 부서별/서비스별매출</option><option value="MT.2">+--+-- MT.2 / 실적회의(손익)</option><option value="MT.2.1">+--+--+-- MT.2.1 / 손익실적</option><option value="MT.2.2">+--+--+-- MT.2.2 / 부서별손익(누계)</option><option value="MT.2.3">+--+--+-- MT.2.3 / 사업유형별손익(누계)</option><option value="MT.2.4">+--+--+-- MT.2.4 / 차2개월 전망(부서)</option><option value="MT.2.5">+--+--+-- MT.2.5 / 차2개월 전망(사업)</option><option value="MT.3">+--+-- MT.3 / 손익분석</option><option value="MT.3.1">+--+--+-- MT.3.1 / 조직별</option><option value="MT.3.2">+--+--+-- MT.3.2 / 고객사별</option><option value="MT.3.3">+--+--+-- MT.3.3 / 사업유형별</option><option value="MT.3.4">+--+--+-- MT.3.4 / 사업유형별(조직별)</option><option value="MT.4">+--+-- MT.4 / 인사</option><option value="MT.4.1">+--+--+-- MT.4.1 / 인력지표-미시</option><option value="MT.4.2">+--+--+-- MT.4.2 / 인력지표-거시</option><option value="ID">+-- ID / 경영지표</option><option value="ID.1">+--+-- ID.1 / MAIN</option><option value="ID.1.1">+--+--+-- ID.1.1 / MAIN</option><option value="ID.2">+--+-- ID.2 / 재무</option><option value="ID.2.1">+--+--+-- ID.2.1 / SUB</option><option value="ID.2.2">+--+--+-- ID.2.2 / 사업유형별 직접이익</option><option value="ID.3">+--+-- ID.3 / 이러닝</option><option value="ID.3.1">+--+--+-- ID.3.1 / SUB</option><option value="ID.3.2">+--+--+-- ID.3.2 / (진)입과인원</option><option value="ID.3.3">+--+--+-- ID.3.3 / 과정매출</option><option value="ID.3.4">+--+--+-- ID.3.4 / 상품평균판가</option><option value="ID.3.5">+--+--+-- ID.3.5 / 연1억이상 과정수</option><option value="ID.3.6">+--+--+-- ID.3.6 / 신규과정 매핑율</option><option value="ID.3.7">+--+--+-- ID.3.7 / 신규 고객사수</option><option value="ID.3.8">+--+--+-- ID.3.8 / 휴면 고객사수</option><option value="ID.3.9">+--+--+-- ID.3.9 / CP현황</option><option value="ID.3.11">+--+--+-- ID.3.11 / 과정투자수익율</option><option value="ID.3.10">+--+--+-- ID.3.10 / (완)고용보험심사 적합율</option><option value="ID.3.12">+--+--+-- ID.3.12 / (완)이러닝과정 수료율</option><option value="ID.3.13">+--+--+-- ID.3.13 / (진)학습자만족도</option><option value="ID.4">+--+-- ID.4 / SERICEO</option><option value="ID.4.1">+--+--+-- ID.4.1 / SUB</option><option value="ID.4.2">+--+--+-- ID.4.2 / 세리시이오 회원수</option><option value="ID.4.3">+--+--+-- ID.4.3 / 세리시이오 재계약율</option><option value="ID.4.4">+--+--+-- ID.4.4 / 세리시이오 고객사수</option><option value="ID.4.5">+--+--+-- ID.4.5 / SERICEO 평점</option><option value="ID.5">+--+-- ID.5 / OPIc</option><option value="ID.5.1">+--+--+-- ID.5.1 / SUB</option><option value="ID.5.2">+--+--+-- ID.5.2 / (진)B2C/B2B 응시인원</option><option value="ID.5.3">+--+--+-- ID.5.3 / (진)평가 재응시율</option><option value="ID.6">+--+-- ID.6 / 금융BPO</option><option value="ID.6.1">+--+--+-- ID.6.1 / SUB</option><option value="ID.6.2">+--+--+-- ID.6.2 / 자격시험합격율</option><option value="ID.7">+--+-- ID.7 / 공통</option><option value="ID.7.1">+--+--+-- ID.7.1 / SUB</option><option value="ID.7.2">+--+--+-- ID.7.2 / 그룹사 매출</option><option value="ID.7.3">+--+--+-- ID.7.3 / 핵심고객사 매출</option><option value="ID.7.5">+--+--+-- ID.7.5 / Total HRD 고객사수</option><option value="ID.7.6">+--+--+-- ID.7.6 / Call 응대율</option><option value="CT">+-- CT / 상품정보</option><option value="CT.1">+--+-- CT.1 / 과정현황</option><option value="CT.1.1">+--+--+-- CT.1.1 / 과정매출</option><option value="CT.1.2">+--+--+-- CT.1.2 / 과정투자수익율</option><option value="CT.1.3">+--+--+-- CT.1.3 / 과정손익상세현황</option><option value="CT.2">+--+-- CT.2 / CP과정현황</option><option value="CT.2.1">+--+--+-- CT.2.1 / CP현황</option><option value="SM">+-- SM / 영업정보</option><option value="SM.1">+--+-- SM.1 / 매출/손익현황</option><option value="SM.1.1">+--+--+-- SM.1.1 / 매출현황</option><option value="SM.1.2">+--+--+-- SM.1.2 / 손익실적</option><option value="OP">+-- OP / 운영정보</option><option value="OP.1">+--+-- OP.1 / CTI현황</option><option value="OP.1.1">+--+--+-- OP.1.1 / (완)인바운드</option><option value="OP.1.2">+--+--+-- OP.1.2 / (완)아웃바운드</option><option value="OP.2">+--+-- OP.2 / 입과현황</option><option value="OP.2.1">+--+--+-- OP.2.1 / (진)이러닝 입과인원</option><option value="OP.3">+--+-- OP.3 / 회사 및 교육그룹현황</option><option value="OP.3.2">+--+--+-- OP.3.2 / 휴면 고객사수</option><option value="OP.4">+--+-- OP.4 / VOC</option><option value="OP.4.1">+--+--+-- OP.4.1 / (완)VOC 현황</option><option value="OP.5">+--+-- OP.5 / 강사현황</option><option value="OP.5.1">+--+--+-- OP.5.1 / (완)강사현황</option><option value="SS">+-- SS / 시스템관리</option><option value="SS.1">+--+-- SS.1 / EIS Manager</option><option value="SS.1.1">+--+--+-- SS.1.1 / 사용자관리</option><option value="SS.1.2">+--+--+-- SS.1.2 / (완)메뉴관리</option><option value="SS.1.3">+--+--+-- SS.1.3 / 마감관리</option><option value="SS.1.4">+--+--+-- SS.1.4 / 권한그룹관리</option><option value="SS.1.5">+--+--+-- SS.1.5 / (진)공통코드관리</option><option value="SS.1.6">+--+--+-- SS.1.6 / 도움말관리</option><option value="SS.2">+--+-- SS.2 / Log Manager</option><option value="SS.2.1">+--+--+-- SS.2.1 / Log History</option><option value="ZZ">+-- ZZ / HOME</option><option value="ZZ.1">+--+-- ZZ.1 / Sitemap</option></select> 
+												</span>
+												<input type="hidden" value="" id="p_hid_high_menu_cd" name="p_hid_high_menu_cd">
+											</td>
+										</tr>
+										<tr>
+											<th class="txt_l">표시순서
+											</th><td class="txt_l2">
+												<input type="text" readonly="" disabled="disabled" value="" style="width:100%" id="p_txt_seq" name="p_txt_seq">
+											</td>
+										</tr>
+										<tr>
+											<th class="txt_l">폴더유무
+											</th><td class="txt_l2">
+												<input type="radio" onclick="javascript:attribute_click(this)" value="D" id="p_rdo_attribute_D" name="p_rdo_attribute"> <label for="p_rdo_attribute_D">폴더</label> &nbsp; 
+												<input type="radio" onclick="javascript:attribute_click(this)" value="A" id="p_rdo_attribute_A" name="p_rdo_attribute"> <label for="p_rdo_attribute_A">실행</label>
+												<input type="hidden" value="" id="p_txt_attribute" name="p_txt_attribute">
+												<input type="hidden" value="" id="p_hid_attribute" name="p_hid_attribute">
+											</td>
+										</tr>
+										<tr>
+											<th class="txt_l">사용기간
+											</th><td class="txt_l2">
+												<input type="text" value="" id="p_txt_date_start" name="p_txt_date_start"> ~ <input type="text" value="" id="p_txt_date_end" name="p_txt_date_end">
+											</td>
+										</tr>
+										<tr>
+											<th class="txt_l">사용여부
+											</th><td class="txt_l2">
+												<input type="radio" onclick="javascript:useyn_click(this)" value="Y" id="p_rdo_useyn_Y" name="p_rdo_useyn"> <label for="p_rdo_useyn_Y">Y</label> &nbsp; 
+												<input type="radio" onclick="javascript:useyn_click(this)" value="N" id="p_rdo_useyn_N" name="p_rdo_useyn"> <label for="p_rdo_useyn_N">N</label>
+												<input type="hidden" value="" id="p_txt_useyn" name="p_txt_useyn">
+												<input type="hidden" value="" id="p_hid_useyn" name="p_hid_useyn">
+											</td>
+										</tr>
+										<tr>
+											<th class="txt_l">최소권한설정
+											</th><td class="txt_l2">
+												<select id="p_cb_min_grant" name="p_cb_min_grant" class="formS" style="width:100px;">
+													<option value="00">00</option>
+													<option value="10">10</option>
+													<option value="20">20</option>
+													<option value="30">30</option>
+													<option value="40">40</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<th class="txt_l">부서권한
+											</th><td class="txt_l2">
+												<input type="text" style="width:100%" value="" id="p_cb_dept_grant" name="p_cb_dept_grant">
+											</td>
+										</tr>
+										<tr>
+											<th class="txt_l">조회기간조건
+											</th><td class="txt_l2">
+												<input type="text" style="width:100%" value="" id="p_txt_scon_cal_type" name="p_txt_scon_cal_type">
+											</td>
+										</tr>        
+									</tbody>
+								</table>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+					$('#tab1, #tab1_in').tabsLink();
+				</script>
+
+				<div class="listboxcon">
+					<ul class="list3">
+						<li>과정분류별 : 경영리더십/전문직무/금융/글로벌비즈니스/외국어/기타</li>
+						<li>소유구분별 : 자체/공동/도입/기타</li>
+						<li>서비스유형별 : 이러닝/스마트러닝/앱/전화외국어/독서통신</li>
+					</ul>
+				</div>
+
+			</div>
+			<!--// cont -->
+
+		</div>
+	</div>
+	<!--// contents -->
+
+	<!-- footer -->
+	<div calss="footer_wrap"></div>
+	<!--// footer -->
+
+</div>
+</body>
+</html>

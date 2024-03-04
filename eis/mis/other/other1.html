@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>매출정산 현황 | MIS</title>
+	<link href="../../css/datepicker3.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/module.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/custom.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/popup.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="../../css/admin.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_mis.css" />
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+	<script src="../../js/bootstrap-datepicker.js"></script>
+	<script src="../../js/locales/bootstrap-datepicker.kr.js"></script>
+	<script src="../../js/jquery.slimscroll.min.js"></script>
+	<script src="../../js/admin_script.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../js/html5shiv.js"></script>
+		<script src="../../js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body><!-- 배경색 변경시 class="bg" -->
+<div id="wrap"><!-- 메인일 경우 class="main" -->
+
+	<!-- contents -->
+	<div class="content_wrap">
+		<a id="btn_folding_lnb" class="btn_folding_lnb" href="#">lnb control</a>
+		<div class="wrap_max">
+
+			<!-- EP title -->
+			<div class="cont_subtit fix">
+				<!-- 로케이션 -->
+				<ul class="breadcrumb">
+					<li>경영정보</li>     
+					<li>실적회의(매출)</li>      
+				</ul>
+				<!-- //로케이션 -->
+				<!-- 제목 -->
+				<div class="tit_area ">
+					<div class="sub_tit">
+						<span class="tit_list">
+							<span class="tit">(완)확정일자관리</span>
+						</span>
+					</div>
+				</div>
+				<!-- //제목 -->
+			</div>
+			<!--// EP title -->
+
+			<!-- cont -->
+			<div class="cont_wrap">
+
+				<div class="tbl_search">
+					<table>
+						<colgroup>
+							<col />
+							<col />
+							<col />
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="select_year">검색연도</label></th>
+								<td>
+									<select id="select_year" style="width:150px;">
+										<option value="" selected="selected">2015</option>
+										<option value=""></option>
+									</select>
+								</td>
+								<th scope="row">정산구분</th>
+								<td>CP비용</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="titWrap pd0"><h2 class="h2">등록관리</h2></div>
+				<div class="tbl_type02 mt8">
+					<table class="">
+						<colgroup>
+							<col width="150" />
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">확정년월일</th>
+								<td class="">
+									<div class="fix">
+										<div class="date_wrap fL">
+											<div class="date_input date" id="cal1">
+												<input type="text" style="width:160px;">
+												<a class="btn_calendar input-group-addon" href="#">
+													<i class="icons i_calendar">calendar</i>
+												</a>
+											</div>
+										</div>
+										<span class="btn_area fR">
+											<a class="btn_primary nnew small" href="#"><i class="nIcons">등록</i><span>등록</span></a>
+										</span>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<script type="text/javascript">
+						$('#cal1').datepicker({
+							format: "yyyy.mm",
+							language:'kr',
+							autoclose : true
+						})
+						.on('show', function(){$(this).addClass('active');})
+						.on('hide', function(){$(this).removeClass('active');})
+						;
+					</script>
+				</div>
+
+				<div class="titWrap pd0 mt20"><h2 class="h2">정산 월별 확정일자 리스크</h2></div>
+				<div class="tbl_type02 mt8">
+					<table class="dataMiddle">
+						<colgroup>
+							<col width="100" />
+							<col />
+							<col width="100" />
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">1월</th>
+								<td class="lineR">
+									<p class="pDate">
+										2015.01.15 
+										<span class="btn_area ml10"><a class="btn_default" href="#"><i class="icons i_close"></i><span class="small">삭제</span></a></span>
+									</p>
+									<p>
+										2015.01.15 
+										<span class="btn_area ml10"><a class="btn_default" href="#"><i class="icons i_close"></i><span class="small">삭제</span></a></span>
+									</p>
+								</td>
+								<th scope="row">2월</th>
+								<td>
+									<p class="pDate">
+										2015.02.15 
+										<span class="btn_area ml10"><a class="btn_default" href="#"><i class="icons i_close"></i><span class="small">삭제</span></a></span>
+									</p>
+									<p>
+										2015.02.15 
+										<span class="btn_area ml10"><a class="btn_default" href="#"><i class="icons i_close"></i><span class="small">삭제</span></a></span>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<br /><br />
+
+				<div class="btnLine">
+					<div class="fL">
+						<div class="date_wrap addCal">
+							<div class="date_input date" id="cal1a">
+								<input type="text" style="width:130px;">
+								<a class="btn_calendar input-group-addon" href="#">
+									<i class="icons i_calendar">calendar</i>
+								</a>
+							</div>
+						</div>
+						<span class="btn_area">
+							<a class="btn_basic btn_normal" href="#"><i class="nIcons">합산생성</i><span>합산생성</span></a>
+							<a class="btn_primary nnew" href="#"><i class="nIcons">계산서생성</i><span>계산서생성</span></a>
+						</span>
+					</div>
+					<div class="fR">
+						<span class="btn_area">
+							<a class="btn_primary nnew" href="#"><i class="nIcons">합산생성</i><span>합산생성</span></a>
+							<a class="btn_primary nnew" href="#"><i class="nIcons">계산서생성</i><span>계산서생성</span></a>
+						</span>
+					</div>
+				</div>
+				<script type="text/javascript">
+					$('#cal1a').datepicker({
+						format: "yyyy.mm",
+						language:'kr',
+						autoclose : true
+					})
+					.on('show', function(){$(this).addClass('active');})
+					.on('hide', function(){$(this).removeClass('active');})
+					;
+				</script>
+				<br /><br />
+<pre>
+&lt;div class="tbl_type02"&gt;<br />
+	&lt;table class="tbl_type02_row"&gt;<br />
+	~	<br />
+	&lt;/table&gt;<br />
+&lt;/div&gt;<br />
+</pre>
+				<div class="tbl_type02">
+					<table class="tbl_type02_row">
+						<colgroup>
+							<col width="15%" />
+							<col width="35%" />
+							<col width="*" />
+							<col width="35%" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">th1-1</th>
+								<td>td1-1</td>
+								<th scope="row">th1-2</th>
+								<td>td1-2</td>
+							</tr>
+							<tr>
+								<th scope="row">th2-1</th>
+								<td>td2-1</td>
+								<th scope="row">th2-1</th>
+								<td>td2-2</td>
+							</tr>
+							<tr>
+								<th scope="row">th3</th>
+								<td colspan="3">td3</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+			<!--// cont -->
+
+		</div>
+	</div>
+	<!--// contents -->
+
+	<!-- footer -->
+	<div calss="footer_wrap"></div>
+	<!--// footer -->
+
+</div>
+</body>
+</html>

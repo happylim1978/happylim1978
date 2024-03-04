@@ -1,0 +1,5 @@
+@media(max-width:480px) {
+	.myInfoArea .myInfoTab ul {display: flex;}
+	.myInfoArea .myInfoTab ul li {flex:1; width: auto; margin-right: -1px;}
+	.myInfoArea .myInfoTab ul li div {padding: 0;}
+}

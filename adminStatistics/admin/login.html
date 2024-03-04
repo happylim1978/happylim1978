@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<!--[if IE 7]><html class="ie7" lang="ko"><![endif]-->
+<!--[if IE 8]><html class="ie8" lang="ko"><![endif]-->
+<!--[if gte IE 9]><!--><html lang="ko"><!--<![endif]-->
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>관리자 통계</title>
+	<link rel="stylesheet" href="../css/admin_edu.css">
+	<link rel="stylesheet" href="../css/admin_edu_add.css">
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="../js/respond.min.js"></script>
+	<![endif]-->
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script src="../js/edu_admin_default.js"></script>
+</head>
+<body class="login">
+	<div class="loginbox">
+		<div class="loginboxIn">
+			<header><h1>크레듀 <span>교육관리 시스템</span></h1></header><!-- 타이틀 태그 위치 이동 2016-02-04 -->
+			<fieldset>
+				<legend>로그인</legend>
+				<div class="loginId"><label for="login_id" class="label">ID</label><input type="text" class="text" id="login_id" /></div>
+				<div class="loginPassword"><label for="login_password" class="label">Password</label><input type="password" class="text" id="login_password" /></div>
+				<div class="loginCheck"><input type="checkbox" id="auto_login" class="checkbox" /> <label for="auto_login">자동 로그인 설정</label></div>
+				<div class="btnLine"><button class="btn btnType1">Login</button></div>
+				<p class="loginCopy"><strong>회원가입 및 아이디/비밀번호 찾기</strong>는 컴퓨터에서<br />크레듀닷컴 (www.credu.com) 에 방문 하시면 이용 가능합니다.</p>
+			</fieldset>
+		</div>
+		<footer>
+			<div class="phoneWrap">
+				<span>HELP<br />DESK</span>
+				<a href="tel:15449001">1544-9001</a>
+			</div>
+			<span class="copyright">COPYRIGHT ⓒ 2014 CREDU. ALL RIGHT RESERVED.</span>
+		</footer>
+	</div>
+	<script>
+		var $loginLayer = $('.loginbox');
+		var pValue = ($(document).outerHeight() - $('footer').outerHeight() - $('.loginboxIn').outerHeight())/2;
+		$loginLayer.css('paddingTop', pValue+'px');
+	</script>
+</body>
+</html>

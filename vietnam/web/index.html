@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html class="no-js" lang="vi">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Trang web dành cho Việt Nam</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/menu.js"></script>
+	<script type="text/javascript" src="js/default.js"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128155137-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-128155137-1');
+</script>
+
+</head>
+
+<body>
+<div class="wrap">
+	<div class="top" id="top">
+	</div>
+	<div id="header-wrap">
+	</div>
+	<div class="main-con">
+		<p class="m-copy">
+			<span class="line"></span><br />
+			Đối Tác<br />
+			Dịch Vụ Nhân Sự<br />
+			Tốt Nhất
+		</p>
+		<div class="sub-item" id="sub-item">
+			<div class="item-wrap item-wrap1">
+				<div class="item item1">
+					<span class="sp1">Ｖề <br />Multicampus</span>
+					<a href="page1-1.html">Tìm hiểu thêm</a>
+				</div>
+				<div class="item item5">
+					<span class="sp1">Dịch vụ đào tạo Leadership</span>
+					<a href="page2-1.html">Tìm hiểu thêm</a>
+				</div>
+			</div>
+			<div class="item-wrap item-wrap2">
+				<div class="item item2">
+					<span class="sp1">Hệ thống <br />nhận diện <br />thương hiệu</span>
+					<a href="page1-2.html">Tìm hiểu thêm</a>
+				</div>
+				<div class="item item6">
+					<span class="sp1">Dịch vụ <br />đào tạo <br />ngoại ngữ</span>
+					<a href="page2-2.html">Tìm hiểu thêm</a>
+				</div>
+			</div>
+			<div class="item-wrap item-wrap3">
+				<div class="item item3">
+					<span class="sp1">Tầm nhìn </span>
+					<a href="page1-3.html">Tìm hiểu thêm</a>
+				</div>
+				<div class="item item7">
+					<span class="sp1">Dịch vụ <br />đào tạo <br />tin học</span>
+					<a href="page2-3.html">Tìm hiểu thêm</a>
+				</div>
+			</div>
+			<div class="item-wrap item-wrap4">
+				<div class="item item4">
+					<span class="sp1">Liên hệ</span>
+					<a href="page1-4.html">Tìm hiểu thêm</a>
+				</div>
+				<div class="item item8">
+					<span class="sp1">Dịch vụ <br />E-learning</span>
+					<a href="page2-4.html">Tìm hiểu thêm</a>
+				</div>
+			</div>
+		</div>
+		<script>
+			var $si = $('#sub-item');
+			$si.find('.item').on({
+				mouseenter: function() {
+					$( this ).addClass( "hover" );
+				},
+				mouseleave: function() {
+					$( this ).removeClass( "hover" );
+				}
+			});
+		</script>
+	</div>
+	<div id="footer-wrap">
+	</div>
+</div>
+<script>
+	pagecode = null;
+
+	$(document).ready(function(){
+		var mobileArr = new Array("iPhone", "iPod", "BlackBerry", "Android", "Windows CE", "LG", "MOT", "SAMSUNG", "SonyEricsson");
+		for(var txt in mobileArr){
+			if(navigator.userAgent.match(mobileArr[txt]) != null){
+				location.href = 'http://multicampus.edu.vn/';
+			}
+		}
+	});
+
+	var code = [1,2];
+	var countryCode = '0' // 0 베트남어, 1 영어
+</script>
+</body>
+</html>

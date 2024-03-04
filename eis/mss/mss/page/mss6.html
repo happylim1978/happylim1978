@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> | MSS</title>
+	<link href="../../css/datepicker3.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/module.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/custom.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/popup.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="../../css/admin.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_eis.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_mss.css" />
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+	<script src="../../js/bootstrap-datepicker.js"></script>
+	<script src="../../js/locales/bootstrap-datepicker.kr.js"></script>
+	<script src="../../js/jquery.slimscroll.min.js"></script>
+	<script src="../../js/admin_script.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../js/html5shiv.js"></script>
+		<script src="../../js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body><!-- 배경색 변경시 class="bg" -->
+<div id="wrap"><!-- 메인일 경우 class="main" -->
+
+	<!-- contents -->
+	<div class="content_wrap">
+		<a id="btn_folding_lnb" class="btn_folding_lnb" href="#">lnb control</a>
+		<div class="wrap_max">
+
+			<!-- EP title -->
+			<div class="cont_subtit fix">
+
+				<!-- 제목 -->
+				<div class="tit_area">
+					<div class="sub_tit">
+						<span class="tit_list"><!-- tit_list_tab 클래스 추가 -->
+							<span class="tit">프로젝트별 손익 현황</span>
+						</span>
+					</div>
+				</div>
+				<!-- //제목 -->
+
+			</div>
+			<!--// EP title -->
+
+
+			<!-- cont -->
+			<div class="cont_wrap">
+
+				<div class="eisMain mmsMain">
+					<!-- 검색 -->
+					<div class="tbl_search tbl_search2">
+						<table>
+							<tbody>
+								<tr>
+									<th style="width: 30px;">년월</th>
+									<td>
+										<select id="" style="width: 120px;">
+											<option value="" selected="selected">ALL</option>
+											<option value=""></option>
+										</select>
+										<span class="separate"></span>
+										<div class="date_wrap">
+											<div class="date_input date" id="cal1">
+												<input type="text" style="width:160px;">
+												<a class="btn_calendar input-group-addon" href="#">
+													<i class="icons i_calendar">calendar</i>
+												</a>
+											</div>
+											<span>~</span>
+											<div class="date_input date" id="cal2">
+												<input type="text" style="width:160px;">
+												<a class="btn_calendar input-group-addon" href="#">
+													<i class="icons i_calendar">calendar</i>
+												</a>
+											</div>
+										</div>
+										<span class="separate"></span>
+										<select id="" style="width: auto;">
+											<option value="" selected="selected">적자사업만 보기</option>
+											<option value=""></option>
+										</select>
+										<span class="separate"></span>
+										<span class="btn_area">
+											<a href="#" class="btn_default small"><span class="small">조회</span></a>
+											<a href="#" class="btn_primary small"><span>당월</span></a>
+											<a href="#" class="btn_primary small"><span>누계</span></a>
+											<a href="#" class="btn_primary small"><span>엑셀</span></a>
+										</span>
+										<script>
+											$('#cal1').datepicker({
+												format: "yyyy.mm",
+												minViewMode: 1, //월력변환
+												language:'kr',
+												autoclose : true
+											})
+											.on('show', function(){$(this).addClass('active');})
+											.on('hide', function(){$(this).removeClass('active');})
+											;
+											$('#cal2').datepicker({
+												format: "yyyy.mm",
+												minViewMode: 1, //월력변환
+												language:'kr',
+												autoclose : true
+											})
+											.on('show', function(){$(this).addClass('active');})
+											.on('hide', function(){$(this).removeClass('active');})
+											;
+										</script>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- //검색 -->
+					<div class="btnLine">
+						<div class="fR">
+							<span class="txt">[단위 : 백만원]</span>
+						</div>
+					</div>
+					<!-- table -->
+					<div class="tbl_type02 mt10">
+						<table cellspacing="0" cellpadding="0" class="blue blue-type1">
+							<colgroup>
+								<col width="*">
+								<col width="12%">
+								<col width="10%">
+								<col width="7%">
+								<col width="7%">
+								<col width="7%">
+								<col width="7%">
+								<col width="7%">
+								<col width="7%">
+								<col width="6%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" rowspan="2">프로젝트명</th>
+									<th scope="col" rowspan="2">고객사명</th>
+									<th scope="col" rowspan="2">귀속부서명</th>
+									<th scope="col" colspan="3">사업품의</th>
+									<th scope="col" colspan="3">누계실적</th>
+									<th scope="col" rowspan="2">상세보기</th>
+								</tr>
+								<tr class="depth1-th">
+									<th scope="col">매출</th>
+									<th scope="col">영업이익</th>
+									<th scope="col">이익률</th>
+									<th scope="col">매출</th>
+									<th scope="col">영업이익</th>
+									<th scope="col">이익률</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr onmousemove="Grids[0].ARow=Grids[0].Rows[&quot;2&quot;];Grids[0].ASec=0;" class="GMDataRow " style="height:21px;">
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C1">
+										[세아상역] '21년 임원 외국어 BPO 운영의 건
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C2">
+										세아상역(주)
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C3">
+										기업교육사업2그룹
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C4">
+										5
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C5">
+										0
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C6">
+										9.9%
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C7">
+										4
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C8">
+										-20
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C9">
+										-461.5%
+									</td>
+									<td align="Center" style="color:blue;" class=" GMClassReadOnly GMEllipsis GMAlignCenter GMText GMCell IBSheetFont0 HideCol0C10">
+										<a class="detail-view" href="../popup/popup6-1.html" onclick="window.open(this.href,'_blank','width=1200, height=600, resizable=yes, scrollbars=yes'); return false;">상세보기</a>
+									</td>
+								</tr>
+								<tr onmousemove="Grids[0].ARow=Grids[0].Rows[&quot;3&quot;];Grids[0].ASec=0;" class="GMDataRow GMClassAlternate" style="height:21px;">
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C1">
+										[우리FIS]신입사원 IT 집합맞춤 교육
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C2">
+										우리에프아이에스(주)
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C3">
+										기업교육사업2그룹
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C4">
+										23
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C5">
+										2
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C6">
+										9.8%
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C7">
+										23
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C8">
+										-1
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C9">
+										-3.9%
+									</td>
+									<td align="Center" style="color:blue;" class=" GMClassReadOnly GMEllipsis GMAlignCenter GMText GMCell IBSheetFont0 HideCol0C10">
+										<a class="detail-view" href="../popup/popup6-1.html" onclick="window.open(this.href,'_blank','width=900, height=600, resizable=yes, scrollbars=yes'); return false;">상세보기</a>
+									</td>
+								</tr>
+								<tr onmousemove="Grids[0].ARow=Grids[0].Rows[&quot;4&quot;];Grids[0].ASec=0;" class="GMDataRow " style="height:21px;">
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C1">
+										[SDC] Spring Framework 과정 운영
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C2">
+										삼성디스플레이(주)
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C3">
+										전자사업그룹
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C4">
+										13
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C5">
+										1
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C6">
+										9.8%
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C7">
+										13
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C8">
+										-48
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C9">
+										-355.1%
+									</td>
+									<td align="Center" style="color:blue;" class=" GMClassReadOnly GMEllipsis GMAlignCenter GMText GMCell IBSheetFont0 HideCol0C10">
+										<a class="detail-view" href="../popup/popup6-1.html" onclick="window.open(this.href,'_blank','width=900, height=600, resizable=yes, scrollbars=yes'); return false;">상세보기</a>
+									</td>
+								</tr>
+								<tr onmousemove="Grids[0].ARow=Grids[0].Rows[&quot;5&quot;];Grids[0].ASec=0;" class="GMDataRow GMClassAlternate" style="height: 21px;">
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C1">
+										[성장엔진사업] 경제연구소-멀티캠퍼스 진단사업 실시의 件
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C2">
+										삼성물산(주)패션부문
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C3">
+										금융/서비스사업그룹
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C4">
+										2,611
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C5">
+										248
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C6">
+										9.5%
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C7">
+										1,102
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C8">
+										-155
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C9">
+										-14.1%
+									</td>
+									<td align="Center" style="color:blue;" class=" GMClassReadOnly GMEllipsis GMAlignCenter GMText GMCell IBSheetFont0 HideCol0C10">
+										<a class="detail-view" href="../popup/popup6-1.html" onclick="window.open(this.href,'_blank','width=900, height=600, resizable=yes, scrollbars=yes'); return false;">상세보기</a>
+									</td>
+								</tr>
+								<tr onmousemove="Grids[0].ARow=Grids[0].Rows[&quot;6&quot;];Grids[0].ASec=0;" class="GMDataRow " style="height: 21px; cursor: default;">
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C1">
+										[사업발의]농협은행 IT본부 세대간 소통과정
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C2">
+										농협은행IT부문
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C3">
+										기업교육사업1그룹
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C4">
+										5
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C5">
+										0
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C6">
+										9.5%
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C7">
+										4
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C8">
+										0
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C9">
+										-10.8%
+									</td>
+									<td align="Center" style="color:blue;" class=" GMClassReadOnly GMEllipsis GMAlignCenter GMText GMCell IBSheetFont0 HideCol0C10">
+										<a class="detail-view" href="../popup/popup6-1.html" onclick="window.open(this.href,'_blank','width=900, height=600, resizable=yes, scrollbars=yes'); return false;">상세보기</a>
+									</td>
+								</tr>
+								<tr onmousemove="Grids[0].ARow=Grids[0].Rows[&quot;7&quot;];Grids[0].ASec=0;" class="GMDataRow GMClassAlternate" style="height: 21px; cursor: default;">
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C1">
+										[사업발의] 고용부_KDT(3차) 벤처스타트업 아카데미 사업(11월)_2개과정(3개차수)
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C2">
+										고용노동부
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMClassFocusedCell GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C3"  style="background-color: rgb(255, 255, 254);">
+										정부지원사업그룹
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C4"  style="">
+										1,830
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C5">
+										172
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C6">
+										9.4%
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C7">
+										984
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C8">
+										-47
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C9">
+										-4.8%
+									</td>
+									<td align="Center" style="color:blue;" class=" GMClassReadOnly GMEllipsis GMAlignCenter GMText GMCell IBSheetFont0 HideCol0C10">
+										<a class="detail-view" href="../popup/popup6-1.html" onclick="window.open(this.href,'_blank','width=900, height=600, resizable=yes, scrollbars=yes'); return false;">상세보기</a>
+									</td>
+								</tr>
+								<tr onmousemove="Grids[0].ARow=Grids[0].Rows[&quot;8&quot;];Grids[0].ASec=0;" class="GMDataRow " style="height: 21px; cursor: default;">
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C1">
+										[스마일게이트] 외주 정보보호 콘텐츠 개발 및 운영 건
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C2">
+										(주)스마일게이트스토브
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C3">
+										기업교육사업2그룹
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C4">
+										10
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C5">
+										1
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C6">
+										9.2%
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C7">
+										10
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C8">
+										-5
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C9">
+										-51.3%
+									</td>
+									<td align="Center" style="color:blue;" class=" GMClassReadOnly GMEllipsis GMAlignCenter GMText GMCell IBSheetFont0 HideCol0C10">
+										<a class="detail-view" href="../popup/popup6-1.html" onclick="window.open(this.href,'_blank','width=900, height=600, resizable=yes, scrollbars=yes'); return false;">상세보기</a>
+									</td>
+								</tr>
+								<tr onmousemove="Grids[0].ARow=Grids[0].Rows[&quot;9&quot;];Grids[0].ASec=0;" class="GMDataRow GMClassAlternate" style="height: 21px;">
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C1">
+										'22년 효성그룹 이러닝 위탁운영 서비스
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C2">
+										(주) 효성
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C3">
+										기업교육사업1그룹
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C4">
+										238
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C5">
+										20
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C6">
+										8.6%
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C7">
+										5
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C8">
+										-1
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C9">
+										-28.7%
+									</td>
+									<td align="Center" style="color:blue;" class=" GMClassReadOnly GMEllipsis GMAlignCenter GMText GMCell IBSheetFont0 HideCol0C10">
+										<a class="detail-view" href="../popup/popup6-1.html" onclick="window.open(this.href,'_blank','width=900, height=600, resizable=yes, scrollbars=yes'); return false;">상세보기</a>
+									</td>
+								</tr>
+								<tr onmousemove="Grids[0].ARow=Grids[0].Rows[&quot;10&quot;];Grids[0].ASec=0;" class="GMDataRow " style="height: 21px;">
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C1">
+										[사업발의]고용부_KDT사업-스마트(2차)_'21년(빅데이터 5개)_사업기간 3년(2021~2023년)
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C2">
+										고용노동부
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C3">
+										정부지원사업그룹
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C4">
+										6,784
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C5">
+										537
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C6">
+										7.9%
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C7">
+										749
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C8">
+										-32
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C9">
+										-4.3%
+									</td>
+									<td align="Center" style="color:blue;" class=" GMClassReadOnly GMEllipsis GMAlignCenter GMText GMCell IBSheetFont0 HideCol0C10">
+										<a class="detail-view" href="../popup/popup6-1.html" onclick="window.open(this.href,'_blank','width=900, height=600, resizable=yes, scrollbars=yes'); return false;">상세보기</a>
+									</td>
+								</tr>
+								<tr onmousemove="Grids[0].ARow=Grids[0].Rows[&quot;11&quot;];Grids[0].ASec=0;" class="GMDataRow GMClassAlternate" style="height: 21px;">
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C1">
+										한국자산관리공사 19년-22년(3년) HRD BPO 사업 진행의 件
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C2">
+										한국자산관리공사
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C3">
+										공공HRD사업그룹
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C4">
+										1,367
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C5">
+										105
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C6">
+										7.7%
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C7">
+										8
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C8">
+										-3
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C9">
+										-35.3%
+									</td>
+									<td align="Center" style="color:blue;" class=" GMClassReadOnly GMEllipsis GMAlignCenter GMText GMCell IBSheetFont0 HideCol0C10">
+										<a class="detail-view" href="../popup/popup6-1.html" onclick="window.open(this.href,'_blank','width=900, height=600, resizable=yes, scrollbars=yes'); return false;">상세보기</a>
+									</td>
+								</tr>
+								<tr onmousemove="Grids[0].ARow=Grids[0].Rows[&quot;12&quot;];Grids[0].ASec=0;" class="GMDataRow " style="height: 21px;">
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C1">
+										HP프린팅코리아 일러스트레이터 교육 진행 건
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C2">
+										에이치피프린팅코리아 유한회사
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C3"  style="">
+										기업교육사업2그룹
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C4">
+										6
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C5">
+										0
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C6">
+										7.6%
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C7">
+										0
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C8">
+										-1
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C9">
+										0.0%
+									</td>
+									<td align="Center" style="color:blue;" class=" GMClassReadOnly GMEllipsis GMAlignCenter GMText GMCell IBSheetFont0 HideCol0C10">
+										<a class="detail-view" href="../popup/popup6-1.html" onclick="window.open(this.href,'_blank','width=900, height=600, resizable=yes, scrollbars=yes'); return false;">상세보기</a>
+									</td>
+								</tr>
+								<tr onmousemove="Grids[0].ARow=Grids[0].Rows[&quot;13&quot;];Grids[0].ASec=0;" class="GMDataRow GMClassAlternate" style="height: 21px;">
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C1">
+										[발의/현장직무/ClassNow] ‘21년 하나금융티아이 3차 DT University IT직무 비대면 교육 건
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C2">
+										(주)하나금융티아이
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C3">
+										기업교육사업2그룹
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C4">
+										100
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C5">
+										8
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C6">
+										7.5%
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C7">
+										100
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C8">
+										-10
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C9">
+										-10.5%
+									</td>
+									<td align="Center" style="color:blue;" class=" GMClassReadOnly GMEllipsis GMAlignCenter GMText GMCell IBSheetFont0 HideCol0C10">
+										<a class="detail-view" href="../popup/popup6-1.html" onclick="window.open(this.href,'_blank','width=900, height=600, resizable=yes, scrollbars=yes'); return false;">상세보기</a>
+									</td>
+								</tr>
+								<tr onmousemove="Grids[0].ARow=Grids[0].Rows[&quot;14&quot;];Grids[0].ASec=0;" class="GMDataRow " style="height: 21px; cursor: default;">
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C1">
+										[삼성복지재단] 드림클래스 2.0 개편 위탁 사업 변경 품의의 件
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C2">
+										(재)삼성복지재단
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C3">
+										SERICEO사업그룹
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C4">
+										13,830
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C5">
+										1,010
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C6">
+										7.3%
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C7">
+										10,713
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C8">
+										-1,618
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C9">
+										-15.1%
+									</td>
+									<td align="Center" style="color:blue;" class=" GMClassReadOnly GMEllipsis GMAlignCenter GMText GMCell IBSheetFont0 HideCol0C10">
+										<a class="detail-view" href="../popup/popup6-1.html" onclick="window.open(this.href,'_blank','width=900, height=600, resizable=yes, scrollbars=yes'); return false;">상세보기</a>
+									</td>
+								</tr>
+								<tr onmousemove="Grids[0].ARow=Grids[0].Rows[&quot;15&quot;];Grids[0].ASec=0;" class="GMDataRow GMClassAlternate" style="height:21px;">
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C1">
+										[수주품의] 연세대학교 직원 역량교육 위탁운영 사업
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C2">
+										(학)연세대학교
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C3">
+										공공HRD사업그룹
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C4">
+										80
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C5">
+										55
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C6">
+										69.3%
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C7">
+										0
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C8">
+										0
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C9">
+										0.0%
+									</td>
+									<td align="Center" style="color:blue;" class=" GMClassReadOnly GMEllipsis GMAlignCenter GMText GMCell IBSheetFont0 HideCol0C10">
+										<a class="detail-view" href="../popup/popup6-1.html" onclick="window.open(this.href,'_blank','width=900, height=600, resizable=yes, scrollbars=yes'); return false;">상세보기</a>
+									</td>
+								</tr>
+								<tr onmousemove="Grids[0].ARow=Grids[0].Rows[&quot;16&quot;];Grids[0].ASec=0;" class="GMDataRow " style="height:21px;">
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C1">
+										[수주품의]`21년~`22년 두산그룹 이러닝 위탁운영(2년)
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C2">
+										주식회사 두산
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C3">
+										기업교육사업2그룹
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C4">
+										885
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C5">
+										606
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C6">
+										68.6%
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C7">
+										128
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C8">
+										-66
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C9">
+										-51.7%
+									</td>
+									<td align="Center" style="color:blue;" class=" GMClassReadOnly GMEllipsis GMAlignCenter GMText GMCell IBSheetFont0 HideCol0C10">
+										<a class="detail-view" href="../popup/popup6-1.html" onclick="window.open(this.href,'_blank','width=900, height=600, resizable=yes, scrollbars=yes'); return false;">상세보기</a>
+									</td>
+								</tr>
+								<tr onmousemove="Grids[0].ARow=Grids[0].Rows[&quot;17&quot;];Grids[0].ASec=0;" class="GMDataRow GMClassAlternate" style="height:21px;">
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C1">
+										[사업발의] 국가보안기술연구소 '20-'21 이러닝+집합맞춤 위탁운영
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C2">
+										ETRI부설국가보안기술연구소
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C3">
+										공공HRD사업그룹
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C4">
+										211
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C5">
+										142
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C6">
+										67.0%
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C7">
+										3
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C8">
+										-14
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C9">
+										-430.1%
+									</td>
+									<td align="Center" style="color:blue;" class=" GMClassReadOnly GMEllipsis GMAlignCenter GMText GMCell IBSheetFont0 HideCol0C10">
+										<a class="detail-view" href="../popup/popup6-1.html" onclick="window.open(this.href,'_blank','width=900, height=600, resizable=yes, scrollbars=yes'); return false;">상세보기</a>
+									</td>
+								</tr>
+								<tr onmousemove="Grids[0].ARow=Grids[0].Rows[&quot;18&quot;];Grids[0].ASec=0;" class="GMDataRow " style="height:21px;">
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C1">
+										[현대산업개발] 중대재해처벌법 자체콘텐츠 포팅 및 운영 件
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C2">
+										에이치디씨현대산업개발 주식회사
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C3">
+										기업교육사업1그룹
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C4">
+										5
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C5">
+										3
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C6">
+										67.0%
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C7">
+										1
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C8">
+										0
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C9">
+										-58.9%
+									</td>
+									<td align="Center" style="color:blue;" class=" GMClassReadOnly GMEllipsis GMAlignCenter GMText GMCell IBSheetFont0 HideCol0C10">
+										<a class="detail-view" href="../popup/popup6-1.html" onclick="window.open(this.href,'_blank','width=900, height=600, resizable=yes, scrollbars=yes'); return false;">상세보기</a>
+									</td>
+								</tr>
+								<tr onmousemove="Grids[0].ARow=Grids[0].Rows[&quot;19&quot;];Grids[0].ASec=0;" class="GMDataRow GMClassAlternate" style="height:21px;">
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C1">
+										2022년 EBSlang 공동제휴사업 운영의 건
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C2">
+										한국교육방송공사
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C3">
+										외국어사업그룹
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C4">
+										2,000
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C5">
+										134
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C6">
+										6.7%
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C7">
+										270
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C8">
+										-5
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C9">
+										-1.7%
+									</td>
+									<td align="Center" style="color:blue;" class=" GMClassReadOnly GMEllipsis GMAlignCenter GMText GMCell IBSheetFont0 HideCol0C10">
+										<a class="detail-view" href="../popup/popup6-1.html" onclick="window.open(this.href,'_blank','width=900, height=600, resizable=yes, scrollbars=yes'); return false;">상세보기</a>
+									</td>
+								</tr>
+								<tr onmousemove="Grids[0].ARow=Grids[0].Rows[&quot;20&quot;];Grids[0].ASec=0;" class="GMDataRow " style="height:21px;">
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C1">
+										삼성전기 사원 SW과정 3기 과정 수주 건
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C2">
+										삼성전기(주)
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C3">
+										전자사업그룹
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C4">
+										516
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C5">
+										34
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C6">
+										6.6%
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C7">
+										435
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C8">
+										-23
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C9">
+										-5.4%
+									</td>
+									<td align="Center" style="color:blue;" class=" GMClassReadOnly GMEllipsis GMAlignCenter GMText GMCell IBSheetFont0 HideCol0C10">
+										<a class="detail-view" href="../popup/popup6-1.html" onclick="window.open(this.href,'_blank','width=900, height=600, resizable=yes, scrollbars=yes'); return false;">상세보기</a>
+									</td>
+								</tr>
+								<tr onmousemove="Grids[0].ARow=Grids[0].Rows[&quot;21&quot;];Grids[0].ASec=0;" class="GMDataRow GMClassAlternate" style="height:21px;">
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C1">
+										[수주품의]21~22년 범 농협 통합미디어 교육시스템 운영사업
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C2">
+										주식회사 에프앤이노에듀
+									</td>
+									<td align="Left" class=" GMClassReadOnly GMEllipsis GMAlignLeft GMText GMCell IBSheetFont0 HideCol0C3">
+										기업교육사업1그룹
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C4">
+										5,819
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C5">
+										374
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C6">
+										6.4%
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C7">
+										384
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMInt GMCell IBSheetFont0 HideCol0C8">
+										-346
+									</td>
+									<td align="Right" class=" GMClassReadOnly GMEllipsis GMAlignRight GMFloat GMCell IBSheetFont0 HideCol0C9">
+										-90.2%
+									</td>
+									<td align="Center" style="color:blue;" class=" GMClassReadOnly GMEllipsis GMAlignCenter GMText GMCell IBSheetFont0 HideCol0C10">
+										<a class="detail-view" href="../popup/popup6-1.html" onclick="window.open(this.href,'_blank','width=900, height=600, resizable=yes, scrollbars=yes'); return false;">상세보기</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- //table -->
+				</div>
+
+			</div>
+			<!--// cont -->
+
+		</div>
+	</div>
+	<!--// contents -->
+
+	<!-- footer -->
+	<div calss="footer_wrap"></div>
+	<!--// footer -->
+
+</div>
+</body>
+</html>

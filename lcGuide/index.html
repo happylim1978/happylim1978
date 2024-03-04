@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MULTICAMPUS DESIGN SYSTEM Learning Cloud</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/gsap.min.js"></script>
+</head>
+
+<body>
+	<div class="wrap">
+		<div class="main-gnb">
+			<a href="./overview/overview.html">Service Overview</a>
+			<a href="./foundation/foundation-layout.html#2_1">Learing Cloud Guideline</a>
+			<a href="./resource/resource-ci.html#5_1">Resource</a>
+		</div>
+		<div class="main-lnb">
+			<a href="#" class="link1">learning cloud</a>
+			<a href="#" class="link2">data center</a>
+		</div>
+		<div class="txts-wrap">
+			<div class="txts">
+				<div class="ps">
+					<div class="t-wrap">
+						<p class="p1">MULTICAMPUS</p>
+					</div>
+					<div class="t-wrap">
+						<p class="p2">DESIGN</p>
+					</div>
+					<div class="t-wrap">
+						<p class="p3">SYSTEM</p>
+					</div>
+				</div>
+				<p class="p4">
+					Learning Cloud
+				</p>
+			</div>
+		</div>
+		<div class="go-link">
+			<a href="./overview/overview.html" class="go-arrow"><img src="images/main/icon.png" alt="" /></a>
+		</div>
+		<div class="shapes-wrap">
+			<div class="shapes shapes4">
+				<div class="shape circle shape1"></div>
+				<div class="shape circle shape2"></div>
+				<div class="shape circle shape3"></div>
+				<div class="shape circle shape4"></div>
+				<div class="shape circle shape5"></div>
+				<div class="shape circle shape6"></div>
+				<div class="shape circle shape7"></div>
+				<div class="shape circle shape8"></div>
+				<div class="shape circle shape9"></div>
+				<div class="shape circle shape10"></div>
+			</div>
+		</div>
+		<div class="copyright-wrap">
+			<p class="copyright">
+				ⓒ Multicampus Co., Ltd. All rights reserved.<img src="images/common/logo-w.png" alt="multicampus" />
+			</p>
+		</div>
+	</div>
+	<script>
+		function move1() {
+			gsap.to('.shape1', {rotation: 23, left: 0.78125 + 'vw', bottom: 5 + 'vw', duration: 2, onComplete: moveComplete})
+			gsap.to('.shape2', {rotation: -15, left: 13.9583 + 'vw', bottom: 13.5416 + 'vw', duration: 2, delay: 0.2, onComplete: moveComplete})
+			gsap.to('.shape3', {left: 25.3125 + 'vw',  bottom: 0 + 'vw', duration: 2, delay: 0.4, onComplete: moveComplete})
+			gsap.to('.shape4', {left: 31.25 + 'vw', bottom:11.1979 + 'vw', duration: 2, delay: 0.6, onComplete: moveComplete})
+			gsap.to('.shape5', {left: 43.0729 + 'vw', bottom: 4.375 + 'vw', duration: 2.5, 'backgroundColor':'#FE6B00', ease: 'circ', onComplete: moveComplete})
+			gsap.to('.shape6', {left: 50.4167 + 'vw', bottom:0, duration: 2, delay: 0.8, onComplete: moveComplete})
+			gsap.to('.shape7', {left: 62.1958 + 'vw', bottom:0, duration: 2, delay: 0.6, onComplete: moveComplete})
+			gsap.to('.shape8', {rotation: -30, left: 72.2917 + 'vw', bottom: 17.1875 + 'vw', duration: 2, delay: 0.4, onComplete: moveComplete})
+			gsap.to('.shape9', {left: 72.8125 + 'vw', bottom: 0, duration: 2, delay: 0.2, onComplete: moveComplete})
+			gsap.to('.shape10', {left: 83.5417 + 'vw', bottom: 6.25 + 'vw', duration: 2, onComplete: moveComplete})
+		}
+
+		function move2() {
+			gsap.to('.shape1', {rotation: 23, left: 18, bottom: 85, duration: 2, onComplete: moveComplete})
+			gsap.to('.shape2', {rotation: -15, left: 287, bottom: 264, duration: 2, delay: 0.2, onComplete: moveComplete})
+			gsap.to('.shape3', {left: 502, bottom: 0, duration: 2, delay: 0.4, onComplete: moveComplete})
+			gsap.to('.shape4', {left: 617, bottom: 223, duration: 2, delay: 0.6, onComplete: moveComplete})
+			gsap.to('.shape5', {left: 854, bottom: 86, duration: 2.5, 'backgroundColor':'#FE6B00', ease: 'circ', onComplete: moveComplete})
+			gsap.to('.shape6', {left: 1000, bottom: 0, duration: 2, delay: 0.8, onComplete: moveComplete})
+			gsap.to('.shape7', {left: 1246, bottom: 0, duration: 2, delay: 0.6, onComplete: moveComplete})
+			gsap.to('.shape8', {rotation: -30, left: 1440, bottom: 340, duration: 2, delay: 0.4, onComplete: moveComplete})
+			gsap.to('.shape9', {left: 1444, bottom: 0, duration: 2, delay: 0.2, onComplete: moveComplete})
+			gsap.to('.shape10', {left: 1658, bottom: 124, duration: 2, onComplete: moveComplete})
+		}
+
+		function _wCheck() {
+			if( $(window).width() >= 1920 ) {
+				$('.shapes-wrap').addClass('shapes-large');
+				move2();
+			} else {
+				move1();
+			}
+		}
+
+		_wCheck();
+
+		function moveComplete() {
+			var $this = $(this.targets()[0]);
+			$this.addClass('move-complete');
+		}
+
+		$('.shape').on('mouseenter', function(){
+			if( $(this).hasClass('move-complete') ){
+				$(this).addClass('over');
+			}
+		});
+		$('.shape').on('mouseleave', function(){
+			$(this).removeClass('over');
+		});
+
+
+		gsap.from('.p1', {y:100, autoAlpha:0, ease: 'circ'})
+		gsap.from('.p2', {y:100, delay:0.3, autoAlpha:0, ease: 'circ'})
+		gsap.from('.p3', {y:100, delay:0.6, autoAlpha:0, ease: 'circ'})
+		gsap.from('.p4', {y:20, delay:1.1, autoAlpha:0, ease: 'circ'})
+		gsap.from('.go-arrow', {y:100, delay:1.4, autoAlpha:0, ease: 'circ'})
+		gsap.from('.copyright', {y:50, delay:3, autoAlpha:0, ease: 'circ'})
+	</script>
+</body>
+</html>

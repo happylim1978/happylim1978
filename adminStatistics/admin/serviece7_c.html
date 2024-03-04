@@ -1,0 +1,297 @@
+<!DOCTYPE HTML>
+<!--[if IE 7]><html class="ie7" lang="ko"><![endif]-->
+<!--[if IE 8]><html class="ie8" lang="ko"><![endif]-->
+<!--[if gte IE 9]><!--><html lang="ko"><!--<![endif]-->
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>관리자 통계</title>
+	<link rel="stylesheet" href="../css/admin_edu.css">
+	<link rel="stylesheet" href="../css/chart.css">
+	<link rel="stylesheet" href="../css/admin_edu_add.css">
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="../js/respond.min.js"></script>
+	<![endif]-->
+	<!--[if lte IE 8]><script src="../js/excanvas.min.js"></script><![endif]-->
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script src="../js/jquery.flot.js"></script>
+	<script src="../js/jquery.flot.pie.min.js"></script>
+	<script src="../js/jquery.flot.resize.min.js"></script>
+	<script src="../js/edu_admin_default.js"></script>
+</head>
+<body class="themeC">
+	<div class="wrap">
+		<header>
+			<h1>크래듀 교육 관리 서비스</h1>
+			<a href="#" class="backBtn"><span>이전</span></a>
+			<a href="#" class="menuBtn"><span>메뉴</span></a>
+		</header>
+		<section class="content">
+			<!-- 탭메뉴 -->
+			<div class="tabmenu">
+				<a href="#"><span class="step1">학습현황</span></a>
+				<a href="#" class="on"><span class="step2">운영보고서</span></a>
+			</div>
+			<!-- 학습현황 시작 -->
+			<div class="reportBox">
+				<div class="reportBoxHead">
+					<p class="copy">학습현황</p>
+					<span class="select3">
+						<select id="">
+							<option value="">페이지 선택</option>
+							<option value="">월 교육현황</option>
+							<option value="">종합현황</option>
+							<option value="">과정별 수료율</option>
+							<option value="" selected="selected">학습현황</option>
+							<option value="">과정랭킹</option>
+						</select>
+					</span>
+				</div>
+
+				<div class="chartboxCover">
+					<div class="chartbox">
+						<h2>미수료 사유</h2>
+						<div class="chartWrap">
+							<div class="chartA chartA1" id="chartA1"></div>
+						</div>
+					</div>
+
+					<div class="chartbox chartover">
+						<h2>시간대별 학습접속</h2>
+						<div class="chartWrap">
+							<div class="chartA chartA2" id="chartA2"></div>
+						</div>
+					</div>
+
+					<div class="chartbox">
+						<h2>요일별 학습접속</h2>
+						<div class="chartWrap">
+							<div class="chartA chartA3" id="chartA3"></div>
+						</div>
+					</div>
+
+					<div class="chartbox chartover">
+						<h2>일자별 학습접속</h2>
+						<div class="chartWrap">
+							<div class="chartA chartA4" id="chartA4"></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+		<footer class="footer">
+			<div class="person">
+				<div class="number1">
+					<a href="tel:0262629128">
+						<span class="name">교육컨설팅 문의 : 최승운 과장</span>
+						<span class="num">02-6262-9128</span>
+					</a>
+				</div>
+				<div class="number2">
+					<a href="tel:0262629018">
+						<span class="name">교육 운영 문의 : 김보민 사원</span>
+						<span class="num">02-6262-9018</span>
+					</a>
+				</div>
+				<p class="copy">
+					COPYRIGHT ⓒ 2014 CREDU. ALL RIGHT RESERVED.
+					<button type="button"><img src="../images/com/bg_logout.png" alt="로그아웃" /></button>
+				</p>
+			</div>
+		</footer>
+	</div>
+	<script type="text/javascript">
+
+	var colors1 = null;
+	if($('body').is('.themeA')){
+		colors1 = '#00aeef';
+	}
+	if($('body').is('.themeB')){
+		colors1 = '#52be7f';
+	}
+	if($('body').is('.themeC')){
+		colors1 = '#fe634e';
+	}
+	//미수료 사유
+	var dataA1 = [
+					{data:[[0, 10], [3.6, 23], [1.8, 36], [0, 49], [19.6, 62], [16.1, 75], [58.9, 88]]}
+				]
+
+	var p1 = $.plot("#chartA1", dataA1,  {
+		bars: {
+			show: true,
+			align:'center',
+			barWidth: 5,
+			lineWidth : 0,
+			horizontal : true,
+			fillColor : colors1
+		},
+		xaxis : {
+			color:'#dcdcdc',
+			min : 0,
+			max : 100,
+			autoscaleMargin : 0.1,
+			tickSize : 20
+		},
+		yaxis: {
+			min:0,
+			max:100,
+			ticks: [[10,'기타'],[23,'점수 미달'],[36,'리포트 과락'],[49,'리포트 미제출'],[62,'평가 과락'], [75,'평가 미응시'], [88,'진도미달']],
+			tickLength: 0,
+			autoscaleMargin : 0.5,
+			labelWidth : 100
+		},
+		grid:{
+			borderWidth: {
+				top:0,
+				left:2,
+				bottom:2,
+				right:0
+			},
+			borderColor : '#dcdcdc'
+		},
+		shadowSize : 0
+	});
+
+	//시간대별 학습접속
+	var dataA2 = [
+						[1,22],[2,73],[3,911],[4,972],[5,577],[6,604],[7,406],[8,684],[9,558],[10,400],
+						[11,22],[12,73],[13,911],[14,972],[15,577],[16,604],[17,406],[18,684],[19,558],[20,400],
+						[21,22],[22,73],[23,911]
+					]
+
+	var p2 = $.plot("#chartA2", [dataA2],  {
+		colors: [colors1],
+		lines : {
+			show: true
+		},
+		points : {
+			show : true,
+			fillColor : colors1
+		},
+		xaxis : {
+			tickLength: 0,
+			color:'#dcdcdc',
+			min : 0,
+			max : 24,
+			autoscaleMargin : 0.1,
+			tickSize : 1,
+			tickDecimals : 0
+		},
+		yaxis: {
+			autoscaleMargin : 0.1,
+			tickSize : 200
+		},
+		grid:{
+			borderWidth: {
+				top:0,
+				left:0,
+				bottom:1,
+				right:0
+			},
+			borderColor : '#dcdcdc'
+		},
+		shadowSize : 0
+	});
+
+	//요일별 학습접속
+	var dataA3 = [
+						[10,22],[23,73],[36,911],[49,972],[62,577],[75,604],[88,406]
+					]
+
+	var p3 = $.plot("#chartA3", [dataA3],  {
+		colors: [colors1],
+		lines : {
+			show: true
+		},
+		points : {
+			show : true,
+			fillColor : colors1
+		},
+		xaxis : {
+			tickLength: 0,
+			color:'#dcdcdc',
+			min : 0,
+			max : 100,
+			autoscaleMargin : 0.1,
+			tickSize : 1,
+			ticks: [[10,'월'],[23,'화'],[36,'수'],[49,'목'],[62,'금'], [75,'토'], [88,'일']],
+		},
+		yaxis: {
+			autoscaleMargin : 0.1,
+			tickSize : 500
+		},
+		grid:{
+			borderWidth: {
+				top:0,
+				left:0,
+				bottom:1,
+				right:0
+			},
+			borderColor : '#dcdcdc'
+		},
+		shadowSize : 0
+	});
+
+	//일자별 학습접속
+	var dataA4 = [
+						[1,22],[2,73],[3,911],[4,972],[5,577],[6,604],[7,406],[8,684],[9,558],[10,400],
+						[11,22],[12,73],[13,911],[14,972],[15,577],[16,604],[17,406],[18,684],[19,558],[20,400],
+						[21,22],[22,73],[23,911],[24,972],[25,577],[26,604],[27,406],[28,684],[29,558],[30,400]
+					]
+
+	var p4 = $.plot("#chartA4", [dataA4],  {
+		colors: [colors1],
+		lines : {
+			show: true
+		},
+		points : {
+			show : true,
+			fillColor : colors1
+		},
+		xaxis : {
+			tickLength: 0,
+			color:'#dcdcdc',
+			min : 0,
+			max : 30, //월별로 달라짐 28, 30, 31
+			autoscaleMargin : 0.1,
+			tickSize : 1,
+			tickDecimals : 0
+		},
+		yaxis: {
+			autoscaleMargin : 0.1,
+			tickSize : 100
+		},
+		grid:{
+			borderWidth: {
+				top:0,
+				left:0,
+				bottom:1,
+				right:0
+			},
+			borderColor : '#dcdcdc'
+		},
+		shadowSize : 0
+	});
+
+	graphLabel('#chartA1', 'A1', p1, 0, 5, -9);
+	graphLabel('#chartA2', 'A2', p2, 1, 0, -25);
+	graphLabel('#chartA3', 'A3', p3, 1, 0, -25);
+	graphLabel('#chartA4', 'A4', p4, 1, 0, -25);
+
+	$(window).on('resize', function(){
+		graphLabel('#chartA1', 'A1', p1, 0, 5, -9);
+		graphLabel('#chartA2', 'A2', p2, 1, 0, -25);
+		graphLabel('#chartA3', 'A3', p3, 1, 0, -25);
+		graphLabel('#chartA4', 'A4', p4, 1, 0, -25);
+
+	});
+
+	</script>
+<div class="goTop" id="go_top"><a href="#"><span>페이지상단으로 이동</span></a></div>
+</body>
+</html>

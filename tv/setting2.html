@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>SERICEO - TV</title>
+		<link rel="stylesheet" type="text/css" href="./css/common.css" />
+		<link rel="stylesheet" type="text/css" href="./css/sub.css" />
+		<link rel="stylesheet" type="text/css" href="./css/special.css" />
+		<script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="./css/swiper.min.css" />
+		<script type="text/javascript" src="./js/swiper.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('#side1 .sidelist > li:eq(1) > a').focus();
+			});
+		</script>
+	</head>
+	<body>
+		<div class="sub special-wrap">
+			<!-- sub lnb 타입 -->
+			<div class="sub-box side-menu"><!-- 클래스 side-menu 추가 -->
+				<!-- lnb -->
+				<div class="side-bar">
+					<!-- 메뉴 1단 -->
+					<div class="side1" id="side1">
+						<p class="cate">설정/안내</p>
+						<ul class="sidelist side-setting"><!-- 클래스 side-setting 추가 -->
+							<li><a href="#">공지사항</a></li>
+							<li><a href="#" class="on">기기설정</a></li>
+							<li><a href="#">서비스 약관</a></li>
+						</ul>
+					</div>
+					<!-- //메뉴 1단 -->
+				</div>
+				<!-- lnb -->
+				<!-- 해당 콘텐츠 -->
+				<div class="list-con-wrap">
+					<div class="setting-box">
+						<div class="menu-items">
+							<div class="menu-items-in">
+								<div class="setting-item-wrap">
+									<div class="setting-item">
+										<div class="s-item">
+											<a href="#">
+												<span class="icon icon1"></span>
+												<p class="name">HDMI 01</p>
+												<p class="des">HDMI 1 과 연결된 기기를 <br />연결 합니다.</p>
+											</a>
+										</div>
+										<div class="s-item">
+											<a href="#">
+												<span class="icon icon2"></span>
+												<p class="name">HDMI 02</p>
+												<p class="des">HDMI 2 과 연결된 기기를 <br />연결 합니다.</p>
+											</a>
+										</div>
+										<div class="s-item">
+											<a href="#">
+												<span class="icon icon3"></span>
+												<p class="name">설정</p>
+												<p class="des">기기의 다양한 기능을 <br />설정할 수 있습니다.</p>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //해당 콘텐츠 -->
+			</div>
+		</div>
+	</body>
+</html>

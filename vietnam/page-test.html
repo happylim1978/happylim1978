@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html class="no-js" lang="vi">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Trang web dành cho Việt Nam</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<link rel="stylesheet" type="text/css" href="css/sub.css" />
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/menu.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/sly.min.js"></script>
+	<script type="text/javascript" src="js/default.js"></script>
+</head>
+
+<body>
+<div class="wrap">
+	<!-- header -->
+	<div class="header">
+		<button type="button" class="ham" id="ham"><span>링크</span></button>
+		<h1 id="title1"></h1>
+		<a class="back" href="#" onclick="history.back(); return false;">back</a>
+	</div>
+	<!-- //header -->
+	<!-- side -->
+	<div class="side" id="side">
+		<div class="sidemenu">
+			<div class="menu"></div>
+			<button type="button" class="close" id="lnbClose"></button>
+		</div>
+	</div>
+	<!-- side -->
+	<!-- sub con -->
+	<div class="sub-con">
+		<!-- tab -->
+		<div class="sub-tab">
+			<div class="frame" id="crazy">
+				<ul class="clearfix" id="depth1">
+					<li><a href="#">테스트</a></li>
+					<li><a href="#">테스트</a></li>
+					<li><a href="#">테스트</a></li>
+					<li><a href="#">테스트</a></li>
+					<li><a href="#">테스트</a></li>
+				</ul>
+			</div>
+		</div>
+		<script>
+			$(document).ready(function(){
+				var $frame  = $('#crazy');
+				var $slidee = $frame.children('ul').eq(0);
+				var $wrap   = $frame.parent();
+				var pageCode = 0
+
+				function doSly() {
+					$frame.sly({
+						horizontal: 1,
+						itemNav: 'basic',
+						smart: 1,
+						activateOn: 'click',
+						mouseDragging: 1,
+						touchDragging: 1,
+						releaseSwing: 1,
+						startAt: pageCode,
+						scrollBy: 1,
+						activatePageOn: 'click',
+						speed: 300,
+						elasticBounds: 1,
+						easing: 'easeOutExpo',
+						dragHandle: 1,
+						dynamicHandle: 1,
+						clickBar: 1
+					});
+					$($frame).find('>ul').width( $($frame).find('>ul').width() + 50 )
+				}
+
+				doSly();
+
+				$(window).resize(function(e) {
+					$frame.sly('reload');
+				});
+			});
+		</script>
+		<!-- //tab -->
+		<div class="contents">
+			<div class="sbc sbc2">
+				<p class="image"><img class="img" src="images/2020/sub/img1.png" alt="" /></p>
+				<p class="copy">Multicampus là công ty chuyên về nhân sự của Samsung, phát triển các chương trình giáo dục cho nhân viên của tập đoàn.</p>
+				<p class="copy">Bên cạnh đó, Multicampus đang mở rộng lĩnh vực kinh doanh về đánh giá ngoại ngữ và các dịch vụ đào tạo để tăng cường năng lực cạnh tranh toàn cầu, kinh doanh dịch vụ tri thức dựa trên nền tảng kiến thức có sẵn, khẳng định bản thân là một công ty chuyên cung cấp các giải pháp toàn diện về phát triển nguồn nhân lực.</p>
+				<p class="copy">Đặc biệt, trong thời đại Cách mạng công nghiệp 4.0, chúng tôi đang vươn lên như một tổ chức dẫn đầu xu thế phát triển các nhân tài tương lai thông qua việc đưa ra các giải pháp và quan điểm khác biệt, kết hợp với công nghệ lõi như AI và Big Data.</p>
+				<p class="copy">Dựa vào kiến thức và kinh nghiệm tích lũy trong lĩnh vực phát triển nguồn nhân lực, Multicampus phấn đấu trở thành công ty đào tạo nhân lực số một toàn cầu bằng cách đảm bảo tăng trưởng trong tương lai thông qua các lĩnh vực kinh doanh mới và việc gia nhập thị trường quốc tế.</p>
+			</div>
+		</div>
+	</div>
+	<!-- //sub con -->
+	<!-- footer -->
+	<br /><br />
+	<div id="footer-wrap">
+	</div>
+	<!-- //footer -->
+</div>
+
+</body>
+</html>

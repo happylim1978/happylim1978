@@ -1,0 +1,157 @@
+.button {background-color: #4869C3;}
+
+input[type='text']::-webkit-input-placeholder,
+input[type='password']::-webkit-input-placeholder  {color:#999 !important; font-family: 'Noto Sans KR';}
+input[type='text']::-moz-placeholder,
+input[type='password']::-moz-placeholder {color:#999 !important; opacity:1 !important; font-family: 'Noto Sans KR';}
+input[type='text']:-ms-input-placeholder,
+input[type='password']:-ms-input-placeholder {color:#999 !important; font-family: 'Noto Sans KR';}
+
+.ui-page-theme-a .ui-btn:focus {
+	box-shadow:0 0 12px #4869C3;
+}
+.ui-page-theme-a a:visited, html .ui-bar-a a:visited, html .ui-body-a a:visited, html body .ui-group-theme-a a:visited {color: #4869C3;}
+.btt {border: 0 none; background: none;}
+.ui-popup-screen.in {background-color: rgba(0,0,0,0.6);} /* dim 배경 컬러 및 투명도 */
+.loginDiv.loginDivType1 {width: 280px; padding: 30px;}
+.loginDiv.loginDivType1 {background: none; background-color: #fff;}
+.loginDiv.loginDivType1 .p1 {font-size: 19px; line-height: 26px; font-weight: bold;}
+.loginDiv.loginDivType1 .p2 {margin-top: 8px; font-size: 12px; line-height: 16px; font-weight: 500;}
+.loginDiv.loginDivType1 .loginInput {text-align: left; color: #000;}
+.loginDiv.loginDivType1 .loginInput input[type='text'],
+.loginDiv.loginDivType1 .loginInput input[type='password'] {border: 0 none; width: 100%; height: 29px; border-bottom: 1px solid#707070;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	outline:0;
+	transition:all 0.4s;
+}
+.loginDiv.loginDivType1 .loginInput input:focus {border-bottom-color: #4869C3;} /* input 포커스시 보더 컬러 */
+
+.loginDiv.loginDivType1 .field {margin-top: 25px;}
+.loginDiv.loginDivType1 .inputs {position: relative;}
+.loginDiv.loginDivType1 .inputs + .inputs {margin-top: 25px;}
+.loginDiv.loginDivType1 .inputs label {overflow: hidden; visibility: hidden; position: absolute; top: 0; left: 0; width: 1px; height: 1px; cursor:text; color: #B8B8B8; font-size: 14px; line-height: 19px;}
+.loginDiv.loginDivType1 .btns {margin-top: 15px;}
+.loginDiv.loginDivType1 .btns .button {width: 100%; display: inline-block; border: 2px solid #4869C3; overflow: visible; color: #fff; text-align: center; line-height: normal; height: 55px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+.loginDiv.loginDivType1 .btns .button {background-color: #4869C3;} /* btn 배경 컬러 */
+.loginDiv.loginDivType1 .login-check {display: flex; margin-top: 15px; justify-content:space-between; align-items:center; font-size: 12px;}
+.loginDiv.loginDivType1 .login-check .autologin {display: flex; align-items:center;}
+.loginDiv.loginDivType1 .login-check .autologin * {vertical-align: middle;}
+.loginDiv.loginDivType1 .login-check .autologin label {margin-bottom: 0; margin-left: 5px;}
+.loginDiv.loginDivType1 .login-check .autologin label {font-size: 12px;}
+.loginDiv.loginDivType1 .msg {margin-top: 25px; color: #666; font-size: 12px; line-height: 23px; text-align: center;}
+.loginDiv.loginDivType1 .msg a {font-weight: bold;}
+.ui-btn.ui-btn-right.ui-link.ui-icon-delete:hover,
+.ui-btn.ui-btn-right.ui-link.ui-icon-delete {background-color: #4869C3; border-color: #4869C3;} /* 닫기 버튼 컬러 */
+
+.header {}
+.header * {font-weight: 500;}
+.header .header-in {position: relative;}
+.header .header-in .logo-wrap {position: relative; padding-top: 12px; height: 46px; background-color: #fff;
+	box-sizing: border-box;
+}
+.header .logo {display: flex; align-items:center; font-size: 14px; line-height: 1.5em; margin-left: 20px;}
+.header .logo:before {content:''; width: 1.5em; height: 1.5em; margin-right: 0.2857142857142857em; background: url('../images/common/logo-m.png') 0 0 no-repeat;
+	background-size: 100% 100%;
+}
+.header .menu {position: absolute; top: 12px; right: 20px; width: 20px; height: 20px; border: 0 none; font-size: 0; background: none;}
+
+.header.menu-on .header-in .logo-wrap,
+.header.menu-on .menu,
+.header .layer {z-index: 1001;}
+
+.header .menu:before,
+.header .menu:after {content:''; position: absolute; left: 3px; width: 14px; height: 2px; background-color: #222;
+	transition:all 0.4s;
+}
+.header .menu:before {top: 5px;}
+.header .menu:after {bottom: 5px;}
+.header .layer {overflow: hidden; position: absolute; opacity: 0; top: 46px; right: 0; width: 0; white-space:nowrap; background-color: #F4F4F7;
+	transition:width 0.4s, opacity 0.4s;
+}
+.header.menu-on .layer {width: 100%; opacity: 1;}
+.header.menu-on .menu:before {top: 50%;
+	transform:rotate(45deg);
+	word-wrap:break-word; word-break:keep-all;
+}
+.header.menu-on .menu:after {bottom: auto; top: 50%;
+	transform:rotate(-45deg);
+}
+.header .dim {display: none; position: fixed; z-index: 1000; top: 46px; right: 0; bottom: 0; left: 0; background-color: rgba(0,0,0,0.7);}
+.header.menu-on .dim {z-index: 1000;}
+
+.header .layer ul li {}
+.header .layer ul li > a {display: block;}
+.header .layer .layer-menu1 li {margin-top: 4px;}
+.header .layer .layer-menu1 li > a {position: relative; font-size: 15px; padding: 14px 42px 14px 25px; line-height: 1.5em; color: #222; background-color: #fff;}
+.header .layer .layer-menu1 li > a:after {content:''; position: absolute; top: 50%; right: 27px; margin-top: -7px; width: 8px; height: 14px; background: url('../images/common/arrow.png') 0 0 no-repeat;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+.header .layer .layer-menu2 {padding: 4px 0 20px;}
+.header .layer .layer-menu2 li > a {color: #666; font-size: 14px; padding: 12px 30px 12px 30px;}
+.header .layer .layer-menu2 li > a.login {padding-left: 47px; background: url('../images/common/icon-login.png') 30px center no-repeat;
+	-webkit-background-size: auto 13px;
+	background-size: auto 13px;
+}
+
+.footer-wrap {background-color: #333;}
+.footer-wrap .footer-wrap-in a {color: #B4B5B5 !important;}
+.footer-wrap .footer-wrap-in .tel em,
+.footer-wrap .footer-wrap-in .tel {font-size: 18px; color: #B4B5B5 !important;}
+
+@media(min-width:1024px) {
+	.header.menu-on .header-in .logo-wrap, .header.menu-on .menu, .header.menu-on .layer {z-index: inherit;}
+
+	.header {position: relative; border-bottom: 1px solid #E7E7ED;}
+	.header:after {content:''; position: absolute; top: 30px; left: 0; right: 0; height: 1px; font-size: 0; line-height: 0; background-color: #E7E7ED;}
+
+	.header .dim {display: none !important;}
+	.header .header-in {margin: 0 auto; max-width:1200px;}
+
+	.header .header-in .logo-wrap {height: auto; padding-top: 54px; padding-bottom: 23px;}
+
+	.header .logo {margin-left: 0;}
+	.header .logo:before {width: 52px; height: 52px; background: url('../images/common/logo.png') 0 0 no-repeat;}
+	.header .menu {display: none;}
+	.header .layer {position: static; opacity: 1; width: auto; background: none;}
+
+	.header .layer .layer-menu1 {position: absolute; top: 60px; right: 0; display: flex;}
+	.header .layer .layer-menu1 li {margin: 0;}
+	.header .layer .layer-menu1 li + li {margin-left: 90px;}
+	.header .layer .layer-menu1 li > a {padding: 10px 0;}
+	.header .layer .layer-menu1 li > a:after {display: none;}
+	.header .layer .layer-menu2 {position: absolute; top: 0; right: 0; display: flex; padding: 0;}
+
+	.header .layer .layer-menu2 li > a {padding: 0; font-size: 12px; line-height: 29px;}
+	.header .layer .layer-menu2 li + li {margin-left: 12px;}
+	.header .layer .layer-menu2 li + li > a {position: relative; padding-left: 13px;}
+	.header .layer .layer-menu2 li + li > a:after {content:''; position: absolute; top: 50%; left: 0; width: 1px; height: 10px; margin-top: -5px; background-color: #E7E7ED;}
+}
+@media(max-width:1200px) {
+	.header .logo {margin-left: 0;}
+	.header .layer .layer-menu1,
+	.header .layer .layer-menu2 {right: 60px;}
+	.header .header-in {margin: 0 auto; padding-left: 30px; padding-right: 60px;}
+	.header .layer .layer-menu1 li + li {}
+
+	.footer-wrap {padding-left: 32px; padding-right: 32px;}
+}
+@media(max-width:767px) {
+	.header .logo {margin-left: 20px;}
+	.header .header-in {padding-left: 0;}
+	.footer-wrap {padding: 20px;}
+	.footer-wrap .footer-wrap-in {text-align: left;}
+	.footer-wrap .footer-wrap-in a:nth-child(4) {display: block; padding-left: 0; margin-left: 0;}
+	.footer-wrap .footer-wrap-in a:nth-child(4):after {display: none;}
+	.footer-wrap .footer-wrap-in .tel {margin-top: 14px; padding-top: 14px; text-align: left; border-top: 1px solid #4B4B4B; font-size: 14px;}
+	.footer-wrap .footer-wrap-in .tel em {font-size: 14px;}
+}

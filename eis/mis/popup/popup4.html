@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=7">
+	<title>싱글결재자정보 / 프로젝트 기본정보 | MIS</title>
+	<link href="../../css/datepicker3.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/module.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/custom.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/popup.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="../../css/admin.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_mis.css" />
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+	<script src="../../js/bootstrap-datepicker.js"></script>
+	<script src="../../js/locales/bootstrap-datepicker.kr.js"></script>
+	<script src="../../js/jquery.slimscroll.min.js"></script>
+	<script src="../../js/admin_script.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../js/html5shiv.js"></script>
+		<script src="../../js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body class="body_popup">
+	<!-- system popup -->
+	<div id="" class="pop_wrap">
+		<!-- title -->
+		<div class="pHead">
+			<h1>싱글결재자정보 / 프로젝트 기본정보</h1>
+		</div>
+		<!-- //title -->
+		<!-- contents -->
+		<div class="pop_cont">
+
+			<h2 class="h2">싱글결재자정보</h2>
+			<div class="tbl_type03 tableForm">
+				<table class="formRow2">
+					<colgroup>
+						<col width="18%">
+						<col width="*">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><label for="form1">결재자</label></th>
+							<td>
+								<input type="text" id="form1" style="width:50%;">
+								<span class="btn_area"><a href="#" class="btn_basic small"><span>검색</span></a></span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="form2">결재경로</label></th>
+							<td>
+								<textarea id="form2" rows="20" cols="100" class="form-control" style="width:99%; height:120px"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="form2">결재경로</label></th>
+							<td>
+								<!-- 테이블 영역 -->
+								<div class="tbl_type02 tbl_type02in">
+									<table class="tbl_typeA tableCenter">
+										<colgroup>
+											<col width="10">
+											<col>
+											<col>
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col" class="first"><input type="checkbox" class="inputCheckbox" title="전체선택"></th>
+												<th>비용품의코드</th>
+												<th>비용품의명</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><input type="checkbox" class="inputCheckbox" title="현재줄선택"></td>
+												<td class="subject">K-SPACE 업그레이드편</td>
+												<td><span class="tc5">결재완료</span></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<!-- //테이블 영역 -->
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">구분</th>
+							<td>
+								<div class="overH">
+									<div class="fL">
+										<div class="formWrap">
+											<input type="radio" class="inputRadio" name="form3" id="form3a"> <label for="form3a">합의</label>
+											<input type="radio" class="inputRadio" name="form3" id="form3b"> <label for="form3b">결재</label>
+											<input type="radio" class="inputRadio" name="form3" id="form3c"> <label for="form3c">통보</label>
+											<input type="radio" class="inputRadio" name="form3" id="form3d"> <label for="form3d">합의(병렬)</label>
+										</div>
+									</div>
+									<div class="fR">
+										<span class="btn_area btnLine">
+											<a href="#" class="btn_basic fix1"><span>삭제</span></a>
+											<a href="#" class="btn_basic fix1"><span>위</span></a>
+											<a href="#" class="btn_basic fix1"><span>아래</span></a>
+										</span>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<h2 class="h2 mt20">프로젝트기본정보 <span class="h2add tc2">(수주 프로젝트의 예산 및 귀속부서는 발의부서로 하여야 합니다)</span></h2>
+			<div class="tbl_type03 tableForm">
+				<table>
+					<colgroup>
+						<col width="18%">
+						<col width="*">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">프로젝트 구분 (<span class="star">＊<em class="sr-only">필수</em></span>)</th>
+							<td>
+								<label for="form4a">대분류</label>
+								<select id="form4a" style="width:200px;">
+									<option value="" selected="selected"></option>
+									<option value=""></option>
+								</select>
+
+								<label class="ml10" for="form4b">소분류</label>
+								<select id="form4b" style="width:200px;">
+									<option value="" selected="selected"></option>
+									<option value=""></option>
+								</select>
+
+								<span class="btn_area"><a href="#" class="btn_basic small"><span>분류값 보기</span></a></span>
+
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="form5">프로젝트 명 (<span class="star">＊<em class="sr-only">필수</em></span>)</label></th>
+							<td><input type="text" id="form5" style="width:99%;"></td>
+						</tr>
+						<tr>
+							<th scope="row">프로젝트 기간 (<span class="star">＊<em class="sr-only">필수</em></span>)</th>
+							<td>
+								<div class="date_wrap" style="display:inline-block;">
+									<div class="date_input date" id="cal1">
+										<input type="text">
+										<a class="btn_calendar input-group-addon" href="#">
+											<i class="icons i_calendar">calendar</i></a>
+									</div>
+									<span>~</span>
+									<div class="date_input date" id="cal2">
+										<input type="text">
+										<a class="btn_calendar input-group-addon" href="#">
+											<i class="icons i_calendar">calendar</i>
+										</a>
+									</div>
+								</div>
+								<script>
+									$('#cal1').datepicker({
+										format: "yyyy.mm",
+										minViewMode: 1,
+										language:'kr',
+										autoclose : true
+									})
+									.on('show', function(){$(this).addClass('active');})
+									.on('hide', function(){$(this).removeClass('active');})
+									;
+									$('#cal2').datepicker({
+										format: "yyyy.mm",
+										minViewMode: 1,
+										language:'kr',
+										autoclose : true
+									})
+									.on('show', function(){$(this).addClass('active');})
+									.on('hide', function(){$(this).removeClass('active');})
+									;
+								</script>
+								
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">내용</th>
+							<td>
+								<!-- 2016-04-04 -->
+								<div class="fileUpLoadWrap">
+									<div class="btn_area btnLine addLabel" style="display:inline-block;">
+										<span class="btn_default btn_symbol"><label for="fileAdd"><i class="fa fa-plus"></i> 파일첨부하기</label></span>
+										<input type="file" class="fileAdd" id="fileAdd" />
+									</div>
+									<div class="fileCheckBox">
+										파일 <span><em>0</em> / 5</span>
+										사이즈 제한 : 10 MB
+									</div>
+								</div>
+								<!-- //2016-04-04 -->
+								<link type="text/css" rel="stylesheet" href="http://211.45.28.227:8088/common/css/module/swfupload.css" />
+								<div id="uploadFile" class="mainFileUploader" style="padding:5px;"> 
+									<div id="test"> 
+										<div class="swfupload"></div>
+										<div class="fieldset flash" id="uploadFile_progress"> 
+											<dl class="legend"> 
+												<dt>파일</dt>
+												<dd> 
+													<span id="uploadFile_currentUploadCount">0</span> 
+													<span>/</span> <span id="uploadFile_maxUploadCount">5</span></dd> 
+												</dd> 
+												<dt>사이즈 제한</dt> 
+												<dd> : 10 MB </dd> 
+											</dl> 
+										</div> 
+										<p><span id="uploadFile_placeHolder"></span></p> 
+										</div> 
+									<div id="uploadFile_files" class="progressWrapper"></div> 
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+		<!--// contents -->
+
+		<!-- footer -->
+		<div class="pop_footer wide">
+			<a class="btn_close" href="#"><i class="icons i_close">Close</i>Close</a>
+		</div>
+		<!--// footer -->
+	</div>
+	<!--// popup -->
+
+</body>
+</html>

@@ -1,0 +1,1235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="ko" xml:lang="ko">
+<head>
+<title>화성의과학대학교</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta http-equiv="content-script-type" content="text/html"/>
+<meta http-equiv="content-style-type" content="text/css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+<link rel="icon" type="image/x-icon" href="?v=1"/>
+<link rel="shortcut_icon" type="image/x-icon" href=""/>
+<link rel="apple-touch-icon" href=""/>
+<link rel="apple-touch-icon-precomposed" href=""/>
+<link rel="stylesheet" href="https://seri.ust.ac.kr/css/jquery.mobile-1.4.5.min.css"/>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.mobile-default.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.mobile-1.4.5.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/common.css?ver=20200513"/>
+<link rel="stylesheet" type="text/css" href="./css/common_add.css"/>
+
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jqueryFunc.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/common.js?ver=20200518"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.flexslider.min.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/ns.js?v=210506"></script>
+
+
+<script type="text/javascript">
+	var gisMoblie = "N";
+</script>
+
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/panel.js"></script>
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/jquery.mCustomScrollbar.min.css"/>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/panel.css"/>
+<script type="text/javascript">
+	$(document).ready(function() {
+		if ($('#panel-left').length > 0) $('#panel-left').panelCtrl();
+		if ($('#panel-right').length > 0) $('#panel-right').panelCtrl();
+		//$('div:jqmData(role="panel") .panel').addClass('customScroll');
+		$('div:jqmData(role="panel") .panel').addClass('customScroll');
+	});
+
+	function panel(pos, option, idx1, idx2) {
+		$('#panel-'+pos).panelCtrl(option, idx1, idx2);
+	}
+</script>
+
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/sub.css"/>
+<link rel="stylesheet" type="text/css" href="./css/sub_add.css"/>
+
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/study.css"/>
+<link rel="stylesheet" type="text/css" href="./css/study_add.css"/>
+
+<style type="text/css">
+	#chart_avg .jqplot-table-legend{background:#fff;z-index:3;}
+	.myInfoArea .quali.type02 .last {display:inline-block;}
+	.myInfoArea .quali.type02 .last .searchBtn {margin-left:0;}
+</style>
+<script type="text/javascript">
+	var selectedIndex = 0;
+
+	$(document).ready(function() {
+		var sdate = "20221230";
+		var edate = "20230129";
+		var ele = null;
+		if(sdate.length == 8){
+			ele = $("#p_syear option[value='" + sdate.substr(0, 4) + "']");
+			if(ele.length > 0 && !ele.is(":selected")){
+				$("#p_syear").val(sdate.substr(0, 4)).selectmenu("refresh");
+			}
+			ele = $("#p_smon option[value='" + sdate.substr(4, 2) + "']");
+			if(ele.length > 0 && !ele.is(":selected")){
+				$("#p_smon").val(sdate.substr(4, 2)).selectmenu("refresh");
+			}
+			ele = $("#p_sday option[value='" + sdate.substr(6, 2) + "']");
+			if(ele.length > 0 && !ele.is(":selected")){
+				$("#p_sday").val(sdate.substr(6, 2)).selectmenu("refresh");
+			}
+		}
+
+		if(edate.length == 8){
+			ele = $("#p_eyear option[value='" + edate.substr(0, 4) + "']");
+			if(ele.length > 0 && !ele.is(":selected")){
+				$("#p_eyear").val(edate.substr(0, 4)).selectmenu("refresh");
+			}
+			ele = $("#p_emon option[value='" + edate.substr(4, 2) + "']");
+			if(ele.length > 0 && !ele.is(":selected")){
+				$("#p_emon").val(edate.substr(4, 2)).selectmenu("refresh");
+			}
+			ele = $("#p_eday option[value='" + edate.substr(6, 2) + "']");
+			if(ele.length > 0 && !ele.is(":selected")){
+				$("#p_eday").val(edate.substr(6, 2)).selectmenu("refresh");
+			}
+		}
+	});
+
+	function selectTab(index) {
+		if (index < 2) {
+			$('.myInfoTab.type01 ul li').removeClass('on').eq(index).addClass('on');
+			$('.learningData').removeClass('on').eq(index).addClass('on');
+			if (index == 0) chart_total.replot();
+		} else {
+			$('.myInfoTab.type02 ul li').removeClass('on').eq(index-2).addClass('on');
+		}
+	}
+
+	function setYear(year) {
+		$('#procPop').procPopupDialog({
+			closeDelay:0,
+			url:'/msMyStudyB.html',
+			procMsg:'학습정보를 불러오고 있습니다.',
+			failMsg:'학습정보 로딩에 실패했습니다.',
+			success:function(data) {
+				selectedIndex = $('#p_year option:selected').index();
+				var obj = $('#learningData_month');
+				if (obj.length > 0 && obj.children().length > 0) obj.children().remove();
+				data = $(document.createElement("div")).html(data["contents"]);
+				smoothDisplay(obj, data);
+			},
+			fail:function() {
+				$('#p_year')[0].selectedIndex = selectedIndex;
+				$('#p_year').selectmenu('refresh');
+			},
+			error:function() {
+				$('#p_year')[0].selectedIndex = selectedIndex;
+				$('#p_year').selectmenu('refresh');
+			}
+		});
+		$('#procPop').procPopupDialog('options', {
+			data:{p_proc:'month', p_year:year}
+		});
+		$('#procPop').procPopupDialog('open');
+	}
+
+	function searchLog() {
+		var sdate = $('#p_syear').val() + $('#p_smon').val() + $('#p_sday').val();
+		var edate = $('#p_eyear').val() + $('#p_emon').val() + $('#p_eday').val();
+		if (sdate > edate) {
+			alert("시작일과 종료일을 정확히 입력해 주세요.");
+			return;
+		}
+
+		$('#procPop').procPopupDialog({
+			closeDelay:0,
+			url:'/msMyStudyLogB.html',
+			procMsg:'학습정보를 불러오고 있습니다.',
+			failMsg:'학습정보 로딩에 실패했습니다.',
+			success:function(data) {
+				$('#totalTime_text').text(data["totalTime_text"]);
+				$('#totalCnt_text').text(data["totalCnt_text"]);
+				$('#sdate_text').text(data["sdate_text"]);
+				$('#edate_text').text(data["edate_text"]);
+
+				var url = window.location.href;
+				url = replaceUrlParameter(url, "p_sdate", data["sdate"]);
+				url = replaceUrlParameter(url, "p_edate", data["edate"]);
+				url = replaceUrlParameter(url, "p_page", null);
+				changeWindowUrl(url);
+
+				var obj = $('#contLItems');
+				if (obj.length > 0 && obj.children().length > 0) obj.children().remove();
+				data = $(document.createElement("div")).html(data["contents"]);
+				smoothDisplay(obj, data);
+			}
+		});
+		$('#procPop').procPopupDialog('options', {
+			data:{p_proc:'list', p_sdate:sdate, p_edate:edate}
+		});
+		$('#procPop').procPopupDialog('open');
+	}
+
+	function setDate(type) {
+		var sdate = {'year':'', 'month':'', 'day':''};
+		var edate = {'year':'', 'month':'', 'day':''};
+
+		edate.year = "2023";
+		edate.month = "01";
+		edate.day = "29";
+
+		switch (type) {
+			case "3month" :
+				sdate.year = "2022";
+				sdate.month = "10";
+				sdate.day = "30";
+				break;
+			case "6month" :
+				sdate.year = "2022";
+				sdate.month = "07";
+				sdate.day = "30";
+				break;
+			case "today" :
+				sdate.year = "2023";
+				sdate.month = "01";
+				sdate.day = "29";
+				break;
+			default :
+				sdate.year = "2022";
+				sdate.month = "12";
+				sdate.day = "30";
+				edate.year = "2023";
+				edate.month = "01";
+				edate.day = "29";
+				break;
+		}
+
+		$('#p_syear').val(sdate.year).selectmenu('refresh');
+		$('#p_smon').val(sdate.month).selectmenu('refresh');
+		$('#p_sday').val(sdate.day).selectmenu('refresh');
+		$('#p_eyear').val(edate.year).selectmenu('refresh');
+		$('#p_emon').val(edate.month).selectmenu('refresh');
+		$('#p_eday').val(edate.day).selectmenu('refresh');
+	}
+</script>
+</head>
+<body>
+<div data-role="page" id="main">
+
+	<div data-role="panel" id="panel-left" data-position="left" data-position-fixed="true" data-display="overlay" data-swipe-close="false" data-dismissible="true">
+		<div class="panel">
+			<div class="panel-scroller">
+				<div class="closeBtn">
+					<div class="panel-tit">
+						<h1 class="h1">MENU</h1>
+					</div>
+					<div class="panel-head">
+						<p class="panel-msg">
+							[홍길동] 님은 <strong>1월 0편 학습</strong>하셨습니다.
+							&nbsp; &nbsp;<a href="/msMyStudyL.html" class="ui-link">자세히 보기</a>
+						</p>
+					</div>
+					<a href="javascript:panel('left', 'close')" data-role="button" data-shadow="false" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-corner-all" role="button"><div class="btn">닫기</div></a>
+				</div>
+				<div class="panel-service">
+					<div class="panel-tab">
+						<a href="/msAbout.html" class="tab1">MSP 소개</a>
+						<a href="/msNoticeL.html" class="tab2">공지사항</a>
+					</div>
+					<div class="panel-tab2">
+						<a href="/msMdaL.html" class="tab1"><span>What's New</span><em>보러가기</em></a>
+						<a href="" class="tab3"><span>AI Recommendation</span><em>보러가기</em></a>
+						<a href="/msBestL.html?p_gbn=M" class="tab2"><span>Best Contents</span><em>보러가기</em></a>
+					</div>
+				</div>
+				<!-- <div class="closeBtn">
+					<a href="javascript:panel('left', 'close')" data-role="button" data-shadow="false" data-iconpos="notext" class="ui-btn-right"><div class="btn">닫기</div></a>
+				</div> -->
+				<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set1">
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="About"><div>About</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							<div class="coltype lv2">
+								<h2 title="서비스 소개" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msAbout.html" class="ui-btn " target=""><div>서비스 소개</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="공지사항" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msNoticeL.html" class="ui-btn " target=""><div>공지사항</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="핫라인" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msHotLineN.html" class="ui-btn " target=""><div>핫라인</div></a></h2>
+							</div>
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="My Page"><div>My Page</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							<div class="coltype lv2">
+								<h2 title="학습현황" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMyStudyL.html" class="ui-btn " target=""><div>학습현황</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="콘텐츠 공유 내역" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMyShareL.html" class="ui-btn " target=""><div>콘텐츠 공유 내역</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="즐겨찾기" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMyContL.html" class="ui-btn " target=""><div>즐겨찾기</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="개인정보수정" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMyMimL.html" class="ui-btn " target=""><div>개인정보수정</div></a></h2>
+							</div>
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Global Leadership"><div>Global Leadership</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							
+							<div data-role="collapsible" class="collapsible02">
+								<h2>영어</h2>
+								<ul class="collapsible03">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>중국어</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>베트남어</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>일본어</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Character Education"><div>Character Education</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+
+							<div data-role="collapsible" class="collapsible02">
+								<h2>과학과 기술</h2>
+								<ul class="collapsible03">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>역사의 이해</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>인문교양</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>철학적 사고</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Medi Science"><div>Medi Science</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+
+							<div data-role="collapsible" class="collapsible02">
+								<h2>의과학</h2>
+								<ul class="collapsible03">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>바이오과학</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>뇌과학</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Liberal 101"><div>Liberal 101</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							<div class="coltype lv2">
+								<h2 title="전체보기" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMdaL.html?p_gmenu=04" class="ui-btn " target=""><div>전체보기</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="CIS 리포트" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMdaL.html?p_gmenu=0401" class="ui-btn " target=""><div>CIS 리포트</div></a></h2>
+							</div>
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Essential Courses"><div>Essential Courses</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							<div class="coltype lv2">
+								<h2 title="전체보기" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMdaL.html?p_gmenu=05" class="ui-btn " target=""><div>전체보기</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="AI가 바꾸는 미래 비즈니스" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMdaL.html?p_gmenu=0510" class="ui-btn " target=""><div>AI가 바꾸는 미래 비즈니스</div></a></h2>
+							</div>
+						</div>
+					</div>
+					<div class="coltype lv1">
+						<h2 title="HSMU Contents" class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+							<a href="/msMdaL.html?p_gmenu=1001" class="ui-btn  ui-btn-icon-left ui-icon-eye" target=""><div>HSMU Contents</div></a>
+						</h2>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div data-role="panel" id="panel-right" data-position="right" data-position-fixed="true" data-display="overlay" data-swipe-close="false">
+		<div class="panel">
+			<div class="panel-scroller">
+				<div class="closeBtn">
+					<a href="javascript:panel('right', 'close')" data-role="button" data-shadow="false" data-iconpos="notext" class="ui-btn-right"><div class="btn">닫기</div></a>
+				</div>
+				<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set1">
+					<div class="coltype lv1">
+						<h2 title="로그아웃" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msLogout.html" class="ui-btn  ui-btn-icon-left ui-icon-power" target=""><div>로그아웃</div></a></h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="panel" id="panel-right" data-position="right" data-position-fixed="true" data-display="overlay" data-swipe-close="false">
+		<div class="panel">
+			<div class="panel-scroller">
+				<div class="closeBtn">
+					<a href="javascript:panel('right', 'close')" data-role="button" data-shadow="false" data-iconpos="notext" class="ui-btn-right"><div class="btn">닫기</div></a>
+				</div>
+				<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set1">
+
+
+					<div class="coltype lv1">
+						<h2 title="로그아웃" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msLogout.html" class="ui-btn  ui-btn-icon-left ui-icon-power" target=""><div>로그아웃</div></a></h2>
+					</div>
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div data-role="popup" id="procPop" class="procPopDiv" title="" data-corners="false" data-overlay-theme="a" data-theme="d" data-tolerance="0,0">
+		<div class="waitCommentDiv">
+			<p class="comment"></p>
+			<p class="loading">잠시만 기다려 주세요.<img src="/images/common/ajax-loader.gif"/></p>
+			<p class="close"><a href="#" data-rel="back" data-role="button" data-corners="false">닫기</a></p>
+		</div>
+	</div>
+
+	<div data-role="header" class="btn2type">
+		<h1 class="logo"><a href="/index.html">화성의과학대학교</a></h1>
+		<div class="btn left">
+			<a href="javascript:panel('left', 'open')" class="menu" title="메뉴열기">메뉴열기</a>
+		</div>
+		<div class="btn right">
+			<a href="/msLogout.html" class="logout">로그아웃</a>
+			<a href="#" class="search" title="검색" onClick="$('#p_kwd').focus();">검색</a>
+		</div>
+		<div class="searchBar">
+			<div class="searchArea">
+				<form method="post">
+					<input type="hidden" id="search_url" value="/msSearchL.html"/>
+					<div class="search-textbox">
+						<input type="search" id="p_kwd" name="p_kwd" value="" data-theme="d" title="검색어 입력"/>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="mpinfo">
+		<div class="after">
+			홍길동님은 <strong>1월 0편</strong> 학습하셨습니다.
+		</div>
+	</div>
+
+	<div class="header">
+		<div class="header-out">
+			<div class="head-in">
+				<h1 class="lg"><a href="/index.html">화성의과학대학교</a></h1>
+				<div class="head-con">
+					<div class="head-other">
+						<div class="search-input">
+							<input type="text" class="text" title="검색어" data-role="none" id="p_hkwd" placeholder="검색어를 입력해주세요." onkeypress="if(event.keyCode==13) {main_headerSearch();}"/>
+						</div>
+						<div class="search">
+							<a href="#" class="dosearch">검색</a>
+						</div>
+						<div class="other-link">
+							<a href="/msMyStudyL.html">마이페이지</a>
+							<a href="/msLogout.html">로그아웃</a>
+							<a href="/msAbout.html">이용가이드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="h-des2">
+				<p class="msg">Dream the Best, Be the First, Medi-Science Park</p>
+				<p class="p-info">홍길동님의 학습현황: <strong>1월 0편</strong> 학습하셨습니다. <a href="/msMyStudyL.html">학습현황 자세히 보기  &gt;</a></p>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function(){
+			$('.search').on('click', function(){
+				if( $(this).closest('.head-other').hasClass('search-input-on') ) {
+					$(this).closest('.head-other').removeClass('search-input-on');
+				} else {
+					$(this).closest('.head-other').addClass('search-input-on');
+					$('#p_hkwd').focus();
+				}
+				return false;
+			});
+		});
+	</script>
+
+	<div class="con-wrap">
+		<div class="web-lnb" id="web-lnb">
+			<div class="scroll">
+				<ul class="lnb-item-list">
+					<li class="lnb-item">
+						<a href="/msMdaL.html">What's NEW</a>
+					</li>
+					<li class="lnb-item">
+						<a href="#">AI Recommendation</a>
+					</li>
+					<li class="lnb-item">
+						<a href="/msBestL.html?p_gbn=M">Best Contents</a>
+					</li>
+					<li class="lnb-item">
+						<a href="#">About</a>
+						<ul>
+							<li><a href="/msAbout.html">서비스 소개</a></li>
+							<!--li><a href="/msAbout.html?p_tab=1">이용안내</a></li-->
+							<li><a href="/msNoticeL.html">공지사항</a></li>
+							<!--li><a href="/msAbout.html?p_tab=3">FAQ</a></li-->
+							<li><a href="/msHotLineN.html">핫라인</a></li>
+						</ul>
+					</li>
+					<li class="lnb-item">
+						<a href="#">My Page</a>
+						<ul>
+							<li><a href="/msMyStudyL.html">학습현황</a></li>
+							<li><a href="/msMyShareL.html">콘텐츠 공유 내역</a></li>
+							<li><a href="/msMyContL.html">즐겨찾기</a></li>
+							<li><a href="/msMyMimL.html">개인정보수정</a></li>
+						</ul>
+					</li>
+					<li class="lnb-item">
+						<a href="#">Global Leadership</a>
+						<ul>
+							<li><a href="#">영어</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">중국어</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">베트남어</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">일본어</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="lnb-item">
+						<a href="#">Character Education</a>
+						<ul>
+							<li><a href="#">과학과 기술</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">역사의 이해</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">인문교양</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">철학적 사고</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="lnb-item">
+						<a href="#">Medi-Science</a>
+						<ul>
+							<li><a href="#">의과학</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">바이오과학</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">뇌과학</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="lnb-item">
+						<a href="#">Liberal 101</a>
+					</li>
+					<li class="lnb-item">
+						<a href="#">Essential Courses</a>
+					</li>
+					<li class="lnb-item">
+						<a href="#">HSMU Contents</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="sub-con side-con">
+			<div class="sub-con-in">
+				<div class="issue-box issue-box2">
+					<div class="title-wrap">
+						<ul class="nav">
+							<li><a href="#">My Page</a></li>
+							<li><i>&gt;</i><span>학습현황</span></li>
+						</ul>
+					</div>
+					<div class="sub-side-menu" id="sub-side-menu">
+						<div class="sub-side-menu-in">
+							<a href="/msMyStudyL.html" class="current">학습현황</a>
+							<a href="/msMyShareL.html">콘텐츠 공유내역</a>
+							<a href="/msMyContL.html">즐겨찾기</a>
+							<a href="/msMyMimL.html">개인정보수정</a>
+						</div>
+					</div>
+					<script>
+						// 메뉴 스크롤 있을때 path 감추기
+						$('.title-wrap .nav').addClass('menuHidden');
+						// 메뉴 스크롤 스크립트
+						$(window).on("load",function(){
+							var $subSideMenu = $('#sub-side-menu');
+							var _left = 0;
+							if($subSideMenu.width() < $subSideMenu.find('.current').offset().left + $subSideMenu.find('.current').width()) {
+								_left = Math.round(($subSideMenu.find('.current').offset().left + $subSideMenu.find('.current').width()) - $subSideMenu.width() + 5) * -1
+							}
+							leftValue = _left + 'px';
+							$subSideMenu.mCustomScrollbar({
+								axis:"x",
+								setLeft: leftValue,
+								theme:"dark-thin",
+								autoExpandScrollbar:true,
+								advanced:{autoExpandHorizontalScroll:true}
+							});
+						});
+					</script>
+					<div class="contentArea">
+						<div class="sub-con-box">
+							<h3 class="h3-1">연간 학습 현황</h3>
+							<div class="myInfoArea">
+								<div class="myzoneTable">
+									<table class="myzone" cellpadding="0" cellspacing="0" border="0" summary="월별, 누적 포인트 및 랭킹 정보 제공">
+										<caption>포인트 현황 상세 내역</caption>
+										<colgroup>
+											<col width="33%"/>
+											<col width="33%"/>
+											<col width="*%"/>
+										</colgroup>
+										<thead>
+											<th scope="col" class="first">구분</th>
+											<th scope="col">학습시간</th>
+											<th scope="col">학습편수</th>
+										</thead>
+										<tbody>
+											<tr>
+												<th scope="row" class="alignC first">전체</th>
+												<td class="alignC word">01시간 08분 49초</td>
+												<td class="alignC">11편</td>
+											</tr>
+											<tr>
+												<th scope="row" class="alignC first">인문학</th>
+												<td class="alignC word">00시간 28분 22초</td>
+												<td class="alignC">4편</td>
+											</tr>
+											<tr>
+												<th scope="row" class="alignC first">리더십/감성</th>
+												<td class="alignC word">00시간 07분 12초</td>
+												<td class="alignC">1편</td>
+											</tr>
+											<tr>
+												<th scope="row" class="alignC first">경제/경영</th>
+												<td class="alignC word">00시간 11분 24초</td>
+												<td class="alignC">2편</td>
+											</tr>
+											<tr>
+												<th scope="row" class="alignC first">산업</th>
+												<td class="alignC word">00시간 10분 56초</td>
+												<td class="alignC">2편</td>
+											</tr>
+											<tr>
+												<th scope="row" class="alignC first">트렌드</th>
+												<td class="alignC word">00시간 10분 55초</td>
+												<td class="alignC">2편</td>
+											</tr>
+
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="myInfoArea">
+								<div class="myInfoTab type01">
+									<ul class="cFix">
+										<li class="on"><a href="#tab1"><div>월별 학습현황</div></a></li>
+										<li><a href="#tab2"><div>기간별 재생목록</div></a></li>
+										<li><a href="#tab3"><div>수강과목</div></a></li>
+									</ul>
+								</div>
+								<script>
+									$('.myInfoTab li').on('click', function(e){
+										var $this = $(this);
+										var $target = $this.find('>a').attr('href');
+										$this.siblings().removeClass('on').end().addClass('on');
+										$('.learningData').removeClass('on');
+										$($target).addClass('on');
+									});
+								</script>
+								<div class="learningData on" id="tab1">
+									<div class="quali">
+										<select title="연도선택" id="p_year" onchange="setYear(this.value)">
+											<option value="2023" title="2023년" selected>2023년</option>
+											<option value="2022" title="2022년" >2022년</option>
+											<option value="2021" title="2021년" >2021년</option>
+										</select>
+									</div>
+									<div class="myzoneTable">
+										<table class="myzone" cellpadding="0" cellspacing="0" border="0" summary="연도별 월별 학습 시간, 편수 정보 제공">
+											<caption>월별 학습 현황</caption>
+											<colgroup>
+												<col width="22%"/>
+												<col width="26%"/>
+												<col width="26%"/>
+											</colgroup>
+											<thead>
+												<th scope="col" class="first">구분</th>
+												<th scope="col">학습시간</th>
+												<th scope="col">학습편수</th>
+											</thead>
+											<tbody id="learningData_month">
+												<tr>
+													<th scope="row" class="alignC first">01월</th>
+													<td class="alignC word">00시간 13분 07초</td>
+													<td class="alignC">2편</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+
+								<div class="learningData" id="tab2">
+									<div class="myInfoArea">
+										<div class="quali type02">
+											<fieldset>
+												<legend>기간별 학습 조회 상세 정보 선택</legend>
+												<div class="line">
+													<div class="date top">
+														<div class="year">
+															<select title="시작 연도 선택" id="p_syear">
+																<option value="2023" title="2023년" selected>2023년</option>
+																<option value="2022" title="2022년" >2022년</option>
+																<option value="2021" title="2021년" >2021년</option>
+															</select>
+														</div>
+														<div>
+															<select title="시작 월 선택" id="p_smon">
+																<option value="01" title="01월">01월</option>
+																<option value="02" title="02월">02월</option>
+																<option value="03" title="03월">03월</option>
+																<option value="04" title="04월">04월</option>
+																<option value="05" title="05월">05월</option>
+																<option value="06" title="06월">06월</option>
+																<option value="07" title="07월">07월</option>
+																<option value="08" title="08월">08월</option>
+																<option value="09" title="09월">09월</option>
+																<option value="10" title="10월">10월</option>
+																<option value="11" title="11월">11월</option>
+																<option value="12" title="12월">12월</option>
+															</select>
+														</div>
+														<div>
+															<select title="시작 일 선택" id="p_sday">
+																<option value="01" title="01일">01일</option>
+																<option value="02" title="02일">02일</option>
+																<option value="03" title="03일">03일</option>
+																<option value="04" title="04일">04일</option>
+																<option value="05" title="05일">05일</option>
+																<option value="06" title="06일">06일</option>
+																<option value="07" title="07일">07일</option>
+																<option value="08" title="08일">08일</option>
+																<option value="09" title="09일">09일</option>
+																<option value="10" title="10일">10일</option>
+																<option value="11" title="11일">11일</option>
+																<option value="12" title="12일">12일</option>
+																<option value="13" title="13일">13일</option>
+																<option value="14" title="14일">14일</option>
+																<option value="15" title="15일">15일</option>
+																<option value="16" title="16일">16일</option>
+																<option value="17" title="17일">17일</option>
+																<option value="18" title="18일">18일</option>
+																<option value="19" title="19일">19일</option>
+																<option value="20" title="20일">20일</option>
+																<option value="21" title="21일">21일</option>
+																<option value="22" title="22일">22일</option>
+																<option value="23" title="23일">23일</option>
+																<option value="24" title="24일">24일</option>
+																<option value="25" title="25일">25일</option>
+																<option value="26" title="26일">26일</option>
+																<option value="27" title="27일">27일</option>
+																<option value="28" title="28일">28일</option>
+																<option value="29" title="29일">29일</option>
+																<option value="30" title="30일">30일</option>
+																<option value="31" title="31일">31일</option>
+															</select>
+														</div>
+														<div>부터</div>
+													</div>
+													<div class="date bot">
+														<div class="year">
+															<select title="끝 연도 선택" id="p_eyear">
+																<option value="2023" title="2023년" selected>2023년</option>
+																<option value="2022" title="2022년" >2022년</option>
+																<option value="2021" title="2021년" >2021년</option>
+															</select>
+														</div>
+														<div>
+															<select title="끝 월 선택" id="p_emon">
+																<option value="01" title="01월">01월</option>
+																<option value="02" title="02월">02월</option>
+																<option value="03" title="03월">03월</option>
+																<option value="04" title="04월">04월</option>
+																<option value="05" title="05월">05월</option>
+																<option value="06" title="06월">06월</option>
+																<option value="07" title="07월">07월</option>
+																<option value="08" title="08월">08월</option>
+																<option value="09" title="09월">09월</option>
+																<option value="10" title="10월">10월</option>
+																<option value="11" title="11월">11월</option>
+																<option value="12" title="12월">12월</option>
+															</select>
+														</div>
+														<div>
+															<select title="끝 일 선택" id="p_eday">
+																<option value="01" title="01일">01일</option>
+																<option value="02" title="02일">02일</option>
+																<option value="03" title="03일">03일</option>
+																<option value="04" title="04일">04일</option>
+																<option value="05" title="05일">05일</option>
+																<option value="06" title="06일">06일</option>
+																<option value="07" title="07일">07일</option>
+																<option value="08" title="08일">08일</option>
+																<option value="09" title="09일">09일</option>
+																<option value="10" title="10일">10일</option>
+																<option value="11" title="11일">11일</option>
+																<option value="12" title="12일">12일</option>
+																<option value="13" title="13일">13일</option>
+																<option value="14" title="14일">14일</option>
+																<option value="15" title="15일">15일</option>
+																<option value="16" title="16일">16일</option>
+																<option value="17" title="17일">17일</option>
+																<option value="18" title="18일">18일</option>
+																<option value="19" title="19일">19일</option>
+																<option value="20" title="20일">20일</option>
+																<option value="21" title="21일">21일</option>
+																<option value="22" title="22일">22일</option>
+																<option value="23" title="23일">23일</option>
+																<option value="24" title="24일">24일</option>
+																<option value="25" title="25일">25일</option>
+																<option value="26" title="26일">26일</option>
+																<option value="27" title="27일">27일</option>
+																<option value="28" title="28일">28일</option>
+																<option value="29" title="29일">29일</option>
+																<option value="30" title="30일">30일</option>
+																<option value="31" title="31일">31일</option>
+															</select>
+														</div>
+														<div>까지</div>
+													</div>
+												</div>
+												<div class="last cFix">
+													<div class="dateBtn">
+														<button type="button" class="btn btn_search_3month" onclick="setDate('3month')">최근 3개월</button> <button type="button" class="btn btn_search_today" onclick="setDate('today')">오늘로 맞추기</button>
+													</div>
+													<div class="searchBtn">
+														<button type="button" class="btn btn_search" onclick="searchLog()"><img src="./images/my/bg_search.png"/>조회</button>
+													</div>
+												</div>
+											</fieldset>
+										</div>
+									</div>
+									<div class="inquiryList">
+										<div class="logInfo">
+											<span><em id="sdate_text">2022.12.30</em> ~ <em id="edate_text">2023.01.29</em></span>
+											<span>총 시청 내역 : <em id="totalTime_text">15</em>분 / <em id="totalCnt_text">9</em>편</span>
+										</div>
+										<ul id="contLItems">
+											<li>
+												<input type="hidden" name="p_cseq[]" value="134995"/>
+												<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=134995')" title="중국 역사의 심장, 천안문 광장">
+													<dl>
+														<dt>인문학</dt>
+														<dd>
+															<p><em>[도읍지로 중국 읽기]</em> 중국 역사의 심장, 천안문 광장</p>
+															<span>학습일 : 2023.01.29</span>학습시간 : 06분 26초
+														</dd>
+													</dl>
+												</a>
+											</li>
+											<li>
+												<input type="hidden" name="p_cseq[]" value="136232"/>
+												<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=136232')" title="북한발 위기, 어떻게?">
+													<dl>
+														<dt>인문학</dt>
+														<dd>
+															<p><em>[生生 북한읽기]</em> 북한발 위기, 어떻게?</p>
+															<span>학습일 : 2023.01.29</span>학습시간 : 06분 41초
+														</dd>
+													</dl>
+												</a>
+											</li>
+											<li>
+												<input type="hidden" name="p_cseq[]" value="116314"/>
+												<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=116314')" title="권력의 맛">
+													<dl>
+														<dt>리더십/감성</dt>
+														<dd>
+															<p><em>[건국의 정치]</em> 권력의 맛</p>
+															<span>학습일 : 2023.01.18</span>학습시간 : 00분 00초
+														</dd>
+													</dl>
+												</a>
+											</li>
+											<li>
+												<input type="hidden" name="p_cseq[]" value="109027"/>
+												<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=109027')" title="다크 데이터의 부상">
+													<dl>
+														<dt>경제/경영</dt>
+														<dd>
+															<p><em>[경영전략]</em> 다크 데이터의 부상</p>
+															<span>학습일 : 2023.01.18</span>학습시간 : 00분 00초
+														</dd>
+													</dl>
+												</a>
+											</li>
+											<li>
+												<input type="hidden" name="p_cseq[]" value="122031"/>
+												<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=122031')" title="황제를 시험한 신하">
+													<dl>
+														<dt>리더십/감성</dt>
+														<dd>
+															<p><em>[제왕학의 교과서 자치통감]</em> 황제를 시험한 신하</p>
+															<span>학습일 : 2023.01.12</span>학습시간 : 00분 00초
+														</dd>
+													</dl>
+												</a>
+											</li>
+											<li>
+												<input type="hidden" name="p_cseq[]" value="135532"/>
+												<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=135532')" title="사랑에 대한 눈부신 탐구 『향연』">
+													<dl>
+														<dt></dt>
+														<dd>
+															<p><em>[인문의 샘]</em> 사랑에 대한 눈부신 탐구 『향연』</p>
+															<span>학습일 : 2023.01.12</span>학습시간 : 00분 00초
+														</dd>
+													</dl>
+												</a>
+											</li>
+											<li>
+												<input type="hidden" name="p_cseq[]" value="96860"/>
+												<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=96860')" title="'새 양말 신기'의 의미">
+													<dl>
+														<dt>인문학</dt>
+														<dd>
+															<p><em>[시가 있는 풍경]</em> '새 양말 신기'의 의미</p>
+															<span>학습일 : 2023.01.09</span>학습시간 : 00분 00초
+														</dd>
+													</dl>
+												</a>
+											</li>
+											<li>
+												<input type="hidden" name="p_cseq[]" value="135314"/>
+												<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=135314')" title="디지털 광고 후발주자 ‘MS’, 판도 바꿀까?">
+													<dl>
+														<dt>경제/경영</dt>
+														<dd>
+															<p><em>[이슈 브리핑]</em> 디지털 광고 후발주자 ‘MS’, 판도 바꿀까?</p>
+															<span>학습일 : 2023.01.09</span>학습시간 : 02분 02초
+														</dd>
+													</dl>
+												</a>
+											</li>
+											<li>
+												<input type="hidden" name="p_cseq[]" value="134472"/>
+												<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=134472')" title="북극여우와 사막여우를 바라보는 마음">
+													<dl>
+														<dt>인문학</dt>
+														<dd>
+															<p><em>[수학, 인생을 풀다]</em> 북극여우와 사막여우를 바라보는 마음</p>
+															<span>학습일 : 2023.01.09</span>학습시간 : 00분 00초
+														</dd>
+													</dl>
+												</a>
+											</li>
+
+											<li class="moreBtn">
+												<div class="moreArea only">
+													<a href="javascript:scrollToOffset(0)" class="btnTop">맨 위로</a>
+												</div>
+											</li>
+
+										</ul>
+									</div>
+								</div>
+								<div class="learningData" id="tab3">
+									<p class="section-head">
+										홍길동님의 15주차 점수 현황
+									</p>
+									<div class="myzoneTable">
+										<table class="myzone" cellpadding="0" cellspacing="0" border="0" summary="구분, 학습시간, 학습편수 내역">
+											<caption>수강과목 현황</caption>
+											<colgroup>
+												<col width="25%" />
+												<col width="" />
+												<col width="25%" />
+											</colgroup>
+											<thead>
+												<th scope="col" class="first">구분</th>
+												<th scope="col">수료기준(총점 대비 80%)</th>
+												<th scope="col">내 점수</th>
+											</thead>
+											<tbody id="learningData_month">
+												<tr>
+													<th scope="row" class="alignC first">인사이트 문학</th>
+													<td class="alignC word">총점 3,370점 중 2,696점 획득</td>
+													<td class="alignC">0점</td>
+												</tr>
+												<tr>
+													<th scope="row" class="alignC first">인사이트 문학</th>
+													<td class="alignC word">총점 3,370점 중 2,696점 획득</td>
+													<td class="alignC">0점</td>
+												</tr>
+												<tr>
+													<th scope="row" class="alignC first">인사이트 문학</th>
+													<td class="alignC word">총점 3,370점 중 2,696점 획득</td>
+													<td class="alignC">0점</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<p class="caution2">
+										콘텐츠는 수강 기한 내에 보셔야 10점이 인정되며, 날짜가 지날 수록 점수가 깎입니다.<br />콘텐츠를 처음부터 끝까지 다 보셔야 "수강"처리 됩니다.
+									</p>
+									<p class="section-head">
+										주차별 점수 현황
+									</p>
+
+									<div class="pil-down">
+										<div class="btns">
+											<a href="#" class="button define">인사이트 인문학</a>
+										</div>
+									</div>
+									<div class="myzoneTable">
+										<table class="myzone" cellspacing="0" summary="우석체인지 현황표">
+											<thead>
+												<tr>
+													<th scope="col">주차</th>
+													<th scope="col">총 제공 <span>콘텐츠 수</span></th>
+													<th scope="col">수강한 <span>콘텐츠 수</span></th>
+													<th scope="col">내 점수</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="alignC">15주</td>
+													<td class="alignC">22편</td>
+													<td class="alignC">0편</td>
+													<td class="alignC">0점</td>
+												</tr>
+												<tr>
+													<td class="alignC">14주</td>
+													<td class="alignC">22편</td>
+													<td class="alignC">0편</td>
+													<td class="alignC">0점</td>
+												</tr>
+												<tr>
+													<td class="alignC">13주</td>
+													<td class="alignC">22편</td>
+													<td class="alignC">0편</td>
+													<td class="alignC">0점</td>
+												</tr>
+												<tr>
+													<td class="alignC">12주</td>
+													<td class="alignC">23편</td>
+													<td class="alignC">0편</td>
+													<td class="alignC">0점</td>
+												</tr>
+												<tr>
+													<td class="alignC">11주</td>
+													<td class="alignC">23편</td>
+													<td class="alignC">0편</td>
+													<td class="alignC">0점</td>
+												</tr>
+												<tr>
+													<td class="alignC">10주</td>
+													<td class="alignC">23편</td>
+													<td class="alignC">0편</td>
+													<td class="alignC">0점</td>
+												</tr>
+												<tr>
+													<td class="alignC">9주</td>
+													<td class="alignC">22편</td>
+													<td class="alignC">0편</td>
+													<td class="alignC">0점</td>
+												</tr>
+												<tr>
+													<td class="alignC">8주</td>
+													<td class="alignC">22편</td>
+													<td class="alignC">0편</td>
+													<td class="alignC">0점</td>
+												</tr>
+												<tr>
+													<td class="alignC">7주</td>
+													<td class="alignC">22편</td>
+													<td class="alignC">0편</td>
+													<td class="alignC">0점</td>
+												</tr>
+												<tr>
+													<td class="alignC">6주</td>
+													<td class="alignC">23편</td>
+													<td class="alignC">0편</td>
+													<td class="alignC">0점</td>
+												</tr>
+												<tr>
+													<td class="alignC">5주</td>
+													<td class="alignC">22편</td>
+													<td class="alignC">0편</td>
+													<td class="alignC">0점</td>
+												</tr>
+												<tr>
+													<td class="alignC">4주</td>
+													<td class="alignC">23편</td>
+													<td class="alignC">0편</td>
+													<td class="alignC">0점</td>
+												</tr>
+												<tr>
+													<td class="alignC">3주</td>
+													<td class="alignC">22편</td>
+													<td class="alignC">0편</td>
+													<td class="alignC">0점</td>
+												</tr>
+												<tr>
+													<td class="alignC">2주</td>
+													<td class="alignC">23편</td>
+													<td class="alignC">0편</td>
+													<td class="alignC">0점</td>
+												</tr>
+												<tr>
+													<td class="alignC">1주</td>
+													<td class="alignC">23편</td>
+													<td class="alignC">0편</td>
+													<td class="alignC">0점</td>
+												</tr>
+										
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+	<div class="footer">
+		<div class="footer-in">
+			<ul class="link">
+				<li><a href="javascript:windowPopup('/msUse.html')">이용약관</a></li>
+				<li><a href="javascript:windowPopup('/msCopyright.html')">저작권정책</a></li>
+				<li><a href="javascript:windowPopup('/msPrivate.html')">개인정보처리방침</a></li>
+				<li><a href="javascript:windowPopup('/msErules.html','','400','200')">이메일주소 무단수집거부</a></li>
+			</ul>
+			<div class="contact">
+				<strong class="tit">이용문의</strong>
+				<span class="tel">02-2143-8507</span>
+			</div>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>

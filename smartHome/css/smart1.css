@@ -1,0 +1,244 @@
+@charset "utf-8";
+
+body {background:#4f4238 url('../images/type1/common/_bg_common.png') 0 0 no-repeat;
+	-webkit-background-size:100% 100%;
+	background-size:100% 100%;
+}
+body.codeBlue {background:#2b3f58 url('../images/type1/common/_bg_common_blue.png') 0 0 no-repeat;
+	-webkit-background-size:100% 100%;
+	background-size:100% 100%;
+}
+
+.wrap {min-width:1200px}
+
+.nav {overflow:auto; overflow-x:hidden; position:absolute; top:0; left:-300px; bottom:0; width:300px;
+	background:url('../images/type1/common/bg_navback.png') 100% 0 repeat-y;
+	background-color:rgba(0,0,0, 0.2);
+	will-change: left;
+	-webkit-transition:left ease-out 0.3s;
+	transition:left ease-out 0.3s;
+}
+.nav .navList {padding:145px 0 0 75px; width:300px;}
+.nav .navList li {margin-bottom:30px;}
+.nav .navList li a {display:block; line-height:60px; font-weight:bold; font-size:20px;}
+.nav .navList li a:hover {color:#fff;}
+.nav .navList li a::before {content:''; display:inline-block; vertical-align:middle; width:60px; height:60px; margin-right:24px; background:url('../images/type1/common/bg_nav.png') 0 0 no-repeat;}
+.nav .navList li:nth-child(2) a::before {background-position:0 -300px;}
+.nav .navList li:nth-child(3) a::before {background-position:0 -60px;}
+.nav .navList li:nth-child(4) a::before {background-position:0 -120px;}
+.nav .navList li:nth-child(5) a::before { background-position:0 -180px;}
+.nav .navList li:nth-child(6) a::before {background-position:0 -240px;}
+
+.contentbox .header {overflow:hidden; position:relative; padding:14px 0; height:70px;}
+.contentbox .header h1 {text-align:center; line-height:40px;}
+.contentbox .header h1 img {vertical-align:middle;}
+.contentbox .header .viewList {overflow:hidden; position:absolute; top:0; left:0;}
+.contentbox .header .viewList a {float:left; display:block; width:70px; height:70px; background:url('../images/type1/common/bg_list.png') center center no-repeat;}
+.contentbox .header .viewList a.topprev {background:url('../images/type1/common/bg_top_back.png') center center no-repeat;}
+.main .contentbox .header .viewList a.topprev {display:none;}
+.contentbox .header .viewList a span {color:transparent;}
+.contentbox .header .searchbox {position:absolute; top:14px; left:140px; right:140px; padding-right:70px; border:1px solid transparent;}
+.main .contentbox .header .searchbox {/*left:70px;*/}
+.contentbox .header .searchbox a {overflow:hidden; display:inline-block; width:21px; height:21px;}
+.contentbox .header .searchbox .topRbtn {position:absolute; right:15px; top:10px;}
+.contentbox .header .searchbox input {display:none; width:100%; padding-left:20px; border:0 none; background:transparent;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+}
+.contentbox .header .searchbox .searchClose {display:none;}
+.contentbox .header .searchbox .searchBtn {background:url('../images/type1/common/bg_search.png') 0 0 no-repeat;}
+.contentbox .header .searchbox .searchBtn span {color:transparent;}
+
+.contentbox .header .topRbtn2 {overflow:hidden; position:absolute; top:0; right:0;}
+.contentbox .header .topRbtn2 a {float:left; display:block; width:70px; height:70px;}
+.contentbox .header .topRbtn2 .bookmark {background:url('../images/type1/common/bg_top_star.png') center center no-repeat;}
+.contentbox .header .topRbtn2 .pageCancel {background:url('../images/type1/common/bg_top_cancel.png') center center no-repeat;}
+.contentbox .header .topRbtn2 span {color:transparent;}
+
+.contentbox .searchboxOn .searchbox {border:1px solid #2e2620;
+	background-color:rgba(255,255,255, 0.1);
+	-webkit-border-radius:20px;
+	border-radius:20px;
+}
+.contentbox .searchboxOn .searchbox input {display:inline-block;}
+.contentbox .searchboxOn .searchbox .searchClose {margin-right:10px; width:20px; height:20px; display:inline-block; background:url('../images/type1/common/bg_input_cancel.png') center center no-repeat;}
+.contentbox .searchboxOn .searchbox .searchClose span {color:transparent;}
+.contentbox .searchboxOn h1 {display:none;}
+
+html.menuOpen {overflow:hidden;}
+html.menuOpen body {height:100%; overflow:hidden;}
+html.menuOpen .nav {display:block; left:0;}
+.contentbox {position:relative; z-index:1;
+	/*transition:transform 0.7s;*/
+	will-change: transition;
+	-webkit-transition:left ease-out 0.2s;
+	transition:left ease-out 0.2s;
+	left:0;
+}
+html.menuOpen .contentbox {height:800px; left:300px;
+	/*-webkit-transform:translate3d(400px, 0, 0);
+	transform:translate3d(400px, 0, 0);*/
+}
+
+/* 줄바꿈 */
+.listBox > li .detailBox .tit,
+.textover {overflow:hidden;white-space:nowrap; word-wrap:normal; text-overflow:ellipsis; display:block;}
+
+/* 2줄 바꿈 */
+.listBox > li .detailBox .des,
+.textover2 {white-space:normal; overflow:hidden; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; box-orient: vertical; word-wrap:break-word;}
+
+.smartListWrap {
+	display:-webkit-flex;
+	display:flex;
+	height:calc(800px - 95px);
+	-webkit-align-items:center;
+	align-items:center;
+}
+.smartList {position:relative; width:1020px; margin:0 auto;
+}
+.smartList .flipWrap {position:absolute; top:0; left:340px;}
+.smartList .flipWrap .flip {float:left; margin:0 0 0 6px;}
+.smartList .flipWrap .flip.flipStep4,
+.smartList .flipWrap .flip.flipStep5,
+.smartList .flipWrap .flip.flipStep6 {margin-top:6px;}
+
+.smartList .flipWrap .flip {position:relative; width:220px; height:240px;}
+
+.smartList .flipWrap .flipIn {width: 100%; height: 100%; position: absolute;}
+
+.smartList .flipWrap .flipIn .front,
+.smartList .flipWrap .flipIn .back {position: absolute; display: block; height: 100%; width: 100%; overflow:hidden;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+.smartList .flipWrap .flipIn .back {z-index:-1; padding:40px 0 0 0; text-align:center;}
+.smartList .flipWrap .flipIn .back h2 {font-size:24px; font-weight:bold; color:#fff;}
+.smartList .flipWrap .flipIn .back ul {margin:16px 40px 0;}
+.smartList .flipWrap .flipIn .back ul li {border-top:1px solid #5082c4;}
+.smartList .flipWrap .flipStep1 .flipIn .back ul li {border-top-color:#ab452b;}
+.smartList .flipWrap .flipStep2 .flipIn .back ul li {border-top-color:#f0880c;}
+.smartList .flipWrap .flipStep3 .flipIn .back ul li {}
+.smartList .flipWrap .flipStep4 .flipIn .back ul li {border-top-color:#6a8323;}
+.smartList .flipWrap .flipStep5 .flipIn .back ul li {border-top-color:#2e855f;}
+.smartList .flipWrap .flipStep6 .flipIn .back ul li {border-top-color:#5c419c;}
+.smartList .flipWrap .flipIn .back ul li:first-child {border-top:0 none;}
+.smartList .flipWrap .flipIn .back a {display:block; padding:7px 0; font-size:18px; font-weight:bold;}
+.smartList .flipWrap .flipIn .back a:hover {color:#fff;}
+.smartList .flipWrap .flipIn.flipped .front {z-index:-1;}
+.smartList .flipWrap .flipIn.flipped .back {z-index:0;}
+.smartList .flipWrap .flipIn .back {background:url('../images/type1/common/bg_common.png') 0 0 no-repeat;
+	-webkit-background-size:100% 100%;
+	background-size:100% 100%;
+}
+
+.smartList .flipWrap .flipStep1 .flipIn .back {background-color:#ee5a37;}
+.smartList .flipWrap .flipStep2 .flipIn .back {background-color:#f79520;}
+.smartList .flipWrap .flipStep3 .flipIn .back {background-color:#73a6de;}
+.smartList .flipWrap .flipStep4 .flipIn .back {background-color:#aace44;}
+.smartList .flipWrap .flipStep5 .flipIn .back {background-color:#4fd59b;}
+.smartList .flipWrap .flipStep6 .flipIn .back {background-color:#9d84da;}
+
+.subCon {overflow:hidden;}
+.subCon .lnb {float:left; width:25%;}
+.subCon .lnb h2 {padding:20px 0 15px 30px;}
+.subCon .lnb a {display:block; padding:20px 30px; font-size:18px;}
+.subCon .lnb a:hover {color:#fff;}
+.subCon .lnb > ul {border-bottom:1px solid #231d18;}
+.subCon .lnb > ul > li {border-top:1px solid #231d18;}
+.subCon .lnb > ul > li > a {position:relative; border-top:1px solid #4f4136;}
+.subCon .lnb > ul > li > a .count {position:absolute; top:50%; right:30px; margin-top:-8px; font-size:14px; color:#ffb400;}
+.subCon .lnb > ul > li > ul {display:none;}
+.subCon .lnb > ul > li.open > a {color:#ffb400;}
+.subCon .lnb > ul > li > ul > li {border-top:1px solid #231d18;}
+.subCon .lnb > ul > li > ul > li a {border-top:1px solid #4f4136; font-size:15px; color:#b7a396;}
+.subCon .lnb > ul > li > ul > li.on a {color:#fff;}
+.subCon .listCon {overflow:hidden; margin-left:25%; min-height:705px; background-color:#fff;
+	-webkit-border-radius:5px 0 0 5px;
+	border-radius:5px 0 0 5px;
+}
+.subCon .lnb .bookmarkList {overflow:hidden; width:100%; background-color:rgba(0,0,0,0.25);}
+.subCon .lnb .bookmarkTit {margin-left:30px; padding-left:55px; padding-bottom:29px; color:#fff; font-size:24px; font-weight:bold; background:url('../images/type1/common/bg_bookmark.png') 0 14px no-repeat;}
+.subCon .lnb .bookmarkList li {float:left; width:27%; text-align:center;}
+.subCon .lnb .bookmarkList li:first-child {text-align:left;}
+.subCon .lnb .bookmarkList li:nth-child(2) {width:35%;}
+.subCon .lnb .bookmarkList li:nth-child(3) {width:38%;}
+.subCon .lnb .bookmarkList li a {padding:20px 0; background:url('../images/type1/common/bg_line.png') 0 center no-repeat;}
+.subCon .lnb .bookmarkList li:first-child a {background-image:none; padding-left:30px;}
+.subCon .lnb .bookmarkList li.on {}
+.subCon .lnb .bookmarkList li.on a {color:#f5b700;}
+.codeBlue  .subCon .lnb .bookmarkTit {background-image:url('../images/type1/common/bg_bookmark_blue.png');}
+.codeBlue .subCon .lnb .bookmarkList li.on a {color:#90c5ff;}
+
+.codeBlue .subCon .lnb > ul > li > a .count {color:#90c5ff;}
+.codeBlue .subCon .lnb > ul > li.open > a {color:#90c5ff;}
+.codeBlue .subCon .lnb > ul > li > ul > li a {color:#91a9c7;}
+.codeBlue .subCon .lnb > ul > li > ul > li.on a {color:#fff;}
+
+.codeBlue .subCon .lnb > ul {border-bottom-color:#131c28;}
+.codeBlue .subCon .lnb > ul > li {border-top-color:#131c28;}
+.codeBlue .subCon .lnb > ul > li > a {border-top-color:#283a50;}
+.codeBlue .subCon .lnb > ul > li > ul > li {border-top-color:#131c28;}
+.codeBlue .subCon .lnb > ul > li > ul > li a {border-top-color:#283a50;}
+.codeBlue .subCon .lnb .bookmarkTit {background-image:url('../images/type1/common/bg_bookmark_blue.png');}
+.codeBlue .subCon .lnb .bookmarkList li a {background-image:url('../images/type1/common/bg_line_blue.png');}
+
+
+.listBox {overflow:hidden; width:100%;}
+.listBox > li {position:relative; float:left; width:50%;}
+.listBox > li .detailBoxWrap {overflow:hidden; padding:20px;}
+.listBox > li:nth-child(2n+1) {border-right:1px solid #ddd;}
+.listBox > li:nth-child(2n+1)::after {content:''; display:block; position:absolute; bottom:0; width:200%; border-top:1px solid #ddd; }
+.listBox > li .photo {position:relative; float:left; padding-right:25px; width:34.66666666666667%;}
+.listBox > li .photo  .bookCheck {overflow:hidden; position:absolute; top:4px; left:4px; display:block; border:1px solid #9b8d82; width:32px; height:32px; background:url('../images/type1/common/bg_bookmarkicon.png') center center no-repeat;
+	background-color:rgba(255,255,255,0.75);
+	border-radius:3px;
+}
+.listBox > li .photo .bookCheckOn {border:0 none; background:url('../images/type1/common/bg_bookmarkicon_on.png') center center no-repeat;
+	background-color:rgba(245,183,0,0.9);
+}
+.listBox > li .photo img {width:100%; height:178px;}
+.listBox > li .detailBox {margin-left:34.66666666666667%;}
+.listBox > li .detailBox .tit {font-size:18px; padding:0 0 5px 0; line-height:30px; color:#222; letter-spacing:-1px; font-weight:bold;}
+.listBox > li .detailBox .des {font-size:15px; line-height:20px; color:#444; letter-spacing:-1px;}
+.listBox > li .detailBox .info {padding:20px 0 0 0; font-size:15px; color:#222;}
+.listBox > li .detailBox .info span {display:inline-block; width:25%; font-weight:bold;}
+.listBox > li .detailBox .info .time {width:20%;}
+.listBox > li .detailBox .info span::before {content:''; margin-right:5px; display:inline-block; width:18px; height:18px; vertical-align:middle;}
+.listBox > li .detailBox .info .time::before {background:url('../images/type1/common/bg_icon1.png') 0 0 no-repeat;}
+.listBox > li .detailBox .info .view::before {background:url('../images/type1/common/bg_icon2.png') 0 0 no-repeat;}
+.listBox > li .detailBox .info .point::before {background:url('../images/type1/common/bg_icon3.png') 0 0 no-repeat;}
+.listBox > li .detailBox .viewBtn {position:absolute; left:36.12244897959184%; bottom:20px; right:20px;}
+.listBox > li .detailBox .viewBtn a {display:block; height:47px; line-height:47px; border:1px solid #f49883; text-align:center; font-size:16px; font-weight:bold; background-color:#ec5431;
+	border-radius:5px;
+}
+.listBox > li .detailBox .viewBtn a:hover {color:#fff;}
+
+.listBox > li .detailBox .replay a {background-color:#af3e1b;}
+.listBox > li .detailBox .viewBtn a::before {content:''; display:inline-block; margin:-2px 10px 0 0; width:26px; height:26px; line-height:26px; vertical-align:middle; background:url('../images/type1/common/bg_icon4.png') 0 0 no-repeat;}
+.listBox > li .detailBox .replay a::before {background-image:url('../images/type1/common/bg_replay.png');}
+
+.codeBlue .listBox > li .detailBox .viewBtn a {background-color:#6297da; border-color:#c0d5f0;}
+.codeBlue .listBox > li .detailBox .replay a {background-color:#4672a9;}
+
+.bookmarkListWrap {position:relative; height:55px; border-bottom:1px solid #ccc; background-color:#ebebeb;}
+.bookmarkListWrap .bookmarkList {}
+.bookmarkListWrap .bookmarkList li {float:left;}
+.bookmarkListWrap .bookmarkList li a {display:block; width:120px; height:55px; line-height:55px; border-right:1px solid #c1c1c1; text-align:center; color:#999; font-size:18px;}
+.bookmarkListWrap .bookmarkList li.on {background-color:#fff;}
+.bookmarkListWrap .bookmarkList li.on a{color:#ec5431; font-weight:bold;}
+
+.codeBlue .bookmarkListWrap .bookmarkList li.on a{color:#6297da;}
+
+.bookmarkListWrap .typeSelect {position:absolute; right:20px; top:7px; font-size:16px; color:#444;}
+.bookmarkListWrap .typeSelect label {margin-right:14px; font-weight:bold; line-height:40px;}
+
+span.select select {width:190px; border:1px solid #d4d6d9; padding:2px 17px 2px 5px; height:40px; text-indent:0.01px; text-overflow:''; font-size:16px; background:#fff url('../images/type1/common/bg_select.png') no-repeat 100% center;
+	-webkit-border-radius:5px; border-radius:5px; -webkit-appearance:none; -moz-appearance:none;}
+.codeBlue span.select select {background-image:url('../images/type1/common/bg_select_blue.png');}
+@-moz-document url-prefix() {.select select {padding-right:0;}}
+.select select::-ms-expand {display: none;}
+
+@media (max-width: 1024px) {
+
+}

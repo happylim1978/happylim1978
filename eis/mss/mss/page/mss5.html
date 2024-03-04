@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> | MSS</title>
+	<link href="../../css/datepicker3.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/module.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/custom.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/popup.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="../../css/admin.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_eis.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_mss.css" />
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+	<script src="../../js/bootstrap-datepicker.js"></script>
+	<script src="../../js/locales/bootstrap-datepicker.kr.js"></script>
+	<script src="../../js/jquery.slimscroll.min.js"></script>
+	<script src="../../js/admin_script.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../js/html5shiv.js"></script>
+		<script src="../../js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body><!-- 배경색 변경시 class="bg" -->
+<div id="wrap"><!-- 메인일 경우 class="main" -->
+
+	<!-- contents -->
+	<div class="content_wrap">
+		<a id="btn_folding_lnb" class="btn_folding_lnb" href="#">lnb control</a>
+		<div class="wrap_max">
+
+			<!-- EP title -->
+			<div class="cont_subtit fix">
+
+				<!-- 제목 -->
+				<div class="tit_area">
+					<div class="sub_tit">
+						<span class="tit_list tit_list_tab"><!-- tit_list_tab 클래스 추가 -->
+							<span class="tit">사업기회</span>
+							<ul>
+								<li><a href="#display-tab1" class="on">전사</a></li>
+								<li><a href="#display-tab2">인재개발사업부</a></li>
+								<li><a href="#display-tab3">스마트교육사업부</a></li>
+							</ul>
+						</span>
+					</div>
+				</div>
+				<!-- //제목 -->
+
+				<div class="tbl_search tbl_search2 tbl_search_type1"><!-- 클래스 tbl_search_type1 추가 -->
+					<table>
+						<tbody>
+							<tr>
+								<th class="th10">년월</th>
+								<td class="calTd">
+									<div class="date_wrap">
+										<div class="date_input date" id="cal1">
+											<input type="text" style="width:160px;">
+											<a class="btn_calendar input-group-addon" href="#">
+												<i class="icons i_calendar">calendar</i>
+											</a>
+										</div>
+										<span>~</span>
+										<div class="date_input date" id="cal2">
+											<input type="text" style="width:160px;">
+											<a class="btn_calendar input-group-addon" href="#">
+												<i class="icons i_calendar">calendar</i>
+											</a>
+										</div>
+									</div>
+									<span class="btn_area">
+										<a href="#" class="btn_default small"><span class="small">조회</span></a>
+										<a href="#" class="btn_primary small"><span>당월</span></a>
+										<a href="#" class="btn_primary small"><span>누계</span></a>
+									</span>
+									<script>
+										$('#cal1').datepicker({
+											format: "yyyy.mm",
+											minViewMode: 1, //월력변환
+											language:'kr',
+											autoclose : true
+										})
+										.on('show', function(){$(this).addClass('active');})
+										.on('hide', function(){$(this).removeClass('active');})
+										;
+										$('#cal2').datepicker({
+											format: "yyyy.mm",
+											minViewMode: 1, //월력변환
+											language:'kr',
+											autoclose : true
+										})
+										.on('show', function(){$(this).addClass('active');})
+										.on('hide', function(){$(this).removeClass('active');})
+										;
+									</script>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+
+			</div>
+			<!--// EP title -->
+
+
+			<!-- cont -->
+			<div class="cont_wrap">
+
+				<div class="eisMain mmsMain">
+					
+					<div class="main-state chance-box">
+						<div class="chance-box-des fix">
+							<div class="c-box">
+								<p class="tit">사업기회 현황 &gt;</p>
+								<p class="tit2">전체</p>
+								<div class="graph">
+									<div class="item">
+										<div class="bar barc4" style="height: 100%;">
+											<em class="value">00억</em>
+											<em class="section">경영계획</em>
+										</div>
+									</div>
+									<div class="item">
+										<div class="bar barc5" style="height: 70%;">
+											<em class="value">00억</em>
+											<em class="section">확보매출</em>
+										</div>
+									</div>
+									<div class="item">
+										<div class="bar barc4" style="height: 100%;">
+											<em class="value">00억</em>
+											<em class="section">BO목표</em>
+										</div>
+									</div>
+									<div class="item">
+										<div class="bar barc6" style="height: 50%;">
+											<em class="value">00억</em>
+											<em class="section">BO매출</em>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="c-box">
+								<p class="tit">당월 발굴 사업기회 &gt;</p>
+								<div class="btn_area btnLine">
+									<div class="fR">
+										<span class="txt">00억원</span>
+									</div>
+								</div>
+
+								<div class="scroll" style="height:240px; border-right: 0 none;">
+									<div class="tbl_type02 mt5">
+										<table class="tableCenter" style="border-left: 0 none; border-right: 0 none;">
+											<colgroup>
+												<col width="50">
+												<col width="*">
+												<col width="60">
+												<col width="20%">
+												<col width="100">
+												<col width="100">
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col">No.</th>
+													<th scope="col">사업기회</th>
+													<th scope="col">확도</th>
+													<th scope="col">서비스라인</th>
+													<th scope="col">사업규모</th>
+													<th scope="col">목표 수주월</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td class="subject">AI 인력 양성 교육</td>
+													<td>80%</td>
+													<td>집합교육</td>
+													<td>00억원</td>
+													<td>0월</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td class="subject">디지털 금융인재 양성</td>
+													<td>60%</td>
+													<td>집합교육</td>
+													<td>00억원</td>
+													<td>0월</td>
+												</tr>
+
+											</tbody>
+										</table>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="change-box-list">
+							<div class="c-box-full">
+								<p class="tit">사업기회 현황 (사업별) &gt;</p>
+								<div class="fix">
+									<div class="c-item-box">
+										<p class="tit2">기존사업</p>
+										<div class="graph">
+											<div class="item">
+												<div class="bar barc4" style="height: 90%;">
+													<em class="value">00억</em>
+													<em class="section">경영계획</em>
+												</div>
+											</div>
+											<div class="item">
+												<ul class="section-item">
+													<li><i class="barc6"></i>BO매출</li>
+													<li><i class="barc5"></i>확보매출</li>
+												</ul>
+												<div class="bar barc5" style="height: 100%;">
+													<div class="bar-in barc6" style="height: 50%; bottom: 50%;"><span class="v">00억</span></div>
+													<div class="bar-in barc5" style="height: 50%; bottom: 0;"><span class="v">00억</span></div>
+													<em class="section">전망</em>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="c-item-box">
+										<p class="tit2">전략사업</p>
+										<div class="graph">
+											<div class="item">
+												<div class="bar barc4" style="height: 90%;">
+													<em class="value">00억</em>
+													<em class="section">경영계획</em>
+												</div>
+											</div>
+											<div class="item">
+												<ul class="section-item">
+													<li><i class="barc6"></i>BO매출</li>
+													<li><i class="barc5"></i>확보매출</li>
+												</ul>
+												<div class="bar barc5" style="height: 100%;">
+													<div class="bar-in barc6" style="height: 50%; bottom: 50%;"><span class="v">00억</span></div>
+													<div class="bar-in barc5" style="height: 50%; bottom: 0;"><span class="v">00억</span></div>
+													<em class="section">전망</em>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="c-item-box">
+										<p class="tit2">신규사업</p>
+										<div class="graph">
+											<div class="item">
+												<div class="bar barc4" style="height: 90%;">
+													<em class="value">00억</em>
+													<em class="section">경영계획</em>
+												</div>
+											</div>
+											<div class="item">
+												<ul class="section-item">
+													<li><i class="barc6"></i>BO매출</li>
+													<li><i class="barc5"></i>확보매출</li>
+												</ul>
+												<div class="bar barc5" style="height: 100%;">
+													<div class="bar-in barc6" style="height: 50%; bottom: 50%;"><span class="v">00억</span></div>
+													<div class="bar-in barc5" style="height: 50%; bottom: 0;"><span class="v">00억</span></div>
+													<em class="section">전망</em>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+			<!--// cont -->
+
+		</div>
+	</div>
+	<!--// contents -->
+
+	<!-- footer -->
+	<div calss="footer_wrap"></div>
+	<!--// footer -->
+
+</div>
+</body>
+</html>

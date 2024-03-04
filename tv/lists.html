@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<title>SERICEO TV 목록</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type="text/css">
+		* {margin:0; padding:0;}
+		body {font-family:"나눔고딕",NanumGothic,"맑은고딕","Malgun Gothic","돋움",Dotum,"굴림",Gulim,"Helvetica Neue", Helvetica, Arial, sans-serif}
+		img {border:0 none;}
+		.com_title{font-size:16px; font-weight:bold; padding:20px 0 10px 0;}
+		.com_cont{padding:20px; border:solid 2px #eee;}
+		.red{color:red; font-weight:bold;}
+		.blue{color:blue; font-weight:bold;}
+		table{width:1200px; border-spacing:0;}
+
+		.h1 {font-size:30px; padding:15px 0 0 10px; color:#fa6116;}
+		.h2 {font-size:20px; padding:15px 0 5px 0px; color:#333;}
+
+		.tab_content {display:none; padding:10px;}
+		.sub_navi {height:50px; margin:0 10px;}
+		.sub_navi li {list-style:none; float:left; margin:0 0 0 -1px; border:1px solid #ccc; text-align:center; background:#f7f7f7; min-width: 200px}
+		.sub_navi li a {display:block; padding:8px 15px; font-size:11px; color:#0958b9;}
+		.sub_navi li.selected {background:#999;}
+		.sub_navi li.selected a {color:#fff; font-weight:bold; letter-spacing:-2px;}
+
+		table.lists {border-collapse:separate; width:100%; margin-bottom: 30px; border-bottom:2px solid #999;}
+		table.lists th {border-bottom:1px solid #e3e3e3; padding:7px 0 5px 5px; color:#fff; background-color:#aaa; font-size:16px; text-align:left;}
+		table.lists th:last-child {width:30%;}
+		table.lists td {border-bottom:1px solid #e3e3e3; padding:7px 0 5px 5px; font-size:16px; line-height:1.8em;}
+		table.lists td a {font-family: Helvetica, Arial, sans-serif; text-decoration:none; color: #333 !important;}
+		table.lists td:first-child {white-space:nowrap;}
+		table.lists tr td:first-child {font-size:14px;}
+		table.lists tr:hover {background-color:#f7f7f7;}
+		table.lists .line {text-decoration:line-through;}
+		table.lists strong {color:#f00;}
+		table.lists tr.section th,
+		table.lists tr.section td {border-bottom-color:#999;}
+		p.link {padding:10px 0 0 10px; font-size:18px;}
+		p.link a {text-decoration:none;}
+		tbody + tbody tr:first-child td {border-top: 2px solid #aaa;}
+	</style>
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.js"></script>
+</head>
+<body>
+<h1 class="h1">SERICEO TV</h1>
+<div id="tab1" class="tab_content" style="display:block;">
+	<table class="lists">
+		<colgroup>
+			<col width="10%" />
+			<col />
+			<col />
+			<col />
+			<col />
+			<col />
+		</colgroup>
+		<thead>
+			<tr>
+				<th>페이지명</th>
+				<th>depth1</th>
+				<th>depth2</th>
+				<th>File-name</th>
+				<th>업데이트</th>
+				<th>비고</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>홈</td>
+				<td></td>
+				<td></td>
+				<td><a href="home.html" target="_blank">home.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+		<tbody>
+			<tr>
+				<td>로그인</td>
+				<td>로그인</td>
+				<td></td>
+				<td><a href="login.html" target="_blank">login.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>로그인 완료</td>
+				<td></td>
+				<td><a href="login-complete.html" target="_blank">login-complete.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>로그인 실패</td>
+				<td></td>
+				<td><a href="login-fail.html" target="_blank">login-fail.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>로그인 만료</td>
+				<td></td>
+				<td><a href="login-finish.html" target="_blank">login-finish.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>로그인 아이디 입력</td>
+				<td></td>
+				<td><a href="login-id.html" target="_blank">llogin-idgin-id.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>로그인 패스워드 입력</td>
+				<td></td>
+				<td><a href="login-pw.html" target="_blank">login-pw.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+		<tbody>
+			<tr>
+				<td>MY 페이지</td>
+				<td>메인</td>
+				<td></td>
+				<td><a href="my-main.html" target="_blank">my-main.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>메인 콘텐츠 없음</td>
+				<td></td>
+				<td><a href="my-main-none.html" target="_blank">my-main-none.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>최근 콘텐츠</td>
+				<td></td>
+				<td><a href="my-recent.html" target="_blank">my-recent.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>최근 콘텐츠 없음</td>
+				<td></td>
+				<td><a href="my-recent-none.html" target="_blank">my-recent-none.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>이어보기 콘텐츠</td>
+				<td></td>
+				<td><a href="my-continue-recent.html" target="_blank">my-continue-recent.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>이어보기 콘텐츠 없음</td>
+				<td></td>
+				<td><a href="my-continue-recent-none.html" target="_blank">my-continue-recent-none.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+		<tbody>
+			<tr>
+				<td>프로그램</td>
+				<td>상세보기</td>
+				<td></td>
+				<td><a href="program-detail.html" target="_blank">program-detail.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+		<tbody>
+			<tr>
+				<td>프로그램</td>
+				<td>메인</td>
+				<td></td>
+				<td><a href="program-main.html" target="_blank">program-main.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>최근</td>
+				<td></td>
+				<td><a href="programe-recent.html" target="_blank">programe-recent.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>최근 - sub</td>
+				<td></td>
+				<td><a href="programe-recent-sub.html" target="_blank">programe-recent-sub.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>최근 - sub 닫기 버튼</td>
+				<td></td>
+				<td><a href="programe-recent-sub-close.html" target="_blank">programe-recent-sub-close.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+		<tbody>
+			<tr>
+				<td>스페셜</td>
+				<td>메인</td>
+				<td></td>
+				<td><a href="special-main.html" target="_blank">special-main.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>최근</td>
+				<td></td>
+				<td><a href="special-recent.html" target="_blank">special-recent.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>최근 - sub</td>
+				<td></td>
+				<td><a href="special-recent-sub.html" target="_blank">special-recent-sub.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>최근 - sub 닫기 버튼</td>
+				<td></td>
+				<td><a href="special-recent-sub-close.html" target="_blank">special-recent-sub-close.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+		<tbody>
+			<tr>
+				<td>설정/안내</td>
+				<td>공지사항</td>
+				<td></td>
+				<td><a href="setting1.html" target="_blank">setting1.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>공지사항 레이어</td>
+				<td></td>
+				<td><a href="setting1-layer.html" target="_blank">setting1-layer.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>기기설정</td>
+				<td></td>
+				<td><a href="setting2.html" target="_blank">setting2.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>서비스 약관</td>
+				<td></td>
+				<td><a href="setting3.html" target="_blank">setting3.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>서비스 약관 레이어</td>
+				<td></td>
+				<td><a href="setting3-layer.html" target="_blank">setting3-layer.html</a></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+		<tbody>
+			<tr>
+				<td>동영상</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>

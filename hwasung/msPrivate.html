@@ -1,0 +1,835 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="ko" xml:lang="ko">
+<head>
+<title>Ust inSighT</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta http-equiv="content-script-type" content="text/html"/>
+<meta http-equiv="content-style-type" content="text/css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+<link rel="icon" type="image/x-icon" href="?v=1"/>
+<link rel="shortcut_icon" type="image/x-icon" href=""/>
+<link rel="apple-touch-icon" href=""/>
+<link rel="apple-touch-icon-precomposed" href=""/>
+<link rel="stylesheet" href="https://seri.ust.ac.kr/css/jquery.mobile-1.4.5.min.css"/>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.mobile-default.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.mobile-1.4.5.min.js"></script>
+
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jqueryFunc.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/common.js"></script>
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/common.css"/>
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/sub.css"/>
+<style type="text/css">
+	.subArea4{font:12px/20px '돋움',Dotum,sans-serif;display:block;}
+	.subArea4 h2{margin-top:15px;font-weight:normal;}
+	.subArea4 h3{margin-top:30px;margin-bottom:12px;font-size:1.28em;}
+	.subArea4 strong{display:block;font-size:12px;margin-top:10px;margin-left:10px;}
+	.subArea4 p{margin-bottom:10px;margin-left:20px;}
+	.subArea4 ul{margin-left:20px;}
+	.subArea4 ul li div{margin-left:-3px;}
+	.subArea4 .indent{padding-left:14px;text-indent:-14px;}
+	.subArea4 .indent div{padding-left:0;text-indent:0;}
+	.subArea4 .indent div.indent{padding-left:15px;text-indent:-15px;}
+
+	.fixedArea{position:fixed;top:0;left:0;right:0;padding:15px;background:#fff;}
+	.subArea4{padding-top:28px;}
+
+.table1{text-align:center;width:100%;}
+.table1 span{display:inline-block;}
+.table1 th{border-top:1px solid #ccc;border-bottom:1px solid #ccc;border-right:1px solid #ccc;padding:3px;background:#fafafa;}
+.table1 th:first-child{border-left:1px solid #ccc;}
+.table1 td{border-bottom:1px solid #ccc;border-right:1px solid #ccc;padding:3px;}
+.table1 td:first-child{border-left:1px solid #ccc;}
+.ui-btn {/*width:300px;*/float:right;}
+
+.trustPopDiv {margin:10px 10px 10px 10px; }
+.trustPopup {font-size: 13px; padding:30px 15px 15px 20px; text-align:center;}
+.trustPopup .table1 th{padding:10px;}
+.trustPopup .table1 td{padding:10px;}
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#versionCheck").change(function(){
+		$("#versionCheck option").each(function(idx, item){
+			if(this.selected){
+				$("#ver"+this.value).show();
+			}
+			else{
+				$("#ver"+this.value).hide();
+			}
+		});
+	});
+});
+
+function openPopup() {
+	$('#trustPop').popupDialog('open');
+}
+</script>
+</head>
+<body>
+<div data-role="page" id="main">
+<div data-role="popup" id="trustPop" class="trustPopDiv" title="" data-corners="false" data-overlay-theme="a" >
+	<a href="" data-role="button" data-rel="back" data-theme="d" data-icon="delete" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-btn-right">닫기</a>
+	<div class="trustPopup">
+		<strong><개인정보 처리 위탁 정보></strong>
+		<!--
+		<table cellpadding="0" cellspacing="0" border="0" summary="개인정보 취급 위탁" class="table1" style="margin-top: 10px; font:normal 85%;">
+			<colgroup>
+				<col width="25%"/>
+				<col width="*"/>
+				<col width="25%"/>
+				<col width="25%"/>
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col"><span>개인정보를 </span><span>제공받는 자</span></th>
+					<th scope="col"><span>개인정보 </span><span>이용 목적</span></th>
+					<th scope="col"><span>개인정보의 </span><span>항목</span></th>
+					<th scope="col"><span>개인정보 </span><span>보유/</span><span>이용기간</span></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="first">KT, 슈어엠주식회사</td>
+					<td>SMS, LMS, MMS 발송</td>
+					<td>성명, 휴대전화번호</td>
+					<td>위탁운영 계약기간</td>
+				</tr>
+				<tr>
+					<td class="first">GS엠비즈</td>
+					<td>이벤트 상품 배송</td>
+					<td>휴대전화번호</td>
+					<td>3개월</td>
+				</tr>
+				<tr>
+					<td class="first">(주)아이마켓코리아</td>
+					<td>카카오톡 메시지, SMS, LMS, MMS 발송</td>
+					<td>성명, 휴대폰번호</td>
+					<td>위탁운영 계약기간</td>
+				</tr>
+			</tbody>
+		</table>
+		-->
+		<table cellpadding="0" cellspacing="0" border="0" align="center" class="table1" style="margin-top: 10px; font:normal 85%;">
+			<colgroup>
+				<col width="50%"/>
+				<col width="*"/>
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">개인정보를 제공받는 자</th>
+					<th scope="col">위탁업무 목적</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>KT, 슈어엠주식회사</td>
+					<td>SMS, LMS, MMS 발송</td>
+				</tr>
+				<tr>
+					<td>아이마켓코리아</td>
+					<td>카카오톡 메시지, SMS, LMS, MMS 발송</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+	<div data-role="content">
+		<div class="content cFix">
+			<div class="fixedArea">
+				<div class="naviTitle noOption">
+					<h2>개인정보처리방침</h2>
+					<!--
+					<div class="versionSelect" style="width:150px; position: absolute;height: 100px;right: 30px;top: -7px;  font-size:5pt;">
+						<select name="versionCheck" id="versionCheck" style=" font-size:10pt;">
+							<option value="2">개인정보처리방침 V1.2</option>
+							<option value="1">개인정보처리방침 V1.1</option>
+							<option value="0">개인정보처리방침 V1.0</option>
+						</select>
+					</div>
+					-->
+				</div>
+			</div>
+
+			<div id="ver2" class="subArea4">
+<style type="text/css">
+	.simpleTable {margin-top:10px; border-top:1px solid #111; border-top:1px solid #aaa;}
+	.simpleTable table {table-layout:fixed; width:100%;}
+	.simpleTable table th,
+	.simpleTable table td {padding:0 5px; font-size:12px; line-height:18px;}
+	.simpleTable table th {border-top:1px solid #111;}
+	.simpleTable table td {border-top:1px solid #ddd; text-align:center;}
+</style>
+</br></br>
+	<p style="margin:20px 0 0;">(주)멀티캠퍼스는 이용자의 소속사로부터 교육서비스 업무를 위임받았습니다. (주)멀티캠퍼스(이하 '회사')는 이용자의 개인정보를 중요시하며, '정보통신망 이용촉진 및 정보보호'에 관한 법률과 개인정보보호법 등을 준수하고 있습니다.<br/>회사는 개인정보처리방침을 통하여 이용자님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려 드립니다.
+	회사는 개인정보처리방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)을 통하여 공지할 것입니다.</p>
+
+	<p style="margin:20px 0 0;">회사의 개인정보처리방침은 다음과 같은 내용을 담고 있습니다.</p>
+	<ul>
+		<li>1. 수집하는 개인정보 항목 및 수집방법</li>
+		<li>2. 개인정보의 수집 및 이용목적</li>
+		<li>3. 수집한 개인정보의 공유 및 제공</li>
+		<li>4. 개인정보처리 위탁</li>
+		<li>5. 수집한 개인정보의 보유 및 이용기간</li>
+		<li>6. 개인정보의 파기절차 및 방법</li>
+		<li>7. 개인정보의 안전성 확보 조치</li>
+		<li>8. 이용자의 권리와 그 행사방법</li>
+		<li>9. 개인정보 자동 수집 장치의 설치ㆍ운영 및 그 거부에 관한 사항</li>
+		<li>10. 개인정보 관리책임자 및 담당자의 소속 - 성명 및 연락처</li>
+		<li>11. 고지의 의무</li>
+	</ul>
+
+	<p>본 방침은 2023년 2월 24일부터 시행됩니다.</p>
+	</br>
+	<h3>1. 수집하는 개인정보의 항목 및 수집방법</h3>
+	<ul>
+		<li>□ 수집항목
+			<ul>
+				<li>가. 필수정보</li>
+				<li class="marL20">- 이름, 회원ID, 패스워드, 이메일주소, 휴대전화번호, 수강과목</li>
+				<li>나. 서비스 이용과정이나 사업처리 과정에서 아래의 정보들이 생성되어 수집될 수 있습니다.</li>
+				<li class="marL20">- 서비스 이용기록, 접속로그, 크기, 접속 IP 정보</li>
+			</ul>
+		<li>
+
+		<li>□ 수집방법
+			<ul>
+				<li>회사는 다음과 같은 방법으로 개인정보를 수집합니다.</li>
+				<li class="marL20">- 웹사이트에서 이용자 회원가입 시 직접 개인정보 입력/수정 <br/>- 이용자의 소속 기관에서 대상자(이용자) 정보를 회사에 전달</li>
+			</ul>
+		<li>
+		<li>□ 이용자는 동의를 거부할 권리가 있습니다. 동의를 거부할 경우 상기의 정보수집을 필요로 하는 교육서비스를 제공받으실 수 없습니다.</li>
+	</ul>
+
+	</br>
+	<h3>2. 개인정보의 수집 및 이용목적</h3>
+	<p>□ 회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.</p>
+	<ul>
+		<li>- 회원 가입과 서비스 제공을 위한 의사 확인 및 본인 인증, 이용자 식별, 회원탈퇴 의사의 확인 등 회원 관리</li>
+		<li>- 제공되는 콘텐츠 및 서비스 이용에 관한 인구통계학적 분석, 서비스 방문 및 이용기록 분석, 개인정보 및 관심사에 기반한 맞춤형 서비스나 커뮤니티 등의 서비스를 제공</li>
+		<li>- 이용약관을 위반하거나 서비스의 원활한 운영에 지장을 주는 행위에 대한 방지 및 제재, 분쟁조정을 위한 기록 보존과 민원처리 등 이용자 보호 및 서비스 운영</li>
+		<li>- 우수회원 및 이벤트를 위한 상품 배송 및 회원 요청사항 답변</li>
+		<li>- 보안, 프라이버시, 안전을 위한 서비스 환경 최적화</li>
+		<li>- 콘텐츠 안내 및 고지사항 전달을 위한 서비스 제공 경로의 확보</li>
+	</ul>
+	</br>
+	<h3>3. 수집한 개인정보의 공유 및 제공 [개인정보의 제3자 제공 등]</h3>
+	<p>□ 회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 아래의 경우에는 예외로 합니다.</p>
+	<ul>
+		<li>- 이용자들이 사전에 동의한 경우</li>
+		<li>- 법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우</li>
+		<li>- 이용자의 소속사로부터 위임받은 교육서비스와 관련하여 과목별 수강 실적 관리, 학사관리를 위해 소속사에 교육 결과 데이터를 제공하는 경우</li>
+	</ul>
+	</br>
+	<h3>4. 개인정보의 처리위탁</h3>
+	<ul>
+		<li>□ 회사는 서비스 이행을 위해 외부 전문업체에 위탁하여 운영하고 있습니다.<br/>
+		자세한 내역을 확인하시려면 <a href="javascript:openPopup();">&lt;여기&gt;</a>를 클릭하세요.</li>
+	</ul>
+	</br>
+	<h3>5. 수집한 개인정보의 보유ㆍ이용기간 </h3>
+	<ul>
+		<li>□ 개인정보 수집 및 이용목적이 달성된 후 또는 탈퇴를 요청하거나 동의를 철회하는 경우 '회사'는 이용료 납부 등 거래완료 여부 확인을 위해 일정 기간 저장(학습완료일 기준 최대 30일) 후 이용자의 개인정보를 파기합니다.</li>
+		<li>□ 관계법령의 규정에 의하여 개인정보를 보관하여야 하는 경우, 해당 관련 법령에 따른 보관기간 동안 이용자의 개인정보를 보관합니다.</li>
+		<li>
+			<div class="simpleTable">
+				<table cellpadding="0" cellspacing="0" border="0" summary="보존항목 및 내용, 보존기간, 보존근거 정보 제공">
+					<caption>수집한 개인정보의 보유ㆍ이용기간 정보</caption>
+					<colgroup>
+						<col width="*">
+						<col width="26%">
+						<col width="26%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="first">보존항목/내용</th>
+							<th scope="col">보존기간</th>
+							<th scope="col">보존근거</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="first">계약 또는 청약철회 등에 관한 기록</td>
+							<td>5년</td>
+							<td rowspan="3">전자상거래 등에서의<br/>소비자 보호에 관한 법률</td>
+						</tr>
+						<tr>
+							<td class="first">대금결제 및 재화 등의 공급에 관한 기록</td>
+							<td>5년</td>
+						</tr>
+						<tr>
+							<td class="first">소비자의 불만 또는 분쟁처리에 관한 기록</td>
+							<td>3년</td>
+						</tr>
+						<tr>
+							<td class="first">전자금융에 관한 기록</td>
+							<td>5년</td>
+							<td>전자금융거래법</td>
+						</tr>
+						<tr>
+							<td class="first">로그인 기록</td>
+							<td>3개월</td>
+							<td>통신비밀보호법</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</li>
+	</ul>
+	</br>
+	<h3>6. 개인정보의 파기 절차 및 방법</h3>
+	<p>회사는 원칙적으로 개인정보 수집 및 이용목적이 달성되고 보유기간이 경과된 후에는 해당 정보를 지체없이 파기합니다. 파기절차 및 방법은 다음과 같습니다.</p>
+	<ul>
+		<li>□ 파기절차
+			<ul>
+				<li>회사는 원칙적으로 개인정보 수집 및 이용목적이 달성된 후에는 해당정보를 지체없이 파기합니다. 단, 관련 법령의 규정에 의하여 보관하여야 하는 경우, 법령에 따른 보관기관 동안 일시 저장한 후 파기합니다. 이때에도 회사는 보관하는 개인정보를 다른 목적으로 이용하지 않습니다.</li>
+			</ul>
+		</li>
+		<li>□ 파기방법
+			<ul>
+				<li>- 종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기하고, </li>
+				<li>- 전자적 파일형태로 저장된 개인정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제합니다.</li>
+			</ul>
+		</li>
+	</ul>
+	</br>
+	<h3>7. 개인정보의 안전성 확보 조치</h3>
+	<p>회사는 다음과 같이 안전성 확보에 필요한 기술적, 관리적, 물리적 조치를 하고 있습니다. </p>
+	<ul>
+		<li>□ 내부관리계획의 수립 및 시행
+			<br/>- 회사의 내부관리계획 수립하여 개인정보 보호를 위해 실행합니다.</li>
+		<li>□ 개인정보 처리 담당자의 최소화 및 교육
+			<br/>- 개인정보를 처리하는 담당자를 지정하고 최소화하여 개인정보를 관리하는 대책을 시행하고 있습니다. </li>
+		<li>□ 개인정보에 대한 접근 제한
+			<br/>- 개인정보를 처리하는 데이터베이스시스템에 대한 접근권한의 부여, 변경, 말소를 통하여 개인정보에 대한 접근통제를 위하여 필요한 조치를 하고 있으며 침입차단시스템을 이용하여 외부로부터의 무단 접근을 통제하고 있습니다. </li>
+		<li>□ 접속기록의 보관 및 위변조 방지
+			<br/>- 개인정보처리시스템에 접속한 기록(웹 로그, 요약정보 등)을 최소 2년 이상 보관, 관리하고 있으며, 접속 기록이 위변조 및 도난, 분실되지 않도록 보안기능을 사용하고 있습니다. </li>
+		<li>□ 개인정보의 암호화
+			<br/>- 이용자의 개인정보는 암호화 되어 저장 및 관리되고 있습니다. 또한 중요한 데이터는 저장 및 전송 시 암호화하여 사용하는 등의 별도 보안기능을 사용하고 있습니다. </li>
+		<li>□ 해킹 등에 대비한 기술적 대책
+			<br/>- 회사는 해킹이나 컴퓨터 바이러스 등에 의한 개인정보 유출 및 훼손을 막기 위하여 보안프로그램을 설치하고 주기적인 갱신·점검을 하며 외부로부터 접근이 통제된 구역에 시스템을 설치하고 기술적/물리적으로 감시 및 차단하고 있습니다. 또한 네트워크 트래픽의 통제(Monitoring)는 물론 불법적으로 정보를 변경하는 등의 시도를 탐지하고 있습니다. </li>
+		<li>□ 비인가자에 대한 출입 통제
+			<br/>- 개인정보를 보관하고 있는 개인정보시스템의 물리적 보관 장소를 별도로 두고 이에 대해 출입통제 절차를 수립, 운영하고 있습니다.</li>
+	</ul>
+	</br>
+	<h3>8. 이용자의 권리와 그 행사방법</h3>
+	<ul>
+		<li>□ 이용자는 언제든지 Medi Science Park > My > 개인정보관리에서 자신의 개인정보를 조회하거나 수정할 수 있습니다. </li>
+		<li>□ 이용자는 언제든지 법인 계약 담당자 또는 고객센터를 통해 개인정보의 수집 및 이용 동의를 철회할 수 있습니다.</li>
+		<li>□ 만 14세 미만 아동의 경우, 법정대리인이 아동의 개인정보를 조회하거나 수정할 권리, 수집 및 이용 동의를 철회할 권리를 가집니다.</li>
+		<li>□ 회원이 오류의 정정을 요구한 경우에 회사는 그 오류를 정정할 때까지 당해 개인정보를 이용하지 않으며, 정정 조치를 한 경우에는 그 사실을 지체없이 당해 회원에게 통보합니다. </li>
+		<li>□ 회사는 탈퇴 처리 또는 삭제된 개인정보를 열람 또는 이용할 수 없도록 처리하고 있습니다.</li>
+	</ul>
+	</br>
+	<h3>9. 개인정보 자동 수집 장치의 설치ㆍ운영 및 그 거부에 관한 사항</h3>
+	<p>회사는 이용자의 정보를 수시로 저장하고 찾아내는 쿠키(cookie) 등 개인정보를 자동으로 수집하는 장치를 설치ㆍ운용합니다. 쿠키란 회사의 웹사이트를 운영하는데 이용되는 서버가 이용자의 브라우저에 보내는 아주 작은 텍스트 파일로서 이용자의 컴퓨터 하드디스크에 저장됩니다.</p>
+	<ul>
+		<li>□ 쿠키 등 사용 목적
+			<ul>
+				<li>- 회원과 비회원의 접속 빈도나 방문 시간 등을 분석, 이용자의 취향과 관심분야를 파악 및 자취 추적, 각종 이벤트 참여 정도 및 방문 회수 파악 등을 통한 타겟 마케팅 및 개인 맞춤 서비스 제공.</li>
+			</ul>
+		</li>
+		<li>□ 쿠키 설정 거부 방법
+			<ul>
+				<li>- 이용자는 쿠키 설치에 대한 선택권을 가지고 있습니다. 단, 이용자께서 쿠키 설치를 거부하였을 경우 서비스 제공에 어려움이 있을 수 있습니다.</li>
+				<li>- 쿠키 설정을 거부하는 방법으로는 이용자가 사용하시는 웹 브라우저의 옵션을 선택함으로써 모든 쿠키를 허용하거나 쿠키를 저장할 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수 있습니다. </li>
+				<li>- 설정방법 (Chrome의 경우) : 웹 브라우저 오른쪽 상단의 더보기 &gt; 개인정보 및 보안 &gt; 쿠키 및 기타 사이트 데이터</li>
+				<li>이 외에도 Edge, Firefox, Safari, Opera 등 주요 인터넷 웹 브라우저들도 쿠키 삭제 기능을 제공하고 있습니다.</li>
+			</ul>
+		</li>
+	</ul>
+	</br>
+	<h3>10. 개인정보보호책임자 및 개인정보담당 부서</h3>
+	<p>이용자의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 관련 부서 및 개인정보보호책임자를 지정하고 있습니다.</p>
+
+	<ul>
+		<li>□ 개인정보 보호 책임자</li>
+		<li>성명 : 임영관 이사</li>
+		<li>E-mail : <a href="mailto:help12@multicampus.co.kr" target="_blank">help12@multicampus.co.kr</a></li>
+		<li>Tel : 1544-9001</li>
+	</ul>
+	<br />
+	<ul>
+		<li>□ 고객서비스 담당자</li>
+		<li>성명 : 강원기 그룹장</li>
+		<li>E-mail : <a href="mailto:sericeo@sericeo.org" target="_blank">sericeo@sericeo.org</a></li>
+		<li>Tel : 02-2143-8400</li>
+	</ul>
+
+	<p style="margin:20px 0 0;">이용자께서는 회사의 서비스를 이용하시며 발생하는 모든 개인정보보호 관련 민원을 개인정보보호책임자 혹은 고객서비스 담당부서로 신고하실 수 있습니다.<br/>회사는 이용자들의 신고사항에 대해 신속하게 충분한 답변을 드릴 것입니다.</p>
+
+	<p style="margin:20px 0 0;">기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에는 아래 기관에 문의하시기 바랍니다.</p>
+
+	<ul  style="margin:20px 0 0;">
+		<li>- 개인정보침해신고센터 (privacy.kisa.or.kr/ 국번 없이 118)</li>
+		<li>- 정보보호마크인증위원회 (www.eprivacy.or.kr/ 02-580-0533~4)</li>
+		<li>- 대검찰청 첨단범죄수사과 (www.spo.go.kr/ 02-3480-2000)</li>
+		<li>- 경찰청 사이버테러대응센터 (cyberbureau.police.go.kr/ 국번 없이 182) </li>
+	</ul>
+	</br>
+	<h3>11. 고지의 의무 </h3>
+	<ul>
+		<li>□ 현 개인정보처리방침 내용의 변경이 필요한 경우, 회사는 개인정보처리방침 개정 최소 7일전부터 홈페이지의 '공지사항'을 통하여 내용을 고지합니다.</li>
+		<li>□ 개인정보처리방침 시행일자 : 2022.2.10</li>
+	</ul>
+
+			</div>
+
+			<div id="ver1" class="subArea4" style="display:none;">
+<style type="text/css">
+	.simpleTable {margin-top:10px; border-top:1px solid #111; border-top:1px solid #aaa;}
+	.simpleTable table {table-layout:fixed; width:100%;}
+	.simpleTable table th,
+	.simpleTable table td {padding:0 5px; font-size:12px; line-height:18px;}
+	.simpleTable table th {border-top:1px solid #111;}
+	.simpleTable table td {border-top:1px solid #ddd; text-align:center;}
+</style>
+</br></br>
+	<p style="margin:20px 0 0;">(주)멀티캠퍼스(이하 '회사')는 이용자의 개인정보를 중요시하며, '정보통신망 이용촉진 및 정보보호'에 관한 법률과 개인정보보호법 등을 준수하고 있습니다.<br/>회사는 개인정보처리방침을 통하여 이용자님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려 드립니다.
+	회사는 개인정보처리방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)을 통하여 공지할 것입니다.</p>
+
+	<p style="margin:20px 0 0;">회사의 개인정보처리방침은 다음과 같은 내용을 담고 있습니다.</p>
+	<ul>
+		<li>1. 수집하는 개인정보 항목 및 수집방법</li>
+		<li>2. 개인정보의 수집 및 이용목적</li>
+		<li>3. 수집한 개인정보의 공유 및 제공</li>
+		<li>4. 개인정보처리 위탁</li>
+		<li>5. 수집한 개인정보의 보유 및 이용기간</li>
+		<li>6. 개인정보의 파기절차 및 방법</li>
+		<li>7. 개인정보의 안전성 확보 조치</li>
+		<li>8. 이용자의 권리와 그 행사방법</li>
+		<li>9. 개인정보 자동 수집 장치의 설치ㆍ운영 및 그 거부에 관한 사항</li>
+		<li>10. 개인정보 관리책임자 및 담당자의 소속 - 성명 및 연락처</li>
+		<li>11. 고지의 의무</li>
+	</ul>
+
+	<p>본 방침은 2021년 9월 9일부터 시행됩니다.</p>
+	</br>
+	<h3>1. 수집하는 개인정보의 항목 및 수집방법</h3>
+	<ul>
+		<li>□ 수집항목
+			<ul>
+				<li>가. 필수정보</li>
+				<li class="marL20">- 이름, 회원ID, 패스워드, 휴대전화번호, 이메일</li>
+				<li>나. 선택정보</li>
+				<li class="marL20">- 부서, 직위</li>
+
+				<li>다. 서비스 이용과정이나 사업처리 과정에서 아래의 정보들이 생성되어 수집될 수 있습니다.</li>
+				<li class="marL20">- 서비스 이용기록, 접속로그, 크기, 접속 IP 정보</li>
+			</ul>
+		<li>
+
+		<li>□ 수집방법
+			<ul>
+				<li>회사는 다음과 같은 방법으로 개인정보를 수집합니다.</li>
+				<li class="marL20">- 웹사이트에서 이용자 회원가입 시 직접 개인정보 입력/수정 <br/>- 이용자의 소속 기관에서 대상자(이용자) 정보를 회사에 전달</li>
+			</ul>
+		<li>
+		<li>□ 이용자는 동의를 거부할 권리가 있습니다. 동의를 거부할 경우 상기의 정보수집을 필요로 하는 교육서비스를 제공받으실 수 없습니다.</li>
+	</ul>
+
+	</br>
+	<h3>2. 개인정보의 수집 및 이용목적</h3>
+	<p>□ 회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.</p>
+	<ul>
+		<li>- 회원 가입과 서비스 제공을 위한 의사 확인 및 본인 인증, 이용자 식별, 회원탈퇴 의사의 확인 등 회원 관리</li>
+		<li>- 제공되는 콘텐츠 및 서비스 이용에 관한 인구통계학적 분석, 서비스 방문 및 이용기록 분석, 개인정보 및 관심사에 기반한 맞춤형 서비스나 커뮤니티 등의 서비스를 제공</li>
+		<li>- 이용약관을 위반하거나 서비스의 원활한 운영에 지장을 주는 행위에 대한 방지 및 제재, 분쟁조정을 위한 기록 보존과 민원처리 등 이용자 보호 및 서비스 운영</li>
+		<li>- 우수회원 및 이벤트를 위한 상품 배송 및 회원 요청사항 답변</li>
+		<li>- 보안, 프라이버시, 안전을 위한 서비스 환경 최적화</li>
+		<li>- 콘텐츠 안내 및 고지사항 전달을 위한 서비스 제공 경로의 확보</li>
+	</ul>
+	</br>
+	<h3>3. 수집한 개인정보의 공유 및 제공 [개인정보의 제3자 제공 등]</h3>
+	<p>□ 회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 아래의 경우에는 예외로 합니다.</p>
+	<ul>
+		<li>- 이용자들이 사전에 동의한 경우</li>
+		<li>- 법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우</li>
+	</ul>
+	</br>
+	<h3>4. 개인정보의 처리위탁</h3>
+	<ul>
+		<li>□ 회사는 서비스 이행을 위해 외부 전문업체에 위탁하여 운영하고 있습니다.<br/>
+		자세한 내역을 확인하시려면 <a href="javascript:openPopup();"><여기></a>를 클릭하세요.</li>
+	</ul>
+	</br>
+	<h3>5. 수집한 개인정보의 보유ㆍ이용기간 </h3>
+	<ul>
+		<li>□ 개인정보 수집 및 이용목적이 달성된 후 또는 탈퇴를 요청하거나 동의를 철회하는 경우 '회사'는 이용료 납부 등 거래완료 여부 확인을 위해 일정 기간 저장(학습완료일 기준 최대 30일) 후 이용자의 개인정보를 파기합니다.</li>
+		<li>□ 관계법령의 규정에 의하여 개인정보를 보관하여야 하는 경우, 해당 관련 법령에 따른 보관기간 동안 이용자의 개인정보를 보관합니다.</li>
+		<li>
+			<div class="simpleTable">
+				<table cellpadding="0" cellspacing="0" border="0" summary="보존항목 및 내용, 보존기간, 보존근거 정보 제공">
+					<caption>수집한 개인정보의 보유ㆍ이용기간 정보</caption>
+					<colgroup>
+						<col width="*">
+						<col width="26%">
+						<col width="26%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="first">보존항목/내용</th>
+							<th scope="col">보존기간</th>
+							<th scope="col">보존근거</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="first">계약 또는 청약철회 등에 관한 기록</td>
+							<td>5년</td>
+							<td rowspan="3">전자상거래 등에서의<br/>소비자 보호에 관한 법률</td>
+						</tr>
+						<tr>
+							<td class="first">대금결제 및 재화 등의 공급에 관한 기록</td>
+							<td>5년</td>
+						</tr>
+						<tr>
+							<td class="first">소비자의 불만 또는 분쟁처리에 관한 기록</td>
+							<td>3년</td>
+						</tr>
+						<tr>
+							<td class="first">전자금융에 관한 기록</td>
+							<td>5년</td>
+							<td>전자금융거래법</td>
+						</tr>
+						<tr>
+							<td class="first">로그인 기록</td>
+							<td>3개월</td>
+							<td>통신비밀보호법</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</li>
+	</ul>
+	</br>
+	<h3>6. 개인정보의 파기 절차 및 방법</h3>
+	<p>회사는 원칙적으로 개인정보 수집 및 이용목적이 달성되고 보유기간이 경과된 후에는 해당 정보를 지체없이 파기합니다. 파기절차 및 방법은 다음과 같습니다.</p>
+	<ul>
+		<li>□ 파기절차
+			<ul>
+				<li>회사는 원칙적으로 개인정보 수집 및 이용목적이 달성된 후에는 해당정보를 지체없이 파기합니다. 단, 관련 법령의 규정에 의하여 보관하여야 하는 경우, 법령에 따른 보관기관 동안 일시 저장한 후 파기합니다. 이때에도 회사는 보관하는 개인정보를 다른 목적으로 이용하지 않습니다.</li>
+			</ul>
+		</li>
+		<li>□ 파기방법
+			<ul>
+				<li>- 종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기하고, </li>
+				<li>- 전자적 파일형태로 저장된 개인정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제합니다.</li>
+			</ul>
+		</li>
+	</ul>
+	</br>
+	<h3>7. 개인정보의 안전성 확보 조치</h3>
+	<p>회사는 다음과 같이 안전성 확보에 필요한 기술적, 관리적, 물리적 조치를 하고 있습니다. </p>
+	<ul>
+		<li>□ 내부관리계획의 수립 및 시행
+			<br/>- 회사의 내부관리계획 수립하여 개인정보 보호를 위해 실행합니다.</li>
+		<li>□ 개인정보 처리 담당자의 최소화 및 교육
+			<br/>- 개인정보를 처리하는 담당자를 지정하고 최소화하여 개인정보를 관리하는 대책을 시행하고 있습니다. </li>
+		<li>□ 개인정보에 대한 접근 제한
+			<br/>- 개인정보를 처리하는 데이터베이스시스템에 대한 접근권한의 부여, 변경, 말소를 통하여 개인정보에 대한 접근통제를 위하여 필요한 조치를 하고 있으며 침입차단시스템을 이용하여 외부로부터의 무단 접근을 통제하고 있습니다. </li>
+		<li>□ 접속기록의 보관 및 위변조 방지
+			<br/>- 개인정보처리시스템에 접속한 기록(웹 로그, 요약정보 등)을 최소 2년 이상 보관, 관리하고 있으며, 접속 기록이 위변조 및 도난, 분실되지 않도록 보안기능을 사용하고 있습니다. </li>
+		<li>□ 개인정보의 암호화
+			<br/>- 이용자의 개인정보는 암호화 되어 저장 및 관리되고 있습니다. 또한 중요한 데이터는 저장 및 전송 시 암호화하여 사용하는 등의 별도 보안기능을 사용하고 있습니다. </li>
+		<li>□ 해킹 등에 대비한 기술적 대책
+			<br/>- 회사는 해킹이나 컴퓨터 바이러스 등에 의한 개인정보 유출 및 훼손을 막기 위하여 보안프로그램을 설치하고 주기적인 갱신·점검을 하며 외부로부터 접근이 통제된 구역에 시스템을 설치하고 기술적/물리적으로 감시 및 차단하고 있습니다. 또한 네트워크 트래픽의 통제(Monitoring)는 물론 불법적으로 정보를 변경하는 등의 시도를 탐지하고 있습니다. </li>
+		<li>□ 비인가자에 대한 출입 통제
+			<br/>- 개인정보를 보관하고 있는 개인정보시스템의 물리적 보관 장소를 별도로 두고 이에 대해 출입통제 절차를 수립, 운영하고 있습니다.</li>
+	</ul>
+	</br>
+	<h3>8. 이용자의 권리와 그 행사방법</h3>
+	<ul>
+		<li>□ 이용자는 언제든지 Ust inSighT > My > 개인정보관리에서 자신의 개인정보를 조회하거나 수정할 수 있습니다. </li>
+		<li>□ 이용자는 언제든지 법인 계약 담당자 또는 고객센터를 통해 개인정보의 수집 및 이용 동의를 철회할 수 있습니다.</li>
+		<li>□ 만 14세 미만 아동의 경우, 법정대리인이 아동의 개인정보를 조회하거나 수정할 권리, 수집 및 이용 동의를 철회할 권리를 가집니다.</li>
+		<li>□ 회원이 오류의 정정을 요구한 경우에 회사는 그 오류를 정정할 때까지 당해 개인정보를 이용하지 않으며, 정정 조치를 한 경우에는 그 사실을 지체없이 당해 회원에게 통보합니다. </li>
+		<li>□ 회사는 탈퇴 처리 또는 삭제된 개인정보를 열람 또는 이용할 수 없도록 처리하고 있습니다.</li>
+	</ul>
+	</br>
+	<h3>9. 개인정보 자동 수집 장치의 설치ㆍ운영 및 그 거부에 관한 사항</h3>
+	<p>회사는 이용자의 정보를 수시로 저장하고 찾아내는 쿠키(cookie) 등 개인정보를 자동으로 수집하는 장치를 설치ㆍ운용합니다. 쿠키란 회사의 웹사이트를 운영하는데 이용되는 서버가 이용자의 브라우저에 보내는 아주 작은 텍스트 파일로서 이용자의 컴퓨터 하드디스크에 저장됩니다.</p>
+	<ul>
+		<li>□ 쿠키 등 사용 목적
+			<ul>
+				<li>- 회원과 비회원의 접속 빈도나 방문 시간 등을 분석, 이용자의 취향과 관심분야를 파악 및 자취 추적, 각종 이벤트 참여 정도 및 방문 회수 파악 등을 통한 타겟 마케팅 및 개인 맞춤 서비스 제공.</li>
+			</ul>
+		</li>
+		<li>□ 쿠키 설정 거부 방법
+			<ul>
+				<li>- 이용자는 쿠키 설치에 대한 선택권을 가지고 있습니다. 단, 이용자께서 쿠키 설치를 거부하였을 경우 서비스 제공에 어려움이 있을 수 있습니다.</li>
+				<li>- 쿠키 설정을 거부하는 방법으로는 이용자가 사용하시는 웹 브라우저의 옵션을 선택함으로써 모든 쿠키를 허용하거나 쿠키를 저장할 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수 있습니다. </li>
+				<li>- 설정방법 (인터넷 익스플로어의 경우) : 웹 브라우저 상단의 도구 > 인터넷 옵션 > 개인정보</li>
+			</ul>
+		</li>
+	</ul>
+	</br>
+	<h3>10. 개인정보보호책임자 및 개인정보담당 부서</h3>
+	<p>이용자의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 관련 부서 및 개인정보보호책임자를 지정하고 있습니다.</p>
+
+	<ul>
+		<li>□ 개인정보 보호 책임자</li>
+		<li>성명 : 김영상 상무</li>
+		<li>E-mail : <a href="mailto:help12@multicampus.co.kr" target="_blank">help12@multicampus.co.kr</a></li>
+		<li>Tel : 1544-9001</li>
+	</ul>
+
+	<ul>
+		<li>□ 고객서비스 담당자</li>
+		<li>성명 : 배정훈 이사</li>
+		<li>E-mail : <a href="mailto:sericeo@sericeo.org" target="_blank">sericeo@sericeo.org</a></li>
+		<li>Tel : 02-2143-8400</li>
+	</ul>
+
+	<p style="margin:20px 0 0;">이용자께서는 회사의 서비스를 이용하시며 발생하는 모든 개인정보보호 관련 민원을 개인정보보호책임자 혹은 고객서비스 담당부서로 신고하실 수 있습니다.<br/>회사는 이용자들의 신고사항에 대해 신속하게 충분한 답변을 드릴 것입니다.</p>
+
+	<p style="margin:20px 0 0;">기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에는 아래 기관에 문의하시기 바랍니다.</p>
+
+	<ul  style="margin:20px 0 0;">
+		<li>- 개인정보침해신고센터 (privacy.kisa.or.kr/ 국번 없이 118)</li>
+		<li>- 정보보호마크인증위원회 (www.eprivacy.or.kr/ 02-580-0533~4)</li>
+		<li>- 대검찰청 첨단범죄수사과 (www.spo.go.kr/ 02-3480-2000)</li>
+		<li>- 경찰청 사이버테러대응센터 (cyberbureau.police.go.kr/ 국번 없이 182) </li>
+	</ul>
+	</br>
+	<h3>11. 고지의 의무 </h3>
+	<ul>
+		<li>□ 현 개인정보처리방침 내용의 변경이 필요한 경우, 회사는 개인정보처리방침 개정 최소 7일전부터 홈페이지의 '공지사항'을 통하여 내용을 고지합니다.</li>
+		<li>□ 개인정보처리방침 시행일자 : 2021.9.9</li>
+	</ul>
+
+			</div>
+
+			<div id="ver0" class="subArea4" style="display:none;">
+<style type="text/css">
+	.simpleTable {margin-top:10px; border-top:1px solid #111; border-top:1px solid #aaa;}
+	.simpleTable table {table-layout:fixed; width:100%;}
+	.simpleTable table th,
+	.simpleTable table td {padding:0 5px; font-size:12px; line-height:18px;}
+	.simpleTable table th {border-top:1px solid #111;}
+	.simpleTable table td {border-top:1px solid #ddd; text-align:center;}
+</style>
+</br></br>
+	<p style="margin:20px 0 0;">(주)멀티캠퍼스(이하 '회사')는 이용자의 개인정보를 중요시하며, '정보통신망 이용촉진 및 정보보호'에 관한 법률과 개인정보보호법 등을 준수하고 있습니다.<br/>회사는 개인정보처리방침을 통하여 이용자님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려 드립니다.
+	회사는 개인정보처리방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)을 통하여 공지할 것입니다.</p>
+
+	<p style="margin:20px 0 0;">회사의 개인정보처리방침은 다음과 같은 내용을 담고 있습니다.</p>
+	<ul>
+		<li>1. 수집하는 개인정보 항목 및 수집방법</li>
+		<li>2. 개인정보의 수집 및 이용목적</li>
+		<li>3. 수집한 개인정보의 공유 및 제공</li>
+		<li>4. 개인정보처리 위탁</li>
+		<li>5. 수집한 개인정보의 보유 및 이용기간</li>
+		<li>6. 개인정보의 파기절차 및 방법</li>
+		<li>7. 개인정보의 안전성 확보 조치</li>
+		<li>8. 이용자의 권리와 그 행사방법</li>
+		<li>9. 개인정보 자동 수집 장치의 설치ㆍ운영 및 그 거부에 관한 사항</li>
+		<li>10. 개인정보 관리책임자 및 담당자의 소속 - 성명 및 연락처</li>
+		<li>11. 고지의 의무</li>
+	</ul>
+
+	<p>본 방침은 2020년 5월 11일부터 시행됩니다.</p>
+	</br>
+	<h3>1. 수집하는 개인정보의 항목 및 수집방법</h3>
+	<ul>
+		<li>□ 수집항목
+			<ul>
+				<li>가. 필수정보</li>
+				<li class="marL20">- 이름, 회원ID, 패스워드, 휴대전화번호, 이메일</li>
+				<li>나. 선택정보</li>
+				<li class="marL20">- 부서, 직위</li>
+
+				<li>다. 서비스 이용과정이나 사업처리 과정에서 아래의 정보들이 생성되어 수집될 수 있습니다.</li>
+				<li class="marL20">- 서비스 이용기록, 접속로그, 크기, 접속 IP 정보</li>
+			</ul>
+		<li>
+
+		<li>□ 수집방법
+			<ul>
+				<li>회사는 다음과 같은 방법으로 개인정보를 수집합니다.</li>
+				<li class="marL20">- 웹사이트에서 이용자 회원가입 시 직접 개인정보 입력/수정 <br/>- 이용자의 소속 기관에서 대상자(이용자) 정보를 회사에 전달</li>
+			</ul>
+		<li>
+		<li>□ 이용자는 동의를 거부할 권리가 있습니다. 동의를 거부할 경우 상기의 정보수집을 필요로 하는 교육서비스를 제공받으실 수 없습니다.</li>
+	</ul>
+
+	</br>
+	<h3>2. 개인정보의 수집 및 이용목적</h3>
+	<p>□ 회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.</p>
+	<ul>
+		<li>- 회원 가입과 서비스 제공을 위한 의사 확인 및 본인 인증, 이용자 식별, 회원탈퇴 의사의 확인 등 회원 관리</li>
+		<li>- 제공되는 콘텐츠 및 서비스 이용에 관한 인구통계학적 분석, 서비스 방문 및 이용기록 분석, 개인정보 및 관심사에 기반한 맞춤형 서비스나 커뮤니티 등의 서비스를 제공</li>
+		<li>- 이용약관을 위반하거나 서비스의 원활한 운영에 지장을 주는 행위에 대한 방지 및 제재, 분쟁조정을 위한 기록 보존과 민원처리 등 이용자 보호 및 서비스 운영</li>
+		<li>- 우수회원 및 이벤트를 위한 상품 배송 및 회원 요청사항 답변</li>
+		<li>- 보안, 프라이버시, 안전을 위한 서비스 환경 최적화</li>
+		<li>- 콘텐츠 안내 및 고지사항 전달을 위한 서비스 제공 경로의 확보</li>
+	</ul>
+	</br>
+	<h3>3. 수집한 개인정보의 공유 및 제공 [개인정보의 제3자 제공 등]</h3>
+	<p>□ 회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 아래의 경우에는 예외로 합니다.</p>
+	<ul>
+		<li>- 이용자들이 사전에 동의한 경우</li>
+		<li>- 법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우</li>
+	</ul>
+	</br>
+	<h3>4. 개인정보의 처리위탁</h3>
+	<ul>
+		<li>□ 회사는 서비스 이행을 위해 외부 전문업체에 위탁하여 운영하고 있습니다.<br/>
+		자세한 내역을 확인하시려면 <a href="javascript:openPopup();"><여기></a>를 클릭하세요.</li>
+	</ul>
+	</br>
+	<h3>5. 수집한 개인정보의 보유ㆍ이용기간 </h3>
+	<ul>
+		<li>□ 개인정보 수집 및 이용목적이 달성된 후 또는 탈퇴를 요청하거나 동의를 철회하는 경우 '회사'는 이용료 납부 등 거래완료 여부 확인을 위해 일정 기간 저장(학습완료일 기준 최대 30일) 후 이용자의 개인정보를 파기합니다.</li>
+		<li>□ 관계법령의 규정에 의하여 개인정보를 보관하여야 하는 경우, 해당 관련 법령에 따른 보관기간 동안 이용자의 개인정보를 보관합니다.</li>
+		<li>
+			<div class="simpleTable">
+				<table cellpadding="0" cellspacing="0" border="0" summary="보존항목 및 내용, 보존기간, 보존근거 정보 제공">
+					<caption>수집한 개인정보의 보유ㆍ이용기간 정보</caption>
+					<colgroup>
+						<col width="*">
+						<col width="26%">
+						<col width="26%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="first">보존항목/내용</th>
+							<th scope="col">보존기간</th>
+							<th scope="col">보존근거</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="first">계약 또는 청약철회 등에 관한 기록</td>
+							<td>5년</td>
+							<td rowspan="3">전자상거래 등에서의<br/>소비자 보호에 관한 법률</td>
+						</tr>
+						<tr>
+							<td class="first">대금결제 및 재화 등의 공급에 관한 기록</td>
+							<td>5년</td>
+						</tr>
+						<tr>
+							<td class="first">소비자의 불만 또는 분쟁처리에 관한 기록</td>
+							<td>3년</td>
+						</tr>
+						<tr>
+							<td class="first">전자금융에 관한 기록</td>
+							<td>5년</td>
+							<td>전자금융거래법</td>
+						</tr>
+						<tr>
+							<td class="first">로그인 기록</td>
+							<td>3개월</td>
+							<td>통신비밀보호법</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</li>
+	</ul>
+	</br>
+	<h3>6. 개인정보의 파기 절차 및 방법</h3>
+	<p>회사는 원칙적으로 개인정보 수집 및 이용목적이 달성되고 보유기간이 경과된 후에는 해당 정보를 지체없이 파기합니다. 파기절차 및 방법은 다음과 같습니다.</p>
+	<ul>
+		<li>□ 파기절차
+			<ul>
+				<li>회사는 원칙적으로 개인정보 수집 및 이용목적이 달성된 후에는 해당정보를 지체없이 파기합니다. 단, 관련 법령의 규정에 의하여 보관하여야 하는 경우, 법령에 따른 보관기관 동안 일시 저장한 후 파기합니다. 이때에도 회사는 보관하는 개인정보를 다른 목적으로 이용하지 않습니다.</li>
+			</ul>
+		</li>
+		<li>□ 파기방법
+			<ul>
+				<li>- 종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기하고, </li>
+				<li>- 전자적 파일형태로 저장된 개인정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제합니다.</li>
+			</ul>
+		</li>
+	</ul>
+	</br>
+	<h3>7. 개인정보의 안전성 확보 조치</h3>
+	<p>회사는 다음과 같이 안전성 확보에 필요한 기술적, 관리적, 물리적 조치를 하고 있습니다. </p>
+	<ul>
+		<li>□ 내부관리계획의 수립 및 시행
+			<br/>- 회사의 내부관리계획 수립하여 개인정보 보호를 위해 실행합니다.</li>
+		<li>□ 개인정보 처리 담당자의 최소화 및 교육
+			<br/>- 개인정보를 처리하는 담당자를 지정하고 최소화하여 개인정보를 관리하는 대책을 시행하고 있습니다. </li>
+		<li>□ 개인정보에 대한 접근 제한
+			<br/>- 개인정보를 처리하는 데이터베이스시스템에 대한 접근권한의 부여, 변경, 말소를 통하여 개인정보에 대한 접근통제를 위하여 필요한 조치를 하고 있으며 침입차단시스템을 이용하여 외부로부터의 무단 접근을 통제하고 있습니다. </li>
+		<li>□ 접속기록의 보관 및 위변조 방지
+			<br/>- 개인정보처리시스템에 접속한 기록(웹 로그, 요약정보 등)을 최소 6개월 이상 보관, 관리하고 있으며, 접속 기록이 위변조 및 도난, 분실되지 않도록 보안기능을 사용하고 있습니다. </li>
+		<li>□ 개인정보의 암호화
+			<br/>- 이용자의 개인정보는 암호화 되어 저장 및 관리되고 있습니다. 또한 중요한 데이터는 저장 및 전송 시 암호화하여 사용하는 등의 별도 보안기능을 사용하고 있습니다. </li>
+		<li>□ 해킹 등에 대비한 기술적 대책
+			<br/>- 회사는 해킹이나 컴퓨터 바이러스 등에 의한 개인정보 유출 및 훼손을 막기 위하여 보안프로그램을 설치하고 주기적인 갱신·점검을 하며 외부로부터 접근이 통제된 구역에 시스템을 설치하고 기술적/물리적으로 감시 및 차단하고 있습니다. 또한 네트워크 트래픽의 통제(Monitoring)는 물론 불법적으로 정보를 변경하는 등의 시도를 탐지하고 있습니다. </li>
+		<li>□ 비인가자에 대한 출입 통제
+			<br/>- 개인정보를 보관하고 있는 개인정보시스템의 물리적 보관 장소를 별도로 두고 이에 대해 출입통제 절차를 수립, 운영하고 있습니다.</li>
+	</ul>
+	</br>
+	<h3>8. 이용자의 권리와 그 행사방법</h3>
+	<ul>
+		<li>□ 이용자는 언제든지 Ust inSighT > My > 개인정보관리에서 자신의 개인정보를 조회하거나 수정할 수 있습니다. </li>
+		<li>□ 이용자는 언제든지 법인 계약 담당자 또는 고객센터를 통해 개인정보의 수집 및 이용 동의를 철회할 수 있습니다.</li>
+		<li>□ 만 14세 미만 아동의 경우, 법정대리인이 아동의 개인정보를 조회하거나 수정할 권리, 수집 및 이용 동의를 철회할 권리를 가집니다.</li>
+		<li>□ 회원이 오류의 정정을 요구한 경우에 회사는 그 오류를 정정할 때까지 당해 개인정보를 이용하지 않으며, 정정 조치를 한 경우에는 그 사실을 지체없이 당해 회원에게 통보합니다. </li>
+		<li>□ 회사는 탈퇴 처리 또는 삭제된 개인정보를 열람 또는 이용할 수 없도록 처리하고 있습니다.</li>
+	</ul>
+	</br>
+	<h3>9. 개인정보 자동 수집 장치의 설치ㆍ운영 및 그 거부에 관한 사항</h3>
+	<p>회사는 이용자의 정보를 수시로 저장하고 찾아내는 쿠키(cookie) 등 개인정보를 자동으로 수집하는 장치를 설치ㆍ운용합니다. 쿠키란 회사의 웹사이트를 운영하는데 이용되는 서버가 이용자의 브라우저에 보내는 아주 작은 텍스트 파일로서 이용자의 컴퓨터 하드디스크에 저장됩니다.</p>
+	<ul>
+		<li>□ 쿠키 등 사용 목적
+			<ul>
+				<li>- 회원과 비회원의 접속 빈도나 방문 시간 등을 분석, 이용자의 취향과 관심분야를 파악 및 자취 추적, 각종 이벤트 참여 정도 및 방문 회수 파악 등을 통한 타겟 마케팅 및 개인 맞춤 서비스 제공.</li>
+			</ul>
+		</li>
+		<li>□ 쿠키 설정 거부 방법
+			<ul>
+				<li>- 이용자는 쿠키 설치에 대한 선택권을 가지고 있습니다. 단, 이용자께서 쿠키 설치를 거부하였을 경우 서비스 제공에 어려움이 있을 수 있습니다.</li>
+				<li>- 쿠키 설정을 거부하는 방법으로는 이용자가 사용하시는 웹 브라우저의 옵션을 선택함으로써 모든 쿠키를 허용하거나 쿠키를 저장할 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수 있습니다. </li>
+				<li>- 설정방법 (인터넷 익스플로어의 경우) : 웹 브라우저 상단의 도구 > 인터넷 옵션 > 개인정보</li>
+			</ul>
+		</li>
+	</ul>
+	</br>
+	<h3>10. 개인정보보호책임자 및 개인정보담당 부서</h3>
+	<p>이용자의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 관련 부서 및 개인정보보호책임자를 지정하고 있습니다.</p>
+
+	<ul>
+		<li>□ 개인정보 보호 최고책임자</li>
+		<li>성명 : 김영상 상무</li>
+		<li>소속 : (주)멀티캠퍼스 플랫폼개발운영팀</li>
+		<li>E-mail : <a href="mailto:multicampus@multicampus.com" target="_blank">multicampus@multicampus.com</a></li>
+		<li>Tel : 1544-9001</li>
+	</ul>
+
+	<ul>
+		<li>□ 고객서비스 담당자</li>
+		<li>성명 : 배정훈 이사</li>
+		<li>소속 : (주)멀티캠퍼스 SERICEO개발운영그룹</li>
+		<li>이메일 : <a href="mailto:jhoon.bae@sericeo.com" target="_blank">jhoon.bae@sericeo.com</a></li>
+		<li>Tel : 02-3429-5160</li>
+	</ul>
+
+	<p style="margin:20px 0 0;">이용자께서는 회사의 서비스를 이용하시며 발생하는 모든 개인정보보호 관련 민원을 개인정보보호책임자 혹은 고객서비스 담당부서로 신고하실 수 있습니다.<br/>회사는 이용자들의 신고사항에 대해 신속하게 충분한 답변을 드릴 것입니다.</p>
+
+	<p style="margin:20px 0 0;">기타 개인정보침해에 대한 신고나 상담이 필요하신 경우에는 아래 기관에 문의하시기 바랍니다.</p>
+
+	<ul  style="margin:20px 0 0;">
+		<li>- 개인정보침해신고센터 (privacy.kisa.or.kr/ 국번 없이 118)</li>
+		<li>- 정보보호마크인증위원회 (www.eprivacy.or.kr/ 02-580-0533~4)</li>
+		<li>- 대검찰청 첨단범죄수사과 (www.spo.go.kr/ 02-3480-2000)</li>
+		<li>- 경찰청 사이버테러대응센터 (cyberbureau.police.go.kr/ 국번 없이 182) </li>
+	</ul>
+	</br>
+	<h3>11. 고지의 의무 </h3>
+	<ul>
+		<li>□ 현 개인정보처리방침 내용의 변경이 필요한 경우, 회사는 개인정보처리방침 개정 최소 7일전부터 홈페이지의 '공지사항'을 통하여 내용을 고지합니다.</li>
+		<li>□ 개인정보처리방침 시행일자 : 2023.2.24</li>
+	</ul>
+
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

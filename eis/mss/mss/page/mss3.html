@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> | MSS</title>
+	<link href="../../css/datepicker3.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/module.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/custom.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/popup.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="../../css/admin.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_eis.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_mss.css" />
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+
+	<script src="../../js/jquery.flot.js"></script>
+	<script src="../../js/jquery.flot.pie.js"></script>
+	<script src="../../js/jquery.flot.resize.js"></script>
+
+	<script src="../../js/bootstrap-datepicker.js"></script>
+	<script src="../../js/locales/bootstrap-datepicker.kr.js"></script>
+	<script src="../../js/jquery.slimscroll.min.js"></script>
+	<script src="../../js/admin_script.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../js/html5shiv.js"></script>
+		<script src="../../js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body><!-- 배경색 변경시 class="bg" -->
+<div id="wrap"><!-- 메인일 경우 class="main" -->
+
+	<!-- contents -->
+	<div class="content_wrap">
+		<a id="btn_folding_lnb" class="btn_folding_lnb" href="#">lnb control</a>
+		<div class="wrap_max">
+
+			<!-- EP title -->
+			<div class="cont_subtit fix">
+
+				<!-- 제목 -->
+				<div class="tit_area">
+					<div class="sub_tit">
+						<span class="tit_list"><!-- tit_list_tab 클래스 추가 -->
+							<span class="tit">사업별 현황</span>
+						</span>
+					</div>
+				</div>
+				<!-- //제목 -->
+
+			</div>
+			<!--// EP title -->
+
+
+			<!-- cont -->
+			<div class="cont_wrap">
+
+				<div class="eisMain mmsMain">
+					<!-- 검색 -->
+					<div class="tbl_search tbl_search2">
+						<table>
+							<tbody>
+								<tr>
+									<th class="th10">년월</th>
+									<td class="calTd">
+										<div class="date_wrap">
+											<div class="date_input date" id="cal1">
+												<input type="text" style="width:160px;">
+												<a class="btn_calendar input-group-addon" href="#">
+													<i class="icons i_calendar">calendar</i>
+												</a>
+											</div>
+											<span>~</span>
+											<div class="date_input date" id="cal2">
+												<input type="text" style="width:160px;">
+												<a class="btn_calendar input-group-addon" href="#">
+													<i class="icons i_calendar">calendar</i>
+												</a>
+											</div>
+										</div>
+										<span class="btn_area">
+											<a href="#" class="btn_default small"><span class="small">조회</span></a>
+											<a href="#" class="btn_primary small"><span>차3개월</span></a>
+											<a href="#" class="btn_primary small"><span>차6개월</span></a>
+										</span>
+										<script>
+											$('#cal1').datepicker({
+												format: "yyyy.mm",
+												minViewMode: 1, //월력변환
+												language:'kr',
+												autoclose : true
+											})
+											.on('show', function(){$(this).addClass('active');})
+											.on('hide', function(){$(this).removeClass('active');})
+											;
+											$('#cal2').datepicker({
+												format: "yyyy.mm",
+												minViewMode: 1, //월력변환
+												language:'kr',
+												autoclose : true
+											})
+											.on('show', function(){$(this).addClass('active');})
+											.on('hide', function(){$(this).removeClass('active');})
+											;
+										</script>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- //검색 -->
+					<div class="tab_module" id="tab1">
+						<div class="tab_navi">
+							<ul>
+								<li class="selected"><a href="#display-tab1">전사</a></li>
+								<li><a href="#display-tab2">사업부별</a></li>
+								<li><a href="#display-tab3">사업유형별</a></li>
+							</ul>
+						</div>
+						<div class="tab_cons">
+							<!-- 전사 -->
+							<div class="tab_article" id="display-tab1">
+								<div class="btnLine mt18">
+									<div class="fL">
+										<h2 class="h2a font-style1"><span>[</span>전사현황<span>]</span></h2>
+									</div>
+								</div>
+
+								<!-- 라인 차트 -->
+								<div class="main-state">
+									<div class="chart-top">
+										<p>차<span>X</span>개월 누계</p>
+										<dl>
+											<dt>계획</dt>
+											<dd>1,010억원</dd>
+										</dl>
+										<dl>
+											<dt>확보매출</dt>
+											<dd>686억원</dd>
+										</dl>
+										<dl>
+											<dt>필요매출</dt>
+											<dd>323억원</dd>
+										</dl>
+									</div>
+									<div class="canvas-wrap">
+										차트 영역
+									</div>
+								</div>
+								<!-- //라인 차트 -->
+								<br />
+								<!-- 월별 상세 -->
+								<div class="main-state main-state-list">
+									<div class="state-box-wrap state-box-wrap-col3 state-box-wrap-col3-type2">
+										<!-- (2월)확보BO -->
+										<div class="state-box">
+											<div class="state-detail state-detail-type1">
+												<div class="state-ing">
+													<p class="p1">(2월)확보BO</p>
+												</div>
+												<div class="value-box">
+													<p class="value1"><em>250</em>억원</p>
+													<dl class="value2">
+														<dt>BO 목표비</dt>
+														<dd>-106억원<i class="down"></i></dd>
+														<!-- 추가 -->
+														<dd class="rbtn">
+															<span class="btn_area">
+																<a href="" onclick="" class="btn_primary small"><span>상세보기</span></a>
+															</span>
+														</dd>
+														<!-- //추가 -->
+													</dl>
+												</div>
+												<div class="graph">
+													<div class="item">
+														<div class="bar barc1" style="height: 57%;">
+															<em class="value">285</em>
+															<em class="section">수주목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc1" style="height: 71.2%;">
+															<em class="value">356</em>
+															<em class="section">BO목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc2" style="height: 50%;">
+															<em class="value">250</em>
+															<em class="section">확보BO</em>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- (3월)확보BO -->
+										<div class="state-box">
+											<div class="state-detail state-detail-type1">
+												<div class="state-ing">
+													<p class="p1">(3월)확보BO</p>
+												</div>
+												<div class="value-box">
+													<p class="value1"><em>390</em>억원</p>
+													<dl class="value2">
+														<dt>BO 목표비</dt>
+														<dd>-85억원<i class="down"></i></dd>
+														<!-- 추가 -->
+														<dd class="rbtn">
+															<span class="btn_area">
+																<a href="" onclick="" class="btn_primary small"><span>상세보기</span></a>
+															</span>
+														</dd>
+														<!-- //추가 -->
+													</dl>
+												</div>
+												<div class="graph">
+													<div class="item">
+														<div class="bar barc1" style="height: 76%;">
+															<em class="value">380</em>
+															<em class="section">수주목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc1" style="height: 95%;">
+															<em class="value">475</em>
+															<em class="section">BO목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc2" style="height: 78%;">
+															<em class="value">390</em>
+															<em class="section">확보BO</em>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- (4월)확보BO -->
+										<div class="state-box">
+											<div class="state-detail state-detail-type1">
+												<div class="state-ing">
+													<p class="p1">(4월)확보BO</p>
+												</div>
+												<div class="value-box">
+													<p class="value1"><em>205</em>억원</p>
+													<dl class="value2">
+														<dt>BO 목표비</dt>
+														<dd>+27억원<i class="up"></i></dd>
+														<!-- 추가 -->
+														<dd class="rbtn">
+															<span class="btn_area">
+																<a href="" onclick="" class="btn_primary small"><span>상세보기</span></a>
+															</span>
+														</dd>
+														<!-- //추가 -->
+													</dl>
+												</div>
+												<div class="graph">
+													<div class="item">
+														<div class="bar barc1" style="height: 28.4%;">
+															<em class="value">142</em>
+															<em class="section">수주목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc1" style="height: 35.6%;">
+															<em class="value">178</em>
+															<em class="section">BO목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc2" style="height: 41%;">
+															<em class="value">205</em>
+															<em class="section">확보BO</em>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- (5월)확보BO -->
+										<div class="state-box">
+											<div class="state-detail state-detail-type1">
+												<div class="state-ing">
+													<p class="p1">(5월)확보BO</p>
+												</div>
+												<div class="value-box">
+													<p class="value1"><em>250</em>억원</p>
+													<dl class="value2">
+														<dt>BO 목표비</dt>
+														<dd>-106억원<i class="down"></i></dd>
+													</dl>
+												</div>
+												<div class="graph">
+													<div class="item">
+														<div class="bar barc1" style="height: 57%;">
+															<em class="value">285</em>
+															<em class="section">수주목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc1" style="height: 71.2%;">
+															<em class="value">356</em>
+															<em class="section">BO목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc2" style="height: 50%;">
+															<em class="value">250</em>
+															<em class="section">확보BO</em>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- (6월)확보BO -->
+										<div class="state-box">
+											<div class="state-detail state-detail-type1">
+												<div class="state-ing">
+													<p class="p1">(6월)확보BO</p>
+												</div>
+												<div class="value-box">
+													<p class="value1"><em>390</em>억원</p>
+													<dl class="value2">
+														<dt>BO 목표비</dt>
+														<dd>-85억원<i class="down"></i></dd>
+													</dl>
+												</div>
+												<div class="graph">
+													<div class="item">
+														<div class="bar barc1" style="height: 76%;">
+															<em class="value">380</em>
+															<em class="section">수주목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc1" style="height: 95%;">
+															<em class="value">475</em>
+															<em class="section">BO목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc2" style="height: 78%;">
+															<em class="value">390</em>
+															<em class="section">확보BO</em>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- (7월)확보BO -->
+										<div class="state-box">
+											<div class="state-detail state-detail-type1">
+												<div class="state-ing">
+													<p class="p1">(7월)확보BO</p>
+												</div>
+												<div class="value-box">
+													<p class="value1"><em>205</em>억원</p>
+													<dl class="value2">
+														<dt>BO 목표비</dt>
+														<dd>+27억원<i class="up"></i></dd>
+													</dl>
+												</div>
+												<div class="graph">
+													<div class="item">
+														<div class="bar barc1" style="height: 28.4%;">
+															<em class="value">142</em>
+															<em class="section">수주목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc1" style="height: 35.6%;">
+															<em class="value">178</em>
+															<em class="section">BO목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc2" style="height: 41%;">
+															<em class="value">205</em>
+															<em class="section">확보BO</em>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- //월별 상세  -->
+
+								<h2 class="h2a font-style1"><span>[</span>집중관리/수주지연 BO<span>]</span></h2>
+								<div class="main-state main-state-list">
+									<div class="state-box-wrap state-box-wrap-col2 type-flex">
+										<div class="state-box">
+											<div class="flex">
+												<h3 class="h3 h3a">당월 집중관리 BO</h3>
+												<span class="btn_area">
+													<a href="../popup/popup4-4.html" onclick="window.open(this.href,'_blank','width=1200, height=600, resizable=yes, scrollbars=yes'); return false;" class="btn_primary small"><span>상세보기</span></a>
+												</span>
+											</div>
+											<div class="btnLine">
+												<div class="fR">
+													<span class="txt"><strong class="s">(30건 / 622억원)</strong></span>
+												</div>
+											</div>
+											<div class="tbl_type02 mt5">
+												<table class="blue">
+													<colgroup>
+														<col width="50">
+														<col width="45%">
+														<col width="">
+														<col width="70">
+														<col width="70">
+													</colgroup>
+													<thead>
+														<tr>
+															<th scope="col">No</th>
+															<th scope="col">사업기회명</th>
+															<th scope="col">사업유형</th>
+															<th scope="col">사업규모</th>
+															<th scope="col">성공확률</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="ac">1</td>
+															<td><span class="ellipsis">’22년 삼성U사업</span></td>
+															<td class="ac">[기존]MCP</td>
+															<td class="ar">36.0억원</td>
+															<td class="ac">70%</td>
+														</tr>
+														<tr>
+															<td class="ac">2</td>
+															<td><span class="ellipsis"></span></td>
+															<td class="ac">[기존]집합맞춤</td>
+															<td class="ar">1.4억원</td>
+															<td class="ac"></td>
+														</tr>
+														<tr>
+															<td class="ac">3</td>
+															<td><span class="ellipsis">물산건설 Citizen</span></td>
+															<td class="ac">[기존]집합맞춤</td>
+															<td class="ar">1.1억원</td>
+															<td class="ac"></td>
+														</tr>
+														<tr>
+															<td class="ac">4</td>
+															<td><span class="ellipsis">SDC Academia Data</span></td>
+															<td class="ac">[기존]플랫폼비즈니스</td>
+															<td class="ar">0.7억원</td>
+															<td class="ac"></td>
+														</tr>
+														<tr>
+															<td class="ac">5</td>
+															<td><span class="ellipsis">삼우에프엔지 22년 MCP 삼우에프엔지 22년 MCP 삼우에프엔지 22년 MCP 삼우에프엔지 22년 MCP</span></td>
+															<td class="ac">[기존]MCP</td>
+															<td class="ar">0.5억원</td>
+															<td class="ac"></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="state-box">
+											<div class="flex">
+												<h3 class="h3 h3a">수주지연 BO</h3>
+												<span class="btn_area">
+													<a href="../popup/popup4-5.html" onclick="window.open(this.href,'_blank','width=1200, height=600, resizable=yes, scrollbars=yes'); return false;" class="btn_primary small"><span>상세보기</span></a>
+												</span>
+											</div>
+											<div class="btnLine">
+												<div class="fR">
+													<span class="txt"><strong class="s">(10건 / 15.0억원)</strong></span>
+												</div>
+											</div>
+											<div class="tbl_type02 mt5">
+												<table class="blue">
+													<colgroup>
+														<col width="50">
+														<col width="45%">
+														<col width="">
+														<col width="70">
+														<col width="70">
+													</colgroup>
+													<thead>
+														<tr>
+															<th scope="col">No</th>
+															<th scope="col">사업기회명</th>
+															<th scope="col">사업유형</th>
+															<th scope="col">사업규모</th>
+															<th scope="col">지연일</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="ac">1</td>
+															<td><span class="ellipsis">ㅇㅇㅇ ㅇㅇㅇㅇ 사업</span></td>
+															<td class="ac">[기존]MCP</td>
+															<td class="ar">10.0억원</td>
+															<td class="ac">+76일</td>
+														</tr>
+														<tr>
+															<td class="ac">2</td>
+															<td><span class="ellipsis"></span></td>
+															<td class="ac">[기존]집합맞춤</td>
+															<td class="ar">1.4억원</td>
+															<td class="ac"></td>
+														</tr>
+														<tr>
+															<td class="ac">3</td>
+															<td><span class="ellipsis">△△△△△△△△ 건</span></td>
+															<td class="ac">[기존]집합맞춤</td>
+															<td class="ar">1.1억원</td>
+															<td class="ac">+61일</td>
+														</tr>
+														<tr>
+															<td class="ac">4</td>
+															<td><span class="ellipsis">~~~~~~</span></td>
+															<td class="ac"></td>
+															<td class="ar"></td>
+															<td class="ac"></td>
+														</tr>
+														<tr>
+															<td class="ac">5</td>
+															<td><span class="ellipsis">~~~~~~ ~~~~~~</span></td>
+															<td class="ac"></td>
+															<td class="ar"></td>
+															<td class="ac"></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //전사 -->
+							<!-- 사업부별 -->
+							<div class="tab_article" id="display-tab2">
+								<div class="tbl_search tbl_search2">
+									<table>
+										<tbody>
+											<tr>
+												<th style="width: 140px;"><label for="select1">사업부/팀/그룹</label></th>
+												<td>
+													<select id="select1" style="width:200px;">
+														<optgroup label="인재개발사업팀">
+															<option value="">전자사업그룹</option>
+															<option value="">금융/서비스사업그룹</option>
+														</optgroup>
+														<optgroup label="BPO사업팀">
+															<option value="">한국총괄BPO사업그룹</option>
+															<option value="">생명BPO사업그룹</option>
+														</optgroup>
+													</select>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<!-- 라인 차트 -->
+								<div class="main-state">
+									<div class="chart-top">
+										<dl>
+											<dt>누계 계획</dt>
+											<dd>1,010<span>억원</span></dd>
+										</dl>
+										<dl>
+											<dt>누계 확보매출</dt>
+											<dd>686<span>억원</span></dd>
+										</dl>
+										<dl>
+											<dt>누계 필요매출</dt>
+											<dd>323<span>억원</span></dd>
+										</dl>
+									</div>
+									<div class="canvas-wrap">
+										차트 영역
+									</div>
+								</div>
+								<!-- //라인 차트 -->
+								<br />
+								<!-- 월별 상세 -->
+								<div class="main-state main-state-list">
+									<div class="state-box-wrap state-box-wrap-col3 state-box-wrap-col3-type2">
+										<!-- (5월)확보BO -->
+										<div class="state-box">
+											<div class="state-detail state-detail-type1">
+												<div class="state-ing">
+													<p class="p1">(5월)확보BO</p>
+												</div>
+												<div class="value-box">
+													<p class="value1"><em>250</em>억원</p>
+													<dl class="value2">
+														<dt>BO 목표비</dt>
+														<dd>-106억원<i class="down"></i></dd>
+														<!-- 추가 -->
+														<dd class="rbtn">
+															<span class="btn_area">
+																<a href="" onclick="" class="btn_primary small"><span>상세보기</span></a>
+															</span>
+														</dd>
+														<!-- //추가 -->
+													</dl>
+												</div>
+												<div class="graph">
+													<div class="item">
+														<div class="bar barc1" style="height: 57%;">
+															<em class="value">285</em>
+															<em class="section">수주목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc1" style="height: 71.2%;">
+															<em class="value">356</em>
+															<em class="section">BO목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc2" style="height: 50%;">
+															<em class="value">250</em>
+															<em class="section">확보BO</em>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- (6월)확보BO -->
+										<div class="state-box">
+											<div class="state-detail state-detail-type1">
+												<div class="state-ing">
+													<p class="p1">(6월)확보BO</p>
+												</div>
+												<div class="value-box">
+													<p class="value1"><em>390</em>억원</p>
+													<dl class="value2">
+														<dt>BO 목표비</dt>
+														<dd>-85억원<i class="down"></i></dd>
+														<!-- 추가 -->
+														<dd class="rbtn">
+															<span class="btn_area">
+																<a href="" onclick="" class="btn_primary small"><span>상세보기</span></a>
+															</span>
+														</dd>
+														<!-- //추가 -->
+													</dl>
+												</div>
+												<div class="graph">
+													<div class="item">
+														<div class="bar barc1" style="height: 76%;">
+															<em class="value">380</em>
+															<em class="section">수주목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc1" style="height: 95%;">
+															<em class="value">475</em>
+															<em class="section">BO목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc2" style="height: 78%;">
+															<em class="value">390</em>
+															<em class="section">확보BO</em>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- (7월)확보BO -->
+										<div class="state-box">
+											<div class="state-detail state-detail-type1">
+												<div class="state-ing">
+													<p class="p1">(7월)확보BO</p>
+												</div>
+												<div class="value-box">
+													<p class="value1"><em>205</em>억원</p>
+													<dl class="value2">
+														<dt>BO 목표비</dt>
+														<dd>+27억원<i class="up"></i></dd>
+														<!-- 추가 -->
+														<dd class="rbtn">
+															<span class="btn_area">
+																<a href="" onclick="" class="btn_primary small"><span>상세보기</span></a>
+															</span>
+														</dd>
+														<!-- //추가 -->
+													</dl>
+												</div>
+												<div class="graph">
+													<div class="item">
+														<div class="bar barc1" style="height: 28.4%;">
+															<em class="value">142</em>
+															<em class="section">수주목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc1" style="height: 35.6%;">
+															<em class="value">178</em>
+															<em class="section">BO목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc2" style="height: 41%;">
+															<em class="value">205</em>
+															<em class="section">확보BO</em>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- //월별 상세  -->
+
+								<h2 class="h2a font-style1"><span>[</span>집중관리/수주지연 BO<span>]</span></h2>
+								<div class="main-state main-state-list">
+									<div class="state-box-wrap state-box-wrap-col2 type-flex">
+										<div class="state-box">
+											<div class="flex">
+												<h3 class="h3 h3a">당월 집중관리 BO</h3>
+												<span class="btn_area">
+													<a href="../popup/popup4-4.html" onclick="window.open(this.href,'_blank','width=1200, height=600, resizable=yes, scrollbars=yes'); return false;" class="btn_primary small"><span>상세보기</span></a>
+												</span>
+											</div>
+											<div class="btnLine">
+												<div class="fR">
+													<span class="txt"><strong class="s">(30건 / 622억원)</strong></span>
+												</div>
+											</div>
+											<div class="tbl_type02 mt5">
+												<table class="blue">
+													<colgroup>
+														<col width="50">
+														<col width="45%">
+														<col width="">
+														<col width="70">
+														<col width="70">
+													</colgroup>
+													<thead>
+														<tr>
+															<th scope="col">No</th>
+															<th scope="col">사업기회명</th>
+															<th scope="col">사업유형</th>
+															<th scope="col">사업규모</th>
+															<th scope="col">성공확률</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="ac">1</td>
+															<td><span class="ellipsis">’22년 삼성U사업</span></td>
+															<td class="ac">[기존]MCP</td>
+															<td class="ar">36.0억원</td>
+															<td class="ac">70%</td>
+														</tr>
+														<tr>
+															<td class="ac">2</td>
+															<td><span class="ellipsis"></span></td>
+															<td class="ac">[기존]집합맞춤</td>
+															<td class="ar">1.4억원</td>
+															<td class="ac"></td>
+														</tr>
+														<tr>
+															<td class="ac">3</td>
+															<td><span class="ellipsis">물산건설 Citizen</span></td>
+															<td class="ac">[기존]집합맞춤</td>
+															<td class="ar">1.1억원</td>
+															<td class="ac"></td>
+														</tr>
+														<tr>
+															<td class="ac">4</td>
+															<td><span class="ellipsis">SDC Academia Data</span></td>
+															<td class="ac">[기존]플랫폼비즈니스</td>
+															<td class="ar">0.7억원</td>
+															<td class="ac"></td>
+														</tr>
+														<tr>
+															<td class="ac">5</td>
+															<td><span class="ellipsis">삼우에프엔지 22년 MCP 삼우에프엔지 22년 MCP 삼우에프엔지 22년 MCP 삼우에프엔지 22년 MCP</span></td>
+															<td class="ac">[기존]MCP</td>
+															<td class="ar">0.5억원</td>
+															<td class="ac"></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="state-box">
+											<div class="flex">
+												<h3 class="h3 h3a">수주지연 BO</h3>
+												<span class="btn_area">
+													<a href="../popup/popup4-5.html" onclick="window.open(this.href,'_blank','width=1200, height=600, resizable=yes, scrollbars=yes'); return false;" class="btn_primary small"><span>상세보기</span></a>
+												</span>
+											</div>
+											<div class="btnLine">
+												<div class="fR">
+													<span class="txt"><strong class="s">(10건 / 15.0억원)</strong></span>
+												</div>
+											</div>
+											<div class="tbl_type02 mt5">
+												<table class="blue">
+													<colgroup>
+														<col width="50">
+														<col width="45%">
+														<col width="">
+														<col width="70">
+														<col width="70">
+													</colgroup>
+													<thead>
+														<tr>
+															<th scope="col">No</th>
+															<th scope="col">사업기회명</th>
+															<th scope="col">사업유형</th>
+															<th scope="col">사업규모</th>
+															<th scope="col">지연일</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="ac">1</td>
+															<td><span class="ellipsis">ㅇㅇㅇ ㅇㅇㅇㅇ 사업</span></td>
+															<td class="ac">[기존]MCP</td>
+															<td class="ar">10.0억원</td>
+															<td class="ac">+76일</td>
+														</tr>
+														<tr>
+															<td class="ac">2</td>
+															<td><span class="ellipsis"></span></td>
+															<td class="ac">[기존]집합맞춤</td>
+															<td class="ar">1.4억원</td>
+															<td class="ac"></td>
+														</tr>
+														<tr>
+															<td class="ac">3</td>
+															<td><span class="ellipsis">△△△△△△△△ 건</span></td>
+															<td class="ac">[기존]집합맞춤</td>
+															<td class="ar">1.1억원</td>
+															<td class="ac">+61일</td>
+														</tr>
+														<tr>
+															<td class="ac">4</td>
+															<td><span class="ellipsis">~~~~~~</span></td>
+															<td class="ac"></td>
+															<td class="ar"></td>
+															<td class="ac"></td>
+														</tr>
+														<tr>
+															<td class="ac">5</td>
+															<td><span class="ellipsis">~~~~~~ ~~~~~~</span></td>
+															<td class="ac"></td>
+															<td class="ar"></td>
+															<td class="ac"></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //사업부별 -->
+							<!-- 사업유형별 -->
+							<div class="tab_article" id="display-tab3">
+								<div class="tbl_search tbl_search2">
+									<table>
+										<tbody>
+											<tr>
+												<th style="width: 140px;"><label for="select2-1">사업부/팀/그룹</label></th>
+												<td style="width: 260px;">
+													<select id="select2-1" style="width:200px;">
+														<option value="">ALL</option>
+														<optgroup label="인재개발사업팀">
+															<option value="">전자사업그룹</option>
+															<option value="">금융/서비스사업그룹</option>
+														</optgroup>
+														<optgroup label="BPO사업팀">
+															<option value="">한국총괄BPO사업그룹</option>
+															<option value="">생명BPO사업그룹</option>
+														</optgroup>
+													</select>
+												</td>
+												<th style="width: 80px;"><label for="select2-2">사업유형</label></th>
+												<td>
+													<select id="select2-2" style="width:125px;">
+														<option value="">기존사업</option>
+														<option value="">전략사업</option>
+														<option value="">신규사업</option>
+													</select>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<!-- 라인 차트 -->
+								<div class="main-state">
+									<div class="chart-top">
+										<dl>
+											<dt>누계 계획</dt>
+											<dd>1,010<span>억원</span></dd>
+										</dl>
+										<dl>
+											<dt>누계 확보매출</dt>
+											<dd>686<span>억원</span></dd>
+										</dl>
+										<dl>
+											<dt>누계 필요매출</dt>
+											<dd>323<span>억원</span></dd>
+										</dl>
+									</div>
+									<div class="canvas-wrap">
+										차트 영역
+									</div>
+								</div>
+								<!-- //라인 차트 -->
+								<br />
+								<!-- 월별 상세 -->
+								<div class="main-state main-state-list">
+									<div class="state-box-wrap state-box-wrap-col3 state-box-wrap-col3-type2">
+										<!-- (5월)확보BO -->
+										<div class="state-box">
+											<div class="state-detail state-detail-type1">
+												<div class="state-ing">
+													<p class="p1">(5월)확보BO</p>
+												</div>
+												<div class="value-box">
+													<p class="value1"><em>250</em>억원</p>
+													<dl class="value2">
+														<dt>BO 목표비</dt>
+														<dd>-106억원<i class="down"></i></dd>
+														<!-- 추가 -->
+														<dd class="rbtn">
+															<span class="btn_area">
+																<a href="" onclick="" class="btn_primary small"><span>상세보기</span></a>
+															</span>
+														</dd>
+														<!-- //추가 -->
+													</dl>
+												</div>
+												<div class="graph">
+													<div class="item">
+														<div class="bar barc1" style="height: 57%;">
+															<em class="value">285</em>
+															<em class="section">수주목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc1" style="height: 71.2%;">
+															<em class="value">356</em>
+															<em class="section">BO목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc2" style="height: 50%;">
+															<em class="value">250</em>
+															<em class="section">확보BO</em>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- (6월)확보BO -->
+										<div class="state-box">
+											<div class="state-detail state-detail-type1">
+												<div class="state-ing">
+													<p class="p1">(6월)확보BO</p>
+												</div>
+												<div class="value-box">
+													<p class="value1"><em>390</em>억원</p>
+													<dl class="value2">
+														<dt>BO 목표비</dt>
+														<dd>-85억원<i class="down"></i></dd>
+														<!-- 추가 -->
+														<dd class="rbtn">
+															<span class="btn_area">
+																<a href="" onclick="" class="btn_primary small"><span>상세보기</span></a>
+															</span>
+														</dd>
+														<!-- //추가 -->
+													</dl>
+												</div>
+												<div class="graph">
+													<div class="item">
+														<div class="bar barc1" style="height: 76%;">
+															<em class="value">380</em>
+															<em class="section">수주목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc1" style="height: 95%;">
+															<em class="value">475</em>
+															<em class="section">BO목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc2" style="height: 78%;">
+															<em class="value">390</em>
+															<em class="section">확보BO</em>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- (7월)확보BO -->
+										<div class="state-box">
+											<div class="state-detail state-detail-type1">
+												<div class="state-ing">
+													<p class="p1">(7월)확보BO</p>
+												</div>
+												<div class="value-box">
+													<p class="value1"><em>205</em>억원</p>
+													<dl class="value2">
+														<dt>BO 목표비</dt>
+														<dd>+27억원<i class="up"></i></dd>
+														<!-- 추가 -->
+														<dd class="rbtn">
+															<span class="btn_area">
+																<a href="" onclick="" class="btn_primary small"><span>상세보기</span></a>
+															</span>
+														</dd>
+														<!-- //추가 -->
+													</dl>
+												</div>
+												<div class="graph">
+													<div class="item">
+														<div class="bar barc1" style="height: 28.4%;">
+															<em class="value">142</em>
+															<em class="section">수주목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc1" style="height: 35.6%;">
+															<em class="value">178</em>
+															<em class="section">BO목표</em>
+														</div>
+													</div>
+													<div class="item">
+														<div class="bar barc2" style="height: 41%;">
+															<em class="value">205</em>
+															<em class="section">확보BO</em>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- //월별 상세  -->
+								<!--
+								<h2 class="h2a font-style1"><span>[</span>집중관리/수주지연 BO<span>]</span></h2>
+								<div class="main-state main-state-list">
+									<div class="state-box-wrap state-box-wrap-col2 type-flex">
+										<div class="state-box">
+											<div class="flex">
+												<h3 class="h3 h3a">당월 집중관리 BO</h3>
+												<span class="btn_area">
+													<a href="../popup/popup4-4.html" onclick="window.open(this.href,'_blank','width=1200, height=600, resizable=yes, scrollbars=yes'); return false;" class="btn_primary small"><span>상세보기</span></a>
+												</span>
+											</div>
+											<div class="btnLine">
+												<div class="fR">
+													<span class="txt"><strong class="s">(30건 / 622억원)</strong></span>
+												</div>
+											</div>
+											<div class="tbl_type02 mt5">
+												<table class="blue">
+													<colgroup>
+														<col width="50">
+														<col width="45%">
+														<col width="">
+														<col width="70">
+														<col width="70">
+													</colgroup>
+													<thead>
+														<tr>
+															<th scope="col">No</th>
+															<th scope="col">사업기회명</th>
+															<th scope="col">사업유형</th>
+															<th scope="col">사업규모</th>
+															<th scope="col">성공확률</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="ac">1</td>
+															<td><span class="ellipsis">’22년 삼성U사업</span></td>
+															<td class="ac">[기존]MCP</td>
+															<td class="ar">36.0억원</td>
+															<td class="ac">70%</td>
+														</tr>
+														<tr>
+															<td class="ac">2</td>
+															<td><span class="ellipsis"></span></td>
+															<td class="ac">[기존]집합맞춤</td>
+															<td class="ar">1.4억원</td>
+															<td class="ac"></td>
+														</tr>
+														<tr>
+															<td class="ac">3</td>
+															<td><span class="ellipsis">물산건설 Citizen</span></td>
+															<td class="ac">[기존]집합맞춤</td>
+															<td class="ar">1.1억원</td>
+															<td class="ac"></td>
+														</tr>
+														<tr>
+															<td class="ac">4</td>
+															<td><span class="ellipsis">SDC Academia Data</span></td>
+															<td class="ac">[기존]플랫폼비즈니스</td>
+															<td class="ar">0.7억원</td>
+															<td class="ac"></td>
+														</tr>
+														<tr>
+															<td class="ac">5</td>
+															<td><span class="ellipsis">삼우에프엔지 22년 MCP 삼우에프엔지 22년 MCP 삼우에프엔지 22년 MCP 삼우에프엔지 22년 MCP</span></td>
+															<td class="ac">[기존]MCP</td>
+															<td class="ar">0.5억원</td>
+															<td class="ac"></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="state-box">
+											<div class="flex">
+												<h3 class="h3 h3a">수주지연 BO</h3>
+												<span class="btn_area">
+													<a href="../popup/popup4-5.html" onclick="window.open(this.href,'_blank','width=1200, height=600, resizable=yes, scrollbars=yes'); return false;" class="btn_primary small"><span>상세보기</span></a>
+												</span>
+											</div>
+											<div class="btnLine">
+												<div class="fR">
+													<span class="txt"><strong class="s">(10건 / 15.0억원)</strong></span>
+												</div>
+											</div>
+											<div class="tbl_type02 mt5">
+												<table class="blue">
+													<colgroup>
+														<col width="50">
+														<col width="45%">
+														<col width="">
+														<col width="70">
+														<col width="70">
+													</colgroup>
+													<thead>
+														<tr>
+															<th scope="col">No</th>
+															<th scope="col">사업기회명</th>
+															<th scope="col">사업유형</th>
+															<th scope="col">사업규모</th>
+															<th scope="col">지연일</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="ac">1</td>
+															<td><span class="ellipsis">ㅇㅇㅇ ㅇㅇㅇㅇ 사업</span></td>
+															<td class="ac">[기존]MCP</td>
+															<td class="ar">10.0억원</td>
+															<td class="ac">+76일</td>
+														</tr>
+														<tr>
+															<td class="ac">2</td>
+															<td><span class="ellipsis"></span></td>
+															<td class="ac">[기존]집합맞춤</td>
+															<td class="ar">1.4억원</td>
+															<td class="ac"></td>
+														</tr>
+														<tr>
+															<td class="ac">3</td>
+															<td><span class="ellipsis">△△△△△△△△ 건</span></td>
+															<td class="ac">[기존]집합맞춤</td>
+															<td class="ar">1.1억원</td>
+															<td class="ac">+61일</td>
+														</tr>
+														<tr>
+															<td class="ac">4</td>
+															<td><span class="ellipsis">~~~~~~</span></td>
+															<td class="ac"></td>
+															<td class="ar"></td>
+															<td class="ac"></td>
+														</tr>
+														<tr>
+															<td class="ac">5</td>
+															<td><span class="ellipsis">~~~~~~ ~~~~~~</span></td>
+															<td class="ac"></td>
+															<td class="ar"></td>
+															<td class="ac"></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+								-->
+							</div>
+							<!-- //사업유형별 -->
+						</div>
+						<script type="text/javascript">
+							$('#tab1').tabsx();
+						</script>
+					</div>
+
+				</div>
+
+			</div>
+			<!--// cont -->
+
+		</div>
+	</div>
+	<!--// contents -->
+
+	<!-- footer -->
+	<div calss="footer_wrap"></div>
+	<!--// footer -->
+
+</div>
+</body>
+</html>

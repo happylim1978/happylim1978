@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="no-js" lang="vi">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Samsung SDS Vietnam Multicampus</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<link rel="stylesheet" type="text/css" href="css/sub.css" />
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/menu.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/sly.min.js"></script>
+	<script type="text/javascript" src="js/default.js"></script>
+</head>
+
+<body>
+<div class="wrap">
+	<!-- header -->
+	<div class="header">
+		<button type="button" class="ham" id="ham"><span>링크</span></button>
+		<h1 id="title1"></h1>
+		<a class="back" href="#" onclick="history.back(); return false;">back</a>
+	</div>
+	<!-- //header -->
+	<!-- side -->
+	<div class="side" id="side">
+		<div class="sidemenu">
+			<div class="menu"></div>
+			<button type="button" class="close" id="lnbClose"></button>
+		</div>
+	</div>
+	<!-- side -->
+	<!-- sub con -->
+	<div class="sub-con">
+		<!-- tab -->
+		<div class="sub-tab">
+			<div class="frame" id="crazy">
+				<ul class="clearfix" id="depth1">
+				</ul>
+			</div>
+		</div>
+		<script>
+			$(document).ready(function(){
+				var $frame  = $('#crazy');
+				var $slidee = $frame.children('ul').eq(0);
+				var $wrap   = $frame.parent();
+				var pageCode = 1
+
+				function doSly() {
+					$frame.sly({
+						horizontal: 1,
+						itemNav: 'basic',
+						smart: 1,
+						activateOn: 'click',
+						mouseDragging: 1,
+						touchDragging: 1,
+						releaseSwing: 1,
+						startAt: pageCode,
+						scrollBy: 1,
+						activatePageOn: 'click',
+						speed: 300,
+						elasticBounds: 1,
+						easing: 'easeOutExpo',
+						dragHandle: 1,
+						dynamicHandle: 1,
+						clickBar: 1
+					});
+					$($frame).find('>ul').width( $($frame).find('>ul').width() + 50 )
+				}
+
+				doSly();
+
+				$(window).resize(function(e) {
+					$frame.sly('reload');
+				});
+			});
+		</script>
+		<!-- //tab -->
+		<div class="contents">
+			<div class="sbc sbc2">
+				<p class="image"><img class="img" src="images/2020/sub/img2.png" alt="" /></p>
+				<p class="copy">The new CI of Multicampus is customer-friendly and pursues the design of youth. The key point of the design, "Bridge ti", stands for the combined meaning of "MULTI" and "collaborative IDEA" from creative content creators.</p>
+				<p class="copy">Black, the CI's main color, symbolizes corporate identity with a history as a professional content creator, while the point color, Orange represents a person who is smart and active which are key points of Multicampus Learning Cloud service.</p>
+			</div>
+		</div>
+	</div>
+	<!-- //sub con -->
+	<!-- footer -->
+	<br /><br />
+	<div id="footer-wrap">
+	</div>
+	<!-- //footer -->
+</div>
+
+</body>
+</html>

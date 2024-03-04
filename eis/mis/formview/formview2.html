@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>매출정산 현황 | MIS</title>
+	<link href="../../css/datepicker3.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/module.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/custom.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/popup.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="../../css/admin.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_mis.css" />
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+	<script src="../../js/bootstrap-datepicker.js"></script>
+	<script src="../../js/locales/bootstrap-datepicker.kr.js"></script>
+	<script src="../../js/jquery.slimscroll.min.js"></script>
+	<script src="../../js/admin_script.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../js/html5shiv.js"></script>
+		<script src="../../js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body><!-- 배경색 변경시 class="bg" -->
+<div id="wrap"><!-- 메인일 경우 class="main" -->
+
+	<!-- contents -->
+	<div class="content_wrap">
+		<a class="btn_folding_lnb" href="#">lnb control</a>
+		<div class="wrap_max">
+			<!-- EP title -->
+			<div class="cont_subtit fix">
+				<!-- 로케이션 -->
+				<ul class="breadcrumb">
+					<li>경영정보</li>     
+					<li>실적회의(매출)</li>      
+				</ul>
+				<!-- //로케이션 -->
+				<!-- 제목 -->
+				<div class="tit_area ">
+					<div class="sub_tit">
+						<span class="tit_list">
+							<span class="tit">품의 보기</span>
+						</span>
+					</div>
+				</div>
+				<!-- //제목 -->
+			</div>
+			<!--// EP title -->
+
+			<!-- cont -->
+			<div class="cont_wrap">
+				<div class="btn_area btnLine">
+					<div class="fR">
+						<a href="#" class="btn_basic"><i class="fa fa2 fa-print"></i> <span>출력</span></a>
+						<a href="#" class="btn_basic"><i class="fa fa-arrow-left"></i> <span>이전</span></a>
+					</div>
+				</div>
+
+				<div class="tbl_type01 mt12">
+					<table>
+						<colgroup>
+							<col width="15%">
+							<col width="35%">
+							<col width="15%">
+							<col>
+						</colgroup>
+						<tbody>
+						<tr>
+							<th>비용품의 구분</th>
+							<td>전산비(일반관리비)</td>
+							<th>비용품의 구분</th>
+							<td>전산비(일반관리비)</td>
+						</tr>
+						<tr>
+							<th>비용품의 명</th>
+							<td>15년 EIS/SAP 연간 유지보수 건</td>
+							<th>비용품의 기간</th>
+							<td>2015.01.27 ~ 2015.01.27</td>
+						</tr>
+						</tbody>
+					</table>	
+				</div>
+
+				<div class="tab_module" id="tab1">
+					<div class="tab_navi">
+						<ul>
+							<li><a href="#tab_item1">기본정보</a></li>
+							<li><a href="#tab_item2">계약정보</a></li>
+							<li><a href="#tab_item3">비용정산</a></li>
+							<li><a href="#tab_item4">비용정산출력</a></li>
+							<li><a href="#tab_item5">완료보고</a></li>
+							<li><a href="#tab_item6">마감</a></li>
+						</ul>
+					</div>
+					<div class="tab_cons">
+						<!-- 기본정보 -->
+						<div class="tab_article" id="tab_item1">
+							<h2 class="h2">합의 / 결재정보 <button class="roundBtn" type="button"><i class="fa fa-refresh"></i> reload</button></h2>
+							<div class="tbl_type02">
+								<table class="tableAuto tableCenter">
+									<thead>
+										<tr>
+											<th scope="col" class="first">구분</th>
+											<th scope="col">성명</th>
+											<th scope="col">직급</th>
+											<th scope="col">부서</th>
+											<th scope="col">상태</th>
+											<th scope="col" class="w50p">의견</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>결재</td>
+											<td>임영관</td>
+											<td>G6(차장)</td>
+											<td>시스템개발그룹</td>
+											<td>결재</td>
+											<td>'15년만 유지보수 예정입니다.</td>
+										</tr>
+										<tr>
+											<td>합의</td>
+											<td>촤화섭</td>
+											<td>G7(부장)</td>
+											<td>경영관리그룹</td>
+											<td>합의</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>결재</td>
+											<td>강달중</td>
+											<td>상무</td>
+											<td>경영지원팀</td>
+											<td>결재</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>통보</td>
+											<td>김달성</td>
+											<td>G3(사원)</td>
+											<td>경영관리그룹</td>
+											<td>통보</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>통보</td>
+											<td>김미현</td>
+											<td>G3(사원)</td>
+											<td>경영관리그룹</td>
+											<td>통보</td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<h2 class="h2 mt25">비용품의 기본정보 <button class="roundBtn" type="button"><i class="fa fa-refresh"></i> reload</button></h2>
+							<div class="portlet_wrap">
+								<div class="portlet_area portlet_wide sdse_links sizeAuto">
+									<div class="portlet_tit">
+										<strong>내용(사유)</strong>
+									</div>
+									<div class="portlet_con">
+										<ul class="list1">
+											<li>1.개요
+												<ul class="list2">
+													<li>1) EIS/SAP 시스템 유지보수 연 단위 계약 진행</li>
+													<li>2) 계약기간 : 2015.1.1~2.15.12.31</li>
+													<li>3) 계약기간 : 2015.1.1~2.15.12.31</li>
+													<li>4) 계약기간 : 2015.1.1~2.15.12.31</li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!-- //기본정보 -->
+						<!-- 계약정보 -->
+						<div class="tab_article" id="tab_item2">
+							2
+						</div>
+						<!-- //계약정보 -->
+						<!-- 비용정산 -->
+						<div class="tab_article" id="tab_item3">
+							3
+						</div>
+						<!-- //비용정산 -->
+						<!-- 비용정산출력 -->
+						<div class="tab_article" id="tab_item4">
+							4
+						</div>
+						<!-- //비용정산출력 -->
+						<!-- 완료보고 -->
+						<div class="tab_article" id="tab_item5">
+
+							<div class="titWrap">
+								<h2 class="h2 fL">완료보고 <button class="roundBtn" type="button"><i class="fa fa-refresh"></i> reload</button></h2>
+								<div class="fR btn_area">
+									<a class="btn_primary nnew" href="#"><i class="nIcons">완료보고등록</i><span>완료보고등록</span></a>
+								</div>
+							</div>
+
+							<div class="tbl_type02">
+								<table class="tableAuto tableCenter">
+									<thead>
+										<tr>
+											<th scope="col" class="first">보고번호</th>
+											<th scope="col">보고구분</th>
+											<th scope="col" class="w50p">제목</th>
+											<th scope="col">보고일자</th>
+											<th scope="col">보고자</th>
+											<th scope="col">결재상태</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>구분</td>
+											<td>제목</td>
+											<td>2012.01.27</td>
+											<td>홍길동</td>
+											<td>결재</td>
+										</tr>
+										<tr>
+											<td colspan="6" class="empty">조회된 완료보고 정보가 없습니다.</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="titWrap mt30">
+								<h2 class="h2 fL">완료보고 보류사유 <button class="roundBtn" type="button"><i class="fa fa-refresh"></i> reload</button></h2>
+							</div>
+
+							<!-- 사유 입력 전 -->
+							<div class="tbl_type02">
+								<table class="tableAuto tableCenter tableForm">
+									<colgroup>
+										<col width="70" />
+										<col width="130" />
+										<col width="70" />
+										<col width="" />
+									</colgroup>
+									<tbody>
+										<tr>
+											<td class="tc3">날짜</td>
+											<td>2015.01.27</td>
+											<td class="tc3"><label for="input_check1">보류사유</label></td>
+											<td>
+												<div class="row">
+													<input type="text" class="text" id="input_check1" />
+													<span class="btn_area" style="width:52px;"><a href="#" class="btn_basic">저장</a></span>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- //사유 입력 전 -->
+							<br />
+							<!-- 사유 입력 후-->
+							<div class="tbl_type02">
+								<table class="tableAuto tableCenter tableForm">
+									<colgroup>
+										<col width="70" />
+										<col width="130" />
+										<col width="70" />
+										<col width="" />
+									</colgroup>
+									<tbody>
+										<tr>
+											<td class="tc3">날짜</td>
+											<td>2015.01.27</td>
+											<td class="tc3">보류사유</td>
+											<td class="a_l">보류합니다.</td>
+										</tr>
+										<tr>
+											<td colspan="4">
+												<div class="row">
+													<label for="input_check2" class="reason tc3">보류취소사유</label>
+													<input type="text" class="text" id="input_check2" />
+													<span class="btn_area" style="width:52px;"><a href="#" class="btn_basic">저장</a></span>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- //사유 입력 후-->
+
+							<div class="titWrap mt30">
+								<h2 class="h2 fL">완료보고독려 <button class="roundBtn" type="button"><i class="fa fa-refresh"></i> reload</button></h2>
+								<div class="fR btn_area">
+									<a href="#" class="btn_primary"><span>발송대상자</span></a>
+								</div>
+							</div>
+
+							<div class="tbl_type02">
+								<table class="tableAuto tableCenter">
+									<thead>
+										<tr>
+											<th scope="col" class="first">보고번호</th>
+											<th scope="col">보고구분</th>
+											<th scope="col" class="w50p">제목</th>
+											<th scope="col">보고일자</th>
+											<th scope="col">보고자</th>
+											<th scope="col">결재상태</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>구분</td>
+											<td>제목</td>
+											<td>2012.01.27</td>
+											<td>홍길동</td>
+											<td>결재</td>
+										</tr>
+										<tr>
+											<td colspan="6" class="empty">조회된 완료보고 정보가 없습니다.</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+
+						</div>
+						<!-- //완료보고 -->
+						<!-- 마감 -->
+						<div class="tab_article" id="tab_item6">
+							6
+						</div>
+						<!-- //마감 -->
+					</div>
+				</div>
+				<script type="text/javascript">
+					$('#tab1').tabsx(5);
+				</script>
+			</div>
+			<!--// cont -->
+
+		</div>
+	</div>
+	<!--// contents -->
+
+	<!-- footer -->
+	<div calss="footer_wrap"></div>
+	<!--// footer -->
+
+</div>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<!--[if IE 7]><html class="ie7" lang="ko"><![endif]-->
+<!--[if IE 8]><html class="ie8" lang="ko"><![endif]-->
+<!--[if gte IE 9]><!--><html lang="ko"><!--<![endif]-->
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>관리자 통계</title>
+	<link rel="stylesheet" href="../css/admin_edu.css">
+	<link rel="stylesheet" href="../css/chart.css">
+	<link rel="stylesheet" href="../css/admin_edu_add.css">
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="../js/respond.min.js"></script>
+	<![endif]-->
+	<!--[if lte IE 8]><script src="../js/excanvas.min.js"></script><![endif]-->
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script src="../js/jquery.flot.js"></script>
+	<script src="../js/jquery.flot.resize.min.js"></script>
+	<script src="../js/edu_admin_default.js"></script>
+</head>
+<body class="themeA">
+	<div class="wrap">
+		<header>
+			<h1>크래듀 교육 관리 서비스</h1>
+			<a href="#" class="backBtn"><span>이전</span></a>
+			<a href="#" class="menuBtn"><span>메뉴</span></a>
+		</header>
+		<section class="content">
+			<!-- 탭메뉴 -->
+			<div class="tabmenu">
+				<a href="#"><span class="step1">학습현황</span></a>
+				<a href="#" class="on"><span class="step2">운영보고서</span></a>
+			</div>
+			<!-- 월 운영보고 선택 -->
+			<div class="monReport">
+				<div class="monthReportWrap">
+					<h2>월 운영보고 선택</h2>
+					<!-- 라디오버튼 추가 2016-02-04 -->
+					<div class="reportSearch">
+						<div class="reportSearchbox">
+							<div class="searchLineWrap">
+								<p class="txt">그룹교육</p>
+								<span class="select2">
+									<select id="">
+										<option value="" selected="selected">크레듀 스마트러닝 아카데미</option>
+										<option value=""></option>
+									</select>
+								</span>
+							</div>
+							<div class="searchLineWrap">
+								<p class="txt">교육구분</p>
+								<div>
+									<input type="radio" class="inputRadio" name="sectionSelect" id="sectionSelect1" checked="checked" /><label for="sectionSelect1">이러닝</label>
+									<input type="radio" class="inputRadio" name="sectionSelect" id="sectionSelect2" /><label for="sectionSelect2">집합</label>
+								</div>
+							</div>
+							<div class="searchLineWrap">
+								<p class="txt">검색기간</p>
+								<div class="monthSelectbox">
+									<div class="monthField" id="month_field">
+										<span><input type="text" title="시작 년 월" /><button class="cal"><span>시작년월</span></button></span><span class="space">~</span><span><input type="text" title="끝 년 월" /><button class="cal"><span>마지막년월</span></button></span>
+									</div>
+								</div>
+							</div>
+							<div class="btnWrap"><button class="button"><span class="sview">검색</span></button></div>
+						</div>
+					</div>
+				</div>
+				<!-- 운영결과 보고 -->
+				<div class="tableWrap">
+					<div class="table">
+						<p class="ex"><span class="period">2014.05~2014.06 </span> 운영결과보고서입니다.</p>
+						<table>
+							<caption><span>운영결과 보고서</span></caption>
+							<thead>
+								<tr>
+									<th>년월</th>
+									<th>시작종료</th>
+									<th>회사</th>
+									<th>군구분</th>
+									<th>보기</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>2014.08</td>
+									<td>종료</td>
+									<td>전체</td>
+									<td>정규</td>
+									<td class="td">
+										<button class="button btnType1"><span>보기</span></button>
+									</td>
+								</tr>
+								<tr>
+									<td>2014.07</td>
+									<td>종료</td>
+									<td>전체</td>
+									<td>정규</td>
+									<td class="td">
+										<button class="button btnType1"><span>보기</span></button>
+									</td>
+								</tr>
+								<tr>
+									<td>2014.06</td>
+									<td>종료</td>
+									<td>전체</td>
+									<td>정규</td>
+									<td class="td">
+										<button class="button btnType1"><span>보기</span></button>
+									</td>
+								</tr>
+								<tr>
+									<td>2014.05</td>
+									<td>종료</td>
+									<td>전체</td>
+									<td>정규</td>
+									<td class="td">
+										<button class="button btnType1"><span>보기</span></button>
+									</td>
+								</tr>
+								<tr>
+									<td>2014.04</td>
+									<td>종료</td>
+									<td>전체</td>
+									<td>정규</td>
+									<td class="td">
+										<button class="button btnType1"><span>보기</span></button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="footer">
+			<div class="person">
+				<div class="number1">
+					<a href="tel:0262629128">
+						<span class="name">교육컨설팅 문의 : 최승운 과장</span>
+						<span class="num">02-6262-9128</span>
+					</a>
+				</div>
+				<div class="number2">
+					<a href="tel:0262629018">
+						<span class="name">교육 운영 문의 : 김보민 사원</span>
+						<span class="num">02-6262-9018</span>
+					</a>
+				</div>
+				<p class="copy">
+					COPYRIGHT ⓒ 2014 CREDU. ALL RIGHT RESERVED.
+					<button type="button"><img src="../images/com/bg_logout.png" alt="로그아웃" /></button>
+				</p>
+			</div>
+		</footer>
+	</div>
+	<!-- 2016-02-04 달력 버튼 위치 변경 및 추가 -->
+	<div class="popupWrap" id="popup_wrap">
+		<div class="caltable">
+			<div class="head">
+				<button class="prev"><span class="hidden">이전월</span></button>
+				<button class="next"><span class="hidden">다음월</span></button>
+				<span class="date">2014년</span>
+			</div>
+			<ul>
+				<li><a href="#">1월</a></li>
+				<li><a href="#">2월</a></li>
+				<li><a href="#">3월</a></li>
+				<li class="line"><a href="#">4월</a></li>
+				<li><a href="#">5월</a></li>
+				<li class="on"><a href="#">6월</a></li>
+				<li><a href="#">7월</a></li>
+				<li class="line"><a href="#">8월</a></li>
+				<li class="lb"><a href="#">9월</a></li>
+				<li><a href="#">10월</a></li>
+				<li><a href="#">11월</a></li>
+				<li class="line rb"><a href="#">12월</a></li>
+			</ul>
+		</div>
+		<div class="calClose">
+			<span class="calBtnWrap"><button type="button" class="define">확인</button></span>
+			<span class="calBtnWrap"><button id="cal_close" type="button">닫기</button></span>
+		</div>
+	</div>
+	<script type="text/javascript">
+	/*if( $mask.length > 0 ){
+		$(window).on('resize', function(){
+			mask();
+		});
+	}*/
+	</script>
+<div class="goTop" id="go_top"><a href="#"><span>페이지상단으로 이동</span></a></div>
+</body>
+</html>

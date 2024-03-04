@@ -1,0 +1,37 @@
+@charset 'utf-8';
+/***** reset *****/
+html,body,div,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select,a{margin:0;padding:0;}
+body{font-size:12px; line-height:100%; font-family:'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif;}
+table{border-collapse:collapse; width:100%;}
+th,td{vertical-align:middle;}
+caption{visibility:hidden; font-size:0; line-height:0; height:0}
+img,fieldset{border:0}
+ul,ol{list-style:none}
+em,address{font-style:normal}
+a{text-decoration:none;line-height:120%; }
+
+a{color:#333;text-decoration:none; background: transparent;}
+
+.pil em,
+legend, .blind {overflow:hidden;position:absolute;top:0;left:0;width:1px !important;height:1px;font-size:0;line-height:100px;white-space:nowrap;}
+
+.checkHidden {visibility:hidden}
+
+.table1 {}
+.table1 table {border:1px solid #a3a9b1; border-collapse:separate; border-spacing:0;}
+.table1 table th,
+.table1 table td {font-size:12px; line-height:18px;}
+.table1 table thead th {padding:5px 0 5px; border-left:1px solid #ccc; background-color:#fafafa;}
+.table1 table tbody th {padding:5px 0 5px; border-top:1px solid #ccc; border-left:1px solid #ccc;}
+.table1 table tbody td {padding:5px 0 5px; border-top:1px solid #ccc; border-left:1px solid #ccc; text-align:center; color:#333;}
+.table1 table thead th.first,
+.table1 table tbody th.first,
+.table1 table tbody td.first {border-left:0 none;}
+.table1 table tbody td.txtL {text-align:left; padding-left:5px;}
+
+.row {overflow:hidden; margin:0 -10px 0 -10px;}
+.row .col {float:left; width:33.33333333333333%;}
+.row .first {width:33.33333333333334%;}
+.row .col .colbox {padding:0 10px;}
+
+.tabTit {line-height:18px; font-weight:bold; padding-bottom:3px;}

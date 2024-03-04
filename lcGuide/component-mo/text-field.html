@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html class="no-js compo" lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MULTICAMPUS DESIGN SYSTEM Learning Cloud</title>
+	<link rel="stylesheet" type="text/css" href="../css/jquery.mCustomScrollbar.css" />
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/sub.css" />
+	<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script type="text/javascript" src="../js/menu.js"></script>
+	<script type="text/javascript" src="../js/default.js"></script>
+</head>
+
+<body>
+	<div class="wrap">
+		<!-- gnb -->
+		<div class="gnb">
+			<div class="gnb-in" id="gnb-in">
+				<h1><a href="../index.html">MDS</a></h1>
+				<h2>Multicampus Design System</h2>
+				<!-- 메뉴 -->
+				<div class="menu" id="menu">
+				</div>
+				<!-- //메뉴 -->
+				<div class="other-link" id="other-link"></div>
+			</div>
+		</div>
+		<!-- //gnb -->
+		<div class="page-wrap">
+			<!-- 페이지 1 -->
+			<div class="page1">
+				<div class="page-in">
+					<div class="page-cover">
+						<h3 class="h3 eng">Text Field</h3>
+						<div class="download">
+							<a href="#" target="_blank">XD download</a>
+						</div>
+						<h4 class="h4">Principle</h4>
+						<div class="h4-con">
+							<p class="copy">
+								사용자가 문자와 숫자 타입의 텍스트를 입력할 수 있는 컴포넌트입니다.<br />
+								Placeholder 문구는 사용자의 입력값이 들어오면 문구는 사라지며, 필요 시 상단에 병기하도록 합니다.<br />
+								텍스트 필드의 사용 목적에 따라 아이콘, 클리어 버튼, 도움말, 카운트는 생략 가능합니다.
+							</p>
+						</div>
+						<h4 class="h4">Anatomy</h4>
+						<div class="img2-wrap">
+							<p class="img2">
+								<img src="../images/sub/component/mo/textField/img_m_textfield_anatomy.png" alt="" />
+							</p>
+							<ul class="explain">
+								<li><span class="num">1</span>Title(Optional)</li>
+								<li><span class="num">2</span>Text</li>
+								<li><span class="num">3</span>Input Area</li>
+								<li><span class="num">4</span>Guide Message(Optional)</li>
+								<li><span class="num">5</span>Function Icon(Optional)</li>
+								<li><span class="num">6</span>Character Counter(Optional)</li>
+							</ul>
+						</div>
+
+						<h5 class="h4">Types</h5>
+						<div class="type-ex">
+							<dl>
+								<dt>Single Line<a href="#target1" class="target">링크</a></dt>
+								<dd>
+									<p class="pic"><img src="../images/sub/component/mo/textField/img_m_textfield_types_single line.png" alt="" /></p>
+									<ul class="list1">
+										<li>텍스트가 인풋박스 영역보다 길어질 때, Text가 좌측으로 숨겨지면서 입력됩니다.</li>
+										<li>최대 입력가능한 글자수, 용량(byte)이 차면 더 이상 입력이 수행되지 않으며, 필요에 따라 조정 가능합니다.</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>Multi Line<a href="#target2" class="target">링크</a></dt>
+								<dd>
+									<p class="pic"><img src="../images/sub/component/mo/textField/img_m_textfield_types_multiline.png" alt="" /></p>
+									<ul class="list1">
+										<li>인풋 텍스트를 두 줄 이상으로 노출 할때 사용합니다.</li>
+										<li>텍스트가 인풋박스 영역보다 길어질 때, Text를 다음행으로 줄바꿈하여 <br />한 줄씩 아래로 늘어나며 입력됩니다.</li>
+										<li>화면에 노출하는 줄바꿈 행의 최대 행 수는 화면에 적합하게 정의 해야 합니다.</li>
+										<li>최대 입력가능한 글자수, 용량(byte)이 차면 더 이상 입력이 수행되지 않으며, <br />필요에 따라 조정 가능합니다.</li>
+										<li>화면 노출되는 최대 행수가 넘는 입력값을 받을 수 있는 경우, <br />상단으로 텍스트가 숨겨지면서 계속 입력됩니다.</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>Multi Box<a href="#target3" class="target">링크</a></dt>
+								<dd>
+									<p class="pic"><img src="../images/sub/component/mo/textField/img_m_textfield_types_multibox.png" alt="" /></p>
+									<ul class="list1">
+										<li>텍스트 삭제 버튼과 스크롤이 같이 나올 때 사용합니다.</li>
+										<li>레이어 팝업, 과정내 작성에서는 공통컬러를 사용합니다. (Typing = #5F7AD1)</li>
+										<li>텍스트가 인풋박스 영역보다 길어질 때, Text를 다음행으로 줄바꿈하여 <br />한 줄씩 아래로 늘어나며 입력됩니다.</li>
+										<li>최대 입력가능한 글자수, 용량(byte)이 차면 더 이상 입력이 수행되지 않으며, <br /> 필요에 따라 조정 가능합니다.</li>
+										<li>화면 노출되는 최대 행수가 넘는 입력값을 받을 수 있는 경우, 스크롤 생성 됩니다.</li>
+										<li>텍스트가 기록되면 삭제 버튼이 생성 됩니다.</li>
+									</ul>
+								</dd>
+							</dl>
+
+						</div>
+
+						<h4 class="h4">Simulation</h4>
+						<h5 class="h5-1">Box Button</h5>
+						<div class="Simulation-tab">
+							<div class="tab-out tabs">
+								<ul style="display: none;">
+									<li><a href="#">Text Field</a></li>
+								</ul>
+								<div class="tab-con">
+									<div class="sub-tab tabs">
+										<ul class="sub-tab-list">
+											<li><a href="#">Default</a></li>
+											<li><a href="#">Typing</a></li>
+											<li><a href="#">Error</a></li>
+											<li><a href="#">Disabled</a></li>
+										</ul>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/textField/img_m_textfield_default.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/textField/img_m_textfield_typing.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/textField/img_m_textfield_error.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/textField/img_m_textfield_disabled.png" alt="" /></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- //페이지 1 -->
+			<!-- 페이지 2 -->
+			<div class="page2">
+				<div class="page-in">
+					<div class="page-cover">
+						<h4 class="h4">Usage</h4>
+
+						<h5 class="h5-1" id="target1">Single Line</h5>
+						<p class="img2"><img src="../images/sub/component/mo/textField/img_m_textfield_usage_1.png" alt="" /></p>
+
+						<h5 class="h5-1" id="target2">Multi Line</h5>
+						<p class="img2"><img src="../images/sub/component/mo/textField/img_m_textfield_usage_2.png" alt="" /></p>
+			
+						<div class="m-size">
+							<h5 class="h5-1" id="target3">Multi Box</h5>
+							<p class="img2"><img src="../images/sub/component/mo/textField/img_m_textfield_usage_3.png" alt="" /></p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- //페이지2 -->
+		</div>
+	</div>
+</body>
+</html>

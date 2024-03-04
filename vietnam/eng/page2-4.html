@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="no-js" lang="vi">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Samsung SDS Vietnam Multicampus</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<link rel="stylesheet" type="text/css" href="css/sub.css" />
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/menu.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/sly.min.js"></script>
+	<script type="text/javascript" src="js/default.js"></script>
+</head>
+
+<body>
+<div class="wrap">
+	<!-- header -->
+	<div class="header">
+		<button type="button" class="ham" id="ham"><span>링크</span></button>
+		<h1 id="title2"></h1>
+		<a class="back" href="#" onclick="history.back(); return false;">back</a>
+	</div>
+	<!-- //header -->
+	<!-- side -->
+	<div class="side" id="side">
+		<div class="sidemenu">
+			<div class="menu"></div>
+			<button type="button" class="close" id="lnbClose"></button>
+		</div>
+	</div>
+	<!-- side -->
+	<!-- sub con -->
+	<div class="sub-con">
+		<!-- tab -->
+		<div class="sub-tab">
+			<div class="frame" id="crazy">
+				<ul class="clearfix" id="depth2">
+				</ul>
+			</div>
+		</div>
+		<script>
+			$(document).ready(function(){
+				var $frame  = $('#crazy');
+				var $slidee = $frame.children('ul').eq(0);
+				var $wrap   = $frame.parent();
+				var pageCode = 3
+
+				function doSly() {
+					$frame.sly({
+						horizontal: 1,
+						itemNav: 'basic',
+						smart: 1,
+						activateOn: 'click',
+						mouseDragging: 1,
+						touchDragging: 1,
+						releaseSwing: 1,
+						startAt: pageCode,
+						scrollBy: 1,
+						activatePageOn: 'click',
+						speed: 300,
+						elasticBounds: 1,
+						easing: 'easeOutExpo',
+						dragHandle: 1,
+						dynamicHandle: 1,
+						clickBar: 1
+					});
+					$($frame).find('>ul').width( $($frame).find('>ul').width() + 50 )
+				}
+
+				doSly();
+
+				$(window).resize(function(e) {
+					$frame.sly('reload');
+				});
+			});
+		</script>
+		<!-- //tab -->
+		<div class="contents">
+			<div class="sbc sbc2">
+
+				<p class="t-h2">Why us?</p>
+				<p class="ex-copy">
+					We offer E-learning courses which contribute to the improvement of business performance and trainees' capacity based on a systematic and efficient process. 
+				</p>
+				<div class="btns">
+					<a href="page2-4-1.html" class="btn round">Explore E-Learning courses</a>
+				</div>
+				<p class="t-h2">Features</p>
+				<div class="box-item box-item1">
+					<p class="t-h4"><span>S</span>imple and useful</p>
+					<div class="box-item-list">
+						<div class="box-item-list-in">
+							<div class="item">
+								<dl>
+									<dt>Professionalism</dt>
+									<dd><p>One Point, Bite Size <br />is short and concise</p></dd>
+								</dl>
+							</div>
+							<div class="item">
+								<dl>
+									<dt>Card news</dt>
+									<dd><p>Provide knowledge, <br />capture Key Message</p></dd>
+								</dl>
+							</div>
+							<div class="item">
+								<dl>
+									<dt>Text / PDF</dt>
+									<dd><p>Offer core brief content <br />that can be viewed <br />at any time</p></dd>
+								</dl>
+							</div>
+							<div class="item">
+								<dl>
+									<dt>Webtoon</dt>
+									<dd><p>Build interesting and attractive cartoon images</p></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box-item box-item2">
+					<p class="t-h4"><span>T</span>ouching stories</p>
+					<div class="box-item-list">
+						<div class="box-item-list-in">
+							<div class="item">
+								<dl>
+									<dt>Daily story telling</dt>
+									<dd><p>Meaningful content through daily touching stories</p></dd>
+								</dl>
+							</div>
+							<div class="item">
+								<dl>
+									<dt>Integrated content management</dt>
+									<dd><p>Integrated content management <br />by building a virtual research center</p></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box-item box-item3">
+					<p class="t-h4"><span>E</span>xpert’s knowledge and insights</p>
+					<div class="box-item-list">
+						<div class="box-item-list-in">
+							<div class="item">
+								<dl>
+									<dt>Verified content</dt>
+									<dd><p>Qualified videos containing experts' knowledge</p></dd>
+								</dl>
+							</div>
+							<div class="item">
+								<dl>
+									<dt>Compatible with Vietnam</dt>
+									<dd><p>Expertise content reflects culture and trends in Vietnam</p></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box-item box-item4">
+					<p class="t-h4"><span>A</span>pplicable to field work</p>
+					<div class="box-item-list">
+						<div class="box-item-list-in">
+							<div class="item">
+								<dl>
+									<dt>Contents with high field applicability</dt>
+									<dd><p>Systematic, integrated chain of programs provided <br />for each capacity, position and leadership skills </p></dd>
+								</dl>
+							</div>
+							<div class="item">
+								<dl>
+									<dt>Customer customization program</dt>
+									<dd><p>The program is compatible with business building values based on customer satisfaction</p></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box-item box-item5">
+					<p class="t-h4"><span>L</span>ive, vivid contents</p>
+					<div class="box-item-list">
+						<div class="box-item-list-in">
+							<div class="item">
+								<dl>
+									<dt>Studying regularly</dt>
+									<dd><p>Studying regularly through periodic follow-up emails</p></dd>
+								</dl>
+							</div>
+							<div class="item">
+								<dl>
+									<dt>Study beforehand and after</dt>
+									<dd><p>Build a systematic learning structure with blended Learning</p></dd>
+								</dl>
+							</div>
+							<div class="item">
+								<dl>
+									<dt>Studying by topics</dt>
+									<dd><p>Offer topics related to new staff, work experience, organization's  activation</p></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p class="t-h2">Training fields</p>
+				<div class="list-box2">
+					<div class="list-box2-in">
+						<ul>
+							<li>
+								<div>
+									<p class="icon"><img src="images/2020/sub/img8-1.png" alt="" /></p>
+									<p class="p1">Basic training</p>
+									<p class="p2">Essential training program in daily office life about business skills and basic etiquette</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<p class="icon"><img src="images/2020/sub/img8-2.png" alt="" /></p>
+									<p class="p1">Leadership training</p>
+									<p class="p2">Training program provides practical and specific solutions so that learners can successfully fulfill their leadership role</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<p class="icon"><img src="images/2020/sub/img8-3.png" alt="" /></p>
+									<p class="p1">Professional training</p>
+									<p class="p2">Training program has the appropriate level for training senior staff</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="btns">
+					<a href="page2-4-1.html" class="btn round">Explore E-Learning courses</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- //sub con -->
+	<!-- footer -->
+	<br /><br />
+	<div id="footer-wrap">
+	</div>
+	<!-- //footer -->
+</div>
+
+</body>
+</html>

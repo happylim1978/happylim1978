@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="no-js" lang="vi">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Trang web dành cho Việt Nam</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<link rel="stylesheet" type="text/css" href="css/sub.css" />
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/menu.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/sly.min.js"></script>
+	<script type="text/javascript" src="js/default.js"></script>
+</head>
+
+<body>
+<div class="wrap">
+	<!-- header -->
+	<div class="header">
+		<button type="button" class="ham" id="ham"><span>링크</span></button>
+		<h1 id="title2"></h1>
+		<a class="back" href="#" onclick="history.back(); return false;">back</a>
+	</div>
+	<!-- //header -->
+	<!-- side -->
+	<div class="side" id="side">
+		<div class="sidemenu">
+			<div class="menu"></div>
+			<button type="button" class="close" id="lnbClose"></button>
+		</div>
+	</div>
+	<!-- side -->
+	<!-- sub con -->
+	<div class="sub-con">
+		<!-- tab -->
+		<div class="sub-tab">
+			<div class="frame" id="crazy">
+				<ul class="clearfix" id="depth2">
+				</ul>
+			</div>
+		</div>
+		<script>
+			$(document).ready(function(){
+				var $frame  = $('#crazy');
+				var $slidee = $frame.children('ul').eq(0);
+				var $wrap   = $frame.parent();
+				var pageCode = 3
+
+				function doSly() {
+					$frame.sly({
+						horizontal: 1,
+						itemNav: 'basic',
+						smart: 1,
+						activateOn: 'click',
+						mouseDragging: 1,
+						touchDragging: 1,
+						releaseSwing: 1,
+						startAt: pageCode,
+						scrollBy: 1,
+						activatePageOn: 'click',
+						speed: 300,
+						elasticBounds: 1,
+						easing: 'easeOutExpo',
+						dragHandle: 1,
+						dynamicHandle: 1,
+						clickBar: 1
+					});
+					$($frame).find('>ul').width( $($frame).find('>ul').width() + 50 )
+				}
+
+				doSly();
+
+				$(window).resize(function(e) {
+					$frame.sly('reload');
+				});
+			});
+		</script>
+		<!-- //tab -->
+		<div class="contents">
+			<div class="sbc sbc2">
+
+				<p class="t-h2">Tại sao là chúng tôi?</p>
+				<p class="ex-copy">
+					Chúng tôi cung cấp chương trình học trực tuyến E-learning góp phần nâng cao hiệu suất kinh doanh và cải thiện năng lực của học viên dựa theo quy trình có hệ thống và hiệu quả.
+				</p>
+				<div class="btns">
+					<a href="page2-4-1.html" class="btn round">Khám phá các khóa học E-Learning</a>
+				</div>
+				<p class="t-h2">Điểm đặc trưng</p>
+				<div class="box-item box-item1">
+					<p class="t-h4"><span class="">Đ</span>ơn giản và hiệu quả</p>
+					<div class="box-item-list">
+						<div class="box-item-list-in">
+							<div class="item">
+								<dl>
+									<dt>Tính chuyên môn</dt>
+									<dd><p>One Point, Bite Size <br />ngắn gọn và  xúc tích</p></dd>
+								</dl>
+							</div>
+							<div class="item">
+								<dl>
+									<dt>Card news</dt>
+									<dd><p>Cung cấp kiến thức, <br />nắm bắt trọng tâm <br />Key Message</p></dd>
+								</dl>
+							</div>
+							<div class="item">
+								<dl>
+									<dt>Văn bản/ PDF</dt>
+									<dd><p>Đưa ra nội dung vắn <br />tắt cốt lõi có thể xem <br />bất cứ khi nào</p></dd>
+								</dl>
+							</div>
+							<div class="item">
+								<dl>
+									<dt>Webtoon</dt>
+									<dd><p>Xây dựng hình ảnh hoạt <br />họa thú vị, thu hút</p></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box-item box-item2">
+					<p class="t-h4"><span class="">C</span>hia sẻ những câu chuyện cảm động</p>
+					<div class="box-item-list">
+						<div class="box-item-list-in">
+							<div class="item">
+								<dl>
+									<dt>Chuyện kể mỗi ngày</dt>
+									<dd><p>Nội dung ý nghĩa thông qua những <br />câu chuyện cảm động mỗi ngày</p></dd>
+								</dl>
+							</div>
+							<div class="item">
+								<dl>
+									<dt>Quản lý nội dung tích hợp</dt>
+									<dd><p>Quản lý nội dung tích hợp bằng việc <br />xây dựng trung tâm nghiên cứu ảo</p></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box-item box-item3">
+					<p class="t-h4"><span class="">K</span>iến thức và cái nhìn sâu sắc từ các chuyên gia</p>
+					<div class="box-item-list">
+						<div class="box-item-list-in">
+							<div class="item">
+								<dl>
+									<dt>Nội dung được kiểm chứng</dt>
+									<dd><p>Video kiến thức chất lượng chứa đựng <br />tri thức và hiểu biết từ các chuyên gia</p></dd>
+								</dl>
+							</div>
+							<div class="item">
+								<dl>
+									<dt>Tương thích với Việt Nam</dt>
+									<dd><p>Nội dung kiến thức chuyên môn <br />phản ánh văn hóa và xu hướng tại Việt Nam</p></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box-item box-item4">
+					<p class="t-h4"><span class="">Á</span>p dụng vào thực tế</p>
+					<div class="box-item-list">
+						<div class="box-item-list-in">
+							<div class="item">
+								<dl>
+									<dt>Nội dung với tính ứng dụng cao</dt>
+									<dd><p>Chuỗi chương trình tích hợp, có hệ thống, cung cấp <br />cho từng năng lực, chức vụ và kỹ năng lãnh đạo</p></dd>
+								</dl>
+							</div>
+							<div class="item">
+								<dl>
+									<dt>Chương trình tùy chỉnh khách hàng</dt>
+									<dd><p>Chương trình tương thích với doanh nghiệp, <br />xây dựng giá trị dựa theo sự hài lòng của khách hàng</p></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box-item box-item5">
+					<p class="t-h4"><span class="">N</span>ội dung sinh động và thú vị</p>
+					<div class="box-item-list">
+						<div class="box-item-list-in">
+							<div class="item">
+								<dl>
+									<dt>Học thường xuyên </dt>
+									<dd><p>Cụ thể hóa học tập thường <br />xuyên thông qua email theo <br />dõi định kỳ</p></dd>
+								</dl>
+							</div>
+							<div class="item">
+								<dl>
+									<dt>Học trước và sau</dt>
+									<dd><p>Xây dựng cấu trúc học tập <br />có hệ thống thông qua <br />Blended Learning</p></dd>
+								</dl>
+							</div>
+							<div class="item">
+								<dl>
+									<dt>Học theo từng chủ đề</dt>
+									<dd><p>Các chủ đề liên quan đến nhân <br />viên mới, kinh nghiệm làm việc, <br />kích hoạt tổ chức v.v...</p></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p class="t-h2">Lĩnh vực đào tạo</p>
+				<div class="list-box2">
+					<div class="list-box2-in">
+						<ul>
+							<li>
+								<div>
+									<p class="icon"><img src="images/2020/sub/img8-1.png" alt="" /></p>
+									<p class="p1">Đào tạo cơ bản</p>
+									<p class="p2">Chương trình đào tạo cần thiết trong sinh hoạt công sở về kỹ năng kinh doanh, nghi thức cơ bản</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<p class="icon"><img src="images/2020/sub/img8-2.png" alt="" /></p>
+									<p class="p1">Đào tạo Leadership</p>
+									<p class="p2">Đào tạo cung cấp giải pháp thực tiễn và cụ thể để học viên có thể thực hiện thành công vai trò lãnh đạo của mình</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<p class="icon"><img src="images/2020/sub/img8-3.png" alt="" /></p>
+									<p class="p1">Đào tạo nghiệp vụ</p>
+									<p class="p2">Chương trình đào tạo có cấp độ phù hợp để bồi dưỡng cho nhân lực cấp cao</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="btns">
+					<a href="page2-4-1.html" class="btn round">Khám phá các khóa học E-Learning</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- //sub con -->
+	<!-- footer -->
+	<br /><br />
+	<div id="footer-wrap">
+	</div>
+	<!-- //footer -->
+</div>
+
+</body>
+</html>

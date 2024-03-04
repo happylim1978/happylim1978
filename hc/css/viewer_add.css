@@ -1,0 +1,10 @@
+.menuArea .script dt.title,
+.menuArea .ppt dt.title,
+.menuArea .opiL dt.title,
+.menuArea .addMyCont dt.title {width: 25%;}
+
+.menuArea .ppt dt.title {left: 25%;}
+.menuArea .opiL dt.title {left: 50%;}
+.menuArea .addMyCont dt.title {left: 75%;}
+
+.rightArea .shareBtn .share a {display: flex; align-items: center;}

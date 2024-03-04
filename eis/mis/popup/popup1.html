@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>거래처 정보 | MIS</title>
+	<link href="../../css/datepicker3.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/module.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/custom.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/popup.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="../../css/admin.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_mis.css" />
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+	<script src="../../js/bootstrap-datepicker.js"></script>
+	<script src="../../js/locales/bootstrap-datepicker.kr.js"></script>
+	<script src="../../js/jquery.slimscroll.min.js"></script>
+	<script src="../../js/admin_script.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../js/html5shiv.js"></script>
+		<script src="../../js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body class="body_popup">
+	<!-- system popup -->
+	<div id="" class="pop_wrap">
+		<!-- title -->
+		<div class="pHead">
+			<h1>거래처 정보</h1>
+		</div>
+		<!-- //title -->
+		<!-- contents -->
+		<div class="pop_cont" style="width:883px;">
+			<div class="tbl_type03 tableForm">
+				<table class="formRow2">
+					<colgroup>
+						<col width="136" />
+						<col width="" />
+						<col width="" />
+						<col width="" />
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row" class="w5">거래처 구분 (<span class="star">＊<em class="sr-only">필수</em></span>)</th>
+							<td class="txt">사업자</td>
+							<th class="w5"><label for="formField1">대표자 (<span class="star">＊<em class="sr-only">필수</em></span>)</label></th>
+							<td>
+								<input type="text" class="form1" id="formField1" placeholder="선택">
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">사업자/주민번호 (<span class="star">＊<em class="sr-only">필수</em></span>)</th>
+							<td>5246161631321</td>
+							<th scope="row"><label for="formField2">거래처명 (<span class="star">＊<em class="sr-only">필수</em></span>)</label></th>
+							<td>
+								<input type="text" class="form1" id="formField2" placeholder="선택">
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="formField3">업태 (<span class="star">＊<em class="sr-only">필수</em></span>)</label></th>
+							<td>
+								<input type="text" class="form1" id="formField3" placeholder="제조외">
+							</td>
+							<th scope="row"><label for="formField4">종목 (<span class="star">＊<em class="sr-only">필수</em></span>)</label></th>
+							<td>
+								<input type="text" class="form1" id="formField4" placeholder="선택">
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="formField5">주소 (<span class="star">＊<em class="sr-only">필수</em></span>)</label></th>
+							<td>
+								<input type="text" style="width:60px;">
+								<span>~</span>
+								<input type="text" style="width:60px;">
+								<span class="btn_area"><a href="#" class="btn_primary small"><span>주소검색</span></a></span>
+								<label for="address2" class="sr-only">나머지주소</label><br />
+								<input type="text" class="text form1 mt5" id="address2" />
+							</td>
+							<th scope="row"><label for="fax_num1">팩스번호</label></th>
+							<td>
+								<input type="text" class="text form1" id="fax_num1" /><br />
+								<label for="fax_num2" class="sr-only">팩스번호</label>
+								<input type="text" class="text form1 mt5" id="fax_num2" />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="formField8">전화번호 (<span class="star">＊<em class="sr-only">필수</em></span>)</label></th>
+							<td>
+								<input type="text" id="formField8" style="width:50px;"> -
+								<input type="text" title="가운데자리" style="width:50px;"> -
+								<input type="text" title="끝자리" style="width:50px;">
+							</td>
+							<th scope="row">은행코드</th>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">회사구분</th>
+							<td>
+								<div class="formWrap">
+									<input type="checkbox" class="inputCheckbox" id="formField10a"> <label for="formField10a">대기업</label>
+									<input type="checkbox" class="inputCheckbox" id="formField10b"> <label for="formField10b">중견기업</label>
+									<input type="checkbox" class="inputCheckbox" id="formField10c"> <label for="formField10c">우선지원기업</label>
+								</div>
+							</td>
+							<th scope="row">개인구분</th>
+							<td>
+								<div class="formWrap formfix1">
+									<input type="radio" class="inputRadio" name="formField13" id="formField13a"> <label for="formField13a" class="size1">기타</label>
+									<input type="radio" class="inputRadio" name="formField13" id="formField13b"> <label for="formField13b" class="size1">크레듀</label>
+									<input type="radio" class="inputRadio" name="formField13" id="formField13c"> <label for="formField13c" class="size1">강사</label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="formField12">예금주</label></th>
+							<td>
+								<input type="text" id="formField12">
+							</td>
+							<th scope="row"><label for="formField15">국가코드</label></th>
+							<td>
+								<select id="formField15" class="form1">
+									<option value="" selected="selected">청구발행</option>
+									<option value=""></option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">거래선 구분</th>
+							<td>
+								<div class="formWrap">
+									<input type="radio" class="inputRadio" name="formField12" id="formField12a"> <label for="formField12a" class="size1">개인</label>
+									<input type="radio" class="inputRadio" name="formField12" id="formField12b"> <label for="formField12b" class="size1">법인</label>
+								</div>
+							</td>
+							<th scope="row"><label for="formField16">실명계좌번호</label></th>
+							<td>
+								<input type="text" id="formField16" class="form1">
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">내외국인 구분</th>
+							<td>
+								<div class="formWrap formfix1">
+									<input type="radio" class="inputRadio" name="formField14" id="formField14a"> <label for="formField14a" class="size1">내국인</label>
+									<input type="radio" class="inputRadio" name="formField14" id="formField14b"> <label for="formField14b" class="size1">외국인</label>
+								</div>
+							</td>
+							<th scope="row">대내/외 구분</th>
+							<td>
+								<div class="formWrap formfix1">
+									<input type="radio" class="inputRadio" name="formField17" id="formField17a"> <label for="formField17a" class="size1">대내</label>
+									<input type="radio" class="inputRadio" name="formField17" id="formField17b"> <label for="formField17b" class="size1">대외</label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">거주구분</th>
+							<td>
+								<div class="formWrap formfix1">
+									<input type="radio" class="inputRadio" name="formField15" id="formField15a"> <label for="formField15a" class="size1">거주</label>
+									<input type="radio" class="inputRadio" name="formField15" id="formField15b"> <label for="formField15b" class="size1">비거주</label>
+								</div>
+							</td>
+							<th scope="row"><label for="formField19">수금조건</label></th>
+							<td>
+								<select class="form1" id="formField19">
+									<option value="" selected="selected">30일 수금</option>
+									<option value=""></option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="formField16">전자세금계산서ID</label></th>
+							<td>
+								<input type="text" class="form1" id="formField16">
+							</td>
+							<th scope="row">그룹</th>
+							<td class="txt">삼성</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="formField18">업종</label></th>
+							<td>
+								<select class="form1" id="formField18">
+									<option value="" selected="selected">선택</option>
+									<option value=""></option>
+								</select>
+							</td>
+							<th scope="row"><label for="formField24">전자계산서URL(본사)</label></th>
+							<td>
+								<select class="form1" id="formField24">
+									<option value="" selected="selected">다큐빌</option>
+									<option value=""></option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="formField20">주민/법인등록번호</label></th>
+							<td>
+								<input type="text" id="formField20" style="width:200px;">
+								<span class="">"-"제외</span>
+							</td>
+							<th scope="row"><label for="formField26">전자계산서URL(세리)</label></th>
+							<td>
+								<select class="form1" id="formField26">
+									<option value="" selected="selected">다큐빌</option>
+									<option value=""></option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="formField21">계산서발행방법</label></th>
+							<td>
+								<select class="form1" id="formField21">
+									<option value="" selected="selected">선택</option>
+									<option value=""></option>
+								</select>
+							</td>
+							<th scope="row"><label for="formField28">영업대표</label></th>
+							<td>
+								<input type="text" id="formField28" style="width:180px;">
+								<span class="btn_area"><a href="#" class="btn_basic small"><span>검색</span></a></span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="formField23">계산서발송방법</label></th>
+							<td>
+								<select class="form1" id="formField23">
+									<option value="" selected="selected">선택</option>
+									<option value=""></option>
+								</select>
+							</td>
+							<th scope="row"><label for="formField24">전자계산서URL(본사)</label></th>
+							<td>
+								<select class="form1" id="formField24">
+									<option value="" selected="selected">다큐빌</option>
+									<option value=""></option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="formField25">종사업장번호</label></th>
+							<td>
+								<input type="text" class="form1" id="formField25">
+							</td>
+							<th scope="row">승인여부</th>
+							<td>승인</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="formField27">고객사</label></th>
+							<td>
+								<input type="text" class="text form1" id="formField27" />
+							</td>
+							<th scope="row">승인일</th>
+							<td>2013-12-22</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="formField28">상시근로자수</label></th>
+							<td>
+								<select class="form1" id="formField28">
+									<option value="" selected="selected"></option>
+									<option value=""></option>
+								</select>
+							</td>
+							<th scope="row">등록일</th>
+							<td class="txt">1999-04-15</td>
+						</tr>
+						<tr>
+							<th scope="row">사용구분</th>
+							<td class="txt">사용</td>
+							<th scope="row">수정일</th>
+							<td class="txt">1999-04-15 오후 1:12:23</td>
+						</tr>
+						<tr>
+							<th scope="row">승인자</th>
+							<td class="txt"></td>
+							<th scope="row"></th>
+							<td class="txt"></td>
+						</tr>
+						<tr>
+							<th scope="row">등록자</th>
+							<td class="txt"></td>
+							<th scope="row"></th>
+							<td class="txt"></td>
+						</tr>
+						<tr>
+							<th scope="row">수정자</th>
+							<td class="txt"></td>
+							<th scope="row"></th>
+							<td class="txt"></td>
+						</tr>
+						<tr>
+							<th scope="row">비용1</th>
+							<td class="txt inTable" colspan="3">
+								<table>
+									<tbody>
+										<tr>
+											<th scope="row">비용품의총예산</th>
+											<td class="cost">20,000,000원</td>
+											<th scope="row">총입력금액</th>
+											<td class="cost">0원</td>
+											<th scope="row">가용예산</th>
+											<td class="cost">20,000,000원</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">비용2</th>
+							<td class="txt inTable" colspan="3">
+								<table>
+									<tbody>
+										<tr>
+											<th scope="row">비용품의총예산</th>
+											<td class="cost">100,000원</td>
+											<th scope="row">총입력금액</th>
+											<td class="cost">0원</td>
+											<th scope="row">가용예산</th>
+											<td class="cost">20,000,000원</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">비용3</th>
+							<td class="txt inTable" colspan="3">
+								<table>
+									<tbody>
+										<tr>
+											<th scope="row">비용품의총예산</th>
+											<td class="cost">50,000원</td>
+											<th scope="row">총입력금액</th>
+											<td class="cost">0원</td>
+											<th scope="row">가용예산</th>
+											<td class="cost">20,000,000원</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">비용4</th>
+							<td class="txt inTable" colspan="3">
+								<table>
+									<tbody>
+										<tr>
+											<th scope="row">비용품의총예산</th>
+											<td class="cost">20,000,000원</td>
+											<th scope="row">총입력금액</th>
+											<td class="cost">10,000원</td>
+											<th scope="row">가용예산</th>
+											<td class="cost">20,000,000원</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+
+			<!-- btns -->
+			<div class="btn_area btnLine mt20">
+				<div class="fL"><span class="txt">수정 된 거래처는 경영관리그룹의 승인 후 MIS와 SAP에 반영이 됩니다.</span></div>
+				<div class="fR">
+					<a class="btn_red small" href="#"><span>저장</span></a>
+					<a class="btn_primary small" href="#"><span>닫기</span></a>
+					<a class="btn_primary small" href="#"><span>신규</span></a>
+					<a class="btn_primary small" href="#"><span>사용여부 변경</span></a>
+				</div>
+			</div>
+		</div>
+		<!--// contents -->
+		<!-- footer -->
+		<div class="pop_footer wide">
+			<a class="btn_close" href="#"><i class="icons i_close">Close</i>Close</a>
+		</div>
+		<!--// footer -->
+
+	</div>
+	<!--// popup -->
+
+</body>
+</html>

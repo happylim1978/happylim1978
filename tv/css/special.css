@@ -1,0 +1,4 @@
+.con-banner .item > .seminar {background-image: url('../images/special/special-banner1.png');}
+.con-banner .item > .special-item {background-image: url('../images/special/special-banner2.png');}
+.con-banner .item > .seminar p:before {background-image: url('../images/special/icon1.png');}
+.con-banner .item > .special-item p:before {background-image: url('../images/special/icon2.png');}

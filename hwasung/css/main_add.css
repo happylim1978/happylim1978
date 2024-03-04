@@ -1,0 +1,15 @@
+.slide-wrap .slider-nav .slick-slide.slick-current,
+.dot-line .stop:after, .dot-line .stop:before,
+.dot-line .dot-line-in .slick-dots li.slick-active button,
+.slide-wrap .slider-for .item .thumbtn > a,
+.slide-wrap .slider-nav .slick-current .nav-in {background-color: #00B5E4;}
+
+.dot-line .play:after {border-left-color: #00B5E4;}
+.dot-line .dot-line-in .slick-dots li.slick-active button {border-color: #00B5E4;}
+
+.main-con .tab-cons {margin-top: 10px;}
+
+@media(max-width:767px) {
+	.slide-wrap .slider-for .item .thumbtn {background-color: #00B5E4;}
+	.main-con .tab-cons {margin-top: 5px;}
+}

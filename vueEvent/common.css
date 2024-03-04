@@ -1,0 +1,141 @@
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 100;src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 300;src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 400;src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 500;src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 700;src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');}
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 900;src: url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
+
+* {margin:0;padding:0;}
+html {font-size: 20px;}
+textarea,
+body{font-family:'Noto Sans KR',"맑은 고딕","Malgun Gothic","돋움",Dotum,"굴림",Gulim,"Helvetica Neue", Helvetica, Arial, sans-serif; font-size:16px; line-height:1.5; -webkit-text-size-adjust:none; font-weight:normal;}
+
+hr{display:none;}
+img{border:0; vertical-align:top;}
+fieldset{border:0;}
+ul,ol,li{list-style:none;}
+select,textarea{border:0; outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0); -webkit-appearance:none;}
+select::-ms-expand {display:none}
+a[href^=tel] {color: inherit; text-decoration: none;}
+
+em, i {font-style:normal;}
+table { border-collapse:collapse;}
+
+a{color:#000; text-decoration:none; outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0); -webkit-appearance:none;}
+a:link,a:hover,a:active{text-decoration:none;}
+
+audio,
+canvas,
+video {display: inline-block; *display: inline; *zoom: 1;}
+audio:not([controls]) {display: none;height: 0;}
+::-moz-selection {background: #b3d4fc; text-shadow: none;}
+::selection {background: #b3d4fc; text-shadow: none;}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {-webkit-appearance: button; cursor: pointer; *overflow: visible;}
+button[disabled],
+input[disabled] {cursor: default;}
+
+input[type="checkbox"],
+input[type="radio"] {box-sizing: border-box; padding: 0; *height: 13px; *width: 13px;}
+
+textarea,
+input[type='text'], input[type='password'] {
+	-webkit-appearance:none;
+	appearance:none;
+	-webkit-border-radius:0;
+	border-radius:0;
+}
+input[type="search"] {
+	-webkit-appearance: textfield;
+	box-sizing: content-box;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+::-webkit-input-placeholder {color: #9a1B1E;}
+:-moz-placeholder {color: #9a1B1E;}
+::-moz-placeholder {color: #9a1B1E;}
+:-ms-input-placeholder {}
+::-ms-input-placeholder {}
+:-ms-placeholder {color: #9a1B1E;}
+:placeholder {color: #9a1B1E;}
+input[type='text'] {border:1px solid #ccc; outline:0;}
+
+.hidden {position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);}
+caption {height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); top: -1px; left: -1px;}
+
+body {background-color: #eee;}
+.wrapper {min-width:1200px;}
+.wrapper * {word-wrap:break-word; word-break:keep-all;}
+.wrapper .header {display: flex; justify-content: center; padding-top: 26px; background-color: #fff;}
+.wrapper .header a {position: relative; color: #999; font-size: 16px; line-height: 44px; padding: 0 40px;}
+.wrapper .header a.current {color: #000; font-weight: bold;}
+.wrapper .header a.current:after {content:''; position: absolute; left: 0; bottom: 0; right: 0; height: 4px; background-color: #000;}
+.wrapper .cons {display: none;}
+.wrapper .cons-on {display: block;}
+.wrapper .cons .list {overflow: hidden; margin: 40px auto; width: 1200px;}
+.wrapper .cons .list li {float: left; margin-left: 15px; margin-bottom: 40px; width: 228px;}
+.wrapper .cons .list li .item {overflow: hidden; background-color: #fff;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+}
+.wrapper .cons .list li:first-child,
+.wrapper .cons .list li:nth-child(5n+1) {margin-left: 0;}
+.wrapper .cons .list li .item {
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 3px 5px 0 rgba(0, 0, 0, 0.13);
+}
+.wrapper .cons .list li .item:hover .img img {
+	-webkit-transform:;
+	-moz-transform:;
+	-o-transform:;
+	-ms-transform:;
+	transform: scale(1.1);
+}
+.wrapper .cons .list li .item .img {overflow: hidden;}
+.wrapper .cons .list li .item .img img {
+	transition: transform 0.4s;
+}
+.wrapper .cons .list li .item .item-in {position: relative; padding: 20px 9px 68px 19px;}
+.wrapper .cons .list li .item .item-in .marks {}
+.wrapper .cons .list li .item .item-in .marks .mark {font-size: 14px; display: inline-block; padding: 0 8px; vertical-align: top; line-height: 22px; border: 1px solid #000;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+.wrapper .cons .list li .item .item-in .tit {margin-top: 4px; font-weight: bold; font-size: 16px;
+	overflow:hidden;text-overflow:ellipsis;line-height:1.5;height:3em; word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+}
+.wrapper .cons .list li .item .item-in .tag {margin-top: 10px; font-size: 14px; font-weight: bold; color: #ff3647;
+	overflow:hidden;text-overflow:ellipsis;line-height:1.5;height:3em; word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+}
+.wrapper .cons .list li .item .item-in .tag span {white-space:nowrap;}
+.wrapper .cons .list li .item .item-in .des {margin-top: 3px; font-size: 14px; line-height: 20px;
+	/*
+	height: 100px;
+	overflow:hidden;text-overflow:ellipsis; word-wrap:break-word;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;
+	*/
+}
+.wrapper .cons .list li .item .btns {position: absolute; left: 19px; right:19px; bottom: 20px;}
+.wrapper .cons .list li .item .btns a {display: block; color: #fff; text-align: center; font-size: 18px; line-height: 40px; font-weight: bold; background-color: #000;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	transition: background-color 0.4s;
+}
+.wrapper .cons .list li .item .btns a:hover {background-color: #332929;}
+.wrapper .no-con {text-align: center; padding: 2em 0; font-weight: bold; font-size: 20px;}
+
+.wrapper .cons .list {display: flex; flex-wrap: wrap;}
+.wrapper .cons .list > li {float: none; display: inline-block;}
+.wrapper .cons .list > li .item {position: relative; height: 100%; padding-bottom: 68px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.wrapper .cons .list > li .item .item-in {padding-bottom: 10px;}

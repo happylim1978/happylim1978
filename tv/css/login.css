@@ -1,0 +1,34 @@
+body.login {background: url('../images/login/bg.jpg') 0 0 no-repeat;
+	-webkit-background-size: cover;
+	background-size: 100% 100%;
+}
+.login-area-wrap {width: 100%; height: 100%;}
+.flex-con,
+.login-area {margin: 0 auto; width: 72.91666666666667%; color: #fff;}
+.login-area .logo {}
+.login-area .logo img {width: 14.82284887924801%;}
+.login-area .p1 {padding: 7.40740740740741vh 0 3.14814814814815vh; font-size: 1.475vw;}
+.login-area .p2 {font-size: 3.7vw; line-height: 1.25em;}
+.login-area .p3 {padding: 7.40740740740741vh 0 3.14814814814815vh; font-size: 3.7vw; line-height: 1.125em;}
+.login-area .p4 {font-size: 1.475vw;}
+.login-area .btns {padding-top: 5.55555555555556vh;}
+.login-area .caution {padding-top: 16.66666666666667vh; font-size: 1.425vw;}
+
+.id-box {background-color: #191919;}
+.id-box .flex-con {height: 100vh;}
+.id-box .flex-con .logo {padding-top: 9%;}
+.id-box .flex-con .form {position: relative;}
+.id-box .flex-con .form .copy {padding-top: 6%; color: #fff; font-size: 4vw; line-height: 1.25em;}
+.id-box .flex-con .form .input-wrap {position: absolute; right: 0; bottom: 0; width: 38.85714285714286%;}
+.id-box .flex-con .form .input-wrap input.input {background: none; border: 0 none; font-size: 1vw; padding-bottom: 0.5vw; width: 100%; color: #fff; border-bottom: 4px solid #1f60cc;}
+.id-box .flex-con .form .input-wrap input.input::-webkit-input-placeholder {color: #fff;}
+.id-box .flex-con .form .input-wrap input.input:-moz-placeholder {color: #fff;}
+.id-box .flex-con .form .input-wrap input.input::-moz-placeholder {color: #fff;}
+.id-box .flex-con .form .input-wrap input.input:-ms-input-placeholder {color: #fff;}
+.id-box .flex-con .form .input-wrap input.input::-ms-input-placeholder {color: #fff;}
+.id-box .flex-con .form .input-wrap input.input:-ms-placeholder {color: #fff;}
+.id-box .flex-con .form .input-wrap input.input:placeholder {color: #fff;}
+.id-box .flex-con .form .input-wrap .check-wrap {padding-top: 0.5vw; margin-bottom: -1em;}
+.id-box .flex-con .form .input-wrap .check-wrap input {margin-right: 0.5em;}
+.id-box .flex-con .form .input-wrap .check-wrap label {font-size: 1vw;}
+.id-box .flex-con .form .input-wrap .check-wrap input:focus + label {color: #da2f2f;}

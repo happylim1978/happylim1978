@@ -1,0 +1,178 @@
+/* 추가하지 않음 글꼴 임시 코드 */
+@font-face {
+font-family: 'NotoSansKR';
+font-style: normal;
+font-weight: 100;
+src: url(./fonts/notosanskr-thin.woff2) format('woff2'),
+	url(./fonts/notosanskr-thin.woff) format('woff');
+}
+@font-face {
+font-family: 'NotoSansKR';
+font-style: normal;
+font-weight: 200;
+src: url(./fonts/notosanskr-demilight.woff2) format('woff2'),
+	url(./fonts/notosanskr-demilight.woff) format('woff');
+}
+@font-face {
+font-family: 'NotoSansKR';
+font-style: normal;
+font-weight: 300;
+src: url(./fonts/notosanskr-light.woff2) format('woff2'),
+	url(./fonts/notosanskr-light.woff) format('woff');
+}
+@font-face {
+font-family: 'NotoSansKR';
+font-style: normal;
+font-weight: 400;
+src: url(./fonts/notosanskr-regular.woff2) format('woff2'),
+	url(./fonts/notosanskr-regular.woff) format('woff');
+}
+@font-face {
+font-family: 'NotoSansKR';
+font-style: normal;
+font-weight: 500;
+src: url(./fonts/notosanskr-medium.woff2) format('woff2'),
+	url(./fonts/notosanskr-medium.woff) format('woff');
+}
+@font-face {
+font-family: 'NotoSansKR';
+font-style: normal;
+font-weight: 700;
+src: url(./fonts/notosanskr-bold.woff2) format('woff2'),
+	url(./fonts/notosanskr-bold.woff) format('woff');
+}
+@font-face {
+font-family: 'NotoSansKR';
+font-style: normal;
+font-weight: 900;
+src: url(./fonts/notosanskr-black.woff2) format('woff2'),
+	url(./fonts/notosanskr-black.woff) format('woff');
+}
+
+* {font-family: 'NotoSansKR',"나눔고딕",NanumGothic,"맑은고딕","Malgun Gothic","돋움",Dotum,"굴림",Gulim,"Helvetica Neue", Helvetica, Arial, sans-serif;}
+body * {font-family: 'NotoSansKR',"나눔고딕",NanumGothic,"맑은고딕","Malgun Gothic","돋움",Dotum,"굴림",Gulim,"Helvetica Neue", Helvetica, Arial, sans-serif;}
+
+/* 추가하지 않음 */
+
+.header .head-in .lg {top: 18px;}
+.ui-header .logo a,
+.header .head-in .lg a { background: url('../images/common/logo.png') 0 0 no-repeat;}
+.header .head-in .lg a {width: 200px; height: 36px;}
+.web-lnb .active > a {color: #00B5E4 !important;}
+
+.ui-panel.ui-panel-position-left {max-width:320px;}
+.header-fixed .header-out, .header-out {background-color: #00B5E4;}
+.header .head-in {border-bottom-color: #00B5E4;}
+
+.ui-panel-position-left .ui-panel-inner .closeBtn .panel-tit .h1 {visibility: hidden;}
+
+.ui-panel-position-left .ui-panel-inner .ui-collapsible-set .ui-collapsible.collapsible02 {}
+.ui-panel-position-left .ui-panel-inner .ui-collapsible-set .ui-collapsible.ui-first-child {}
+.ui-panel-position-left .ui-panel-inner .ui-collapsible-set .ui-collapsible.collapsible02 .ui-collapsible-heading-collapsed {}
+.ui-panel-position-left .ui-panel-inner .ui-collapsible-set .ui-collapsible.collapsible02 .ui-collapsible-heading-collapsed a {border-top: 1px solid #E8E9F5; font-size: 14px;}
+.ui-panel-position-left .ui-panel-inner .ui-collapsible-set .ui-collapsible.ui-first-child .ui-collapsible-heading-collapsed a {border-top: 0 none;}
+
+.ui-panel-position-left .ui-panel-inner .ui-collapsible-set .ui-collapsible-heading a {color: #000 !important; font-size: 14px;}
+.ui-panel-position-left .ui-panel-inner .ui-collapsible-set .ui-collapsible.collapsible02 .ui-collapsible-heading {}
+
+.ui-panel-position-left .ui-panel-inner .ui-collapsible-set .ui-collapsible.collapsible02 .ui-collapsible-heading > a {position: relative; background: none;}
+.ui-panel-position-left .ui-panel-inner .ui-collapsible-set .ui-collapsible.collapsible02 .ui-collapsible-heading > a:before,
+.ui-panel-position-left .ui-panel-inner .ui-collapsible-set .ui-collapsible.collapsible02 .ui-collapsible-heading > a:after {content:''; display: block; position: absolute; margin-top: 0; left: auto; top: 16px; right: 18px; width: 12px; height: 1px; background: none; background-color: #7b7b7b;}
+.ui-panel-position-left .ui-panel-inner .ui-collapsible-set .ui-collapsible.collapsible02 .ui-collapsible-heading > a:before {}
+.ui-panel-position-left .ui-panel-inner .ui-collapsible-set .ui-collapsible.collapsible02 .ui-collapsible-heading-collapsed > a {}
+.ui-panel-position-left .ui-panel-inner .ui-collapsible-set .ui-collapsible.collapsible02 .ui-collapsible-heading-collapsed > a:before {
+	transform:rotate(-90deg);
+}
+.ui-panel-position-left .ui-panel-inner .ui-collapsible-set .ui-collapsible.collapsible02 .ui-collapsible-content {padding-left: 0;}
+.ui-panel-position-left .ui-panel-inner .ui-collapsible-set .ui-collapsible.collapsible02 .collapsible03 {padding: 1em; margin: 0 16px 10px 0; background-color: #f6f6f6;
+	-webkit-border-radius: 0.5em;
+	-moz-border-radius: 0.5em;
+	border-radius: 0.5em;
+}
+.ui-panel-position-left .ui-panel-inner .ui-collapsible-set .ui-collapsible.collapsible02 .collapsible03 > li {}
+.ui-panel-position-left .ui-panel-inner .ui-collapsible-set .ui-collapsible.collapsible02 .collapsible03 > li + li {margin-top: 3px;}
+.ui-panel-position-left .ui-panel-inner .ui-collapsible-set .ui-collapsible.collapsible02 .collapsible03 > li > a {font-size: 13px; line-height: 1.8em; color: #333;}
+
+/* new login */
+.ui-popup-screen.in {background-color: rgba(0,0,0,0.6);} /* dim 배경 컬러 및 투명도 */
+.loginDiv {padding: 60px; width: 546px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.loginDiv.loginDivType1 {}
+.loginDiv.loginDivType1 {background: none; background-color: #fff;}
+
+.loginDiv.loginDivType1 .p2 {margin-top: 8px; font-size: 1.8em; line-height: 1.5em; font-weight: 500;}
+.loginDiv.loginDivType1 .p2 .ca-c {color: #FF6600;}
+.loginDiv.loginDivType1 .loginInput {text-align: left; color: #000; font-size: 10px;}
+.loginDiv.loginDivType1 .loginInput input[type='text'],
+.loginDiv.loginDivType1 .loginInput input[type='password'] {border: 0 none; width: 100%; height: 29px; font-size: 1.8em; border-bottom: 1px solid#707070;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	outline:0;
+	transition:all 0.4s;
+}
+.loginDiv.loginDivType1 .loginInput input:focus {border-bottom-color: #00B5E4;} /* input 포커스시 보더 컬러 */
+.loginDiv.loginDivType1 .loginInput input:focus + label {color: #00B5E4;
+	transform:scale(0.75);
+	transform-origin:0 0;
+}
+.loginDiv.loginDivType1 .field {margin-top: 25px;}
+.loginDiv.loginDivType1 .inputs {position: relative;}
+.loginDiv.loginDivType1 .inputs + .inputs {margin-top: 25px;}
+.loginDiv.loginDivType1 .inputs label {overflow: hidden; visibility: hidden; position: absolute; top: 0; left: 0; width: 1px; height: 1px; cursor:text; color: #B8B8B8; font-size: 14px; line-height: 19px;}
+.loginDiv.loginDivType1 .btns {margin-top: 15px;}
+.loginDiv.loginDivType1 .btns .btn {display: inline-block; width: 100%; height: auto; background-color: #00B5E4 !important; font-size: 2.4em; border: 2px solid #00B5E4 !important; overflow: visible; color: #fff; text-align: center; font-weight: normal; line-height: 2.916666666666667em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border-radius: 0.4166666666666667em !important;
+}
+.loginDiv.loginDivType1 .login-check {display: flex; margin-top: 0.9375em; justify-content:space-between; align-items:center; flex-wrap:wrap; font-size: 1.6em;}
+.loginDiv.loginDivType1 .login-check label {display: inline; font-size: 1em;}
+.loginDiv.loginDivType1 .msg {margin-top: 1.5625em; color: #666; font-size: 1.6em; line-height: 1.5em;}
+.loginDiv.loginDivType1 .msg a {font-weight: bold;}
+
+.loginDiv.loginDivType1 .login-check * {vertical-align: middle;}
+
+.ui-btn.ui-btn-right.ui-link.ui-icon-delete:hover,
+.ui-btn.ui-btn-right.ui-link.ui-icon-delete {background-color: #00B5E4; border-color: #00B5E4;} /* 닫기 버튼 컬러 */
+.ui-btn.ui-btn-right.ui-link.ui-icon-delete:after {background-color: #3c8cc6;}
+
+@media(min-width:768px) and (max-width:1000px) {
+	.header .h-des2 {padding-left: 30px;}
+}
+
+@media(max-width:767px) {
+	.ui-panel-position-left .ui-panel-inner .closeBtn .panel-tit .h1 {visibility: visible;}
+	.ui-panel-position-left .ui-panel-inner .closeBtn,
+	.mpinfo {background-color: #00B5E4;}
+	.mpinfo .before {padding-bottom: 0;}
+	.ui-header .ui-title {padding-top: 19px;}
+	.ui-header .logo a {width: 100px; height: 18px;
+		-webkit-background-size: 100% 100%;
+		background-size: 100% 100%;
+	}
+	.ui-header .btn .login {width: auto; font-size: 12px; color: #000; line-height: 30px;}
+	.ui-panel-position-left .ui-panel-inner .closeBtn .panel-head {padding-right: 8px;}
+	.ui-panel-position-left .ui-panel-inner .closeBtn .panel-head .panel-msg {margin-right: 0;}
+
+}
+
+@media(max-width:640px) {
+	.loginDiv {width: 320px; padding: 15px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	}
+	.loginDiv.loginDivType1 .loginInput {font-size: 8px;}
+	.loginDiv.loginDivType1 .login-check {justify-content:space-around;}
+	.loginDiv.loginDivType1 .login-check > div:last-child {margin-top: 5px;}
+	.loginDiv.loginDivType1 .msg {text-align: center;}
+	.br2 {display: block;}
+}

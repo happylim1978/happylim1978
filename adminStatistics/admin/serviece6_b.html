@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--[if IE 7]><html class="ie7" lang="ko"><![endif]-->
+<!--[if IE 8]><html class="ie8" lang="ko"><![endif]-->
+<!--[if gte IE 9]><!--><html lang="ko"><!--<![endif]-->
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>관리자 통계</title>
+	<link rel="stylesheet" href="../css/admin_edu.css">
+	<link rel="stylesheet" href="../css/chart.css">
+	<link rel="stylesheet" href="../css/admin_edu_add.css">
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="../js/respond.min.js"></script>
+	<![endif]-->
+	<!--[if lte IE 8]><script src="../js/excanvas.min.js"></script><![endif]-->
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script src="../js/jquery.flot.js"></script>
+	<script src="../js/jquery.flot.pie.min.js"></script>
+	<script src="../js/jquery.flot.resize.min.js"></script>
+	<script src="../js/edu_admin_default.js"></script>
+</head>
+<body class="themeB">
+	<div class="wrap">
+		<header>
+			<h1>크래듀 교육 관리 서비스</h1>
+			<a href="#" class="backBtn"><span>이전</span></a>
+			<a href="#" class="menuBtn"><span>메뉴</span></a>
+		</header>
+		<section class="content">
+			<!-- 탭메뉴 -->
+			<div class="tabmenu">
+				<a href="#"><span class="step1">학습현황</span></a>
+				<a href="#" class="on"><span class="step2">운영보고서</span></a>
+			</div>
+			<!-- 학습현황 시작 -->
+			<div class="reportBox">
+				<div class="reportBoxHead">
+					<p class="copy">과정별 수료율</p>
+					<span class="select3">
+						<select id="">
+							<option value="">페이지 선택</option>
+							<option value="">월 교육현황</option>
+							<option value="">종합현황</option>
+							<option value="" selected="selected">과정별 수료율</option>
+							<option value="">학습현황</option>
+							<option value="">과정랭킹</option>
+						</select>
+					</span>
+				</div>
+				<div class="completeBox">
+					<div class="comSearch">
+						<div class="set">
+							<span class="copy">구분</span>
+							<span class="select4">
+								<select id="">
+									<option value="" selected="selected">경영리더십</option>
+									<option value=""></option>
+								</select>
+							</span>
+						</div>
+						<div class="set">
+							<span class="copy">대분류</span>
+							<span class="select4">
+								<select id="">
+									<option value="" selected="selected">All</option>
+									<option value="">비즈니스리더십</option>
+									<option value="">계층리더십</option>
+								</select>
+							</span>
+						</div>
+						<div class="btn">
+							<button class="button"><span class="sview">검색</span></button>
+						</div>
+					</div>
+				</div>
+				<div class="completeBox completeBox1">
+					<div class="table2">
+						<table>
+							<caption><span>송영수 교수의 사람을 키우는 리더,조직을 키우는 코칭</span></caption>
+							<thead>
+								<tr>
+									<th scope="col" colspan="3">송영수 교수의 사람을 키우는 리더,조직을 키우는 코칭</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>수료인원 <span class="tc1">15명</span></td>
+									<td>미수료인원 <span class="tc1">1명</span></td>
+									<td>수료율 <span class="tc1">94%</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="table2">
+						<table>
+							<caption><span>세종의 창조 리더십</span></caption>
+							<thead>
+								<tr>
+									<th scope="col" colspan="3">세종의 창조 리더십</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>수료인원 <span class="tc1">15명</span></td>
+									<td>미수료인원 <span class="tc1">1명</span></td>
+									<td>수료율 <span class="tc1">94%</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="table2">
+						<table>
+							<caption><span>조직을 장악하는 신임리더의 관리비번</span></caption>
+							<thead>
+								<tr>
+									<th scope="col" colspan="3">조직을 장악하는 신임리더의 관리비번</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>수료인원 <span class="tc1">15명</span></td>
+									<td>미수료인원 <span class="tc1">1명</span></td>
+									<td>수료율 <span class="tc1">94%</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="footer">
+			<div class="person">
+				<div class="number1">
+					<a href="tel:0262629128">
+						<span class="name">교육컨설팅 문의 : 최승운 과장</span>
+						<span class="num">02-6262-9128</span>
+					</a>
+				</div>
+				<div class="number2">
+					<a href="tel:0262629018">
+						<span class="name">교육 운영 문의 : 김보민 사원</span>
+						<span class="num">02-6262-9018</span>
+					</a>
+				</div>
+				<p class="copy">
+					COPYRIGHT ⓒ 2014 CREDU. ALL RIGHT RESERVED.
+					<button type="button"><img src="../images/com/bg_logout.png" alt="로그아웃" /></button>
+				</p>
+			</div>
+		</footer>
+	</div>
+	<script type="text/javascript">
+	</script>
+<div class="goTop" id="go_top"><a href="#"><span>페이지상단으로 이동</span></a></div>
+</body>
+</html>

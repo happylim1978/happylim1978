@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> | EIS</title>
+	<link href="../../css/datepicker3.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/module.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/custom.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/popup.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="../../css/admin.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_eis.css" />
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+	<script src="../../js/bootstrap-datepicker.js"></script>
+	<script src="../../js/locales/bootstrap-datepicker.kr.js"></script>
+	<script src="../../js/jquery.slimscroll.min.js"></script>
+	<script src="../../js/admin_script.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../js/html5shiv.js"></script>
+		<script src="../../js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body><!-- 배경색 변경시 class="bg" -->
+<div id="wrap"><!-- 메인일 경우 class="main" -->
+
+	<!-- contents -->
+	<div class="content_wrap">
+		<a id="btn_folding_lnb" class="btn_folding_lnb" href="#">lnb control</a>
+		<div class="wrap_max">
+
+			<!-- EP title -->
+			<div class="cont_subtit fix">
+				<!-- 로케이션 -->
+				<ul class="breadcrumb">
+					<li>경영정보</li>     
+					<li>실적회의(매출)</li>
+					<li><strong>메인</strong></li>
+				</ul>
+				<!-- //로케이션 -->
+
+				<!-- 제목 -->
+				<div class="tit_area">
+					<div class="sub_tit">
+						<span class="tit_list">
+							<span class="tit">메인</span>
+						</span>
+					</div>
+				</div>
+				<!-- //제목 -->
+
+			</div>
+			<!--// EP title -->
+
+
+			<!-- cont -->
+			<div class="cont_wrap">
+
+				<div class="eisMain">
+
+					<div class="tbl_search tbl_search2">
+						<table>
+							<tbody>
+								<tr>
+									<td class="calTd">
+										<div class="date_wrap">
+											<div class="date_input date" id="cal1">
+												<input type="text" style="width:160px;">
+												<a class="btn_calendar input-group-addon" href="#">
+													<i class="icons i_calendar">calendar</i>
+												</a>
+											</div>
+											<span>~</span>
+											<div class="date_input date" id="cal2">
+												<input type="text" style="width:160px;">
+												<a class="btn_calendar input-group-addon" href="#">
+													<i class="icons i_calendar">calendar</i>
+												</a>
+											</div>
+										</div>
+										<span class="btn_area">
+											<a href="#" class="btn_primary small">조회</a>
+										</span>
+										<script>
+											$('#cal1').datepicker({
+												format: "yyyy.mm",
+												minViewMode: 1, //월력변환
+												language:'kr',
+												autoclose : true
+											})
+											.on('show', function(){$(this).addClass('active');})
+											.on('hide', function(){$(this).removeClass('active');})
+											;
+											$('#cal2').datepicker({
+												format: "yyyy.mm.dd",
+												language:'kr',
+												todayHighlight: true,
+												autoclose : true,
+												todayBtn : 'linked'
+											})
+											.on('show', function(){$(this).addClass('active');})
+											.on('hide', function(){$(this).removeClass('active');})
+											;
+										</script>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+
+					<p class="maincopy"><strong>P</strong>(Plan) : 계획,  <strong>A</strong>(Actual) : 실적 <span>[단위 :  백만원, %]</span></p>
+					<ul class="mList">
+						<li class="listbox">
+							<div class="head">
+								<p class="txt">I. 도전목표</p>
+								<span class="btn_area"><a href="#" class="btn_basic small"><span>Detail</span></a></span>
+							</div>
+							<div class="status">
+								<table>
+									<thead>
+										<tr>
+											<th scope="col">vs. 1,400</th>
+											<th scope="col">vs. 13년</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<p class="icon"><img src="../../images/common/rup_l.gif" alt="상승" /></p>
+												<ul>
+													<li class="p">11,999</li>
+													<li class="a">10,616</li>
+												</ul>
+												<p class="percent blue addCopy">
+													<span class="tcopy">계획비<br />달성율</span>
+													93<span class="pColor">%</span>
+												</p>
+											</td>
+											<td>
+												<p class="icon"><img src="../../images/common/rdown_l.gif" alt="하락" /></p>
+												<ul>
+													<li class="p">11,999</li>
+													<li class="empty">&nbsp;</li>
+												</ul>
+												<p class="percent red addCopy">
+													<span class="tcopy">전년비<br /><span>신장율</span></span>
+													7<span class="pColor">%</span>
+												</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</li>
+						<li class="listbox">
+							<div class="head">
+								<p class="txt">II. 경영계획</p>
+								<span class="btn_area"><a href="#" class="btn_basic small"><span>Detail</span></a></span>
+							</div>
+							<div class="status">
+								<table>
+									<thead>
+										<tr>
+											<th scope="col">vs. 1,400</th>
+											<th scope="col">vs. 13년</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<p class="icon"><img src="../../images/common/rup_l.gif" alt="상승" /></p>
+												<ul>
+													<li class="p">11,999</li>
+													<li class="a">10,616</li>
+												</ul>
+												<p class="percent blue">93<span class="pColor">%</span></p>
+											</td>
+											<td>
+												<p class="icon"><img src="../../images/common/requal_o_l.gif" alt="변화없음" /></p>
+												<ul>
+													<li class="p">9,666</li>
+													<li class="empty">&nbsp;</li>
+												</ul>
+												<p class="percent red">7<span class="pColor">%</span></p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</li>
+						<li class="listbox">
+							<div class="head">
+								<p class="txt">III. 영업이익</p>
+								<span class="btn_area"><a href="#" class="btn_basic small"><span>Detail</span></a></span>
+							</div>
+							<div class="status">
+								<table>
+									<thead>
+										<tr>
+											<th scope="col">vs. 1,400</th>
+											<th scope="col">vs. 13년</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<p class="icon"><img src="../../images/common/rup_l.gif" alt="상승" /></p>
+												<ul>
+													<li class="p">11,999</li>
+													<li class="a">10,616</li>
+												</ul>
+												<p class="percent blue">93<span class="pColor">%</span></p>
+											</td>
+											<td>
+												<p class="icon"><img src="../../images/common/rdown_l.gif" alt="하락" /></p>
+												<ul>
+													<li class="p">11,999</li>
+													<li class="empty">&nbsp;</li>
+												</ul>
+												<p class="percent red">7<span class="pColor">%</span></p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</li>
+
+						<li class="listbox listboxs">
+							<div class="head">
+								<p class="txt">Ⅳ. 전략사업팀</p>
+							</div>
+							<div class="status">
+								<table>
+									<thead>
+										<tr>
+											<th scope="col">vs. 1,400</th>
+											<th scope="col">vs. 13년</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<p class="icon"><img src="../../images/common/rup_l.gif" alt="상승" /></p>
+												<ul>
+													<li class="p">11,999</li>
+													<li class="a">10,616</li>
+												</ul>
+												<p class="percent blue">93<span class="pColor">%</span></p>
+											</td>
+											<td>
+												<p class="icon"><img src="../../images/common/requal_o_l.gif" alt="변화없음" /></p>
+												<ul>
+													<li class="p">11,999</li>
+													<li class="empty">&nbsp;</li>
+												</ul>
+												<p class="percent red">7<span class="pColor">%</span></p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</li>
+						<li class="listbox listboxSub listboxSub2">
+							<div class="status">
+								<p class="subTit">(1) SL사업 1그룹</p>
+								<div class="tableWrap">
+									<table>
+										<thead>
+											<tr>
+												<th scope="col">vs. 1,400</th>
+												<th scope="col">vs. 13년</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<p class="icon"><img src="../../images/common/rup_s.gif" alt="상승" /></p>
+													<ul>
+														<li class="p">11,999</li>
+														<li class="a">10,616</li>
+													</ul>
+													<p class="percent blue">93<span class="pColor">%</span></p>
+												</td>
+												<td>
+													<p class="icon"><img src="../../images/common/rdown_s.gif" alt="하락" /></p>
+													<ul>
+														<li class="p">11,999</li>
+														<li class="empty">&nbsp;</li>
+													</ul>
+													<p class="percent red">7<span class="pColor">%</span></p>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</li>
+						<li class="listbox listboxSub listboxSub2">
+							<div class="status">
+								<p class="subTit">(2) SL사업 2그룹</p>
+								<div class="tableWrap">
+									<table>
+										<thead>
+											<tr>
+												<th scope="col">vs. 1,400</th>
+												<th scope="col">vs. 13년</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<p class="icon"><img src="../../images/common/rup_s.gif" alt="상승" /></p>
+													<ul>
+														<li class="p">11,999</li>
+														<li class="a">10,616</li>
+													</ul>
+													<p class="percent blue">93<span class="pColor">%</span></p>
+												</td>
+												<td>
+													<p class="icon"><img src="../../images/common/requal_o_s.gif" alt="변화없음" /></p>
+													<ul>
+														<li class="p">11,999</li>
+														<li class="empty">&nbsp;</li>
+													</ul>
+													<p class="percent red">7<span class="pColor">%</span></p>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</li>
+						<li class="listbox listboxSub listboxSub2">
+							<div class="status">
+								<p class="subTit">(3) 생보사업 그룹</p>
+								<div class="tableWrap">
+									<table>
+										<thead>
+											<tr>
+												<th scope="col">vs. 1,400</th>
+												<th scope="col">vs. 13년</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<p class="icon"><img src="../../images/common/rup_s.gif" alt="상승" /></p>
+													<ul>
+														<li class="p">11,999</li>
+														<li class="a">10,616</li>
+													</ul>
+													<p class="percent blue">93<span class="pColor">%</span></p>
+												</td>
+												<td>
+													<p class="icon"><img src="../../images/common/rdown_s.gif" alt="하락" /></p>
+													<ul>
+														<li class="p">11,999</li>
+														<li class="empty">&nbsp;</li>
+													</ul>
+													<p class="percent red">7<span class="pColor">%</span></p>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</li>
+						<li class="listbox listboxSub listboxSub2">
+							<div class="status">
+								<p class="subTit">(4) 손보사업 그룹</p>
+								<div class="tableWrap">
+									<table>
+										<thead>
+											<tr>
+												<th scope="col">vs. 1,400</th>
+												<th scope="col">vs. 13년</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<p class="icon"><img src="../../images/common/rup_s.gif" alt="상승" /></p>
+													<ul>
+														<li class="p">11,999</li>
+														<li class="a">10,616</li>
+													</ul>
+													<p class="percent blue">93<span class="pColor">%</span></p>
+												</td>
+												<td>
+													<p class="icon"><img src="../../images/common/rdown_s.gif" alt="하락" /></p>
+													<ul>
+														<li class="p">11,999</li>
+														<li class="empty">&nbsp;</li>
+													</ul>
+													<p class="percent red">7<span class="pColor">%</span></p>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</li>
+
+						<li class="listbox listboxs">
+							<div class="head">
+								<p class="txt">Ⅴ. HR사업팀</p>
+							</div>
+							<div class="status">
+								<table>
+									<thead>
+										<tr>
+											<th scope="col">vs. 1,400</th>
+											<th scope="col">vs. 13년</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<p class="icon"><img src="../../images/common/rup_l.gif" alt="상승" /></p>
+												<ul>
+													<li class="p">11,999</li>
+													<li class="a">10,616</li>
+												</ul>
+												<p class="percent blue">93<span class="pColor">%</span></p>
+											</td>
+											<td>
+												<p class="icon"><img src="../../images/common/requal_o_l.gif" alt="변화없음" /></p>
+												<ul>
+													<li class="p">11,999</li>
+														<li class="empty">&nbsp;</li>
+												</ul>
+												<p class="percent red">7<span class="pColor">%</span></p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</li>
+						<li class="listbox listboxSub">
+							<div class="status">
+								<p class="subTit">(1) HR사업 1그룹</p>
+								<div class="tableWrap">
+									<table>
+										<thead>
+											<tr>
+												<th scope="col">vs. 1,400</th>
+												<th scope="col">vs. 13년</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<p class="icon"><img src="../../images/common/rup_s.gif" alt="상승" /></p>
+													<ul>
+														<li class="p">11,999</li>
+														<li class="a">10,616</li>
+													</ul>
+													<p class="percent blue">93<span class="pColor">%</span></p>
+												</td>
+												<td>
+													<p class="icon"><img src="../../images/common/rdown_s.gif" alt="하락" /></p>
+													<ul>
+														<li class="p">11,999</li>
+														<li class="empty">&nbsp;</li>
+													</ul>
+													<p class="percent red">7<span class="pColor">%</span></p>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</li>
+						<li class="listbox listboxSub">
+							<div class="status">
+								<p class="subTit">(2) HR사업 2그룹</p>
+								<div class="tableWrap">
+									<table>
+										<thead>
+											<tr>
+												<th scope="col">vs. 1,400</th>
+												<th scope="col">vs. 13년</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<p class="icon"><img src="../../images/common/rup_s.gif" alt="상승" /></p>
+													<ul>
+														<li class="p">11,999</li>
+														<li class="a">10,616</li>
+													</ul>
+													<p class="percent blue">93<span class="pColor">%</span></p>
+												</td>
+												<td>
+													<p class="icon"><img src="../../images/common/rdown_s.gif" alt="하락" /></p>
+													<ul>
+														<li class="p">11,999</li>
+														<li class="empty">&nbsp;</li>
+													</ul>
+													<p class="percent red">7<span class="pColor">%</span></p>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</li>
+						<li class="listbox listboxSub">
+							<div class="status">
+								<p class="subTit">(3) OPIc 그룹</p>
+								<div class="tableWrap">
+									<table>
+										<thead>
+											<tr>
+												<th scope="col">vs. 1,400</th>
+												<th scope="col">vs. 13년</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<p class="icon"><img src="../../images/common/rup_s.gif" alt="상승" /></p>
+													<ul>
+														<li class="p">11,999</li>
+														<li class="a">10,616</li>
+													</ul>
+													<p class="percent blue">93<span class="pColor">%</span></p>
+												</td>
+												<td>
+													<p class="icon"><img src="../../images/common/rdown_s.gif" alt="하락" /></p>
+													<ul>
+														<li class="p">11,999</li>
+														<li class="empty">&nbsp;</li>
+													</ul>
+													<p class="percent red">7<span class="pColor">%</span></p>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</li>
+
+					</ul>
+				</div>
+
+			</div>
+			<!--// cont -->
+
+		</div>
+	</div>
+	<!--// contents -->
+
+	<!-- footer -->
+	<div calss="footer_wrap"></div>
+	<!--// footer -->
+
+</div>
+</body>
+</html>

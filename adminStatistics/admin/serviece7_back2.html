@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<!--[if IE 7]><html class="ie7" lang="ko"><![endif]-->
+<!--[if IE 8]><html class="ie8" lang="ko"><![endif]-->
+<!--[if gte IE 9]><!--><html lang="ko"><!--<![endif]-->
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=7">
+	<meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>관리자 통계</title>
+	<link rel="stylesheet" href="../css/admin_edu.css">
+	<link rel="stylesheet" href="../css/chart.css">
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="../js/respond.min.js"></script>
+	<![endif]-->
+	<!--[if lte IE 8]><script src="../js/excanvas.min.js"></script><![endif]-->
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script src="../js/jquery.flot.js"></script>
+	<script src="../js/jquery.flot.pie.min.js"></script>
+	<script src="../js/jquery.flot.resize.min.js"></script>
+	<script src="../js/edu_admin_default.js"></script>
+	<script src="../js/jquery.flot.animator.min.js"></script>
+	<script src="../js/jquery.flot.valuelabels.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<section class="content">
+			<!-- 학습현황 시작 -->
+			<div class="reportBox">
+				<div class="chartboxCover">
+					<div class="chartbox">
+						<h2>미수료 사유</h2>
+						<div class="chartWrap">
+							<div class="chartA chartA1" id="chartA1"></div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</section>
+	</div>
+	<script type="text/javascript">
+	//시간대별 학습접속
+	var dataA1 = [
+		{
+			label: "학생 전체 성적분포",
+			points: {fillColor: "#4db0ed"},
+			data:[
+				[5,0],[17.25,10],[28.5,15],[39.75,15],[51,20],[61.25,10],[72.5,10],[83.75,15],[95,5]
+			]
+			,valueLabels:{
+				show: true,
+				showMaxValue: true,
+				showMinValue: true,
+				showLastValue: true,
+				yoffset: 1,
+				yoffsetMin: 20,
+				align: 'center',
+				font: "9pt 'Trebuchet MS'",
+				fontcolor: 'blue',
+				useDecimalComma: true,
+				hideZero : true,//0 값 안보이기
+			}
+		},
+		{
+			label: "인문계열 성적분포",
+			points: {fillColor: "#f00"},
+			data:[
+				[5,0],[17.25,15],[28.5,20],[39.75,30],[51,15],[61.25,5],[72.5,5],[83.75,5],[95,10]
+			]
+			,valueLabels:{
+				show: true,//라벨 보이기
+				showMaxValue: true,//최대값 보이기
+				showMinValue: true,//최소값 보이기
+				showLastValue: true,//마지막 값 보이기
+				yoffset: 1,
+				yoffsetMin: 20,
+				align: 'center',
+				font: "9pt 'Trebuchet MS'",
+				fontcolor: 'red',
+				useDecimalComma: true,
+				hideZero : true,//0 값 안보이기
+				labelFormatter : function(v){return v + '%'}
+			}
+		}
+	];
+
+	var options = {
+		colors: ["#4db0ed","#f00"],
+		lines : {
+			show: true
+		},
+		points : {
+			show : false
+		},
+		xaxis : {
+			tickLength: 10,
+			color:'#dcdcdc',//x좌표 라인 칼러 tickLength 값이 있어야함
+			min : 0,
+			max : 100,
+			autoscaleMargin : 0.1,
+			tickSize : 1,
+			ticks: [[5,'NL'],[17.25,'NM'],[28.5,'NH'],[39.75,'IL'],[51,'IM1'],[61.25,'IM2'], [72.5,'IM3'], [83.75,'IH'], [95,'AL']]
+		},
+		yaxis: {
+			autoscaleMargin : 0.1,
+			tickSize : 5
+		},
+		grid:{
+			borderWidth: {
+				top:0,
+				left:0,
+				bottom:1,
+				right:0
+			},
+			borderColor : '#dcdcdc'//x좌표 칼러
+		},
+		shadowSize : 0
+	};
+
+	var p2 = $.plot("#chartA1", dataA1, options);
+
+	function myLoc(x_pos, y_pos, this_ele) {
+		$('<span class="myLoc"><img src="../images/com/myloc.gif" alt="내위치" title="내위치"></span>')
+		.css({
+			position: 'absolute',
+			left: x_pos+'%',
+			top: y_pos+'%'
+		}).appendTo(this_ele.getPlaceholder());
+	}
+	myLoc(15, 20, p2);
+
+	</script>
+</body>
+</html>

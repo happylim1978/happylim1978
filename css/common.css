@@ -1,8 +1,9 @@
 @import url("https://websfont.github.io/nanumSquareNeo/nanumSquareNeo.css");
 
 :root {
-	/*--color1: red*/
+	--color1: #4343ba;
 	font-size:10px;
+	line-height: 1.5;
 	font-weight: 400;
 
 	font-synthesis: none;
@@ -13,7 +14,7 @@
 }
 
 * {margin: 0; padding: 0;}
-body {font-family:'nanumSquareNeo', Arial, sans-serif; font-size: 1.6em; line-height: 1.5em;}
+body {font-family:'nanumSquareNeo', Arial, sans-serif; font-size: 1.6em;}
 ul, ol, li {list-style: none;}
 img {border: 0 none;}
 
@@ -23,3 +24,30 @@ a:focus {
 	color: inherit;
 	text-decoration: none;
 }
+
+.title {padding: 1em 0; text-align: center; font-size: 3em; line-height: 1.5em; font-weight: 900;}
+.site-list-wrap {max-width:1200px; margin: 0 auto;}
+.site-list-wrap h2 {font-size: 2rem; font-weight: 700;}
+.site-list {}
+.site-list > .list {display: flex; flex-wrap:wrap; margin-top: 1rem;}
+.site-list > .list > li {width: calc(33.3333% - 7px); margin-left: 10px; margin-top: 10px;}
+.site-list > .list > li:nth-child(3n + 1) {margin-left: 0;}
+
+.site-list > .list > li .list-box {border: 1px solid #ccc; padding: 10px;
+	border-radius: 10px;
+}
+.site-list > .list > li .list-box .img {overflow: hidden; padding-top: 50%; background-repeat: no-repeat; background-position: center center;
+	background-size: 100% auto;
+	border-radius: 10px;
+	transition: background 0.4s;
+}
+.site-list > .list > li:hover .list-box .img {
+	background-size: 110% auto;
+}
+.site-list > .list > li .list-box .img-m {background-size: auto 100%;}
+.site-list > .list > li:hover .list-box .img-m {background-size: auto 110%;}
+.site-list > .list > li .list-box .tit {font-size: 1.6rem; margin-top: 1em; padding-top: 0.5rem; border-top: 1px solid #999; font-weight: 700; color: var(--color1);}
+.site-list > .list > li .list-box .des {padding: 0.75rem 0.25rem;}
+.site-list > .list > li .list-box .links {display: flex; margin-top: 0.5rem;}
+.site-list > .list > li .list-box .links a {flex:1; color: #fff; font-size: 1.4rem; padding: 0.5rem; text-align: center; background-color: var(--color1);}
+.site-list > .list > li .list-box .links a + a {margin-left: 10px;}

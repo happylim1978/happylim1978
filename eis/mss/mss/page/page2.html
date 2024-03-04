@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> | EIS</title>
+	<link href="../../css/datepicker3.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/module.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/custom.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/popup.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="../../css/admin.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_eis.css" />
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+	<script src="../../js/bootstrap-datepicker.js"></script>
+	<script src="../../js/locales/bootstrap-datepicker.kr.js"></script>
+	<script src="../../js/jquery.slimscroll.min.js"></script>
+	<script src="../../js/admin_script.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../js/html5shiv.js"></script>
+		<script src="../../js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body><!-- 배경색 변경시 class="bg" -->
+<div id="wrap"><!-- 메인일 경우 class="main" -->
+
+	<!-- contents -->
+	<div class="content_wrap">
+		<a id="btn_folding_lnb" class="btn_folding_lnb" href="#">lnb control</a>
+		<div class="wrap_max">
+
+			<!-- EP title -->
+			<div class="cont_subtit fix">
+				<!-- 로케이션 -->
+				<ul class="breadcrumb">
+					<li>경영지표</li>    
+					<li><strong>메인</strong></li>
+				</ul>
+				<!-- //로케이션 -->
+
+				<!-- 제목 -->
+				<div class="tit_area ">
+					<div class="sub_tit">
+						<span class="tit_list">
+							<span class="tit">메인</span>
+						</span>
+					</div>
+				</div>
+				<!-- //제목 -->
+
+			</div>
+			<!--// EP title -->
+
+
+			<!-- cont -->
+			<div class="cont_wrap">
+
+				<div class="tbl_search tbl_search2">
+					<table>
+						<tbody>
+							<tr>
+								<td class="calTd">
+									<div class="date_wrap">
+										<div class="date_input date" id="cal1">
+											<input type="text" style="width:160px;">
+											<a class="btn_calendar input-group-addon" href="#">
+												<i class="icons i_calendar">calendar</i>
+											</a>
+										</div>
+										<span>~</span>
+										<div class="date_input date" id="cal2">
+											<input type="text" style="width:160px;">
+											<a class="btn_calendar input-group-addon" href="#">
+												<i class="icons i_calendar">calendar</i>
+											</a>
+										</div>
+										<span class="btn_area">
+											<a href="#" class="btn_primary small"><span>조회</span></a>
+										</span>
+
+									</div>
+									<script>
+										$('#cal1').datepicker({
+											format: "yyyy.mm",
+											minViewMode: 1, //월력변환
+											language:'kr',
+											autoclose : true
+										})
+										.on('show', function(){$(this).addClass('active');})
+										.on('hide', function(){$(this).removeClass('active');})
+										;
+										$('#cal2').datepicker({
+											format: "yyyy.mm.dd",
+											language:'kr',
+											todayHighlight: true,
+											autoclose : true,
+											todayBtn : 'linked'
+										})
+										.on('show', function(){$(this).addClass('active');})
+										.on('hide', function(){$(this).removeClass('active');})
+										;
+									</script>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="tbl_type05 mt12">
+					<table class="tableData dataMiddle bigTable">
+						<colgroup>
+							<col width="" />
+							<col width="" />
+							<col width="60" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="60" />
+							<col width="" />
+							<col width="" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th class="first" scope="col">구분</th>
+								<th scope="col">지표명</th>
+								<th scope="col">현황</th>
+								<th scope="col">실적</th>
+								<th scope="col" class="lSection">기준data</th>
+								<th scope="col">지표명</th>
+								<th scope="col">현황</th>
+								<th scope="col">실적</th>
+								<th scope="col" class="lSection">기준data</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th class="first textC" scope="row" rowspan="4">
+									<p class="mb8">재무</p>
+									<!--span class="btn_area"><a href="#" class="btn_basic small"><span>Sub</span></a></span-->
+								</th>
+								<td class="textL"><a href="#" class="alink1">HRD사업 매출</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/down_s2.gif" alt="하락" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+								<td class="textL"><a href="#" class="alink1">HRD사업 매출</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/up_s2.gif" alt="상승" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+							</tr>
+							<tr>
+								<td class="textL"><a href="#" class="alink1">영업이익</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/down_s2.gif" alt="하락" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+								<td class="textL"><a href="#" class="alink1">영업이익</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/up_s2.gif" alt="상승" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+							</tr>
+							<tr>
+								<td class="textL"><a href="#" class="alink1">외국어사업 매출</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/down_s2.gif" alt="하락" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+								<td class="textL"><a href="#" class="alink1">외국어사업 매출</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/up_s2.gif" alt="상승" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+							</tr>
+							<tr>
+								<td class="textL"><a href="#" class="alink1">영업이익</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/down_s2.gif" alt="하락" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+								<td class="textL"><a href="#" class="alink1">영업이익</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/up_s2.gif" alt="상승" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+							</tr>
+							<tr class="term">
+								<td colspan="11"></td>
+							</tr>
+							<tr>
+								<th class="first textC" scope="row" rowspan="5">
+									<p class="mb8">영업</p>
+									<!--span class="btn_area"><a href="#" class="btn_basic small"><span>Sub</span></a></span-->
+								</th>
+								<td class="textL"><a href="#" class="alink1">핵심고객사매출</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/down_s2.gif" alt="하락" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+								<td class="textL"><a href="#" class="alink1">HRD사업 신규사</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/equal_s2.gif" width="20" height="8" alt="변화없음" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+							</tr>
+							<tr>
+								<td class="textL"><a href="#" class="alink1">그룹사 매출비율</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/equal_s2.gif" width="20" height="8" alt="변화없음" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+								<td class="textL"><a href="#" class="alink1">외국어 BPO 신규</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/up_s2.gif" alt="상승" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+							</tr>
+							<tr>
+								<td class="textL"><a href="#" class="alink1">외국어사업 매출</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/up_s2.gif" alt="상승" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+								<td class="textL"><a href="#" class="alink1">OPIc 도입 대학수</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/up_s2.gif" alt="상승" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+							</tr>
+							<tr>
+								<td class="textL"><a href="#" class="alink1">신규과정 매핑율</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/up_s2.gif" alt="상승" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+								<td class="textL"><a href="#" class="alink1">SERICEO 회원수</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/up_s2.gif" alt="상승" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+							</tr>
+							<tr>
+								<td class="textL"><a href="#" class="alink1">OPIc평가교육연계</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/up_s2.gif" alt="상승" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 전년대비</td>
+								<td class="textL"><a href="#" class="alink1">SERIPro 회원수</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/up_s2.gif" alt="상승" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+							</tr>
+							<tr class="term">
+								<td colspan="11"></td>
+							</tr>
+							<tr>
+								<th class="first textC" scope="row" rowspan="5">
+									<p class="mb8">콘텐츠</p>
+									<p class="mb8">세리시이오</p>
+									<!--span class="btn_area"><a href="#" class="btn_basic small"><span>Sub</span></a></span-->
+								</th>
+								<td class="textL"><a href="#" class="alink1">핵심고객사매출</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/down_s2.gif" alt="하락" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+								<td class="textL"><a href="#" class="alink1">HRD사업 신규사</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/equal_s2.gif" width="20" height="8" alt="변화없음" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+							</tr>
+							<tr>
+								<td class="textL"><a href="#" class="alink1">그룹사 매출비율</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/equal_s2.gif" width="20" height="8" alt="변화없음" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+								<td class="textL"><a href="#" class="alink1">외국어 BPO 신규</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/up_s2.gif" alt="상승" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+							</tr>
+							<tr>
+								<td class="textL"><a href="#" class="alink1">외국어사업 매출</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/up_s2.gif" alt="상승" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+								<td class="textL"><a href="#" class="alink1">OPIc 도입 대학수</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/up_s2.gif" alt="상승" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+							</tr>
+							<tr>
+								<td class="textL"><a href="#" class="alink1">신규과정 매핑율</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/up_s2.gif" alt="상승" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+								<td class="textL"><a href="#" class="alink1">SERICEO 회원수</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/up_s2.gif" alt="상승" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+							</tr>
+							<tr>
+								<td class="textL"><a href="#" class="alink1">OPIc평가교육연계</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/up_s2.gif" alt="상승" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 전년대비</td>
+								<td class="textL"><a href="#" class="alink1">SERIPro 회원수</a></td>
+								<td class="textC"><img class="vam" src="../../images/common/up_s2.gif" alt="상승" width="27" height="23" /></td>
+								<td>10,738</td>
+								<td class="tdRight">10,738 / 경영계획</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p class="tc9 mt10"><strong>＊ 도입과정  CP율, 이러닝과정 수료율(환급) 지표는 2014년 10월 마감분까지 반영된 데이터임</strong></p>
+
+			</div>
+			<!--// cont -->
+
+		</div>
+	</div>
+	<!--// contents -->
+
+	<!-- footer -->
+	<div calss="footer_wrap"></div>
+	<!--// footer -->
+
+</div>
+</body>
+</html>

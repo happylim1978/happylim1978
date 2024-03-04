@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>SERICEO - TV</title>
+		<link rel="stylesheet" type="text/css" href="./css/common.css" />
+		<link rel="stylesheet" type="text/css" href="./css/sub.css" />
+		<link rel="stylesheet" type="text/css" href="./css/special.css" />
+		<script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="./css/swiper.min.css" />
+		<script type="text/javascript" src="./js/swiper.min.js"></script>
+		<script type="text/javascript" src="./js/slimscroll.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('#side1 .sidelist > li:eq(2) > a').focus();
+			});
+		</script>
+	</head>
+	<body>
+		<div class="sub special-wrap">
+			<!-- sub lnb 타입 -->
+			<div class="sub-box side-menu"><!-- 클래스 side-menu 추가 -->
+				<!-- lnb -->
+				<div class="side-bar">
+					<!-- 메뉴 1단 -->
+					<div class="side1" id="side1">
+						<p class="cate">설정/안내</p>
+						<ul class="sidelist side-setting"><!-- 클래스 side-setting 추가 -->
+							<li><a href="#">공지사항</a></li>
+							<li><a href="#">기기설정</a></li>
+							<li><a href="#" class="on">서비스 약관</a></li>
+						</ul>
+					</div>
+					<!-- //메뉴 1단 -->
+				</div>
+				<!-- lnb -->
+				<!-- 해당 콘텐츠 -->
+				<div class="list-con-wrap">
+					<div class="menu-items">
+						<div class="menu-items-in">
+							<div class="setting-box2">
+								<div class="setting-item-wrap">
+									<div class="setting-item">
+										<div class="s-item">
+											<a href="#">
+												<span class="icon icon1"></span>
+												<p class="name"><span>이용약관</span></p>
+											</a>
+										</div>
+										<div class="s-item">
+											<a href="#">
+												<span class="icon icon2"></span>
+												<p class="name"><span>개인정보처리방침</span></p>
+											</a>
+										</div>
+									</div>
+									<div class="setting-item">
+										<div class="s-item">
+											<a href="#">
+												<span class="icon icon3"></span>
+												<p class="name"><span>이메일 정보 <br />무단 수집 거부</span></p>
+											</a>
+										</div>
+										<div class="s-item">
+											<a href="#">
+												<span class="icon icon4"></span>
+												<p class="name"><span>저작권 정책</span></p>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //해당 콘텐츠 -->
+			</div>
+		</div>
+		<!-- 레이어 -->
+		<script>
+			$(document).ready(function(){
+				$('html').addClass('layer-on');
+				var layerElement = document.getElementById('slimScroll');
+
+				var _layer = new slimScroll(layerElement, {
+					'wrapperClass': 'scroll-wrap',
+					'scrollBarContainerClass': 'scroll-bar-wrap',
+					'scrollBarClass': 'scroll-bar'
+				});
+				window.onresize = function(){
+					_layer.resetValues();
+				}
+			});
+		</script>
+		<div id="layer" class="layer">
+			<div class="layer-cover-wrap">
+				<div class="layer-cover">
+					<div class="layer-in slimScroll" id="slimScroll">
+						<!-- 레이어 콘텐츠 -->
+						<div class="layer-con-in">
+							<!-- 레이어 상단 -->
+							<div class="section">
+								<h3 class="cate">이용약관</h3>
+							</div>
+							<!-- //레이어 상단 -->
+							<!-- 내용 -->
+							<div class="layer-msg">
+								<div class="agree">
+									<h4 class="h4">제 1장 총칙</h4>
+									제 1조 목적<br />
+									본 약관은 주식회사 멀티캠퍼스(이하 "회사")가 운영하는 SERICEO 서비스의 이용과 관련하여 회사와 
+									이용자와의 권리/의무 및 책임사항을 규정함을 목적으로 합니다.<br /><br />
+
+									제 2조 용어의 정의<br />
+									1. "서비스"란 접속 가능한 유/무선 정보통신기기의 종류와는 상관없이 이용 가능한 "회사"가 제공하는 SERICEO 서비스를 의미합니다.<br />
+									2. "웹사이트"란 회사가 이용자에게 서비스를 제공하기 위하여 컴퓨터 등 정보통신설비를 이용하여구성한 가상의 공간을 의미합니다.<br />
+									3. "이용자"란 "웹사이트"에 접속하여 본 약관에 따라 "회사"가 "웹사이트"에서 제공하는 서비스를 이용하는 "회원" 및 "비회원"을 의미합니다.<br />
+									4. "회원"이란 회사에 개인정보를 제공하여 회원등록을 한 자로서, 회사와 서비스 이용계약을 체결하고 회원 아이디를 부여 받은 자를 의미합니다.<br />
+									5. "회원 아이디(이하 "ID"라 한다)"란 회원의 식별과 회원의 서비스 이용을 위하여 회원이 선정하고 회사가 승인하는 문자 및 문자와 숫자의 조합을 의미합니다.<br />
+									6. "비밀번호"란 회원이 부여 받은 ID와 일치된 회원임을 확인하고, 회원의 개인정보를 보호하기 위하여 회원이 정한 문자와 숫자의 조합을 의미합니다.<br />
+									7. "비회원"이란 회원이 아니면서 "회사"가 제공하는 서비스를 이용하는 자를 의미합니다.<br />
+									8. "마음리지"란 재산적 가치가 없는 서비스 상의 가상 데이터를 의미하며, "회사"가 임의로 책정 또는 지급, 조정할 수 있습니다.<br />
+									9. 본 약관에서 사용하는 용어의 정의는 본 조에서 정하는 것을 제외하고는 관계법령 및 서비스별 안내에서 정하는 바에 따릅니다.<br /><br />
+
+									제 3 조 이용약관의 효력 및 변경<br />
+									1. 회사는 본 약관의 내용을 이용자가 쉽게 알 수 있도록 각 "웹사이트" 서비스의 초기 화면에 게시합니다.<br />
+									2. 회사는 약관의 규제에 관한 법률, 전자상거래등에서의 소비자보호에 관한 법률, 정보통신망 이용촉진 및 정보보호 등에 관한 법률 등 관련법을 위배하지 않는 범위에서 본 약관을 개정할 수 있습니다.
+								</div>
+							</div>
+							<!-- //내용 -->
+						</div>
+						<!-- //레이어 콘텐츠 -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //레이어 -->
+	</body>
+</html>

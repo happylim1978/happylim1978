@@ -1,0 +1,124 @@
+@charset "utf-8";
+
+input[type=text], input[type=password],
+.date_wrap .date_input,
+select {border-radius:4px;}
+
+.header_wrap {background-color:#2b4b97;}
+.header_wrap .sideMenu .pInfo {border-left-color:#4e6db7; color:#b6c4e6; background-color:#4767b5;}
+.header_wrap .sideMenu .pInfo span {background-image: url('../images/common/bg_person2.gif');}
+.header_wrap .sideMenu .pInfo a {border-color:#395392; color:#b6c4e6; background-color:#5572ba;}
+.header_wrap .sideMenu .gMenu {padding-right:5px; border-right-color:#1a2f64;}
+.header_wrap .sideMenu .gMenu li {background-image:url('../images/common/bg_bar2.gif');}
+.header_wrap .sideMenu .gMenu li a {display:block; padding:0 0 0 24px; height:49px; line-height:49px; color:#8c9fcc;
+	background:url('../images/common/bg_top1.png') 0 -2px no-repeat;
+}
+.header_wrap .sideMenu .gMenu li.step1 a {}
+.header_wrap .sideMenu .gMenu li.step2 a {background-position:0 -101px;}
+.header_wrap .sideMenu .gMenu li.step3 a {background-position:0 -201px;}
+.header_wrap .sideMenu .gMenu li.step4 a {background-position:0 -301px;}
+
+.maincopy {padding:0 0 23px 0; text-align:right; color:#000;}
+.maincopy span {margin-left:5px; color:#818181;}
+
+.cont_wrap {font-size:14px;}
+.tbl_type05 table.tableData td {line-height:18px;}
+
+.eisMain {overflow:hidden; width:841px; width:961px; width:1151px;
+	font-family:'돋움',Dotum, arial, Helvetica, Sans-serif;
+	min-width:1231px; min-width:1151px;
+	width:auto;
+}
+
+.eisMain .mList {overflow:hidden; margin-left:-18px; width:860px; width:980px; width:1250px; font-size:1.5em;
+	width:auto;
+}
+.eisMain .mList li.listbox {float:left; margin:0 0 30px 18px; width:268px; width:308px; width:398px;
+	margin:0; padding:0 0 30px 18px; width:33.3333333333%; box-sizing:border-box;
+}
+.eisMain .mList li.listbox .head {overflow:hidden; height:32px;}
+.eisMain .mList li.listbox .head .txt {float:left; padding-top:4px; color:#003181; font-size:20px; font-weight:bold;}
+.eisMain .mList li.listbox .head .btn_area {float:right; padding:2px 1px 0 0;}
+.eisMain .mList li.listbox .head .btn_area a span {font-size:15px; font-weight:bold;}
+.eisMain .mList li.listbox .status {}
+.eisMain .mList li.listbox .status table {border-right:1px solid #999; border-bottom:1px solid #999;}
+.eisMain .mList li.listbox .status table thead th {border-top:1px solid #999; padding:13px 0 13px; text-align:center; color:#4d6da7; color:#777; background-color:#f6f9fd; font-family:verdana, '돋움'; line-height:21px;}
+.eisMain .mList li.listbox .status table thead th:first-child {border-left:1px solid #999;}
+.eisMain .mList li.listbox .status table tbody td {border-top:1px solid #999; text-align:center;}
+.eisMain .mList li.listbox .status table tbody td:first-child {border-left:1px solid #999;}
+
+.eisMain .mList li.listbox .status p.icon {padding:24px 0 29px; padding:16px 0 20px 0;}
+.eisMain .mList li.listbox .status ul {padding:2px 0 0 34px; padding-left:43px;
+	padding-left:0; margin:0 auto; width:108px;
+}
+.eisMain .mList li.listbox .status ul li {padding:0 0 6px 20px; height:20px; line-height:20px; text-align:left; font-weight:bold; text-align:right; background:url('../images/common/bg_p.gif') 0 0 no-repeat; font-family:verdana;}
+.eisMain .mList li.listbox .status ul li.a {background-image:url('../images/common/bg_a.gif');}
+.eisMain .mList li.listbox .status p.percent {padding:12px 0 21px 6px; font-size:14px; font-weight:bold; font-size:20px; font-family:verdana;}
+.eisMain .mList li.listbox .status p.blue {color:#f3524e; color:#00f;}
+.eisMain .mList li.listbox .status p.red {color:#4771b7; color:#f00;}
+.eisMain .mList li.listbox .status p.percent .pColor {font-size:15px; font-family:"맑은고딕","Malgun Gothic", "나눔고딕",NanumGothic,"돋움",Dotum,"굴림",Gulim,"Helvetica Neue", Helvetica, Arial, sans-serif}
+.eisMain .mList li.listboxs {width:28%; width:26%;}
+
+.eisMain .mList li.listboxSub {padding-top:32px; margin-left:9px; width:182px; width:268px;
+	padding-left:5px; margin:0; width:24%; width:24.6666666666666667%;
+}
+.eisMain .mList li.listboxSub .subTit {text-align:center; font-weight:bold; height:40px; line-height:40px; font-size:17px;}
+.eisMain .mList li.listboxSub .status {border:1px solid #999; padding:6px 15px 14px;}
+.eisMain .mList li.listboxSub .status .tableWrap {border-top:2px solid #003181;}
+.eisMain .mList li.listboxSub .status table {border-right:0 none; border-bottom:none;}
+.eisMain .mList li.listboxSub .status table thead th:first-child,
+.eisMain .mList li.listboxSub .status table tbody td:first-child {border-left:0 none;}
+.eisMain .mList li.listboxSub .status table thead th {border-top:0 none; background-color:#fff; font-size:20px;}
+.eisMain .mList li.listboxSub .status p.icon {padding:16px 0 17px; padding:10px 0 10px 0;}
+.eisMain .mList li.listboxSub .status ul {padding:0 0 0 4px; padding-left:10px; font-size:18px;
+	padding-left:0; width:102px; width:80px;
+}
+.eisMain .mList li.listboxSub .status ul li {padding-left:22px; padding-bottom:5px;}
+.eisMain .mList li.listboxSub .status p.percent {padding:7px 0 7px;}
+
+.eisMain .mList li.listboxSub2 {width:18%; width:18.5%;}
+.eisMain .mList li.listboxSub2 .status table thead th {font-size:17px;}
+.eisMain .mList li.listboxSub2 .status ul {width:85px; width:72px; }
+.eisMain .mList li.listboxSub2 .status ul li {padding-left:20px; font-size:16px;}
+
+ul.list2 li {text-indent:-14px; padding-left:14px;}
+
+.btn_area {font-size:12px;}
+
+.tbl_search2 table td label {font-size:12px;}
+
+.i_file.eis_excel {width:20px; height:20px; background-image:url('../images/set_icons_file.png');}
+.btn_area .i_file.eis_excel {margin:-1px 2px 0 -6px;}
+
+.tbl_type05 table.tableData thead th {background-color:#f2f2f2;}
+.tbl_type05 table.bigTable td {color:#333;}
+
+a.alink1 {color:#222; font-weight:bold;}
+
+.loadWrap {position:relative;}
+
+.tbl_type02 table th {background-color:#f1f1f1; font-weight:bold; font-size:14px; color:#313F48;}
+.tbl_type02 table td {font-size:14px; color:#000; border-right-color:#e0e0ff;}
+.tbl_type02 table .even td {background-color:#fafafa;}
+.tbl_type02 table tr.section td {color:#597385; font-weight:bold;}
+
+.pop_cont .menuAdminTable table th,
+.pop_cont .menuAdminTable table td {padding:9px 10px 8px; vertical-align:middle;}
+
+.tbl_search table th {padding:0 20px 8px 0; color:#222;}
+.tbl_search table th.step1 {width:60px; padding-left:30px;}
+.tbl_search table th.step2 {width:140px;}
+
+.txtBox {font-weight:normal; font-family: "나눔고딕",NanumGothic,Arial,"맑은고딕","Malgun Gothic","돋움",Dotum,"굴림",Gulim,"Helvetica Neue", Helvetica, sans-serif}
+
+.eisMain .mList li.listbox .status ul li.empty {background:none;}
+.eisMain .mList li.listbox .status p.addCopy {padding-bottom:13px;}
+.eisMain .mList li.listbox .status p.percent .tcopy {display:inline-block; font-size:14px; vertical-align:middle; margin:-2px 20px 0 0; font-family:"돋움",Dotum,"굴림",Gulim,"Helvetica Neue", Helvetica, Arial, sans-serif; color:#000;}
+.eisMain .mList li.listbox .status p.percent .tcopy span {margin-left:-1px;}
+
+/* 20180122 */
+.eisMain .mList li.listboxSub5 {width: 50%;}
+.eisMain .mList li.listboxSub6 {width: 25%;}
+.eisMain .mList li.listboxSub6-f {position: relative; padding-left: 18px;}
+.eisMain .mList li.listboxSub6-f .head {position: absolute; top: 0; left: 18px;}
+.eisMain .mList li.no-list {visibility: hidden;}

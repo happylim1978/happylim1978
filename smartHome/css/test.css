@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+* {margin:0; padding:0;}
+html, body {height:100%;}
+img {border:0 none;}
+
+.swiper-container-warp {position:absolute; top:50%; left:50%; margin:-400px 0 0 -640px; width:1280px; height:800px;}
+
+img,
+.swiper-container {
+	width: 100%;
+	height: 100%;
+}   
+.swiper-button-prev {width:93px; height:112px; background:url('../images/left.png') 0 0 no-repeat;
+	-webkit-background-size:93px 112px;
+	-webkit-background-size:93px 112px;
+}
+.swiper-button-next {width:93px; height:112px; background:url('../images/right.png') 0 0 no-repeat;
+	-webkit-background-size:93px 112px;
+	-webkit-background-size:93px 112px;
+}

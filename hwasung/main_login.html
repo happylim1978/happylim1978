@@ -1,0 +1,934 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="ko" xml:lang="ko">
+<head>
+<title>화성의과학대학교</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta http-equiv="content-script-type" content="text/html"/>
+<meta http-equiv="content-style-type" content="text/css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+<link rel="icon" type="image/x-icon" href="?v=1"/>
+<link rel="shortcut_icon" type="image/x-icon" href=""/>
+<link rel="apple-touch-icon" href=""/>
+<link rel="apple-touch-icon-precomposed" href=""/>
+<link rel="stylesheet" href="https://seri.ust.ac.kr/css/jquery.mobile-1.4.5.min.css"/>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.mobile-default.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.mobile-1.4.5.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/common.css?ver=20200513"/>
+<link rel="stylesheet" type="text/css" href="./css/common_add.css"/>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jqueryFunc.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/common.js?ver=20200518"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.flexslider.min.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/ns.js?v=210506"></script>
+
+
+<script type="text/javascript">
+	var gisMoblie = "N";
+</script>
+
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/panel.js"></script>
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/jquery.mCustomScrollbar.min.css"/>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/panel.css"/>
+<script type="text/javascript">
+	$(document).ready(function() {
+		if ($('#panel-left').length > 0) $('#panel-left').panelCtrl();
+		if ($('#panel-right').length > 0) $('#panel-right').panelCtrl();
+		//$('div:jqmData(role="panel") .panel').addClass('customScroll');
+		$('div:jqmData(role="panel") .panel').addClass('customScroll');
+	});
+
+	function panel(pos, option, idx1, idx2) {
+		$('#panel-'+pos).panelCtrl(option, idx1, idx2);
+	}
+</script>
+
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/main.css?v=210226"/>
+<link rel="stylesheet" type="text/css" href="./css/main_add.css"/>
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/slick.css"/>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/slick.js"></script>
+<script type="text/javascript">
+	var ajax = null;
+	var pidTimer = null;
+
+	$(document).ready(function(){
+		pidTimer = setTimeout(function(){ initPage(); }, 600);
+		main_thumbSlider();
+
+
+		var $tabline = $('.tab-menu > a');
+		var $tabcons = $('.tab-cons');
+		$tabline.on('click', function(){
+			$(this).siblings('a').removeClass('current').end().addClass('current');
+			$tabcons.find('.tab-con').removeClass('tab-con-on').eq($tabline.index(this)).addClass('tab-con-on')
+			return false;
+		});
+
+	});
+
+	function initPage(){
+	}
+
+	function notExistCont(direction) {
+		if (direction == 'prev') alert("이전 콘텐츠가 없습니다.");
+		else alert("콘텐츠 편성 예정입니다.");
+	}
+
+	function getDateLink(direction, date) {
+		if (date == null || date == "") {
+			return "javascript:notExistCont('" + direction + "')";
+		} else {
+			return "javascript:loadWhatsNewCont('"+date+"')";
+		}
+	}
+
+	function setDateData(prevLink, nextLink, currentDate_text, currentDay_text) {
+		$('#prevDateLink').attr('href', prevLink);
+		$('#nextDateLink').attr('href', nextLink);
+		$('#currentDate_text').html(currentDate_text);
+		$('#currentDay_text').html(currentDay_text);
+		$('#prevDateLink2').attr('href', prevLink);
+		$('#nextDateLink2').attr('href', nextLink);
+	}
+
+	function loadWhatsNewCont(date) {
+		if (ajax != null || date == "") return;
+
+		var prevLink = $('#prevDateLink').attr('href');
+		var nextLink = $('#nextDateLink').attr('href');
+		var currentDate_text = $('#currentDate_text').html();
+		var currentDay_text = $('#currentDay_text').html();
+
+		$('.slider-for').slick('unslick');
+		$('.slider-nav').slick('unslick');
+
+		ajax = $.ajax({
+			type:'POST',
+			url:'/msMainB.html',
+			data:{p_proc:'whatsNew', p_date:date},
+			cache:false,
+			headers:{'cache-control':'no-cache'},
+			success:function(data) {
+				ajax = null;
+
+				try {
+					if (data["result"] == "success") {
+						prevLink = getDateLink("prev", data["prevDate"]);
+						nextLink = getDateLink("next", data["nextDate"]);
+						currentDate_text = data["currentDate_text"];
+						currentDay_text = data["currentDay_text"];
+						setDateData(prevLink, nextLink, currentDate_text, currentDay_text);
+						$('#allContPlay').attr('href', data["all_contLink"]);
+
+						changeWindowUrl(replaceUrlParameter(window.location.href, "p_date", data["currentDate"]));
+
+						var obj = $('#whatsnewList');
+						if (obj.length > 0 && obj.children().length > 0) obj.children().remove();
+						data = $(document.createElement("div")).html(data["contents"]);
+						smoothDisplay(obj, data);
+						setTimeout(function(){ main_thumbSlider(); }, 10);
+					} else {
+						setDateData(prevLink, nextLink, currentDate_text, currentDay_text);
+						alert("콘텐츠 로딩에 실패했습니다.");
+					}
+				} catch(e) {
+					setDateData(prevLink, nextLink, currentDate_text, currentDay_text);
+					alert("콘텐츠 로딩에 실패했습니다.");
+				}
+			},
+			error:function() {
+				ajax = null;
+				setDateData(prevLink, nextLink, currentDate_text, currentDay_text);
+				alert("콘텐츠 로딩에 실패했습니다.");
+			}
+		});
+	}
+
+	var $sliderfor = null;
+	function main_thumbSlider() {
+		$sliderfor = $('.slider-for').slick({
+			 autoplay: true,
+			 autoplaySpeed: 10000,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			dots: true,
+			arrows: false,
+			fade: true,
+			asNavFor: '.slider-nav',
+			appendDots: '.dot-line-in',
+			responsive: [
+				{
+					breakpoint: 800,
+					settings: {
+						fade: false
+					}
+				}
+			]
+		});
+
+		$('.dot-line .stop').on('click', function(){
+			$sliderfor.slick('slickPause');
+			$(this).closest('.dot-line').addClass('dot-line-stop');
+		});
+		$('.dot-line .play').on('click', function(){
+			$sliderfor.slick('slickPlay');
+			$(this).closest('.dot-line').removeClass('dot-line-stop');
+		});
+
+		$('.slider-nav').slick({
+			autoplay: true,
+			autoplaySpeed: 5000,
+			slidesToShow: 2,
+			slidesToScroll: 1,
+			asNavFor: '.slider-for',
+			dots: true,
+			centerMode: false,
+			focusOnSelect: true,
+			useTransform: false
+		});
+	}
+</script>
+</head>
+<body>
+<div class="wrapper">
+	<!-- 모바일 왼쪽 패널 -->
+	<div data-role="panel" id="panel-left" data-position="left" data-position-fixed="true" data-display="overlay" data-swipe-close="false" data-dismissible="true">
+		<div class="panel">
+			<div class="panel-scroller">
+				<div class="closeBtn">
+					<div class="panel-tit">
+						<h1 class="h1">MENU</h1>
+					</div>
+					<div class="panel-head">
+						<p class="panel-msg">
+							[홍길동] 님은 <strong>1월 0편 학습</strong>하셨습니다.
+							&nbsp; &nbsp;<a href="/msMyStudyL.html" class="ui-link">자세히 보기</a>
+						</p>
+					</div>
+					<a href="javascript:panel('left', 'close')" data-role="button" data-shadow="false" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-corner-all" role="button"><div class="btn">닫기</div></a>
+				</div>
+				<div class="panel-service">
+					<div class="panel-tab">
+						<a href="/msAbout.html" class="tab1">MSP 소개</a>
+						<a href="/msNoticeL.html" class="tab2">공지사항</a>
+					</div>
+					<div class="panel-tab2">
+						<a href="/msMdaL.html" class="tab1"><span>What's New</span><em>보러가기</em></a>
+						<a href="" class="tab3"><span>AI Recommendation</span><em>보러가기</em></a>
+						<a href="/msBestL.html?p_gbn=M" class="tab2"><span>Best Contents</span><em>보러가기</em></a>
+					</div>
+				</div>
+				<!-- <div class="closeBtn">
+					<a href="javascript:panel('left', 'close')" data-role="button" data-shadow="false" data-iconpos="notext" class="ui-btn-right"><div class="btn">닫기</div></a>
+				</div> -->
+				<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set1">
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="About"><div>About</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							<div class="coltype lv2">
+								<h2 title="서비스 소개" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msAbout.html" class="ui-btn " target=""><div>서비스 소개</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="공지사항" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msNoticeL.html" class="ui-btn " target=""><div>공지사항</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="핫라인" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msHotLineN.html" class="ui-btn " target=""><div>핫라인</div></a></h2>
+							</div>
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="My Page"><div>My Page</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							<div class="coltype lv2">
+								<h2 title="학습현황" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMyStudyL.html" class="ui-btn " target=""><div>학습현황</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="콘텐츠 공유 내역" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMyShareL.html" class="ui-btn " target=""><div>콘텐츠 공유 내역</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="즐겨찾기" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMyContL.html" class="ui-btn " target=""><div>즐겨찾기</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="개인정보수정" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMyMimL.html" class="ui-btn " target=""><div>개인정보수정</div></a></h2>
+							</div>
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Global Leadership"><div>Global Leadership</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							
+							<div data-role="collapsible" class="collapsible02">
+								<h2>영어</h2>
+								<ul class="collapsible03">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>중국어</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>베트남어</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>일본어</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Character Education"><div>Character Education</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+
+							<div data-role="collapsible" class="collapsible02">
+								<h2>과학과 기술</h2>
+								<ul class="collapsible03">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>역사의 이해</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>인문교양</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>철학적 사고</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Medi Science"><div>Medi Science</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+
+							<div data-role="collapsible" class="collapsible02">
+								<h2>의과학</h2>
+								<ul class="collapsible03">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>바이오과학</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>뇌과학</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Liberal 101"><div>Liberal 101</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							<div class="coltype lv2">
+								<h2 title="전체보기" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMdaL.html?p_gmenu=04" class="ui-btn " target=""><div>전체보기</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="CIS 리포트" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMdaL.html?p_gmenu=0401" class="ui-btn " target=""><div>CIS 리포트</div></a></h2>
+							</div>
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Essential Courses"><div>Essential Courses</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							<div class="coltype lv2">
+								<h2 title="전체보기" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMdaL.html?p_gmenu=05" class="ui-btn " target=""><div>전체보기</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="AI가 바꾸는 미래 비즈니스" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMdaL.html?p_gmenu=0510" class="ui-btn " target=""><div>AI가 바꾸는 미래 비즈니스</div></a></h2>
+							</div>
+						</div>
+					</div>
+					<div class="coltype lv1">
+						<h2 title="HSMU Contents" class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+							<a href="/msMdaL.html?p_gmenu=1001" class="ui-btn  ui-btn-icon-left ui-icon-eye" target=""><div>HSMU Contents</div></a>
+						</h2>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- //모바일 왼쪽 패널 -->
+	<div data-role="panel" id="panel-right" data-position="right" data-position-fixed="true" data-display="overlay" data-swipe-close="false">
+		<div class="panel">
+			<div class="panel-scroller">
+				<div class="closeBtn">
+					<a href="javascript:panel('right', 'close')" data-role="button" data-shadow="false" data-iconpos="notext" class="ui-btn-right"><div class="btn">닫기</div></a>
+				</div>
+				<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set1">
+					<div class="coltype lv1">
+						<h2 title="로그아웃" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msLogout.html" class="ui-btn  ui-btn-icon-left ui-icon-power" target=""><div>로그아웃</div></a></h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 모바일 우측 검색 -->
+	<div data-role="header" class="btn2type">
+		<h1 class="logo"><a href="/index.html">화성의과학대학교</a></h1>
+		<div class="btn left">
+			<a href="javascript:panel('left', 'open')" class="menu" title="메뉴열기">메뉴열기</a>
+		</div>
+		<div class="btn right">
+			<a href="/msLogout.html" class="logout">로그아웃</a>
+			<a href="#" class="search" title="검색" onClick="$('#p_kwd').focus();">검색</a>
+		</div>
+		<div class="searchBar">
+			<div class="searchArea">
+				<form method="post">
+					<input type="hidden" id="search_url" value="/msSearchL.html"/>
+					<div class="search-textbox">
+						<input type="search" id="p_kwd" name="p_kwd" value="" data-theme="d" title="검색어 입력"/>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- //모바일 우측 검색 -->
+
+	<!-- 모바일 메시지 -->
+	<div class="mpinfo">
+		<div class="after">
+			홍길동님은 <strong>1월 0편</strong> 학습하셨습니다.
+		</div>
+	</div>
+	<!-- //모바일 메시지 -->
+
+	<!-- pc header -->
+	<div class="header">
+		<div class="header-out">
+			<div class="head-in">
+				<h1 class="lg"><a href="/index.html">화성의과학대학교</a></h1>
+				<div class="head-con">
+					<div class="head-other">
+						<div class="search-input">
+							<input type="text" class="text" title="검색어" data-role="none" id="p_hkwd" placeholder="검색어를 입력해주세요." onkeypress="if(event.keyCode==13) {main_headerSearch();}"/>
+						</div>
+						<div class="search">
+							<a href="#" class="dosearch">검색</a>
+						</div>
+						<div class="other-link">
+							<a href="/msMyStudyL.html">마이페이지</a>
+							<a href="/msLogout.html">로그아웃</a>
+							<a href="/msAbout.html">이용가이드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="h-des2">
+				<p class="msg">Dream the Best, Be the First, Medi-Science Park</p>
+				<p class="p-info">홍길동님의 학습현황: <strong>1월 0편</strong> 학습하셨습니다. <a href="/msMyStudyL.html">학습현황 자세히 보기  &gt;</a></p>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function(){
+			$('.search').on('click', function(){
+				if( $(this).closest('.head-other').hasClass('search-input-on') ) {
+					$(this).closest('.head-other').removeClass('search-input-on');
+				} else {
+					$(this).closest('.head-other').addClass('search-input-on');
+					$('#p_hkwd').focus();
+				}
+				return false;
+			});
+		});
+	</script>
+	<!-- //pc header -->
+
+
+	<div class="containter">
+		<div class="con-wrap">
+			<!-- pc lnb 메뉴 -->
+			<div class="web-lnb" id="web-lnb">
+				<div class="scroll">
+					<ul class="lnb-item-list">
+						<li class="lnb-item">
+							<a href="/msMdaL.html">What's NEW</a>
+						</li>
+						<li class="lnb-item">
+							<a href="#">AI Recommendation</a>
+						</li>
+						<li class="lnb-item">
+							<a href="/msBestL.html?p_gbn=M">Best Contents</a>
+						</li>
+						<li class="lnb-item">
+							<a href="#">About</a>
+							<ul>
+								<li><a href="/msAbout.html">서비스 소개</a></li>
+								<!--li><a href="/msAbout.html?p_tab=1">이용안내</a></li-->
+								<li><a href="/msNoticeL.html">공지사항</a></li>
+								<!--li><a href="/msAbout.html?p_tab=3">FAQ</a></li-->
+								<li><a href="/msHotLineN.html">핫라인</a></li>
+							</ul>
+						</li>
+						<li class="lnb-item">
+							<a href="#">My Page</a>
+							<ul>
+								<li><a href="/msMyStudyL.html">학습현황</a></li>
+								<li><a href="/msMyShareL.html">콘텐츠 공유 내역</a></li>
+								<li><a href="/msMyContL.html">즐겨찾기</a></li>
+								<li><a href="/msMyMimL.html">개인정보수정</a></li>
+							</ul>
+						</li>
+						<li class="lnb-item">
+							<a href="#">Global Leadership</a>
+							<ul>
+								<li><a href="#">영어</a>
+									<ul>
+										<li><a href="#">$프로그램명$</a></li>
+										<li><a href="#">$프로그램명$</a></li>
+									</ul>
+								</li>
+								<li><a href="#">중국어</a>
+									<ul>
+										<li><a href="#">$프로그램명$</a></li>
+										<li><a href="#">$프로그램명$</a></li>
+									</ul>
+								</li>
+								<li><a href="#">베트남어</a>
+									<ul>
+										<li><a href="#">$프로그램명$</a></li>
+										<li><a href="#">$프로그램명$</a></li>
+									</ul>
+								</li>
+								<li><a href="#">일본어</a>
+									<ul>
+										<li><a href="#">$프로그램명$</a></li>
+										<li><a href="#">$프로그램명$</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="lnb-item">
+							<a href="#">Character Education</a>
+							<ul>
+								<li><a href="#">과학과 기술</a>
+									<ul>
+										<li><a href="#">$프로그램명$</a></li>
+										<li><a href="#">$프로그램명$</a></li>
+									</ul>
+								</li>
+								<li><a href="#">역사의 이해</a>
+									<ul>
+										<li><a href="#">$프로그램명$</a></li>
+										<li><a href="#">$프로그램명$</a></li>
+									</ul>
+								</li>
+								<li><a href="#">인문교양</a>
+									<ul>
+										<li><a href="#">$프로그램명$</a></li>
+										<li><a href="#">$프로그램명$</a></li>
+									</ul>
+								</li>
+								<li><a href="#">철학적 사고</a>
+									<ul>
+										<li><a href="#">$프로그램명$</a></li>
+										<li><a href="#">$프로그램명$</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="lnb-item">
+							<a href="#">Medi-Science</a>
+							<ul>
+								<li><a href="#">의과학</a>
+									<ul>
+										<li><a href="#">$프로그램명$</a></li>
+										<li><a href="#">$프로그램명$</a></li>
+									</ul>
+								</li>
+								<li><a href="#">바이오과학</a>
+									<ul>
+										<li><a href="#">$프로그램명$</a></li>
+										<li><a href="#">$프로그램명$</a></li>
+									</ul>
+								</li>
+								<li><a href="#">뇌과학</a>
+									<ul>
+										<li><a href="#">$프로그램명$</a></li>
+										<li><a href="#">$프로그램명$</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="lnb-item">
+							<a href="#">Liberal 101</a>
+						</li>
+						<li class="lnb-item">
+							<a href="#">Essential Courses</a>
+						</li>
+						<li class="lnb-item">
+							<a href="#">HSMU Contents</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- //pc lnb 메뉴 -->
+
+			<div class="main-con side-con">
+
+				<div class="h2-wrap">
+					<h2 class="h2 h2-1">What's New</h2>
+					<div class="date-box">
+						<span id="currentDate_text">2023/01/26</span>
+						<span id="currentDay_text">Thu.</span>
+						<a id="prevDateLink" href="javascript:loadWhatsNewCont('20230125')" class="prev">이전</a>
+						<a id="nextDateLink" href="javascript:notExistCont('next')" class="next">다음</a>
+					</div>
+				</div>
+
+				<div class="slide-wrap" id="whatsnewList">
+					<div class="slider-for">
+						<div class="item">
+							<div class="item-in" style="background-image: url('http://img.sericeo.org/vfile/2022/photo5/0282_202212160001.jpg');">
+								<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=136531')" class="link">
+									<span class="p1">복잡한 도심, 공간 효율을 높여라!</span>
+									<span class="p2">모빌리티 서비스의 증가로 도심의 효율적인 공간 관리가 중요해지고 있다. 도심 교통 문제 해결에 도움이 되고 있는 스타트업들을 확인해 본다.</span>
+									<span class="p3">조우성 수석연구원</span>
+								</a>
+								<div class="thumbtn">
+									<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=136531')" class="movie">영상보기</a>
+
+									<a href="/mCardNewsV.html?p_cseq=136531" class="card">카드보기</a>
+
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item-in" style="background-image: url('http://img.sericeo.org/vfile/2022/photo5/0204_202212130001.jpg');">
+								<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=136416')" class="link">
+									<span class="p1">신제품 흥행의 주류 공식 ‘드롭’</span>
+									<span class="p2">'드롭 데이'에서 시작된 드롭 마케팅은 어떻게 수많은 브랜드의 마케팅 전략이 됐을까?</span>
+									<span class="p3">이준환 수석연구원</span>
+								</a>
+								<div class="thumbtn">
+									<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=136416')" class="movie">영상보기</a>
+
+									<a href="/mCardNewsV.html?p_cseq=136416" class="card">카드보기</a>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="dot-line">
+						<button class="play" type="button" data-role="none">play</button>
+						<button class="stop" type="button" data-role="none">stop</button>
+						<div class="dot-line-in"></div>
+					</div>
+					<div class="slider-nav">
+						<div class="nav">
+							<div class="nav-in">
+								<p class="cate">[화제의 스타트업]</p>
+								<p class="tit">복잡한 도심, 공간 효율을 높여라!</p>
+								<!--div class="btns">
+									<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=136531')" class="movie">영상보기</a>
+									<a href="/mCardNewsV.html?p_cseq=136531" class="card">카드보기</a>
+								</div-->
+							</div>
+						</div>
+						<div class="nav">
+							<div class="nav-in">
+								<p class="cate">[마케팅전략]</p>
+								<p class="tit">신제품 흥행의 주류 공식 ‘드롭’</p>
+								<!--div class="btns">
+									<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=136416')" class="movie">영상보기</a>
+									<a href="/mCardNewsV.html?p_cseq=136416" class="card">카드보기</a>
+								</div-->
+							</div>
+						</div>
+
+					</div>
+					<!--a id="allContPlay" href="javascript:mediaView('/viewer/msViewer.html?p_cseq%5B%5D=136531&p_cseq%5B%5D=136416')" class="plays bgc"><i></i>4편 연속시청</a-->
+
+				</div>
+				<!-- AI Recommendation -->
+				<div class="keyword">
+					<div class="h2-wrap">
+						<h2 class="h2 h2-2">AI Recommendation</h2>
+					</div>
+					<div class="tab-cons">
+						<div class="tab-con tab-con-on">
+
+							<div class="list-wrap">
+								<div class="item">
+									<div class="item-in">
+										<div class="pic">
+											<p class="pic-in"><a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=115772')"><img src="http://img.sericeo.org/vfile/2021/photo4/07E7_202101080001.jpg" alt="세포는 왜 자살할까?"></a></p>
+										</div>
+										<div class="txt-wrap">
+											<p class="menunm">[위대한 발견]</p>
+											<p class="tit">세포는 왜 자살할까?</p>
+											<p class="des">세포가 자살한다는 것은 무슨 뜻일까? 세포는 그 결과를 알고 스스로 자살을 감행하는 것일까?</p>
+											<p class="data">
+												<span class="time">시간 <em>5:39</em></span>
+												<span class="count">조회수 <em>1</em></span>
+											</p>
+										</div>
+										<div class="btns">
+											<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=115772')" class="movie">영상보기</a>
+											<a href="/mCardNewsV.html?p_cseq=115772" class="card">카드보기</a>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="item-in">
+										<div class="pic">
+											<p class="pic-in"><a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=126051')"><img src="http://img.sericeo.org/vfile/2022/photo4/19C8_202202220001.jpg" alt="우리가 착각하기 쉬운 것"></a></p>
+										</div>
+										<div class="txt-wrap">
+											<p class="menunm">[틀을 깨라]</p>
+											<p class="tit">우리가 착각하기 쉬운 것</p>
+											<p class="des">피라미드 밑바탕을 튼튼하게 세워야 하는 이유</p>
+											<p class="data">
+												<span class="time">시간 <em>7:54</em></span>
+												<span class="count">조회수 <em>2</em></span>
+											</p>
+										</div>
+										<div class="btns">
+											<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=126051')" class="movie">영상보기</a>
+											<a href="/mCardNewsV.html?p_cseq=126051" class="card">카드보기</a>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="item-in">
+										<div class="pic">
+											<p class="pic-in"><a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=113150')"><img src="http://img.sericeo.org/vfile/2020/photo4/04C2_202007200001.jpg" alt="우주에는 어떤 사람이 갈까?"></a></p>
+										</div>
+										<div class="txt-wrap">
+											<p class="menunm">[새로운 시대를 열다, 아폴로 11호]</p>
+											<p class="tit">우주에는 어떤 사람이 갈까?</p>
+											<p class="des">우주선과 로켓 기술 개발 외에도 아폴로 계획 책임자들을 괴롭혔던 또 다른 고민거리가 있었다?</p>
+											<p class="data">
+												<span class="time">시간 <em>6:10</em></span>
+												<span class="count">조회수 <em>0</em></span>
+											</p>
+										</div>
+										<div class="btns">
+											<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=113150')" class="movie">영상보기</a>
+											<a href="/mCardNewsV.html?p_cseq=113150" class="card">카드보기</a>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="item-in">
+										<div class="pic">
+											<p class="pic-in"><a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=113429')"><img src="http://img.sericeo.org/vfile/2020/photo4/07F9_202008190001.jpg" alt="대서양을 향한 무모한 꿈"></a></p>
+										</div>
+										<div class="txt-wrap">
+											<p class="menunm">[테크노이매지네이션]</p>
+											<p class="tit">대서양을 향한 무모한 꿈</p>
+											<p class="des">증기선, 전신, 비행기 등 새로운 기술이 탄생할 때마다 이를 이용해 대서양을 횡단하려 했던 노력. 그 무모한 도전의 결과는?</p>
+											<p class="data">
+												<span class="time">시간 <em>7:44</em></span>
+												<span class="count">조회수 <em>0</em></span>
+											</p>
+										</div>
+										<div class="btns">
+											<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=113429')" class="movie">영상보기</a>
+											<a href="/mCardNewsV.html?p_cseq=113429" class="card">카드보기</a>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<a href="#" class="more">+ 더보기</a>
+						</div>
+					</div>
+				</div>
+				<!-- //AI Recommendation -->
+
+				<!-- 베스트 콘텐츠 -->
+				<div class="keyword best-contents">
+					<div class="h2-wrap">
+						<h2 class="h2 h2-2">Best Contents</h2>
+					</div>
+					<div class="tab-cons">
+						<div class="tab-con tab-con-on">
+							<div class="list-wrap">
+								<div class="item">
+									<div class="item-in">
+										<div class="pic">
+											<p class="pic-in"><a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=129315')"><img src="http://img.sericeo.org/vfile/2022/photo4/0153_202207190001.jpg" alt="후지필름의 최종병기"></a></p>
+										</div>
+										<div class="txt-wrap">
+											<p class="menunm">[특허로 보는 미래]</p>
+											<p class="tit">후지필름의 최종병기</p>
+											<p class="des">후지필름은 어떻게 위기를 기회로 바꾸었을까?</p>
+											<p class="data">
+												<span class="time">시간 <em>05:31</em></span>
+												<span class="count">조회수 <em>10</em></span>
+											</p>
+										</div>
+										<div class="btns">
+											<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=129315')" class="movie">영상보기</a>
+											<a href="/mCardNewsV.html?p_cseq=129315" class="card">카드보기</a>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="item-in">
+										<div class="pic">
+											<p class="pic-in"><a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=130171')"><img src="http://img.sericeo.org/vfile/2022/photo4/0152_202208300001.jpg" alt="이 남자가 스스로를 고소한 이유"></a></p>
+										</div>
+										<div class="txt-wrap">
+											<p class="menunm">[굿 프라핏]</p>
+											<p class="tit">이 남자가 스스로를 고소한 이유</p>
+											<p class="des">'노예노동 제로'를 지향하는 외로운 초콜릿 회사, 토니스 초코론니를 소개한다.</p>
+											<p class="data">
+												<span class="time">시간 <em>07:30</em></span>
+												<span class="count">조회수 <em>8</em></span>
+											</p>
+										</div>
+										<div class="btns">
+											<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=130171')" class="movie">영상보기</a>
+											<a href="/mCardNewsV.html?p_cseq=130171" class="card">카드보기</a>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="item-in">
+										<div class="pic">
+											<p class="pic-in"><a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=129592')"><img src="http://img.sericeo.org/vfile/2022/photo4/3006_202208010001.jpg" alt="댕댕이와 냥냥이"></a></p>
+										</div>
+										<div class="txt-wrap">
+											<p class="menunm">[트렌드 마케팅]</p>
+											<p class="tit">댕댕이와 냥냥이</p>
+											<p class="des">동물이 등장하는 광고는 어떤 효과가 있을까?</p>
+											<p class="data">
+												<span class="time">시간 <em>06:53</em></span>
+												<span class="count">조회수 <em>8</em></span>
+											</p>
+										</div>
+										<div class="btns">
+											<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=129592')" class="movie">영상보기</a>
+											<a href="javascript:alert('카드로 보는 콘텐츠를 지원하지 않습니다.')" class="card">카드보기</a>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="item-in">
+										<div class="pic">
+											<p class="pic-in"><a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=129693')"><img src="http://img.sericeo.org/vfile/2022/photo4/0452_202208040001.jpg" alt="덕으로 채우다, 실이덕형"></a></p>
+										</div>
+										<div class="txt-wrap">
+											<p class="menunm">[리더의 玉篇]</p>
+											<p class="tit">덕으로 채우다, 실이덕형</p>
+											<p class="des">여러분의 삶은 무엇으로 가득 차 있나요? 내 삶을 덕으로 채울 수 있게 도와주는 지혜에 관한 이야기</p>
+											<p class="data">
+												<span class="time">시간 <em>06:55</em></span>
+												<span class="count">조회수 <em>9</em></span>
+											</p>
+										</div>
+										<div class="btns">
+											<a href="javascript:mediaView('/viewer/msViewer.html?p_cseq=129693')" class="movie">영상보기</a>
+											<a href="/mCardNewsV.html?p_cseq=129693" class="card">카드보기</a>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<a href="/msBestL.html?p_gbn=M" class="more">+ 더보기</a>
+						</div>
+					</div>
+				</div>
+				<!-- //베스트 콘텐츠 -->
+
+				<!-- notice hotline -->
+				<div class="notice-hotline">
+					<!-- notice -->
+					<div class="notice">
+						<h2 class="h2 h2-4">Notice</h2>
+						<ul class="notice-list">
+							<li><a href="/msNoticeV.html?p_regseq=9">- 개인정보 처리방침 일부 변경(2022년 10월 27일)</a></li>
+							<li><a href="/msNoticeV.html?p_regseq=8">- 원활한 서비스 이용을 위해 Edge/ Chrome 브라우저를 사용하세요</a></li>
+							<li><a href="/msNoticeV.html?p_regseq=7">- 개인정보 처리방침 일부 변경(2022년 2월 10일) </a></li>
+							<li><a href="/msNoticeV.html?p_regseq=5">- 서비스 개선 작업 안내 [9/10(금) 00시 ~ 9/11(토) 06시]</a></li>
+							<li><a href="/msNoticeV.html?p_regseq=4">- [긴급 안내] 서비스 일시 중지 안내(8/18 오후 12:00~12:02)</a></li>
+
+						</ul>
+						<a href="/msNoticeL.html" class="more">+ 더보기</a>
+					</div>
+					<!-- hotline -->
+					<div class="hotline">
+						<h2 class="h2 h2-5">Hotline</h2>
+						<div class="hotline-link">
+							<span>고객지원
+								<span class="webView">02-2143-8507</span>
+								<a href="tel:02-2143-8507" class="mobileView">02-2143-8507</a>
+							</span> ｜
+							<a class="mail" href="mailto:seri-service@sericeo.org">Mail to webmaster</a>
+							<p class="caution">* 고객 정보 보호를 위해 통화내용은 녹음될 수 있습니다.</p>
+						</div>
+						<a href="/msHotLineN.html" class="more">1:1 문의하기</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- footer -->
+	<div class="footer">
+		<div class="footer-in">
+			<ul class="link">
+				<li><a href="javascript:windowPopup('/msUse.html')">이용약관</a></li>
+				<li><a href="javascript:windowPopup('/msCopyright.html')">저작권정책</a></li>
+				<li><a href="javascript:windowPopup('/msPrivate.html')">개인정보처리방침</a></li>
+				<li><a href="javascript:windowPopup('/msErules.html','','400','200')">이메일주소 무단수집거부</a></li>
+			</ul>
+			<div class="contact">
+				<strong class="tit">이용문의</strong>
+				<span class="tel">02-2143-8507</span>
+			</div>
+		</div>
+	</div>
+	<!-- //footer -->
+</div>
+</body>
+</html>

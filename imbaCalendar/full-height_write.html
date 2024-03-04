@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+<link href='./packages/core/main.css' rel='stylesheet' />
+<link href='./packages/daygrid/main.css' rel='stylesheet' />
+<link href='./packages/timegrid/main.css' rel='stylesheet' />
+<link href='./packages/list/main.css' rel='stylesheet' />
+
+<link href='./js/jquery-ui.min.css' rel='stylesheet' />
+<link href='./css/calendar.css' rel='stylesheet' />
+
+<script src='./js/jquery-1.11.1.min.js'></script>
+<script src='./packages/core/main.js'></script>
+<script src='./packages/interaction/main.js'></script>
+<script src='./packages/daygrid/main.js'></script>
+<script src='./packages/timegrid/main.js'></script>
+<script src='./packages/list/main.js'></script>
+
+<script src='./js/jquery-ui.min.js'></script>
+<script src='./js/sly.min.js'></script>
+<script src='./js/pi.js'></script>
+<script src='./js/default-cal.js'></script>
+</head>
+<body>
+<!-- 쓰기 -->
+<div class="calendar-write" id="calendar-write">
+	<div class="calendar-write-in">
+		<!-- calendar-write-head -->
+		<div class="calendar-write-head">
+			<button type="button" class="close">닫기</button>
+			<div class="btn-r">
+				<button type="button" class="save">저장</button>
+			</div>
+			<div class="tit-add">
+				<input type="text" title="제목추가" placeholder="제목추가" />
+			</div>
+		</div>
+		<!-- //calendar-write-head -->
+		<!-- calendar-write-con -->
+		<div class="calendar-write-con">
+			<div class="date-time">
+				<input type="text" id="datepicker1" value="" />
+				<span class="settime-wrap" id="settime1">
+					<span class="ampm">오후</span>
+					<span class="h">5</span>
+					<span>시</span> 
+					<span class="m">00</span>
+					<span>분</span>
+				</span>
+			</div>
+			<div class="date-time">
+				<input type="text" id="datepicker2" value="" />
+				<span class="settime-wrap" id="settime2">
+					<span class="ampm">오후</span>
+					<span class="h">6</span>
+					<span>시</span>
+					<span class="m">00</span>
+					<span>분</span>
+				</span>
+			</div>
+			<p class="tt">일정 세부정보</p>
+			<div class="location">
+				<input type="text" id="" placeholder="위치추가" />
+			</div>
+			<div class="name">
+				<input type="text" id="" value="홍길동" readonly />
+			</div>
+			<div class="theme">
+				<div class="theme-select" id="theme-select">
+					<span style="background-color: #e90000;"></span>
+				</div>
+			</div>
+			<div class="add-explain">
+				<textarea id="" rows="" cols="">설명 추가</textarea>
+			</div>
+		</div>
+		<!-- //calendar-write-con -->
+	</div>
+
+	<!-- 시계 레이어 -->
+	<div id="time-wrapper">
+		<div class="date-wrap1 date-cover">
+			<div id="date1" class="date-field"></div>
+			<div class="date-wrap">
+				<div class="time-box" id="ampm">
+					<ul class="items">
+						<li><span>오전</span></li><li><span>오후</span></li>
+					</ul>
+				</div>
+				<div class="time-box" id="hour">
+					<ul class="items">
+						<li><span>12</span></li><li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li><li><span>8</span></li><li><span>9</span></li><li><span>10</span></li><li><span>11</span></li>
+					</ul>
+				</div>
+				<div class="time-box" id="minute">
+					<ul class="items">
+						<li><span>00</span></li><li><span>05</span></li><li><span>10</span></li><li><span>15</span></li><li><span>20</span></li><li><span>25</span></li><li><span>30</span></li><li><span>35</span></li><li><span>40</span></li><li><span>45</span></li><li><span>50</span></li><li><span>55</span></li>
+					</ul>
+				</div>
+				<div class="btns">
+					<button type="button" class="cancel">취소</button>
+					<button type="button" id="timeset1">확인</button>
+				</div>
+			</div>
+		</div>
+		<div class="date-wrap2 date-cover">
+			<div id="date2" class="date-field"></div>
+			<div class="date-wrap">
+				<div class="time-box" id="ampm2">
+					<ul class="items">
+						<li><span>오전</span></li><li><span>오후</span></li>
+					</ul>
+				</div>
+				<div class="time-box" id="hour2">
+					<ul class="items">
+						<li><span>12</span></li><li><span>1</span></li><li><span>2</span></li><li><span>3</span></li><li><span>4</span></li><li><span>5</span></li><li><span>6</span></li><li><span>7</span></li><li><span>8</span></li><li><span>9</span></li><li><span>10</span></li><li><span>11</span></li>
+					</ul>
+				</div>
+				<div class="time-box" id="minute2">
+					<ul class="items">
+						<li><span>00</span></li><li><span>05</span></li><li><span>10</span></li><li><span>15</span></li><li><span>20</span></li><li><span>25</span></li><li><span>30</span></li><li><span>35</span></li><li><span>40</span></li><li><span>45</span></li><li><span>50</span></li><li><span>55</span></li>
+					</ul>
+				</div>
+				<div class="btns">
+					<button type="button" class="cancel">취소</button>
+					<button type="button" id="timeset2">확인</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //시계 레이어 -->
+
+	<!-- 색상 선택 레이어 -->
+	<div class="theme theme-layer" id="theme-layer">
+		<ul>
+			<li class="current"><span style="background-color: #e90000;"></span></li>
+			<li><span style="background-color: #12ad68;"></span></li>
+			<li><span style="background-color: #f97b31;"></span></li>
+			<li><span style="background-color: #637bd5;"></span></li>
+			<li><span style="background-color: #f2a9a0;"></span></li>
+			<li><span style="background-color: #a6b2e3;"></span></li>
+			<li><span style="background-color: #e8c50c;"></span></li>
+			<li><span style="background-color: #8d8d8d;"></span></li>
+			<li><span style="background-color: #724123;"></span></li>
+			<li><span style="background-color: #b93bce;"></span></li>
+			<li><span style="background-color: #05c3f1;"></span></li>
+			<li><span style="background-color: #9ec016;"></span></li>
+		</ul>
+	</div>
+	<!-- //색상 선택 레이어 -->
+
+</div>
+<!-- //쓰기 -->
+
+</body>
+</html>

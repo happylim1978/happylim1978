@@ -1,0 +1,38 @@
+body.overview {background-color: #161826;}
+
+.overview .page-wrap .h3 {color: #fff;}
+.copy2 {margin-top: 70px; font-size: 26px; line-height: 1.538461538461538em; color: #fff;}
+.copy3 {margin-top: 10px; font-size: 16px; line-height: 1.5em; color: #fff; width: 1060px;}
+
+.des-box {overflow: hidden; margin-top: 60px; width: 1060px; padding-bottom: 60px;}
+.des-box .item {opacity: 0; float: left; width: 330px; margin-left: 16px; background-color: #202231;}
+.des-box .item:first-child {margin-left: 0;}
+.des-box .item .shape {position: relative; height: 350px; background-repeat: no-repeat; background-position: center center;}
+.des-box .item .shape > span {display: block; opacity: 0; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-repeat: no-repeat; background-position: center center;}
+.des-box .item .shape1 {background-image: url('../images/sub/overview/icon-1-off.png');}
+.des-box .item .shape2 {background-image: url('../images/sub/overview/icon-2-off.png');}
+.des-box .item .shape3 {background-image: url('../images/sub/overview/icon-3-off.png');}
+.des-box .item .shape1 > span {background-image: url('../images/sub/overview/icon-1.png');}
+.des-box .item .shape2 > span {background-image: url('../images/sub/overview/icon-2.png');}
+.des-box .item .shape3 > span {background-image: url('../images/sub/overview/icon-3.png');}
+.des-box .item .txt {padding: 0 0 47px 30px; color: #575968;}
+.des-box .item .txt * {letter-spacing: -1px;}
+.des-box .item .txt > p {
+	-webkit-transition:;
+	-moz-transition:;
+	-o-transition:;
+	transition: color 0.4s;
+}
+.des-box .item .txt .p1 {font-weight: bold; font-size: 18px; line-height: 1.5555em;}
+.des-box .item .txt .p2 {margin-top: 10px; font-size: 13px; line-height: 1.846153846153846em;}
+.des-box .item .txt .p3 {margin-top: 30px; font-size: 13px; line-height: 1.923076923076923em;}
+.des-box .item .txt .p4 {margin-top: 10px; font-weight: bold; font-size: 14px; line-height: 1.857142857142857em;}
+.des-box .item .font-color .p1 {color: #fff;}
+.des-box .item .font-color .p2 {color: #FF7A48;}
+.des-box .item .font-color .p3 {color: #BCBDC1;}
+.des-box .item .font-color .p4 {color: #D2D2D5;}
+
+.des-box .item.visible .p1 {color: #fff;}
+.des-box .item.visible .p2 {color: #FF7A48;}
+.des-box .item.visible .p3 {color: #BCBDC1;}
+.des-box .item.visible .p4 {color: #D2D2D5;}

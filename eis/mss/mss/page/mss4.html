@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> | MSS</title>
+	<link href="../../css/datepicker3.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/module.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/custom.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/popup.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="../../css/admin.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_eis.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_mss.css" />
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+	<script src="../../js/bootstrap-datepicker.js"></script>
+	<script src="../../js/locales/bootstrap-datepicker.kr.js"></script>
+	<script src="../../js/jquery.slimscroll.min.js"></script>
+	<script src="../../js/admin_script.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../js/html5shiv.js"></script>
+		<script src="../../js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body><!-- 배경색 변경시 class="bg" -->
+<div id="wrap"><!-- 메인일 경우 class="main" -->
+
+	<!-- contents -->
+	<div class="content_wrap">
+		<a id="btn_folding_lnb" class="btn_folding_lnb" href="#">lnb control</a>
+		<div class="wrap_max">
+
+			<!-- EP title -->
+			<div class="cont_subtit fix">
+
+				<!-- 제목 -->
+				<div class="tit_area ">
+					<div class="sub_tit">
+						<span class="tit_list tit_list_tab"><!-- tit_list_tab 클래스 추가 -->
+							<span class="tit">원가혁신</span>
+							<ul>
+								<li><a href="#" class="on">전사</a></li>
+								<li><a href="#">인재개발사업부</a></li>
+								<li><a href="#">스마트교육사업부</a></li>
+							</ul>
+						</span>
+					</div>
+				</div>
+				<!-- //제목 -->
+
+			</div>
+			<!--// EP title -->
+
+
+			<!-- cont -->
+			<div class="cont_wrap">
+
+				<div class="tab_module" id="tab1">
+					<div class="tab_navi font-style1">
+						<ul>
+							<li class="selected"><a href="#tab_item1">전체 현황</a></li>
+							<li class=""><a href="#tab_item2">상세 목록</a></li>
+						</ul>
+					</div>
+					<div class="tab_cons">
+						<!-- 전체 현황 -->
+						<div class="tab_article" id="tab_item1" style="display: block;">
+
+							<div class="tbl_search tbl_search2">
+								<table>
+									<tbody>
+										<tr>
+											<th scope="row" class="th10a">기간</th>
+											<td class="calTd">
+												<div class="date_wrap">
+													<div class="date_input date" id="cal1">
+														<input type="text" style="width:160px;">
+														<a class="btn_calendar input-group-addon" href="#">
+															<i class="icons i_calendar">calendar</i>
+														</a>
+													</div>
+													<span>~</span>
+													<div class="date_input date" id="cal2">
+														<input type="text" style="width:160px;">
+														<a class="btn_calendar input-group-addon" href="#">
+															<i class="icons i_calendar">calendar</i>
+														</a>
+													</div>
+													<span class="btn_area">
+														<a href="#" class="btn_primary small"><i class="icons i_search vam"></i> <span>검색</span></a>
+														<a href="#" class="btn_primary btn_primary_line small"><i class="fa fa-upload vam"></i> <span>엑셀업로드</span></a>
+													</span>
+
+												</div>
+												<script>
+													$('#cal1').datepicker({
+														format: "yyyy.mm",
+														minViewMode: 1, //월력변환
+														language:'kr',
+														autoclose : true
+													})
+													.on('show', function(){$(this).addClass('active');})
+													.on('hide', function(){$(this).removeClass('active');})
+													;
+													$('#cal2').datepicker({
+														format: "yyyy.mm",
+														minViewMode: 1, //월력변환
+														language:'kr',
+														autoclose : true
+													})
+													.on('show', function(){$(this).addClass('active');})
+													.on('hide', function(){$(this).removeClass('active');})
+													;
+												</script>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="struct fix">
+								<div class="graph-area">
+									<div class="struct-in main-state">
+										<p class="tit">'21년 원가구조</p>
+										<div class="graph-in graph">
+											<div class="item">
+												<div class="bar barc4" style="height: 95%;">
+													<em class="value">40,030</em>
+													<em class="section">매출</em>
+												</div>
+											</div>
+											<div class="item">
+												<div class="bar barc5" style="height: 90%;">
+													<div class="bar-in barc5" style="height: 89.6%; bottom: 10.4%;"><span class="v">52,141</span></div>
+													<div class="bar-in barc6" style="height: 5.2%; bottom: 5.2%;"></div>
+													<div class="bar-in barc7" style="height:5.2%;"></div>
+													<em class="value">40,102</em>
+													<em class="section">원가</em>
+												</div>
+											</div>
+											<div class="item">
+												<div class="bar barc8" style="height: 5.2%;">
+													<em class="value">928</em>
+													<em class="section">영업이익</em>
+												</div>
+											</div>
+
+										</div>
+										<div class="explain">
+											<dl class="dl1">
+												<dt><span>매출</span></dt>
+												<dd>40,030<span>억원</span></dd>
+											</dl>
+											<dl class="dl2">
+												<dt>사업원가</dt>
+												<dd>
+													40,141억원 <span class="bar">ㅣ</span> 91.4%
+												</dd>
+											</dl>
+											<dl class="dl3">
+												<dt>공통원가</dt>
+												<dd>
+													3,396억원 <span class="bar">ㅣ</span> 4.2%
+												</dd>
+											</dl>
+											<dl class="dl4">
+												<dt>간접원가</dt>
+												<dd>
+													3,565억원 <span class="bar">ㅣ</span> 2.7%
+												</dd>
+											</dl>
+											<dl class="dl5">
+												<dt>영업이익</dt>
+												<dd>
+													328억원 <span class="bar">ㅣ</span> 1.6%
+												</dd>
+											</dl>
+										</div>
+									</div>
+								</div>
+								<div class="graph-list main-state">
+									<div class="struct-in">
+										<ul class="graph-list-items">
+											<li>
+												<p class="tit">전사</p>
+												<div class="detail fix">
+													<div class="price-box">
+														<span class="price">333<span>억원</span></span> <span class="bar">ㅣ</span>
+														<span class="percent">21.0%</span>
+													</div>
+													<div class="price-object">
+														목표 <span class="bar">ㅣ</span> 4,333억원
+													</div>
+												</div>
+											</li>
+											<li>
+												<p class="tit">교육콘텐츠센터</p>
+												<div class="detail fix">
+													<div class="price-box">
+														<span class="price">333<span>억원</span></span> <span class="bar">ㅣ</span>
+														<span class="percent">30.0%</span>
+													</div>
+													<div class="price-object">
+														목표 <span class="bar">ㅣ</span> 1,333억원
+													</div>
+												</div>
+												<div class="graph-bar">
+													<span class="bar-line" style="width: 30%;"></span>
+												</div>
+											</li>
+											<li>
+												<p class="tit">스마트교육사업부</p>
+												<div class="detail fix">
+													<div class="price-box">
+														<span class="price">333<span>억원</span></span> <span class="bar">ㅣ</span>
+														<span class="percent">14.9%</span>
+													</div>
+													<div class="price-object">
+														목표 <span class="bar">ㅣ</span> 333억원
+													</div>
+												</div>
+												<div class="graph-bar">
+													<span class="bar-line" style="width: 30%;"></span>
+												</div>
+											</li>
+											<li>
+												<p class="tit">인재개발사업부</p>
+												<div class="detail fix">
+													<div class="price-box">
+														<span class="price">333<span>억원</span></span> <span class="bar">ㅣ</span>
+														<span class="percent">47.1%</span>
+													</div>
+													<div class="price-object">
+														목표 <span class="bar">ㅣ</span> 333억원
+													</div>
+												</div>
+												<div class="graph-bar">
+													<span class="bar-line" style="width: 30%;"></span>
+												</div>
+											</li>
+											<li>
+												<p class="tit">지원실</p>
+												<div class="detail fix">
+													<div class="price-box">
+														<span class="price">333<span>억원</span></span> <span class="bar">ㅣ</span>
+														<span class="percent">3.4%</span>
+													</div>
+													<div class="price-object">
+														목표 <span class="bar">ㅣ</span> 333억원
+													</div>
+												</div>
+												<div class="graph-bar">
+													<span class="bar-line" style="width: 30%;"></span>
+												</div>
+											</li>
+
+										</ul>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!-- //전체 현황 -->
+						<!-- 상세 목록 -->
+						<div class="tab_article" id="tab_item2" style="display: none;">
+
+							<div class="tbl_search tbl_search2">
+								<table>
+									<tbody>
+										<tr>
+											<th class="th-auto-first" style="width: 100px;">원가</th>
+											<td>
+												<select id="">
+													<option value="" selected="selected"></option>
+													<option value=""></option>
+												</select>
+											</td>
+											<th class="th-auto" style="width: 30px;">기간</th>
+											<td class="calTd" style="width: 270px;">
+												<div class="date_wrap">
+													<div class="date_input date" id="cal3">
+														<input type="text" style="width:100px;">
+														<a class="btn_calendar input-group-addon" href="#">
+															<i class="icons i_calendar">calendar</i>
+														</a>
+													</div>
+													<span>~</span>
+													<div class="date_input date" id="cal4">
+														<input type="text" style="width:100px;">
+														<a class="btn_calendar input-group-addon" href="#">
+															<i class="icons i_calendar">calendar</i>
+														</a>
+													</div>
+												</div>
+												<script>
+													$('#cal3').datepicker({
+														format: "yyyy.mm",
+														minViewMode: 1, //월력변환
+														language:'kr',
+														autoclose : true
+													})
+													.on('show', function(){$(this).addClass('active');})
+													.on('hide', function(){$(this).removeClass('active');})
+													;
+													$('#cal4').datepicker({
+														format: "yyyy.mm",
+														minViewMode: 1, //월력변환
+														language:'kr',
+														autoclose : true
+													})
+													.on('show', function(){$(this).addClass('active');})
+													.on('hide', function(){$(this).removeClass('active');})
+													;
+												</script>
+											</td>
+											<th></th>
+											<td class="a_right">
+												<select id="" style="width: 50%;">
+													<option value="" selected="selected">거점전체</option>
+													<option value=""></option>
+												</select>
+											</td>
+
+										</tr>
+										<tr>
+											<th class="th-auto-first" style="width: 100px;">사업부 / 팀</th>
+											<td>
+												<div class="form-wrap">
+													<select id="">
+														<option value="" selected="selected">사업부 전체</option>
+														<option value=""></option>
+													</select>
+													<select id="">
+														<option value="" selected="selected">팀 전체</option>
+														<option value=""></option>
+													</select>
+												</div>
+											</td>
+											<th class="th-auto">사업</th>
+											<td>
+												<select id="">
+													<option value="" selected="selected">전체</option>
+													<option value=""></option>
+												</select>
+											</td>
+											<th class="th-auto" style="width: 105px;">과제명 / 리더명</th>
+											<td><input type="text" class="text" id="" placeholder="텍스트를 입력해주세요." /></td>
+										</tr>
+									</tbody>
+								</table>
+								<div class="btn_area btnLine btnLine2">
+									<div class="fR">
+										<a href="#" class="btn_primary btn_primary_line small"><i class="fa fa-upload vam"></i> <span>엑셀업로드</span></a>
+									</div>
+								</div>
+								<div class="btn_area btnLine btnLine2">
+									<div class="fR">
+										<a href="#" class="btn_primary small"><i class="icons i_search vam"></i> <span>검색</span></a>
+									</div>
+								</div>
+							</div>
+
+							<div class="btn_area btnLine">
+								<div class="fL">
+									<span class="txt total">총 : <strong>411</strong></span>
+								</div>
+								<div class="fR">
+									<span class="txt total">(억원)</span>
+								</div>
+							</div>
+
+							<div class="tbl_type05 font-style1">
+								<table class="tableData vam">
+									<colgroup>
+										<col width="31%">
+										<col width="21%">
+										<col width="120">
+										<col width="120">
+										<col>
+									</colgroup>
+									<caption><span class="text-hide">사업유형별 손익 목록</span></caption>
+									<thead>
+										<tr>
+											<th scope="col">과제명</th>
+											<th scope="col">리더명</th>
+											<th scope="col">목표<i></i></th>
+											<th scope="col">실적</th>
+											<th scope="col">진척률</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="total">
+											<td class="textC">합계</td>
+											<td class="textL">&nbsp;</td>
+											<td class="textR">400.1</td>
+											<td class="textR">300.4</td>
+											<td>
+												<div class="bar-status">
+													<span class="bar">
+														<span class="bar-in" style="width: 77%;"></span>
+													</span>
+													<em>77.0%</em>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="textL">[SEV/T] 항공수출 직영확대를 통한 손익개선 <i class="fa fa-file"></i></td>
+											<td class="textL">INDO-TRANS LOGISTICS 외13</td>
+											<td class="textR">39.8</td>
+											<td class="textR">34.7</td>
+											<td>
+												<div class="bar-status">
+													<span class="bar">
+														<span class="bar-in" style="width: 87.1%;"></span>
+													</span>
+													<em>87.1%</em>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="textL">[SDSA-DAL] SEA/Coppell - 운송입찰을 통한 AP 절감 <i class="fa fa-file"></i></td>
+											<td class="textL">TOTAL QUALITY LOGISTICS. LLC 외4</td>
+											<td class="textR">31.6</td>
+											<td class="textR">31.6</td>
+											<td>
+												<div class="bar-status">
+													<span class="bar">
+														<span class="bar-in" style="width: 100%;"></span>
+													</span>
+													<em>100.0%</em>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="textL">[티후아나] 20년 VD車 티후하나 협상(야드 I/J, OTAY 비용/ <i class="fa fa-file"></i></td>
+											<td class="textL">Vendor 미입력</td>
+											<td class="textR">23.4</td>
+											<td class="textR">0.0</td>
+											<td>
+												<div class="bar-status">
+													<span class="bar">
+														<span class="bar-in" style="width: 0%;"></span>
+													</span>
+													<em>0.0%</em>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="textL">Bethel - WM 직영화로 한계이익 개선 <i class="fa fa-file"></i></td>
+											<td class="textL">JACOBSON WAREHOUSE COMPA …</td>
+											<td class="textR">22.1</td>
+											<td class="textR">16.4</td>
+											<td>
+												<div class="bar-status">
+													<span class="bar">
+														<span class="bar-in" style="width: 74.4%;"></span>
+													</span>
+													<em>74.4%</em>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="textL">[SDSX-XAL] SCS - 전세기 항공사 인센티브 확보 <i class="fa fa-file"></i></td>
+											<td class="textL">㈜대한항공</td>
+											<td class="textR">18.6</td>
+											<td class="textR">3.0</td>
+											<td>
+												<div class="bar-status">
+													<span class="bar">
+														<span class="bar-in" style="width: 15.8%;"></span>
+													</span>
+													<em>15.8%</em>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="textL">[SDSC-SZL] SDIW - import&export local truck and clea <i class="fa fa-file"></i></td>
+											<td class="textL">JISANGSU UNIWILL LOGISTICS CO., …</td>
+											<td class="textR">17.9</td>
+											<td class="textR">16.0</td>
+											<td>
+												<div class="bar-status">
+													<span class="bar">
+														<span class="bar-in" style="width: 89.1%;"></span>
+													</span>
+													<em>89.1%</em>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+						</div>
+						<!-- //상세 목록 -->
+					</div>
+				</div>
+				<script type="text/javascript">$('#tab1').tabsx();</script>
+			</div>
+			<!--// cont -->
+
+		</div>
+	</div>
+	<!--// contents -->
+
+	<!-- footer -->
+	<div calss="footer_wrap"></div>
+	<!--// footer -->
+
+</div>
+</body>
+</html>

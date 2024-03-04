@@ -1,0 +1,9 @@
+.con-banner .item {width: 31%;}
+.con-banner .item + .item {margin-left: 3.5%;}
+.con-banner .item > .rm {background-image: url('../images/program/program-banner1.png');}
+.con-banner .item > .et {background-image: url('../images/program/program-banner2.png');}
+.con-banner .item > .hl {background-image: url('../images/program/program-banner3.png');}
+.con-banner .item > .rm p:before {background-image: url('../images/program/icon1.png');}
+.con-banner .item > .et p:before {background-image: url('../images/program/icon1.png');}
+.con-banner .item > .hl p:before {background-image: url('../images/program/icon1.png');}
+

@@ -1,0 +1,383 @@
+<!DOCTYPE HTML>
+<!--[if IE 7]><html class="ie7" lang="ko"><![endif]-->
+<!--[if IE 8]><html class="ie8" lang="ko"><![endif]-->
+<!--[if gte IE 9]><!--><html lang="ko"><!--<![endif]-->
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>관리자 통계</title>
+	<link rel="stylesheet" href="../css/admin_edu.css">
+	<link rel="stylesheet" href="../css/chart.css">
+	<link rel="stylesheet" href="../css/admin_edu_add.css">
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="../js/respond.min.js"></script>
+	<![endif]-->
+	<!--[if lte IE 8]><script src="../js/excanvas.min.js"></script><![endif]-->
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script src="../js/jquery.flot.js"></script>
+	<script src="../js/jquery.flot.pie.min.js"></script>
+	<script src="../js/jquery.flot.resize.min.js"></script>
+	<script src="../js/edu_admin_default.js"></script>
+</head>
+<body class="themeA">
+	<div class="wrap">
+		<header>
+			<h1>크래듀 교육 관리 서비스</h1>
+			<a href="#" class="backBtn"><span>이전</span></a>
+			<a href="#" class="menuBtn"><span>메뉴</span></a>
+		</header>
+		<section class="content">
+			<!-- 탭메뉴 -->
+			<div class="tabmenu">
+				<a href="#"><span class="step1">학습현황</span></a>
+				<a href="#" class="on"><span class="step2">운영보고서</span></a>
+			</div>
+			<!-- 학습현황 시작 -->
+			<div class="reportBox">
+				<div class="reportBoxHead">
+					<p class="copy">종합현황</p>
+					<span class="select3">
+						<select id="">
+							<option value="">페이지 선택</option>
+							<option value="">월 교육현황</option>
+							<option value="" selected="selected">종합현황</option>
+							<option value="">과정별 수료율</option>
+							<option value="">학습현황</option>
+							<option value="">과정랭킹</option>
+						</select>
+					</span>
+				</div>
+				<!-- 그래프 영역 -->
+				<div class="graphCon2">
+
+					<!-- 연간 입과 -->
+					<div class="chartover">
+						<div class="topWrap">
+							<p class="tit2">연간 입과</p>
+							<div class="legendbox" id="legend1"></div>
+						</div>
+						<div class="chartWrap">
+							<div class="chartD1 chartD" id="chart1"></div>
+						</div>
+					</div>
+
+					<!-- 연간 수료율 -->
+					<div class="chartover">
+						<div class="topWrap">
+							<p class="tit2">연간 수료율</p>
+							<div class="legendbox" id="legend2"></div>
+						</div>
+						<div class="chartWrap">
+							<div class="chartD2 chartD" id="chart2"></div>
+						</div>
+					</div>
+
+					<!-- 연간 만족도 -->
+					<div class="chartover">
+						<div class="topWrap">
+							<p class="tit2">연간 만족도</p>
+							<div class="legendbox" id="legend3"></div>
+						</div>
+						<div class="chartWrap">
+							<div class="chartD3 chartD" id="chart3"></div>
+						</div>
+					</div>
+
+					<!-- 연간 교육비 -->
+					<div class="chartover">
+						<div class="topWrap">
+							<p class="tit2">연간 교육비 <span>(단위 : 천원)</span></p>
+							<div class="legendbox" id="legend4"></div>
+						</div>
+						<div class="chartWrap">
+							<div class="chartD4 chartD" id="chart4"></div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<footer class="footer">
+			<div class="person">
+				<div class="number1">
+					<a href="tel:0262629128">
+						<span class="name">교육컨설팅 문의 : 최승운 과장</span>
+						<span class="num">02-6262-9128</span>
+					</a>
+				</div>
+				<div class="number2">
+					<a href="tel:0262629018">
+						<span class="name">교육 운영 문의 : 김보민 사원</span>
+						<span class="num">02-6262-9018</span>
+					</a>
+				</div>
+				<p class="copy">
+					COPYRIGHT ⓒ 2014 CREDU. ALL RIGHT RESERVED.
+					<button type="button"><img src="../images/com/bg_logout.png" alt="로그아웃" /></button>
+				</p>
+			</div>
+		</footer>
+	</div>
+	<script type="text/javascript">
+
+	var colors = [];
+	if($('body').is('.themeA')){
+		colors = ['#00aeef','#8d3dd8'];
+	}
+	if($('body').is('.themeB')){
+		colors = ['#52be7f','#8d3dd8'];
+	}
+	if($('body').is('.themeC')){
+		colors = ['#fe634e','#8d3dd8'];
+	}
+
+	//연간 입과
+	var data1 = [
+					{label : '2013', data:[[3.5, 20], [11, 200], [18.5, 300], [26, 400], [33.5, 500], [41, 400], [48.5, 600], [56, 700], [63.5, 300], [71, 400], [78.5, 500], [86, 300], [93.5, 300]], bars:{fillColor:colors[0]}},
+					{label : '2014', data:[[6.5, 20], [14, 200], [21.5, 300], [29, 400], [36.5, 500], [44, 400], [51.5, 600], [59, 700], [66.5, 300], [74, 400], [81.5, 500], [89, 600], [96.5, 300]], bars:{fillColor:colors[1]}},
+				]
+
+	var p1 = $.plot("#chart1", data1,  {
+		bars: {
+			show: true,
+			align:'center',
+			barWidth: 2,
+			lineWidth : 0
+		},
+		xaxis: {
+			min : 0,
+			max : 100,
+			ticks: [[5, '1월'], [12.5, '2월'], [20, '3월'], [27.5, '4월'],[35, '5월'], [42.5, '6월'], [50, '7월'], [57.5, '8월'],[65, '9월'], [72.5, '10월'], [80, '11월'], [87.5, '12월'], [95, '평균']],
+			tickLength: 0
+		},
+		yaxis : {
+			min : 0,
+			tickSize : 100
+		},
+		grid:{
+			borderWidth: {
+				top:0,
+				left:0,
+				bottom:2,
+				right:0
+			},
+			borderColor : '#dcdcdc'
+		},
+		shadowSize : 0,
+		legend : {
+			show : true,
+			noColumns : 0,
+			container : $('#legend1')
+		},
+		colors : [colors[0], colors[1]]
+	});
+
+	//연간 수료율
+	var data2 = [
+					{label : '2013', data:[[3.5, 0], [11, 100], [18.5, 92.7], [26, 94.3], [33.5, 91.1], [41, 90.4], [48.5, 91.6], [56, 92.7], [63.5, 85.2], [71, 89.4], [78.5, 89.7], [86, 89.1], [93.5, 90]], bars:{fillColor:colors[0]}},
+					{label : '2014', data:[[6.5, 90], [14, 89.4], [21.5, 89.1], [29, 89.7], [36.5, 89.4], [44, 85.2], [51.5, 92.7], [59, 91.2], [66.5, 90.4], [74, 91.1], [81.5, 94.3], [89, 92.7], [96.5, 87.4]], bars:{fillColor:colors[1]}},
+				]
+
+	var p2 = $.plot("#chart2", data2,  {
+		bars: {
+			show: true,
+			align:'center',
+			barWidth: 2,
+			lineWidth : 0
+		},
+		xaxis: {
+			min : 0,
+			max : 100,
+			ticks: [[5, '1월'], [12.5, '2월'], [20, '3월'], [27.5, '4월'],[35, '5월'], [42.5, '6월'], [50, '7월'], [57.5, '8월'],[65, '9월'], [72.5, '10월'], [80, '11월'], [87.5, '12월'], [95, '평균']],
+			tickLength: 0
+		},
+		yaxis : {
+			min : 0,
+			max : 110,
+			tickSize : 50
+		},
+		grid:{
+			borderWidth: {
+				top:0,
+				left:0,
+				bottom:2,
+				right:0
+			},
+			borderColor : '#dcdcdc'
+		},
+		shadowSize : 0,
+		legend : {
+			show : true,
+			noColumns : 0,
+			container : $('#legend2')
+		},
+		colors : [colors[0], colors[1]]
+	});
+
+	//연간 만족도
+	var data3 = [
+					{label : '2013', data:[[3.5, 0], [11, 0.5], [18.5, 1], [26, 2], [33.5, 3.3], [41, 4.2], [48.5, 3.7], [56, 4.4], [63.5, 3], [71, 4], [78.5, 2.7], [86, 4.3], [93.5, 4.4]], bars:{fillColor:colors[0]}},
+					{label : '2014', data:[[6.5, 5], [14, 4], [21.5, 3.5], [29, 4.2], [36.5, 2.7], [44, 3.7], [51.5, 4.1], [59, 3.7], [66.5, 3], [74, 3.3], [81.5, 4], [89, 4.1], [96.5, 4.2]], bars:{fillColor:colors[1]}},
+				]
+
+	var p3 = $.plot("#chart3", data3,  {
+		bars: {
+			show: true,
+			align:'center',
+			barWidth: 2,
+			lineWidth : 0
+		},
+		xaxis: {
+			min : 0,
+			max : 100,
+			ticks: [[5, '1월'], [12.5, '2월'], [20, '3월'], [27.5, '4월'],[35, '5월'], [42.5, '6월'], [50, '7월'], [57.5, '8월'],[65, '9월'], [72.5, '10월'], [80, '11월'], [87.5, '12월'], [95, '평균']],
+			tickLength: 0
+		},
+		yaxis : {
+			min : 0,
+			max : 5.5,
+			tickSize : 1,
+			tickDecimals : 0
+		},
+		grid:{
+			borderWidth: {
+				top:0,
+				left:0,
+				bottom:2,
+				right:0
+			},
+			borderColor : '#dcdcdc'
+		},
+		shadowSize : 0,
+		legend : {
+			show : true,
+			noColumns : 0,
+			container : $('#legend3')
+		},
+		colors : [colors[0], colors[1]]
+	});
+
+	//연간 교육비
+	var data4 = [
+					{label : '2013', data:[[3.5, 27154, 20.2], [11, 39600], [18.5, 69875], [26, 55555], [33.5, 44444], [41, 33333], [48.5, 47474], [56, 57575], [63.5, 69696], [71, 81818], [78.5, 49995], [86, 63636], [93.5, 50000]], bars:{fillColor:colors[0]}},
+					{label : '2014', data:[[6.5, 17154], [14, 29656], [21.5, 79878], [29, 64105], [36.5, 29292], [44, 39393], [51.5, 49494], [59, 59595], [66.5, 69696], [74, 78787], [81.5, 66555], [89, 55444], [96.5, 44333]], bars:{fillColor:colors[1]}},
+				]
+
+	var p4 = $.plot("#chart4", data4,  {
+		bars: {
+			show: true,
+			align:'center',
+			barWidth: 2,
+			lineWidth : 0
+		},
+		xaxis: {
+			min : 0,
+			max : 100,
+			ticks: [[5, '1월'], [12.5, '2월'], [20, '3월'], [27.5, '4월'],[35, '5월'], [42.5, '6월'], [50, '7월'], [57.5, '8월'],[65, '9월'], [72.5, '10월'], [80, '11월'], [87.5, '12월'], [95, '평균']],
+			tickLength: 0
+		},
+		yaxis : {
+			tickSize : 10000,
+			tickFormatter: function formatter(val, axis) {
+				return Number(String(val).replace(/\..*|[^\d]/g, "")).toLocaleString()
+			}
+		},
+		grid:{
+			borderWidth: {
+				top:0,
+				left:0,
+				bottom:2,
+				right:0
+			},
+			borderColor : '#dcdcdc'
+		},
+		shadowSize : 0,
+		legend : {
+			show : true,
+			noColumns : 0,
+			container : $('#legend4')
+		},
+		colors : [colors[0], colors[1]]
+	});
+
+
+
+	function graphLabel1() {
+		$('#chart1 .data-point-labelD1').remove();
+		for(var j=0; j<data1.length; j++)
+		{
+			$.each(p1.getData()[j].data, function(i, el){
+			  var o = p1.pointOffset({x: el[0], y: el[1]});
+			  $('<div class="data-point-labelD1 count'+(j+1)+'">' + el[1] + '</div>').css( {
+				position: 'absolute',
+				left: o.left - 35,
+				top: o.top - 25
+			  }).appendTo(p1.getPlaceholder());
+			});
+		}
+	}
+
+	function graphLabel2() {
+		$('#chart2 .data-point-labelD2').remove();
+		for(var j=0; j<data2.length; j++)
+		{
+			$.each(p2.getData()[j].data, function(i, el){
+			  var o = p2.pointOffset({x: el[0], y: el[1]});
+			  $('<div class="data-point-labelD2 count'+(j+1)+'">' + el[1] + '</div>').css( {
+				position: 'absolute',
+				left: o.left - 35,
+				top: o.top - 25
+			  }).appendTo(p2.getPlaceholder());
+			});
+		}
+	}
+
+	function graphLabel3() {
+		$('#chart3 .data-point-labelD3').remove();
+		for(var j=0; j<data3.length; j++)
+		{
+			$.each(p3.getData()[j].data, function(i, el){
+			  var o = p3.pointOffset({x: el[0], y: el[1]});
+			  $('<div class="data-point-labelD3 count'+(j+1)+'">' + el[1] + '</div>').css( {
+				position: 'absolute',
+				left: o.left - 35,
+				top: o.top - 25
+			  }).appendTo(p3.getPlaceholder());
+			});
+		}
+	}
+
+	function graphLabel4() {
+		$('#chart4 .data-point-labelD4').remove();
+		for(var j=0; j<data4.length; j++)
+		{
+			$.each(p4.getData()[j].data, function(i, el){
+			  var o = p4.pointOffset({x: el[0], y: el[1]});
+			  $('<div class="data-point-labelD4 count'+(j+1)+'">' + Number(String(el[1]).replace(/\..*|[^\d]/g, "")).toLocaleString() + '</div>').css( {
+				position: 'absolute',
+				left: o.left - 35,
+				top: o.top - 20
+			  }).appendTo(p4.getPlaceholder());
+			});
+		}
+	}
+
+	graphLabel1();
+	graphLabel2();
+	graphLabel3();
+	graphLabel4();
+
+	$(window).on('resize', function(){
+		graphLabel1();
+		graphLabel2();
+		graphLabel3();
+		graphLabel4();
+	});
+	</script>
+
+<div class="goTop" id="go_top"><a href="#"><span>페이지상단으로 이동</span></a></div>
+</body>
+</html>

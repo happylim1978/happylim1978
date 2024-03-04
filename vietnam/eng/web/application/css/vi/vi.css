@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'Noto Sans Korean';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Noto Sans Regular'), local('NotoSans-Regular'),
+    url('/web/css/fonts/NotoSansKR-Light-Hestia.eot'),
+    url('/web/css/fonts/NotoSansKR-Light-Hestia.eot?#iefix') format('embedded-opentype'),
+    url('/web/css/fonts/NotoSansKR-Light-Hestia.woff') format('woff'),
+    url('/web/css/fonts/NotoSansKR-Light-Hestia.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Noto Sans Korean';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Noto Sans Regular'), local('NotoSans-Regular'),
+    url('/web/css/fonts/NotoSansKR-Regular-Hestia.eot'),
+    url('/web/css/fonts/NotoSansKR-Regular-Hestia.eot?#iefix') format('embedded-opentype'),
+    url('/web/css/fonts/NotoSansKR-Regular-Hestia.woff') format('woff'),
+    url('/web/css/fonts/NotoSansKR-Regular-Hestia.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans Korean';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Noto Sans Bold'), local('NotoSans-Bold'),
+    url('/web/css/fonts/NotoSansKR-Bold-Hestia.eot'),
+    url('/web/css/fonts/NotoSansKR-Bold-Hestia.eot?#iefix') format('embedded-opentype'),
+    url('/web/css/fonts/NotoSansKR-Bold-Hestia.woff') format('woff'),
+    url('/web/css/fonts/NotoSansKR-Bold-Hestia.otf') format('opentype');
+}
+
+* {margin:0;padding:0;}
+textarea,
+body{font-family:'Noto Sans Korean','맑은 고딕','Malgun Gothic', '돋움',Dotum,Arial sans-serif,Helvetica; font-size:14px; line-height:1.5; font-weight:normal;}
+
+hr{display:none;}
+img{border:0; vertical-align:top;}
+fieldset{border:0;}
+ul,ol,li{list-style:none;}
+select,textarea{}
+
+em, i {font-style:normal;}
+table { border-collapse:collapse;}
+
+a{color:#000; text-decoration:none;}
+a:link,a:hover,a:active{text-decoration:none;}
+
+.vi-wrap {padding: 50px 0 100px;}
+.vi-box {margin: 0 auto; width: 720px; border: 1px solid #ccc;}
+.vi-box .form-wrap {padding: 50px;}
+.vi-box .form-line {display: table; width: 100%;}
+.vi-box .form-line-type1 {display: block;}
+.vi-box .form-line .col {display: table-cell; vertical-align: middle; width: 100%; padding-top: 8px; padding-bottom: 8px;}
+.vi-box .form-line .col input {vertical-align: middle;}
+.vi-box .form-line .col input[type="checkbox"] {width: 16px; height: 16px;}
+.vi-box .form-line .col label + input[type="checkbox"] {margin-left: 5px;}
+.vi-box .form-line .col label {margin-left: 20px;}
+.vi-box .form-line .col label:first-child {margin-left: 0;}
+.vi-box .form-line .col-check {text-align: center; background-color: #f0f0f0;}
+.vi-box .form-line .col-txt label{margin-left: 0;}
+.vi-box .form-line .col input[type='text'] {border: 0 none; border-bottom: 1px solid #ccc; width: 99%; outline:0 none; line-height: 30px; height: 30px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.vi-box .form-line .col textarea:focus,
+.vi-box .form-line .col input[type='text']:focus {border-color: #00006d;}
+.vi-box .form-line .col textarea {width: 99%; border: 1px solid #ccc; padding: 0.5em 1em; line-height: 1.5em; height: 4.5em; outline:0 none;}
+.vi-box .form-line .col2,
+.vi-box .form-line .col1 {display: block; width: auto;}
+.vi-box .form-line .col1 {padding-left: 15px; padding-right: 15px;}
+.vi-box .form-line .col-txt {white-space:nowrap; width: auto; font-weight: bold; padding-right: 10px; padding-left: 10px;}
+.vi-box .form-line .col-txt:first-child {padding-left: 0;}
+.vi-box .msg {position: relative; overflow: hidden; margin: 0 50px;}
+.vi-box .msg .pic {float: left;}
+.vi-box .msg .txt1 {float: right; text-align: right; padding: 20px 0 0 0;}
+.vi-box .msg .txt1 .sign {margin-top: 10px;}
+.vi-box .msg .txt1 .sign label {}
+.vi-box .msg .txt1 .sign input {border: 0 none; border-bottom: 1px solid #ccc; width: 150px; margin-left: 10px;}
+.vi-box .msg .txt2 {position: absolute; bottom: 15px; left: 0; right: 0; text-align: center; font-weight: bold;}

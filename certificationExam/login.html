@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Data Scientist 인증시험 | 로그인</title>
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+	<script type="text/javascript" src="http://www.credu.com/landing/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/default.js"></script>
+</head>
+
+<body>
+	<div class="login">
+		<div class="login-in">
+			<h1>Data Scientist<br />인증시험 <span>로그인</span></h1>
+			<div class="field">
+				<fieldset>
+					<legend>로그인</legend>
+					<span class="inputs">
+						<label for="input1">사번</label>
+						<input type="text" class="text" id="input1">
+					</span>
+					<span class="inputs">
+						<label for="input2">성명</label>
+						<input type="text" class="text" id="input2" />
+					</span>
+					<span class="inputs">
+						<label for="input3">비밀번호</label>
+						<input type="password" class="text" id="input3" />
+					</span>
+					<div class="btns">
+						<a href="#" class="button">로그인</a>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+	<a href="#" onclick="layer_view(); return false;" style="font-size: 20px;">레이어 보기</a>
+	<div class="layer">
+		<div class="layer-box">
+			<div class="layer-box-in">
+				<p class="msg">사번 또는 비밀번호를 잘못 입력하셨습니다. 확인 후 다시 시도하여 주시기 바랍니다.</p>
+				<div class="btns">
+					<button onclick="layer_close();" type="button" class="button">확인</button>
+				</div>
+			</div>
+		</div>
+		<div class="dim"></div>
+	</div>
+</body>
+</html>

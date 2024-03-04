@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> | MSS</title>
+	<link href="../../css/datepicker3.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/module.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/custom.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/popup.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="../../css/tip.css">
+	<link type="text/css" rel="stylesheet" href="../../css/admin.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_eis.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_mss.css" />
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+	<script src="../../js/bootstrap-datepicker.js"></script>
+	<script src="../../js/locales/bootstrap-datepicker.kr.js"></script>
+	<script src="../../js/jquery.slimscroll.min.js"></script>
+	<script src="../../js/tip.js"></script>
+	<script src="../../js/admin_script.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../js/html5shiv.js"></script>
+		<script src="../../js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body><!-- 배경색 변경시 class="bg" -->
+<div id="wrap"><!-- 메인일 경우 class="main" -->
+
+	<!-- contents -->
+	<div class="content_wrap">
+		<a id="btn_folding_lnb" class="btn_folding_lnb" href="#">lnb control</a>
+		<div class="wrap_max">
+
+			<!-- EP title -->
+			<div class="cont_subtit fix">
+				
+				<!-- 제목 -->
+				<div class="tit_area ">
+					<div class="sub_tit">
+						<span class="tit_list">
+							<span class="tit">경영현황 분석자료</span>
+						</span>
+					</div>
+				</div>
+				<!-- //제목 -->
+
+			</div>
+			<!--// EP title -->
+
+
+			<!-- cont -->
+			<div class="cont_wrap">
+
+				<div class="tbl_search tbl_search2">
+					<table>
+						<tbody>
+							<tr>
+								<th style="width: 60px;">기준년월</th>
+								<td style="width: 100px;">
+									<div class="date_wrap">
+										<div class="date_input date" id="cal1">
+											<input type="text" style="width:60px;">
+											<a class="btn_calendar input-group-addon" href="#">
+												<i class="icons i_calendar">calendar</i>
+											</a>
+										</div>
+									</div>
+									<script>
+										$('#cal1').datepicker({
+											format: "yyyy.mm",
+											minViewMode: 1, //월력변환
+											language:'kr',
+											autoclose : true
+										})
+										.on('show', function(){$(this).addClass('active');})
+										.on('hide', function(){$(this).removeClass('active');})
+										;
+										$('#cal2').datepicker({
+											format: "yyyy.mm.dd",
+											language:'kr',
+											todayHighlight: true,
+											autoclose : true,
+											todayBtn : 'linked'
+										})
+										.on('show', function(){$(this).addClass('active');})
+										.on('hide', function(){$(this).removeClass('active');})
+										;
+									</script>
+								</td>
+								<th style="width: 30px;">조직</th>
+								<td style="width: 250px;">
+									<select id="" style="width:125px;">
+										<option value="" selected="selected">All</option>
+										<option value=""> 인재개발사업부</option>
+										<option value=""> 스마트교육사업부</option>
+										<option value=""> HRD R&D센터</option>
+										<option value=""> 경영지원실</option>
+									</select>
+								</td>
+								<th style="width: 45px;">자료명</th>
+								<td><input type="text" class="text" id="" placeholder="자료명을 입력하세요." /></td>
+								<td style="width: 51px; text-align: right;">
+									<span class="btn_area">
+										<a href="#" class="btn_primary small"><span>검색</span></a>
+									</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!--
+				<div class="btn_area btnLine">
+					<div class="fL">
+						<span class="txt total">총 : <strong>51</strong></span>
+					</div>
+				</div>
+				-->
+				<div class="btnLine">
+					<div class="fL">
+						<span class="btn_area">
+							<a href="#" class="btn_primary small"><span>삭제</span></a>
+							<a href="#" class="btn_primary small"><span>수정</span></a>
+						</span>
+					</div>
+					<div class="fR">
+						<span class="btn_area">
+							<a href="../popup/popup2-1.html" onclick="window.open(this.href,'_blank','width=820, height=330, resizable=yes, scrollbars=yes'); return false;" class="btn_primary small"><span>분석자료 업로드</span></a>
+						</span>
+					</div>
+				</div>
+
+				<div class="tbl_type05 font-style1">
+					<table class="tableData dataMiddle vam">
+						<colgroup>
+							<col width="50" />
+							<col width="100" />
+							<col width="20%" />
+							<col />
+							<col width="60" />
+							<col width="100" />
+							<col width="150" />
+						</colgroup>
+						<thead class="fwn">
+							<tr>
+								<th scope="col"><input type="checkbox" id="" /></th>
+								<th scope="col">년월</th>
+								<th scope="col">사업부</th>
+								<th scope="col">자료명</th>
+								<th scope="col">별첨</th>
+								<th scope="col">작성자</th>
+								<th scope="col">업로드 일자</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="textC"><input type="checkbox" id="" /></td>
+								<td class="textC">21-10</td>
+								<td class="textL">인재개발사업부</td>
+								<td class="textL"><a href="mss1-1.html">10월 경영전략회의</a></td>
+								<td class="textC">1 <i class="fa fa-file"></i></td>
+								<td class="textL">홍길동</td>
+								<td class="textC">2020-05-04</td>
+							</tr>
+							<tr>
+								<td class="textC"><input type="checkbox" id="" /></td>
+								<td class="textC">21-10</td>
+								<td class="textL">인재개발사업부</td>
+								<td class="textL"><a href="mss1-1.html">10월 경영전략회의</a></td>
+								<td class="textC">1 <i class="fa fa-file"></i></td>
+								<td class="textL">홍길동</td>
+								<td class="textC">2020-05-04</td>
+							</tr>
+							<tr>
+								<td class="textC"><input type="checkbox" id="" /></td>
+								<td class="textC">21-10</td>
+								<td class="textL">인재개발사업부</td>
+								<td class="textL"><a href="mss1-1.html">10월 경영전략회의</a></td>
+								<td class="textC">1 <i class="fa fa-file"></i></td>
+								<td class="textL">홍길동</td>
+								<td class="textC">2020-05-04</td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+				<div class="paging_wrap">
+					<div class="page_area">
+						<span class="btn_area">
+							<a class="btn_basic first" href="#"><i>first</i></a>
+							<a class="btn_basic prev" href="#"><i>prev</i></a>
+						</span>
+						<span class="num_area">
+							<a class="on" href="#">1</a><!-- 선택상태 -->
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+							<a href="#">6</a>
+							<a href="#">7</a>
+							<a href="#">8</a>
+							<a href="#">9</a>
+							<a href="#">10</a>
+						</span>
+						<span class="btn_area">
+							<a class="btn_basic next" href="#"><i>next</i></a>
+							<a class="btn_basic last" href="#"><i>last</i></a>
+						</span>
+					</div>
+				</div>
+			</div>
+			<!--// cont -->
+
+		</div>
+	</div>
+	<!--// contents -->
+
+	<!-- footer -->
+	<div calss="footer_wrap"></div>
+	<!--// footer -->
+
+</div>
+</body>
+</html>

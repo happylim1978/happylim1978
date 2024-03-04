@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+.chartWrap {padding:5px 10px; border:1px solid #bbc3d3; background-color:#fff;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+.chartWrap2 {padding:5px 5px;}
+.flot-text {font-size:12px !important;}
+
+.chart1, .chart2 {height:200px;}
+.chart3 {height:240px;}
+.chart2 {margin-top:20px;}
+
+.chart1 .data-point-label,
+.chart2 .data-point-label2 {font-size:0.875em; color:#4db0ed;}
+
+.chart2 .count3,
+.chart1 .count4,
+.chart1 .count5 {color:#fa6b5b;}
+
+.chart1 .flot-y-axis .flot-tick-label {left:0 !important; color:#434343;}
+.chart1 .flot-y-axis .tickLabel4,
+.chart1 .flot-y-axis .tickLabel5 {color:#fa6b5b;}
+
+.chart2 .flot-y-axis .flot-tick-label {left:0 !important;}
+.chart2 .flot-x-axis .tickLabel3 {color:#fa6b5b;}
+
+.chart3 .flot-y-axis .flot-tick-label {left:0 !important; color:#434343;}
+.chart3 .flot-y-axis .tickLabel1 {color:#fa6b5b; font-weight:bold;}
+.chart3 .data-point-label {font-size:0.875em; color:#4db0ed;}
+.chart3 .count1 {color:#fa6b5b;}
+
+.pieWrap {padding:15px 0 0 0;}
+.pieWrap2 {padding:15px 0 0 0; margin-top:20px;}
+.pieWrap2 .tit2 {margin-bottom:-25px;}
+
+.piechart1 {height:220px;}
+.pieChartWrap {padding-left:50px;}
+
+.legendColorBox {padding-left:10px;}
+.legendLabel {font-size:1em;}
+.dotmark {margin-right:3px;
+	-webkit-border-radius:1px;
+	border-radius:1px;
+}
+
+.piechart2 {height:220px;}
+
+.chartA {height:200px;}
+.chartA1 .flot-y-axis .flot-tick-label {left:0 !important; color:#434343;}
+.chartA1 .data-point-labelA1 {font-size:0.875em; color:#4db0ed;}
+
+.chartA2 .data-point-labelA2 {font-size:0.875em; color:#4db0ed;}
+
+.chartA3 .data-point-labelA3 {font-size:0.875em; color:#4db0ed;}
+
+.chartA4 .data-point-labelA4 {font-size:0.875em; color:#4db0ed;}
+
+.chartD {height:200px;}
+.chartD1 .data-point-labelD1,
+.chartD2 .data-point-labelD2,
+.chartD3 .data-point-labelD3,
+.chartD4 .data-point-labelD4 {width:70px; text-align:center; font-size:0.875em; color:#4db0ed;}
+.chartD2 .data-point-labelD2 {letter-spacing:-1px;}
+.chartD1 .data-point-labelD1.count2,
+.chartD2 .data-point-labelD2.count2,
+.chartD3 .data-point-labelD3.count2,
+.chartD4 .data-point-labelD4.count2 {color:#fa6b5b;}
+
+.legendbox .dotmark {width:10px !important; height:10px !important; border-width:5px !important;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+.legendbox .legendColorBox {padding-left:20px;}
+
+@media (max-width:700px) {
+	.chartover {overflow:hidden;}
+	.chartover .chartWrap {overflow-y:hidden; overflow-x:auto;
+		-webkit-overflow-scrolling:touch;
+	}
+
+	.chartover .chartWrap .chartA,
+	.chartover .chartWrap .chartD {width:1000px; padding-right:10px !important;}
+	.chartover .chartWrap .chartA4 {width:850px;}
+}

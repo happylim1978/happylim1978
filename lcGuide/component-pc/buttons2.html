@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html class="no-js compo" lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MULTICAMPUS DESIGN SYSTEM Learning Cloud</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+	<link rel="stylesheet" type="text/css" href="../css/jquery.mCustomScrollbar.css" />
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/sub.css" />
+	<style>
+		.gnb {display: none;}
+		body {background: none;}
+		.page-wrap {margin: 0;}
+		.Simulation-tab,
+		.page-wrap .page-in .page-cover {width: auto; max-width:674px;}
+		img {max-width:100%;}
+	</style>
+	<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script type="text/javascript" src="../js/menu.js"></script>
+	<script type="text/javascript" src="../js/default.js"></script>
+</head>
+
+<body>
+	<div class="wrap">
+		<!-- gnb -->
+		<div class="gnb">
+			<div class="gnb-in" id="gnb-in">
+				<h1><a href="../index.html">MDS</a></h1>
+				<h2>Multicampus Design System</h2>
+				<!-- 메뉴 -->
+				<div class="menu" id="menu">
+				</div>
+				<!-- //메뉴 -->
+				<div class="other-link" id="other-link"></div>
+			</div>
+		</div>
+		<!-- //gnb -->
+		<div class="page-wrap">
+			<!-- 페이지 1 -->
+			<div class="page1">
+				<div class="page-in">
+					<div class="page-cover">
+						<h3 class="h3 eng">Buttons</h3>
+						<div class="download">
+							<a href="#" target="_blank">XD download</a>
+						</div>
+						<h4 class="h4">Principle</h4>
+						<div class="h4-con">
+							<p class="copy">
+								사용자가 작업을 수행하거나 다른 페이지로 이동할 수 있는 컴포넌트 입니다.<br />
+								버튼은 사용처에 따라 적합한 유형으로 분류 사용됨을 원칙으로 하며, <br />
+								배치상황에 따라 너비는 유동적으로 적용 될 수 있습니다.
+							</p>
+						</div>
+						<h4 class="h4">Anatomy</h4>
+						<div class="img2-wrap">
+							<p class="img2">
+								<img src="../images/sub/component/pc/buttons/buttons-1.png" alt="" />
+							</p>
+							<ul class="explain">
+								<li><span class="num">1</span>Lable</li>
+								<li><span class="num">2-1</span>Icon(Optional)</li>
+								<li><span class="num">2-2</span>Icon(Optional)</li>
+								<li><span class="num">3</span>Background(Optional)</li>
+							</ul>
+						</div>
+						<h5 class="h4">Types</h5>
+						<div class="type-ex">
+							<dl>
+								<dt>
+									Box Button : text<a href="#target1" class="target">링크</a>
+								</dt>
+								<dd>
+									<p class="pic"><img src="../images/sub/component/pc/buttons/img_buttons_types_1.png" alt="버튼" /></p>
+									<ul class="list1">
+										<li>
+											박스형의 가장 기본이 되는 텍스트 형태로 솔리드와 라인으로 구분하며, <br />
+											텍스트레이블과 백그라운드로 구성되어 있습니다.
+										</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									Box Button : Icon+text<a href="#target2" class="target">링크</a>
+									<p class="i"></p>
+								</dt>
+								<dd>
+									<p class="pic"><img src="../images/sub/component/pc/buttons/img_buttons_types_2.png" alt="버튼" /></p>
+									<ul class="list1">
+										<li>박스의 형태에 아이콘과 텍스트가 혼합형으로 나오는 버튼을 의미합니다.</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									Keyword Button<a href="#target3" class="target">링크</a>
+								</dt>
+								<dd>
+									<p class="pic"><img src="../images/sub/component/pc/buttons/img_buttons_types_3.png" alt="버튼" /></p>
+									<ul class="list1">
+										<li>키워드와 관련된 버튼 형태로 관련키워드, 추천키워드, 필터형 버튼으로 구분됩니다.</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									Text Button : Line<a href="#target4" class="target">링크</a>
+								</dt>
+								<dd>
+									<p class="pic"><img src="../images/sub/component/pc/buttons/img_buttons_types_4.png" alt="버튼" /></p>
+									<ul class="list1">
+										<li>텍스트 형태 버튼으로 오버시 백그라운드 박스형태로 표현되거나 밑줄 액션을 적용하여<br />일반 정보와 구분되어 인지할 수 있어야 합니다. </li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									Text Button : Link<a href="#target5" class="target">링크</a>
+								</dt>
+								<dd>
+									<p class="pic"><img src="../images/sub/component/pc/buttons/img_buttons_types_5.png" alt="버튼" /></p>
+									<ul class="list1">
+										<li>텍스트에 링크가 적용 되어 있는 버튼, 비교적 중요도가 낮거나 <br />버튼이 시각적으로 방해 되는 경우 사용됩니다.</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									Icon Button<a href="#target6" class="target">링크</a>
+								</dt>
+								<dd>
+									<p class="pic"><img src="../images/sub/component/pc/buttons/img_buttons_types_6.png" alt="버튼" /></p>
+									<ul class="list1">
+										<li>아이콘 형태 버튼으로 아이콘에 Bg 액션을 적용하여 일반 정보 아이콘과 구분될 수 있어야 합니다.</li>
+										<li>아이콘 버튼의 유형은 기본이 되는 라인 아이콘과 솔리드아이콘으로 분류될 수 있습니다.</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									Common Button<a href="#target7" class="target">링크</a>
+								</dt>
+								<dd>
+									<p class="pic"><img src="../images/sub/component/pc/buttons/img_buttons_types_7.png" alt="버튼" /></p>
+									<ul class="list1">
+										<li>컬러, 사이즈 등 모든 페이지에서 공통을 적용 되는 버튼을 의미합니다.</li>
+										<li>공통버튼의 유형은 크게 동영상 관련 버튼과 스와이프 버튼으로 분류됩니다.</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>
+									Function Button<a href="#target8" class="target">링크</a>
+								</dt>
+								<dd>
+									<p class="pic"><img src="../images/sub/component/pc/buttons/img_buttons_types_8.png" alt="버튼" /></p>
+									<ul class="list1">
+										<li>기능버튼은 콘텐츠에 종속된 기능적인 역활을 수행하는 버튼입니다.</li>
+										<li>박스형과 아이콘과 텍스트 조합형으로 분류되어 사용됨을 원칙으로 합니다.</li>
+									</ul>
+								</dd>
+							</dl>
+						</div>
+
+						<h4 class="h4">Simulation</h4>
+						<h5 class="h5-1">Box Button<a href="#target1" class="target">링크</a></h5>
+						<div class="Simulation-tab">
+							<div class="tab-out tabs">
+								<ul>
+									<li><a href="#">Solid Button</a></li>
+									<li><a href="#">line Button</a></li>
+									<li><a href="#">Icon+Text</a></li>
+								</ul>
+								<div class="tab-con">
+									<p><img src="../images/sub/component/pc/buttons/button-tab1-solid.png" alt="" /></p>
+								</div>
+								<div class="tab-con">
+									<p><img src="../images/sub/component/pc/buttons/button-tab1-line.png" alt="" /></p>
+								</div>
+								<div class="tab-con">
+									<p><img src="../images/sub/component/pc/buttons/button-tab1-icontext.png" alt="" /></p>
+								</div>
+							</div>
+						</div>
+
+						<h5 class="h5-1">Keyword Button<a href="#target3" class="target">링크</a></h5>
+						<div class="Simulation-tab">
+							<div class="tab-out tabs">
+								<ul>
+									<li><a href="#">키워드</a></li>
+									<li><a href="#">추천 키워드</a></li>
+									<li><a href="#">필터</a></li>
+								</ul>
+								<div class="tab-con">
+									<p><img src="../images/sub/component/pc/buttons/button-tab2-keyword.png" alt="" /></p>
+								</div>
+								<div class="tab-con">
+									<p><img src="../images/sub/component/pc/buttons/button-tab2-s-keyword.png" alt="" /></p>
+								</div>
+								<div class="tab-con">
+									<p><img src="../images/sub/component/pc/buttons/button-tab2-s-filter.png" alt="" /></p>
+								</div>
+							</div>
+						</div>
+
+						<h5 class="h5-1">Text Button<a href="#target4" class="target">링크</a></h5>
+						<div class="Simulation-tab">
+							<div class="tab-out tabs">
+								<ul>
+									<li><a href="#">Line Button</a></li>
+									<li><a href="#">Link Button</a></li>
+								</ul>
+								<div class="tab-con">
+									<p><img src="../images/sub/component/pc/buttons/button-tab3-line.png" alt="" /></p>
+								</div>
+								<div class="tab-con">
+									<p><img src="../images/sub/component/pc/buttons/button-tab3-link.png" alt="" /></p>
+								</div>
+							</div>
+						</div>
+
+						<h5 class="h5-1">Icon Button<a href="#target6" class="target">링크</a></h5>
+						<div class="Simulation-tab">
+							<div class="tab-out tabs">
+								<ul>
+									<li><a href="#">Basic</a></li>
+									<li><a href="#">피드 인터랙션</a></li>
+									<li><a href="#">과정만들기</a></li>
+									<li><a href="#">설문만들기</a></li>
+								</ul>
+								<div class="tab-con">
+									<p><img src="../images/sub/component/pc/buttons/button-tab4-basic.png" alt="" /></p>
+								</div>
+								<div class="tab-con">
+									<p><img src="../images/sub/component/pc/buttons/button-tab4-feed.png" alt="" /></p>
+								</div>
+								<div class="tab-con">
+									<p><img src="../images/sub/component/pc/buttons/button-tab4-process.png" alt="" /></p>
+								</div>
+								<div class="tab-con">
+									<p><img src="../images/sub/component/pc/buttons/button-tab4-vote.png" alt="" /></p>
+								</div>
+							</div>
+						</div>
+ 
+						<h5 class="h5-1">Common Button<a href="#target7" class="target">링크</a></h5 > 
+						<div class="Simulation-tab">
+							<div class="tab-out tabs">
+								<ul>
+									<li><a href="#">Video</a></li>
+									<li><a href="#">Swipe</a></li>
+								</ul>
+								<div class="tab-con">
+									<div class="sub-tab tabs">
+										<ul class="sub-tab-list">
+											<li><a href="#">Default</a></li>
+											<li><a href="#">Over</a></li>
+											<li><a href="#">Click</a></li>
+										</ul>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/pc/buttons/img_buttons_commonb_video_default.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/pc/buttons/img_buttons_commonb_video_over.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/pc/buttons/img_buttons_commonb_video_click.png" alt="" /></p>
+										</div>
+									</div>
+								</div>
+								<div class="tab-con">
+									<p><img src="../images/sub/component/pc/buttons/button-tab5-swipe.png" alt="" /></p>
+								</div>
+							</div>
+						</div>
+
+						<h5 class="h5-1">Function Button<a href="#target8" class="target">링크</a></h5> 
+						<div class="Simulation-tab">
+							<div class="tab-out tabs">
+								<ul>
+									<li><a href="#">Box Button</a></li>
+									<li><a href="#">Icon+Text</a></li>
+								</ul>
+								<div class="tab-con">
+									<div class="sub-tab tabs">
+										<ul class="sub-tab-list">
+											<li><a href="#">Default</a></li>
+											<li><a href="#">Selected</a></li>
+										</ul>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/pc/buttons/img_buttons_functionb_box_default.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/pc/buttons/img_buttons_functionb_box_selected.png" alt="" /></p>
+										</div>
+									</div>
+								</div>
+								<div class="tab-con">
+									<div class="sub-tab tabs">
+										<ul class="sub-tab-list">
+											<li><a href="#">Default</a></li>
+											<li><a href="#">Over</a></li>
+											<li><a href="#">Click</a></li>
+											<li><a href="#">Selected</a></li>
+											<li><a href="#">Disabled</a></li>
+										</ul>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/pc/buttons/img_buttons_functionb_icontext_default.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/pc/buttons/img_buttons_functionb_icontext_over.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/pc/buttons/img_buttons_functionb_icontext_click.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/pc/buttons/img_buttons_functionb_icontext_selected.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/pc/buttons/img_buttons_functionb_icontext_disabled.png" alt="" /></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- //페이지 1 -->
+			<!-- 페이지 2 -->
+			<div class="page2">
+				<div class="page-in">
+					<div class="page-cover">
+						<h4 class="h4">Usage</h4>
+						<h5 class="h5-1" id="target1">Box Button : Text</h5>
+						<h5 class="h6">콘텐츠의 상태변경으로 사용시</h5>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage1.png" alt="" /></p>
+
+						<h6 class="h6">콘텐츠의 컨펌버튼으로 사용시</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage2.png" alt="" /></p>
+
+						<h6 class="h6">콘텐츠 안에 종속된 버튼으로 사용시</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage3.png" alt="" /></p>
+
+						<h6 class="h6">본문 페이지내 콘텐츠 옵션버튼으로 사용시</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage4.png" alt="" /></p>
+
+						<h5 class="h5-1" id="target2">Box Button : Icon+Text</h5>
+						<h6 class="h6">콘텐츠안에 종속된 옵션버튼으로 사용시</h6>
+						<p class="img2">
+							<span><img src="../images/sub/component/pc/buttons/img_buttons_usage5.png" alt="" /></span>
+							<span><img src="../images/sub/component/pc/buttons/img_buttons_usage6.png" alt="" /></span>
+						</p>
+
+						<h6 class="h6">본문 페이지내 콘텐츠 옵션버튼으로 사용시</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage7.png" alt="" /></p>
+
+						<h5 class="h5-1" id="target3">Keyword Button</h5>
+						<h6 class="h6">피드게시물 관련키워드</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage8.png" alt="" /></p>
+
+						<h6 class="h6">커넥트 관련키워드</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage9.png" alt="" /></p>
+
+						<h6 class="h6">디스커버 추천키워드</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage10.png" alt="" /></p>
+
+						<h6 class="h6">통합검색 추천키워드</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage11.png" alt="" /></p>
+
+						<h6 class="h6">미 학습목록 필터</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage12.png" alt="" /></p>
+
+						<h6 class="h6">디스커버 학습 필터</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage13.png" alt="" /></p>
+
+						<h5 class="h5-1" id="target4">Text Button : Line</h5>
+						<h6 class="h6">댓글 더보기 사용 시</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage14.png" alt="" /></p>
+
+						<h6 class="h6">전체보기 사용시</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage15.png" alt="" /></p>
+
+						<h6 class="h6">탭 상태변경 사용시</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage16.png" alt="" /></p>
+
+						<h5 class="h5-1" id="target5">Text Button : Link</h5>
+						<h6 class="h6">나의 포인트 상세내역 및 이벤트 내역 사용시</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage17.png" alt="" /></p>
+
+						<h6 class="h6">피드 생성</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage18.png" alt="" /></p>
+
+						<h6 class="h6">리워드 가이드 사용시</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage19.png" alt="" /></p>
+
+						<h5 class="h5-1" id="target6">Icon Buttons</h5>
+						<h6 class="h6">레이어 팝업 아이콘</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage20.png" alt="" /></p>
+
+						<h6 class="h6">피드게시물 아이콘</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage21.png" alt="" /></p>
+
+						<h6 class="h6">커넥트 캠퍼스 만들기</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage22.png" alt="" /></p>
+
+						<h6 class="h6">과정만들기</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage23.png" alt="" /></p>
+
+						<h5 class="h5-1" id="target7">Common Button</h5>
+						<h6 class="h6">동영상 재생시</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage24.png" alt="" /></p>
+
+						<h6 class="h6">디스커버 스와이프 사용시</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage25.png" alt="" /></p>
+
+						<h6 class="h6">커넥트 스와이프 사용시</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage26.png" alt="" /></p>
+
+						<h5 class="h5-1" id="target8">Function Button</h5>
+						<h6 class="h6">온라인 결제 팝업에서 사용시</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage27.png" alt="" /></p>
+
+						<h6 class="h6">펼치기 및 접기 사용시</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage28.png" alt="" /></p>
+
+						<h6 class="h6">테이블 정렬</h6>
+						<p class="img2"><img src="../images/sub/component/pc/buttons/img_buttons_usage29.png" alt="" /></p>
+					</div>
+				</div>
+			</div>
+			<!-- //페이지2 -->
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,457 @@
+@charset "utf-8";
+
+/* mms 추가 */
+.eisMain {min-width:1231px;}
+.main-state .graph .item {width: 15.6%;}
+.main-state .state-detail-type2 .graph .item {width: 23%;}
+.main-state .state-box .state-detail .value-box .value2 dd {float: left; margin-left: 5px;}
+.main-state .state-box .state-detail .value-box .value2 dt {width: 5em;}
+.main-state .main-state-head .state-box .state-detail .value-box .value2 dt {width: auto;}
+.main-state .state-box .state-detail .value-box .value2 dd.rbtn {float: right;}
+
+.cont_subtit .tit_area .sub_tit .tit_list_tab *,
+.font1 {font-family: "맑은고딕","Malgun Gothic", "나눔고딕",NanumGothic,"돋움",Dotum,"굴림",Gulim,"Helvetica Neue", Helvetica, Arial, sans-serif;}
+.cont_subtit .tit_area .sub_tit .tit_list_tab {overflow: hidden;}
+.cont_subtit .tit_area .sub_tit .tit_list_tab *,
+.cont_subtit .tit_area .sub_tit .tit_list_tab .tit {display: inline-block;}
+.cont_subtit .tit_area .sub_tit .tit_list_tab ul {margin-left: 9px; vertical-align: -1px;}
+.cont_subtit .tit_area .sub_tit .tit_list_tab ul li {padding-left: 10px;}
+.cont_subtit .tit_area .sub_tit .tit_list_tab ul li a {color: #666; font-size: 14px;}
+.cont_subtit .tit_area .sub_tit .tit_list_tab ul li a:hover,
+.cont_subtit .tit_area .sub_tit .tit_list_tab ul li a.on {color: #122d62; font-weight: bold;}
+
+.head-fix {}
+.tabs-wrap {float: left;}
+.tabs-wrap .tabs {}
+.tabs-wrap .tabs > li {display: inline-block; line-height: 24px;}
+.tabs-wrap .tabs > li > a {font-size: 14px; color: #666;}
+.tabs-wrap .tabs > li > a.on {font-weight: bold; color: #122d62;}
+.head-fix .tbl_search_type1 {padding: 0;}
+
+.tbl_search_type1 {float: right; padding-top: 11px; background: none; margin-bottom: 0;}
+.tbl_search_type1 table {width: auto;}
+.tbl_search_type1 table td {padding: 0;}
+.cont_subtit .tbl_search_type1 .date_wrap {float: none; padding: 0; margin: 0;}
+
+.tbl_search table th.th10 {width: 30px; padding: 0 10px 8px 0;}
+.tbl_search table th.th10a {width: 30px; padding: 0 10px 8px 0;}
+
+.main-state .state-box-wrap-col2 .state-box {width: calc(50% - 20px);}
+.main-state .state-box-wrap-col3 .state-box {width: calc(33.33333333% - 20px);}
+.state-box-link {display: block;}
+.state-box-link:after {content:''; display: table; clear:both;}
+
+.main-state .state-box-type1 .state-detail {width: calc(33.3333% - 20px); margin-left: 10px; margin-right: 10px;}
+.main-state .state-box-type1 .state-detail + .state-detail {float: left;}
+.main-state .state-box-wrap-col3-type1 .graph .item,
+.main-state .state-box-type1 .graph .item {width: 36.40%;}
+.main-state-con-list {display: none;}
+.main-state-con-list-view {display: block;}
+.btn_area + .main-state-head {margin-top: 10px;}
+
+.main-state .btn_area button.small, .main-state .btn_area a.small {font-family: '돋움',Dotum, arial, Helvetica, Sans-serif;}
+.more-search-view {text-align: center; border-top: 1px solid #ddd;}
+.more-search-view > a {position: relative; display: inline-block; padding: 1em; padding-right: 18px; font-size: 12px;}
+.more-search-view > a:after {position: absolute; top: 12px; right: 0; content:''; border-top: 1px solid #000; border-right: 1px solid #000; width: 8px; height: 8px;
+	transform:rotate(135deg);
+}
+.tbl_search .btn_area_float {position: absolute; right: 13px; bottom: 7px;}
+.btn_area.btnLine + .btnLine {margin-top: 5px;}
+.btnLine + .tbl_type05 {margin-top: 10px;}
+
+.main-state .main-state-head .state-box-wrap .state-box.state-box-add-chart {position: relative; padding-right: 30%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.chart-box {color: #fff; position: absolute; top: 24px; right: 40px; width: calc(30% - 40px);}
+.chart-box .btn_area {position: absolute; top: 34px; right: 40px;}
+.chart-box .btn_area a span {vertical-align: top;}
+.chart-box .chart {width:200px; height:200px; margin: 60px auto 0;
+  animation-name: aniopi;
+  animation-duration: 0.5s;
+}
+.chart-box .chart-tit {margin-left: 50px; margin-bottom: 15px; padding-bottom: 22px; color: #000; font-size: 30px; font-weight: bold; color: #7b838f; border-bottom: 1px solid #d7dce0;}
+
+.main-state-head + .main-state-head {margin-top: 20px;}
+
+.main-state .state-box-wrap-col3-type1 {margin-top: 0;}
+.main-state .state-box-wrap-col3-type1 .state-detail {float: none; width: 50%; margin: 0 auto;}
+.vat {vertical-align: top !important;}
+.vam {vertical-align: middle !important;}
+.vat-2 {vertical-align: -2px !important;}
+.mlmr10 {margin-left: 10px; margin-right: 10px;}
+.h2-b {margin-top: 1.5em; font-weight: bold; font-size: 20px; line-height: 1.5em;
+	font-family:'맑은고딕','Malgun Gothic', '돋움',Dotum,Arial, sans-serif; mso-line-height-rule:exactly;
+}
+.h2-b span {vertical-align: 2px;}
+.main-state .h2-b + .state-box-wrap-col3-type1 {margin-top: -15px;}
+.main-state .h2-b + .state-box-wrap-col3-type1 .state-box .tit {font-size: 16px; font-weight: normal;}
+
+.btn_cGray2 {background-color:#444; border: 1px solid #444; color: #fff;}
+.btn_cGray2:hover {background-color: #666;}
+
+.sub-tab {margin-bottom: 5px;}
+.sub-tab > a {position: relative; display: inline-block; color: #666; font-size: 14px; line-height: 1.5em;
+	font-family:'맑은고딕','Malgun Gothic', '돋움',Dotum,Arial, sans-serif; mso-line-height-rule:exactly;
+}
+.sub-tab > a:not(:first-child) {padding-left: 9px; margin-left: 5px;}
+.sub-tab > a:not(:first-child):after {content:''; position: absolute; top: 50%; left: 0; width: 1px; height: 10px; margin-top: -5px; font-size: 0; background-color: #bababa;}
+.sub-tab > a:hover,
+.sub-tab > a.on {color: #111;}
+.sub-tab > a.on {font-weight: bold;}
+.tab-con {display: none;}
+.tab-con-view {display: block;}
+
+.struct {}
+.struct .graph-list,
+.struct .graph-area {width: calc(50% - 7px); padding: 40px; background-color: #ecf1f5;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.struct .graph-list {width: calc(50% - 7px); background-color: #ecf1f5;}
+.struct .graph-area {float: left; height: 646px;}
+.struct .graph-area .struct-in {border: 1px solid #a2a9b1; background-color: #fff;}
+.struct .graph-area .struct-in .tit {margin: 0 40px; font-size: 20px; line-height: 1.5em; color: #000; font-weight: bold;}
+.struct .graph-area .struct-in .explain {}
+.struct .graph-area .struct-in .explain dl {padding: 5px 0 4px;}
+.struct .graph-area .struct-in .explain dl:after {content:''; display: table; clear:both;}
+.struct .graph-area .struct-in .explain dl dt {position: relative; float: left; padding-left: 15px; font-size: 14px; line-height: 1.5em; font-weight: bold; color: #7b838f;}
+.struct .graph-area .struct-in .explain dl dt:after {content:''; position: absolute; top: 6px; left: 0; width: 8px; height: 8px;}
+.struct .graph-area .struct-in .explain dl.dl1 dt:after {background-color: #0b6eff;}
+.struct .graph-area .struct-in .explain dl.dl2 dt:after {background-color: #ffba00;}
+.struct .graph-area .struct-in .explain dl.dl3 dt:after {background-color: #38c360;}
+.struct .graph-area .struct-in .explain dl.dl4 dt:after {background-color: #177147;}
+.struct .graph-area .struct-in .explain dl.dl5 dt:after {background-color: #ff6713;}
+.struct .graph-area .struct-in .explain dl dd {float: right; font-size: 14px; line-height: 1.5em; color: #7b838f;}
+.struct .graph-area .struct-in .explain dl dd .bar {position: relative; top: -1px; display: inline-block; margin: 0 2px; vertical-align: middle; width: 1px; height: 10px; font-size: 0; background-color: #d7dce0;}
+.struct .graph-area .struct-in .explain dl.dl1 {margin-bottom: 8px; border-bottom: 1px solid #d7dce0;}
+.struct .graph-area .struct-in .explain dl.dl1 dt {font-size: 17px; line-height: 36px; color: #000;}
+.struct .graph-area .struct-in .explain dl.dl1 dt span {display: inline-block; line-height: 1em; vertical-align: -8px;}
+.struct .graph-area .struct-in .explain dl.dl1 dt:after {top: 20px;}
+.struct .graph-area .struct-in .explain dl.dl1 dd {font-size: 36px; line-height: 36px; font-weight: bold; color: #000;}
+.struct .graph-area .struct-in .explain dl.dl1 dd span {font-size: 17px;}
+.struct .graph-list {float: right; height: 646px; overflow: hidden; overflow-y:auto;}
+
+.struct .graph-list .graph-list-items {}
+.struct .graph-list .graph-list-items li {border: 1px solid #a2a9b1; padding: 32px 40px; background-color: #fff;}
+.struct .graph-list .graph-list-items li .bar {color: #d7dce0; font-weight: normal;}
+.struct .graph-list .graph-list-items li + li {margin-top: 20px;}
+.struct .graph-list .graph-list-items li .tit {color: #000; font-size: 20px; font-weight: bold; line-height: 1.5em;}
+.struct .graph-list .graph-list-items li .detail {margin-top: 7px; color: #000;}
+.struct .graph-list .graph-list-items li .detail .price-box {float: left; font-weight: bold;}
+.struct .graph-list .graph-list-items li .detail .price-box .price {font-size: 36px;}
+.struct .graph-list .graph-list-items li .detail .price-box .price span {font-size: 17px;}
+.struct .graph-list .graph-list-items li .detail .price-box .percent {font-size: 19px;}
+.struct .graph-list .graph-list-items li .detail .price-object {float: right; font-size: 14px; height: 20px; padding-top: 18px; color: #7b838f; font-weight: bold;}
+.struct .graph-list .graph-list-items li .graph-bar {position: relative; margin-top: 4px; height: 8px; background-color: #f5f5f5;}
+.struct .graph-list .graph-list-items li .graph-bar .bar-line {position: absolute; top: 0; left: 0; bottom: 0; background-color: #ffba00;}
+
+.main-state .graph .item .barc8,
+.main-state .graph .item .barc7,
+.main-state .graph .item .barc6,
+.main-state .graph .item .barc5,
+.main-state .graph .item .barc4 {background-color: #0b6eff;
+  animation-name: aniopi;
+  animation-duration: 0.5s;
+}
+.main-state .graph .item .barc5 {background-color: #ffba00;}
+.main-state .graph .item .barc6 {background-color: #38c360;}
+.main-state .graph .item .barc7 {background-color: #177147;}
+.main-state .graph .item .barc8 {background-color: #ff6713;}
+
+.struct .main-state .graph {margin-top: 42px; height: 250px;}
+.struct .main-state .graph .item {height: 200px;}
+.struct .main-state .graph:after {top: auto; bottom: 49px;}
+.main-state .graph .item .bar-in {overflow: hidden; position: absolute; left: 0; right: 0; bottom: 0; font-weight: bold;}
+.main-state .graph .item .bar-in .v {position: absolute; top: 50%; left: 0; right: 0; margin-top: -0.5em; color: #fff;}
+
+.form-wrap {display: flex; justify-content:space-between;}
+.form-wrap select {width: calc(50% - 5px) !important;}
+.tbl_search table th.th-auto {width: auto; padding-left: 40px; padding-right: 8px;}
+.tbl_search table th.th-auto-first {width: auto; padding-left: 0; padding-right: 8px;}
+
+.tbl_search .btnLine2 {padding: 0 0 8px 0; margin: 0;}
+.tbl_search .btnLine2 + .btnLine2 {margin-top: 0; padding-top: 8px; border-top: 1px solid #cfd0d5;}
+
+.bar-status {position: relative; padding: 2px 96px 0 40px; display: inline-block; width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.bar-status .bar {display: block; position: relative; height: 14px; background-color: #f5f5f5;}
+.bar-status .bar-in {position: absolute; top: 0; left: 0; bottom: 0; background-color: #ffba00;}
+.bar-status em {position: absolute; top: 0; right: 32px;}
+.main-state.chance-box {background-color: #ecf1f5;}
+.chance-box .tit {font-size: 20px; color: #000; line-height: 1.5em; font-weight: bold;}
+.chance-box .tit2 {margin-top: 15px; font-size: 18px; line-height: 1.5em; color: #7b838f; font-weight: bold;}
+.chance-box [class^='c-box'] {border: 1px solid #a2a9b1; background-color: #fff;}
+.chance-box .chance-box-des {position: relative;}
+.chance-box .c-box {width: calc(50% - 20px); padding: 34px 40px 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.chance-box .c-box:not(:first-child) {position: absolute; top: 0; right: 0; bottom: 0;}
+
+.main-state .chance-box-des .graph {margin-top: 52px; height: 200px;}
+.main-state .chance-box-des .graph:after {top: auto; bottom: 59px;}
+.main-state .chance-box-des .graph .item {width: 18%; margin: 0 14px; height: 140px;}
+
+.chance-box .c-box-full {margin-top: 40px; padding: 34px 14px 0;}
+.chance-box .c-box-full .tit {margin: 0 26px;}
+.chance-box .c-box-full .c-item-box {float: left; margin: 0 26px; width: calc(33.3333% - 52px);}
+
+.main-state .change-box-list .graph {height: 200px;}
+.main-state .change-box-list .graph:after {top: auto; bottom: 49px;}
+.main-state .change-box-list .graph .item {height: 150px; width: 26.45%; margin: 0 14px;}
+.main-state .change-box-list .graph .item .section-item {position: absolute; top: -70px; right: 0;}
+.main-state .change-box-list .graph .item .section-item i {position: absolute; top: 50%; left: 0; width: 8px; height: 8px; font-size: 0; margin-top: -4px;}
+.main-state .change-box-list .graph .item .section-item li {position: relative; padding-left: 15px; font-size: 12px; line-height: 1.5em; color: #7b838f; text-align: left;}
+.cont_subtit {min-width:1075px;}
+
+.h3a,
+.font-style1,
+.font-style1 * {letter-spacing:-1px; font-family:'맑은고딕','Malgun Gothic', '돋움',Dotum,Arial, sans-serif;}
+
+.tbl_type05 table.vam td {vertical-align: middle;}
+
+h2.h2a.font-style1 {font-size: 28px; line-height: 1.5em;}
+.fL h2.h2a.font-style1 {margin-top: 0;}
+h2.h2a.font-style1 span {vertical-align: 2px;}
+
+.mt10 {margin-top: 10px !important;}
+.mt18 {margin-top: 18px !important;}
+.fa {font: normal normal normal 14px/1 FontAwesome !important;}
+
+.main-state-list  + .h2a {margin-top: 50px;}
+.main-state-list + .main-state-list {margin-top: 30px;}
+.main-state-list .state-box-wrap-col3 .state-box:nth-child(1),
+.main-state-list .state-box-wrap-col3 .state-box:nth-child(2),
+.main-state-list .state-box-wrap-col3 .state-box:nth-child(3),
+.main-state-list .state-box,
+.main-state-list .state-box-wrap {margin-top: 0;}
+.main-state-list .state-box-wrap-col3 .state-box {position: relative; margin-top: 20px;}
+
+.main-state .state-detail .graph .item .bar .value,
+.main-state.main-state-list .graph .item .bar .value {font-size: 16px; font-weight: bold;}
+
+.struct .main-state .graph .item .bar .value {font-size: 16px; font-weight: bold;}
+.mt50 {margin-top:50px !important;}
+
+.main-state .state-box .state-detail.state-detail-type1 {float: none; width: auto;}
+.main-state .state-box .state-detail.state-detail-type1 .value-box:after {content:''; display: table; clear:both;}
+/*
+.main-state .state-box .state-detail.state-detail-type1 .value-box .value2 {float: left; width: 50%; padding-right: 10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.main-state .state-box .state-detail.state-detail-type1 .value-box .value1 + .value2 {position: relative; padding-right: 11px;}
+.main-state .state-box .state-detail.state-detail-type1 .value-box .value1 + .value2:after {content: ''; display: block; position: absolute; top: 50%; right: 0; width: 1px; background-color: #d7dce0; height: 10px; margin-top: 0;}
+.main-state .state-box .state-detail.state-detail-type1 .value-box .value2 + .value2 {padding-left: 10px;}
+*/
+.h3-wrap .h3a,
+.h3a {font-size: 24px; font-weight: bold; margin-bottom: 10px;}
+.h3a * {vertical-align: middle;}
+.h3a .btn_area {display: inline-block; line-height: 32px;}
+.h3-wrap {overflow: hidden;}
+.h3-wrap .h3a {float: left; width: 50%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.h3-wrap .h3a ~ .h3a {padding-left: 10px;}
+.main-state + .h3a {margin-top: 35px;}
+.btn_area.btn_area_rfix {position: absolute; top: 30px; right: 40px;}
+.btn_area.btn_area_rfix a span {vertical-align: top;}
+.btn_area .add-text {vertical-align: bottom; margin-left: 2px;}
+
+.tbl_type02.tbl_type02_type1 table {table-layout:fixed;}
+.tbl_type02.tbl_type02_type1 table th {font-size: 14px; padding-top: 15px; padding-bottom: 15px;}
+.tbl_type02.tbl_type02_type1 table .depth1-th th {font-weight: normal;}
+.tbl_type02.tbl_type02_type1 table tbody th {text-align: left; padding-left: 10px; padding-right: 20px; white-space:nowrap; width: 100%;}
+.tbl_type02.tbl_type02_type1 table tbody th.depth1 {font-size: 12px; padding-left: 20px; font-weight: normal;}
+.tbl_type02.tbl_type02_type1 table tbody td {text-align: right; font-size: 14px; padding-top: 15px; padding-bottom: 15px;}
+
+.tbl_search .btnLine.btnLine-type1 {margin-right: 0;}
+.tbl_type02 table tr td.line { border-right-color: #cfd3d7;}
+.tbl_type02 table tr th.line {border: 1px solid #cfd3d7;}
+
+.view-area {margin-top: 20px; border: 1px solid #ccc; padding: 15px;}
+.view-area .h3 {font-size: 16px; font-weight: bold; margin-bottom: 10px;}
+.view-area .filelist {line-height: 1.5em;}
+.view-area .filelist a:hover {text-decoration:underline;}
+
+.tbl_type01.tbl_type01_type1 table th {text-align: center;}
+[class^="tbl_type"] table.th-align-l tbody th,
+.tbl_type01.tbl_type01_type1 tbody th {text-align: left; padding-left: 10px; font-weight: normal;}
+[class^="tbl_type"] table.th-align-l tbody th.depth1,
+.tbl_type01.tbl_type01_type1 tbody th.depth1 {padding-left: 20px;}
+.tbl_type01.tbl_type01_type1 tbody td {text-align: right;}
+[class^="tbl_type"] table.blue.blue-body-only tbody th {color: #fff; background-color: #38598e;}
+
+[class^="tbl_type"] table.blue {border: 0 none; border-collapse:collapse;}
+[class^="tbl_type"] table.blue thead th {color: #fff; background-color: #38598e; border: 1px solid #fff; font-size: 14px; padding-top: 15px; padding-bottom: 15px; line-height: 1.285714285714286em;
+	border-color: #0e2140 !important;
+}
+[class^="tbl_type"] table.blue tr.depth1-th th {color: #fff; background-color: #5976a5;}
+[class^="tbl_type"] table.blue tbody th,
+[class^="tbl_type"] table.blue tbody td {border-color: #fff; background-color: #f6f7fa; border: 1px solid #fff !important; font-size: 14px; padding-top: 15px; padding-bottom: 15px; line-height: 1.285714285714286em;
+	border-color: #929fb6 !important;
+}
+
+[class^="tbl_type"] table.blue tbody tr.total2 th,
+[class^="tbl_type"] table.blue tbody tr.total2 td,
+[class^="tbl_type"] table.blue tbody tr.total th,
+[class^="tbl_type"] table.blue tbody tr.total td {font-weight: bold; background-color: #e6eaf2 !important;}
+[class^="tbl_type"] table.blue tbody tr.total2 th,
+[class^="tbl_type"] table.blue tbody tr.total2 td {font-weight: normal;}
+
+a.detail-view {color: #003181;}
+
+.main-state {padding: 8px;}
+.main-state .state-box {padding-top: 25px; padding-bottom: 40px;}
+.main-state .state-box .state-ing {margin-top: 0; margin-bottom: -54px; font-size: 30px;}
+.main-state .state-box .state-detail .value-box .value2 {padding-top: 15px;}
+.main-state .main-state-head .state-box .state-detail .value-box .value1 + .value2 {padding-right: 21px;}
+.main-state .main-state-head .state-box .state-detail .value-box .value2 + .value2 {padding-top: 15px; padding-left: 20px;}
+.main-state .state-box .state-detail .value-box .value2 + .value2 {padding-top: 8px;}
+
+.main-state .state-box .state-detail {width: 47.61904761904762%;}
+.main-state .state-box .state-detail .value-box .value1 {padding-bottom: 9px;}
+.main-state .state-box .state-detail .value-box .value2,
+.main-state .state-box .state-detail .value-box .value1 {font-size: 24px;}
+.main-state .state-box .state-detail .value-box .value2 dd i {margin-left: 7px; border-left-width: 8px; border-right-width: 8px; vertical-align: 4px;}
+.main-state .state-box .state-detail .value-box .value2 dd i.up {border-bottom-width: 10px;}
+.main-state .state-box .state-detail .value-box .value2 dd i.down {border-top-width: 10px;}
+.main-state .main-state-head .state-box .state-detail .value-box .value1 + .value2:after {height: 20px; margin-top: -6px;}
+
+.main-state .state-detail .graph .item .bar .value,
+.main-state.main-state-list .graph .item .bar .value {font-size: 20px; line-height: 1.1em;}
+.main-state .graph .item .bar .value {top: -1.5em;}
+.main-state .graph .item .bar .value-add {top: -2.5em;}
+.main-state .graph .item .bar .value-add > span {font-size: 16px;}
+.main-state .graph .item .bar .section {font-size: 20px; line-height: 1.75em; bottom: -1.75em;}
+
+.main-state .state-box .state-detail .value-box .value1 em {font-size: 50px;}
+.main-state .state-box-type1 .state-detail {width: calc(33.3333% - 20px);}
+
+.main-state .state-box .tit {font-size: 30px; line-height: 35px; padding-bottom: 30px;}
+
+.main-state .state-box .state-detail-type2 .state-ing {margin-bottom: -44px; font-size: 20px;}
+.main-state .state-box .state-detail-type2 .value-box .value2 {font-size: 20px;}
+.main-state .state-box .state-detail-type2 .value-box .value1 {font-size: 20px;}
+.main-state .state-box .state-detail-type2 .value-box .value1 em {font-size: 40px;}
+
+.main-state .btn-detail .state-box {padding-top: 60px;}
+.main-state .btn-detail .btn_area.btn_area_rfix {top: 20px;}
+
+.chart-box .chart-tit {margin-left: 0;}
+.main-state .main-state-head .state-box-wrap .state-box.state-box-add-chart {padding-right: 40px;}
+.main-state .main-state-head .state-box-wrap .state-box.state-box-add-chart .chart-in {display: flex; justify-content:space-between;}
+.main-state .main-state-head .state-box-wrap .state-box.state-box-add-chart .state-detail {float: none; width: 33.5345405767941%;}
+.main-state .main-state-head .state-box-wrap .state-box.state-box-add-chart .chart-box {position: static; width: 23.54124748490946%;}
+.main-state .main-state-head .state-box-wrap .graph .item {margin: 0 22px;}
+.main-state .main-state-head .state-box-wrap .state-box-add-chart .graph .item {margin: 0 15px;}
+
+.main-state .graph {height: 300px;}
+.main-state .graph .item {height: 200px;}
+.main-state .graph:after {top: 200px;}
+
+/* 20220322 */
+.main-state .graph {height: 280px;}
+.main-state .minus-type .graph {height: 400px;}
+
+/* 20220323 */
+[class^="tbl_type"] table.blue tbody th.al,
+[class^="tbl_type"] table.blue tbody td.al {text-align: left !important;}
+[class^="tbl_type"] table.blue tbody th.ac,
+[class^="tbl_type"] table.blue tbody td.ac {text-align: center !important;}
+[class^="tbl_type"] table.blue tbody th.ar,
+[class^="tbl_type"] table.blue tbody td.ar {text-align: right !important;}
+[class^="tbl_type"] table.ta-all-c tbody td {text-align: center;}
+[class^="tbl_type"] table.ta-all-vm tbody td {vertical-align: middle;}
+.flex {display: flex; justify-content:space-between; align-items:center;}
+.flex h2,
+.flex h3 {margin: 0;}
+.main-state .main-state-head .state-box .state-detail .value-box .value1 + .value2:after {display: none;}
+.main-state .main-state-head .state-box .state-detail .value-box .value2 + .value2:after {content: ''; display: block; position: absolute; top: 50%; left: 0;height: 20px; margin-top: -6px; width: 1px; background-color: #d7dce0;}
+.btnLine .txt .s {font-size: 15px; letter-spacing: 0;}
+.ellipsis {width: 100%;
+	overflow:hidden;white-space:nowrap; word-wrap:normal; text-overflow:ellipsis; display:inline-block;
+}
+
+/* 20220324 */
+.main-state .state-box-add-chart .state-detail .value-box .value2 {font-size: 21px;}
+.main-state .main-state-head .state-box-add-chart .state-detail .value-box .value2 + .value2:after {margin-top: -2px;}
+
+@media(max-width: 1700px) {
+	.main-state .state-box .state-detail-type2 .value-box .value2 {font-size: 18px;}
+	.main-state .main-state-head .state-box-add-chart .state-detail .value-box .value1 + .value2,
+	.main-state .main-state-head .state-box-add-chart .state-detail .value-box .value2 + .value2 {font-size: 18px;}
+}
+@media(max-width: 1600px) {
+	.btn_area.btn_area_rfix {right: 20px;}
+	.main-state .state-box-wrap-col3 .state-box {padding-left: 20px; padding-right: 20px;}
+
+	.main-state .state-box {padding-left: 30px; padding-right: 30px;}
+	.chart-box .chart-tit {font-size: 24px; padding-bottom: 17px;}
+	.chart-box .btn_area {top: 29px; right: 20px;}
+	.main-state .main-state-head .state-box-add-chart .state-detail .value-box .value1 + .value2,
+	.main-state .main-state-head .state-box-add-chart .state-detail .value-box .value2 + .value2 {font-size: 18px;}
+	.main-state .main-state-head .state-box-wrap .state-box.state-box-add-chart {padding-left: 20px; padding-right: 20px;}
+	.main-state .main-state-head .state-box-wrap .state-box.state-box-add-chart .state-ing {margin-bottom: -46px; font-size: 24px;}
+	.main-state .main-state-head .state-box-wrap .state-box.state-box-add-chart .state-detail .value-box .value1 em {font-size: 40px;}
+
+	.main-state .state-box .state-ing {margin-bottom: -46px; font-size: 24px;}
+	.main-state .state-box .state-detail .value-box .value1 em {font-size: 40px;}
+	.main-state .main-state-head .state-box .state-ing {margin-top: 0; margin-bottom: -54px; font-size: 30px;}
+
+
+	.main-state .state-detail-type2 .graph .item .bar .value {font-size: 16px;}
+	.main-state .state-detail-type2 .graph .item .bar .section {font-size: 14px;}
+	.main-state .state-detail-type2 .graph .item .bar .value-add > span {font-size: 12px;}
+
+	.main-state .state-box .state-detail .value-box .value2,
+	.main-state .state-box .state-detail .value-box .value1 {font-size: 22px;}
+	.main-state .state-box .state-detail-type2 .value-box .value2 {font-size: 15px;}
+	.main-state .state-box .state-detail-type2 .value-box .value2 dd i {vertical-align: 2px;}
+}
+@media(max-width: 1500px) {
+	.main-state .main-state-head .state-box-add-chart .state-detail .value-box .value1 + .value2,
+	.main-state .main-state-head .state-box-add-chart .state-detail .value-box .value2 + .value2 {font-size: 16px;}
+}
+
+/* 20220517 */
+.type-flex {display: flex;}
+/*
+.canvas-wrap {padding-bottom: 30px; background-color: #fff;}
+.canvas-wrap canvas {height: 500px; width: 100%;}
+*/
+.canvas-wrap {background-color: #fff;}
+.main-state .type-flex .state-box {float: none;}
+.btn_wrap button span, .btn_wrap a span, .btn_area button span, .btn_area a span,
+.main-state .state-box-wrap-col2 .state-box .btn_area a span {vertical-align: top;}
+
+.main-state .state-box-wrap-col3-type2 .graph {height: 210px;}
+.main-state .state-box-wrap-col3-type2 .graph .item .bar .section {left: -20px; right: -20px;}
+.main-state .state-box-wrap-col3-type2 .graph .item {margin-left: 20px; margin-right: 20px;}
+
+.chart-top {display: flex; padding: 10px 20px; border: 1px solid #ccc; background-color: #fff;}
+.chart-top > p,
+.chart-top dl {display: flex; font-weight: bold; align-items:center; margin-left: 50px;}
+.chart-top > p,
+.chart-top dl dt {font-size: 24px; color: #7b838f;}
+.chart-top > p {margin-left: 0; color: #000;}
+.chart-top > p > span {color: #f36;}
+.chart-top dl dd {margin-left: 10px; font-size: 24px;}
+.chart-top dl dd span {font-size: 22px;}
+.chart-top + .canvas-wrap {margin-top: 10px;}
+
+@keyframes aniopi {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}

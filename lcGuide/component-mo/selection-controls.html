@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html class="no-js compo" lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MULTICAMPUS DESIGN SYSTEM Learning Cloud</title>
+	<link rel="stylesheet" type="text/css" href="../css/jquery.mCustomScrollbar.css" />
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/sub.css" />
+	<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script type="text/javascript" src="../js/menu.js"></script>
+	<script type="text/javascript" src="../js/default.js"></script>
+</head>
+
+<body>
+	<div class="wrap">
+		<!-- gnb -->
+		<div class="gnb">
+			<div class="gnb-in" id="gnb-in">
+				<h1><a href="../index.html">MDS</a></h1>
+				<h2>Multicampus Design System</h2>
+				<!-- 메뉴 -->
+				<div class="menu" id="menu">
+				</div>
+				<!-- //메뉴 -->
+				<div class="other-link" id="other-link"></div>
+			</div>
+		</div>
+		<!-- //gnb -->
+		<div class="page-wrap">
+			<!-- 페이지 1 -->
+			<div class="page1">
+				<div class="page-in">
+					<div class="page-cover">
+						<h3 class="h3 eng">Selection Controls</h3>
+						<div class="download">
+							<a href="#" target="_blank">XD download</a>
+						</div>
+						<h4 class="h4">Principle</h4>
+						<div class="h4-con">
+							<p class="copy">
+								콘텐츠 내에서 옵션 선택 시 사용 되는 유형별 컨포넌트 입니다.<br />
+								체크박스는 기본적으로 우측에 위치하는것을 기본으로 하며 콘텐츠 안에 종속으로 사용하는 <br />
+								경우 예외적으로 좌측에 위치됩니다.<br />
+								라디오버튼은 기본적으로 우측에 위치하는것을 기본으로 하며 2종류의 컴포넌트 사용시 <br />
+								예외적으로 좌측에 위치됩니다.
+							</p>
+						</div>
+						<h4 class="h4">Anatomy</h4>
+						<h5 class="h5-1">Check Box / Radio Button / Toggle Switch</h5>
+						<div class="img2-wrap">
+							<p class="img2">
+								<img src="../images/sub/component/mo/selectionControls/img_m_selection_anatomy_1.png" alt="" />
+							</p>
+							<ul class="explain">
+								<li><span class="num">1</span>Control</li>
+								<li><span class="num">2</span>Label</li>
+							</ul>
+						</div>
+						<h5 class="h5-1">Select Box</h5>
+						<div class="img2-wrap">
+							<p class="img2">
+								<img src="../images/sub/component/mo/selectionControls/img_m_selection_anatomy_2.png" alt="" />
+							</p>
+							<ul class="explain">
+								<li><span class="num">1</span>Control</li>
+								<li><span class="num">2</span>Trigger</li>
+								<li><span class="num">3</span>Menu</li>
+							</ul>
+						</div>
+
+						<h5 class="h4">Types</h5>
+						<div class="type-ex">
+							<dl>
+								<dt>Check Box<a href="#target1" class="target">링크</a></dt>
+								<dd>
+									<p class="pic"><img src="../images/sub/component/mo/selectionControls/img_m_selection_types_1.png" alt="" /></p>
+									<ul class="list1">
+										<li>설정에 대한 완료 전, 사용자 확인이 필요한 경우, 여러 개의 항목 중 다중 선택이 필요할 경우 사용하며 팝업 내에 사용 시 공통 컬러가 적용되며 자세한 사항은 공통 컬러 가이드를 참조해 주세요.</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>Radio Button<a href="#target2" class="target">링크</a></dt>
+								<dd>
+									<p class="pic"><img src="../images/sub/component/mo/selectionControls/img_m_selection_types_2.png" alt="" /></p>
+									<ul class="list1">
+										<li>Default로 첫 번째 항목이 선택되어 있음, 여러 개의 항목 중 단일 선택이 필요할 경우 사용하며 팝업 내에 사용 시 공통 컬러가 적용되며 자세한 사항은 공통 컬러 가이드를 참조해 주세요.</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>Toggle Switch<a href="#target3" class="target">링크</a></dt>
+								<dd>
+									<p class="pic"><img src="../images/sub/component/mo/selectionControls/img_m_selection_types_3.png" alt="" /></p>
+									<ul class="list1">
+										<li>물리적 스위치 모습으로 주로 켜기/끄기 용도로 사용하며 팝업 내에 사용 시 공통 컬러가 적용되며 자세한 사항은 공통 컬러 가이드를 참조해 주세요.</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl>
+								<dt>Select Box<a href="#target4" class="target">링크</a></dt>
+								<dd>
+									<p class="pic"><img src="../images/sub/component/mo/selectionControls/img_m_selection_types_4.png" alt="" /></p>
+									<ul class="list1">
+										<li>한눈에 보여질 필요가 없는 옵션 집합에서 하나의 옵션을 선택해야 할 경우 사용합니다.</li>
+									</ul>
+								</dd>
+							</dl>
+
+						</div>
+
+						<h4 class="h4">Simulation</h4>
+						<h5 class="h5-1">Box Button<a href="#target1" class="target">링크</a></h5>
+						<div class="Simulation-tab">
+							<div class="tab-out tabs">
+								<ul>
+									<li><a href="#">기본</a></li>
+									<li><a href="#">리스트</a></li>
+									<li><a href="#">전체선택</a></li>
+									<li><a href="#">전체선택+리스트</a></li>
+								</ul>
+								<div class="tab-con">
+									<div class="sub-tab tabs">
+										<ul class="sub-tab-list">
+											<li><a href="#">Default</a></li>
+											<li><a href="#">Touch</a></li>
+											<li><a href="#">Selected</a></li>
+											<li><a href="#">Disabled</a></li>
+										</ul>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_check_tab01_default.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_check_tab01_touch.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_check_tab01_selected.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_check_tab01_disabled.png" alt="" /></p>
+										</div>
+									</div>
+								</div>
+								<div class="tab-con">
+									<div class="sub-tab tabs">
+										<ul class="sub-tab-list">
+											<li><a href="#">Default</a></li>
+											<li><a href="#">Touch</a></li>
+											<li><a href="#">Selected</a></li>
+											<li><a href="#">Disabled</a></li>
+										</ul>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_check_tab02_default.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_check_tab02_touch.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_check_tab02_selected.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_check_tab02_disabled.png" alt="" /></p>
+										</div>
+									</div>
+								</div>
+								<div class="tab-con">
+									<div class="sub-tab tabs">
+										<ul class="sub-tab-list">
+											<li><a href="#">Default</a></li>
+											<li><a href="#">Selected</a></li>
+										</ul>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_check_tab03_default.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_check_tab03_selected.png" alt="" /></p>
+										</div>
+									</div>
+								</div>
+								<div class="tab-con">
+									<div class="sub-tab tabs">
+										<ul class="sub-tab-list">
+											<li><a href="#">Default</a></li>
+											<li><a href="#">Selected</a></li>
+										</ul>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_check_tab04_default.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_check_tab04_selected.png" alt="" /></p>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+						<h5 class="h5-1">Radio Button<a href="#target2" class="target">링크</a></h5>
+						<div class="Simulation-tab">
+							<div class="tab-out tabs">
+								<ul>
+									<li><a href="#">기본</a></li>
+									<li><a href="#">리스트</a></li>
+								</ul>
+								<div class="tab-con">
+									<div class="sub-tab tabs">
+										<ul class="sub-tab-list">
+											<li><a href="#">Default</a></li>
+											<li><a href="#">Touch</a></li>
+											<li><a href="#">Selected</a></li>
+											<li><a href="#">Disabled</a></li>
+										</ul>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_radio_tab01_default.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_radio_tab01_touch.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_radio_tab01_selected.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_radio_tab01_disabled.png" alt="" /></p>
+										</div>
+									</div>
+								</div>
+								<div class="tab-con">
+									<div class="sub-tab tabs">
+										<ul class="sub-tab-list">
+											<li><a href="#">Default</a></li>
+											<li><a href="#">Touch</a></li>
+											<li><a href="#">Selected</a></li>
+											<li><a href="#">Disabled</a></li>
+										</ul>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_radio_tab02_default.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_radio_tab02_touch.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_radio_tab02_selected.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_radio_tab02_disabled.png" alt="" /></p>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+						<h5 class="h5-1">Toggle Switch<a href="#target3" class="target">링크</a></h5>
+						<div class="Simulation-tab">
+							<div class="tab-out tabs">
+								<ul>
+									<li><a href="#">기본</a></li>
+									<li><a href="#">리스트</a></li>
+								</ul>
+								<div class="tab-con">
+									<div class="sub-tab tabs">
+										<ul class="sub-tab-list">
+											<li><a href="#">Default</a></li>
+											<li><a href="#">Touch</a></li>
+											<li><a href="#">Selected</a></li>
+											<li><a href="#">Disabled</a></li>
+										</ul>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_toggle_tab01_default.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_toggle_tab01_touch.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_toggle_tab01_selected.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_toggle_tab01_disabled.png" alt="" /></p>
+										</div>
+									</div>
+								</div>
+								<div class="tab-con">
+									<div class="sub-tab tabs">
+										<ul class="sub-tab-list">
+											<li><a href="#">Default</a></li>
+											<li><a href="#">Touch</a></li>
+											<li><a href="#">Selected</a></li>
+											<li><a href="#">Disabled</a></li>
+										</ul>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_toggle_tab02_default.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_toggle_tab02_touch.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_toggle_tab02_selected.png" alt="" /></p>
+										</div>
+										<div class="tab-con">
+											<p class="tab-img"><img src="../images/sub/component/mo/selectionControls/img_m_selection_toggle_tab02_disabled.png" alt="" /></p>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- //페이지 1 -->
+			<!-- 페이지 2 -->
+			<div class="page2">
+				<div class="page-in">
+					<div class="page-cover">
+						<h4 class="h4">Usage</h4>
+
+						<h5 class="h5-1" id="target1">Check Box</h5>
+						<p class="img2"><img src="../images/sub/component/mo/selectionControls/img_m_selection_usage_1.png" alt="" /></p>
+
+						<h5 class="h5-1" id="target2">Radio Button</h5>
+						<p class="img2"><img src="../images/sub/component/mo/selectionControls/img_m_selection_usage_2.png" alt="" /></p>
+
+						<h5 class="h5-1" id="target3">Toggle Switch </h5>
+						<p class="img2"><img src="../images/sub/component/mo/selectionControls/img_m_selection_usage_3.png" alt="" /></p>
+
+						<h5 class="h5-1" id="target4">Select Box</h5>
+						<h6 class="h6">로그인 언어지정 및 결제 범위선택</h6>
+						<p class="img2"><img src="../images/sub/component/mo/selectionControls/img_m_selection_usage_4.png" alt="" /></p>
+
+					</div>
+				</div>
+			</div>
+			<!-- //페이지2 -->
+		</div>
+	</div>
+</body>
+</html>

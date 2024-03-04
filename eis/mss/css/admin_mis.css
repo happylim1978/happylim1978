@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+input[type=text], input[type=password],
+.date_wrap .date_input,
+select {border-radius:4px;}
+
+.header_wrap .sideMenu .gMenu li a {display:block; padding:0 0 0 24px; height:49px; line-height:49px; color:#8c9fcc;
+	background:url('../images/common/bg_top2.png') 0 -2px no-repeat;
+}
+.header_wrap .sideMenu .gMenu li.step1 a {}
+.header_wrap .sideMenu .gMenu li.step2 a {background-position:0 -52px;}
+.header_wrap .sideMenu .gMenu li.step3 a {background-position:0 -101px;}
+.header_wrap .sideMenu .gMenu li.step4 a {background-position:0 -151px;}
+.header_wrap .sideMenu .gMenu li.step5 a {background-position:0 -202px;}
+
+.tbl_noauto table {table-layout:auto;}
+.tbl_noauto table td input[type="text"],
+.tbl_noauto table td select {width:auto; padding:0 0 0 5px;}
+.tbl_noauto table th {width:auto; padding-right:10px;}
+.tbl_noauto table td {padding-right:10px;}
+
+.tbl_search table td.tdr {text-align:right; padding-right:34px;}
+
+.tbl_type02 table.tbl_type02_row tbody th {border:1px solid #a3a9b1; padding:10px; text-align:left; font-weight:bold; color:#4d6da7;}
+.tbl_type02 table.tbl_type02_row tbody td {border:1px solid #a3a9b1; padding:10px;}
+
+.tbl_type03 table tr td.inTable {padding:0;}
+.tbl_type03 table tr td.inTable table {width:100%; table-layout:fixed;}
+.tbl_type03 table tr td.inTable table tr {border:0 none;}
+.tbl_type03 table tr td.inTable table th {border:0 none; color:#666;}
+.tbl_type03 table tr td.inTable table td {border:0 none; padding:5px 10px 5px 10px;}
+.tbl_type03 table tr td.inTable table td.cost {text-align:right;}
+
+.tbl_type02 table.tbl_type02_row {border-collapse:separate;}
+
+.tbl_type02 table.tbl_type02_row {border-top:0 none; border-right:0 none;}
+.tbl_type02 table.tbl_type02_row tbody td,
+.tbl_type02 table.tbl_type02_row tbody th {border:0 none; border-top:1px solid #a3a9b1; border-right:1px solid #a3a9b1;}
+
+.trHidden {display:none;}
+.tonoff .fa {padding:0 2px;}
+
+/* 2016-04-01 */
+.fileUpLoadWrap {overflow:hidden ;width:100%;}
+.fileAdd {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); border: 0;}
+.fileUpLoadWrap .addLabel {float:left;}
+.fileUpLoadWrap .addLabel .btn_default {padding:0; border:0 none;}
+.fileUpLoadWrap .addLabel .btn_default label {display:inline-block; padding:0 10px; line-height:24px; height:22px; border:1px solid #ccc; border-radius:5px;}
+.fileUpLoadWrap .fileCheckBox {float:right; padding:3px 5px 0 0;}
+.fileUpLoadWrap .fileCheckBox span {margin-right:10px;}
+
+/* 2016-07-22 */
+.header_wrap .step0 i {position:relative; top:-1px; font-size:20px; text-indent:0; margin-right:7px; vertical-align:middle; background:none;}
+.header_wrap .sideMenu .gMenu li.step0 a {padding-left:0; background:none;}

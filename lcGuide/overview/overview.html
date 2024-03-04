@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MULTICAMPUS DESIGN SYSTEM Learning Cloud</title>
+	<link rel="stylesheet" type="text/css" href="../css/jquery.mCustomScrollbar.css" />
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/sub.css" />
+	<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../js/gsap.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script type="text/javascript" src="../js/menu.js"></script>
+	<script type="text/javascript" src="../js/default.js"></script>
+</head>
+
+<body class="overview">
+	<div class="wrap">
+		<!-- gnb -->
+		<div class="gnb">
+			<div class="gnb-in" id="gnb-in">
+				<h1><a href="../index.html">MDS</a></h1>
+				<h2>Multicampus Design System</h2>
+				<!-- 메뉴 -->
+				<div class="menu" id="menu">
+				</div>
+				<!-- //메뉴 -->
+				<div class="other-link" id="other-link"></div>
+			</div>
+		</div>
+		<!-- //gnb -->
+		<div class="page-wrap">
+			<div class="page-box">
+				<h3 class="h3 eng">Service Overview</h3>
+				<p class="copy2">MDS(Multicampus Design System) Principles</p>
+				<p class="copy3">
+					MDS는 플랫폼의 기능 구성과 정보의 시각화를 통한 전달까지 서비스의 모든 것을 고려합니다. (Invisible vs Visible) 그래서 우리는 사소한 결정에도<br />
+					MDS Principles을 중심으로 생각하고, 사용자에게 최상의 경험을 제공하고자 합니다.
+				</p>
+
+				<div class="des-box">
+
+					<div class="item item1">
+						<p class="shape shape1">
+							<span></span>
+						</p>
+						<div class="txt">
+							<p class="p1">MDS는 사용자의 다양성을<br />존중합니다</p>
+							<p class="p2">#다양성 #다양함 #보편성 #일관성</p>
+							<p class="p3">
+								LC는 학습자만을 위한 플랫폼이 아닙니다.<br />
+								학습자, 운영자, 서비스의 이해관계자 모두를 존중하며,<br />
+								다양한 사용자의 경험에 집중합니다.
+							</p>
+							<p class="p4">보편 타당한 UX, 일관성 바탕</p>
+						</div>
+					</div>
+					<div class="item item2">
+						<p class="shape shape2">
+							<span></span>
+						</p>
+						<div class="txt">
+							<p class="p1">MDS는 서비스의 신뢰성을<br />고려합니다</p>
+							<p class="p2">#신뢰성 #맥락적 #간결함 #명료함</p>
+							<p class="p3">
+								LC는 다양한 학습 콘텐츠와 관련 기능을 제공합니다.<br />
+								그래서 긍정적인 학습 경험을 지속적으로 제공할 수 <br />
+								있도록, 모든 기능은 신뢰성을 바탕으로 설계합니다. 
+							</p>
+							<p class="p4">맥락을 고려한 UX , 간결하고 명료함</p>
+						</div>
+					</div>
+					<div class="item item3">
+						<p class="shape shape3">
+							<span></span>
+						</p>
+						<div class="txt">
+							<p class="p1">MDS는 플랫폼의 확장성을<br />지향합니다</p>
+							<p class="p2">#확장성 #콘텐츠 #접근성</p>
+							<p class="p3">
+								LC는 단순한 E-Learning을 넘어 새로운 학습 경험 <br />
+								제공에 도전합니다. 시간과 장소, 디바이스 등 사용자의<br />
+								환경에 구애받지 않는 확장성 있는 UX를 추구합니다.
+							</p>
+							<p class="p4">콘텐츠 중심의 UX, 접근성 고려</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function(){
+			$('#go-top').hide();
+		});
+
+		gsap.timeline()
+		.to('.item', {
+			duration: 1, delay: 0.4, autoAlpha:1, stagger: {
+				each: 0.6
+			}
+		});
+		gsap.to('.item > .shape > span', {duration: 1, autoAlpha:1, delay:2.3, stagger: {
+			each: 0.3,
+			onStart: function(){
+				var $this = $(this.targets()[0]);
+				$this.closest('.item').addClass('visible');
+			}
+		}});
+	</script>
+</body>
+</html>

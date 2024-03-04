@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> | EIS</title>
+	<link href="../../css/datepicker3.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/module.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/custom.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/popup.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="../../css/admin.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_eis.css" />
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+	<script src="../../js/bootstrap-datepicker.js"></script>
+	<script src="../../js/locales/bootstrap-datepicker.kr.js"></script>
+	<script src="../../js/jquery.slimscroll.min.js"></script>
+	<script src="../../js/admin_script.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../js/html5shiv.js"></script>
+		<script src="../../js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body><!-- 배경색 변경시 class="bg" -->
+<div id="wrap"><!-- 메인일 경우 class="main" -->
+
+	<!-- contents -->
+	<div class="content_wrap">
+		<a id="btn_folding_lnb" class="btn_folding_lnb" href="#">lnb control</a>
+		<div class="wrap_max">
+
+			<!-- EP title -->
+			<div class="cont_subtit fix">
+				<!-- 로케이션 -->
+				<ul class="breadcrumb">
+					<li>경영정보</li>     
+					<li>실적회의(매출)</li>      
+				</ul>
+				<!-- //로케이션 -->
+
+				<!-- 제목 -->
+				<div class="tit_area ">
+					<div class="sub_tit">
+						<span class="tit_list">
+							<span class="tit">메인</span>
+						</span>
+					</div>
+				</div>
+				<!-- //제목 -->
+
+			</div>
+			<!--// EP title -->
+
+
+			<!-- cont -->
+			<div class="cont_wrap">
+
+				<div class="tbl_search tbl_search2">
+					<table>
+						<tbody>
+							<tr>
+								<td class="calTd">
+									<div class="date_wrap" style="display:inline-block;">
+										<div class="date_input date" id="cal1">
+											<input type="text" style="width:160px;">
+											<a class="btn_calendar input-group-addon" href="#">
+												<i class="icons i_calendar">calendar</i>
+											</a>
+										</div>
+										<span>~</span>
+										<div class="date_input date" id="cal2">
+											<input type="text" style="width:160px;">
+											<a class="btn_calendar input-group-addon" href="#">
+												<i class="icons i_calendar">calendar</i>
+											</a>
+										</div>
+										<span class="btn_area">
+											<a href="#" class="btn_primary small"><span>조회</span></a>
+											<a href="#" class="btn_default small"><span class="small">데이터 다운로드</span></a>
+										</span>
+										<span class="form">
+											<input type="radio" class="inputRadio" name="check" id="check1" />
+											<label for="check1">경영계획</label>
+											<input type="radio" class="inputRadio" name="check" id="check2" />
+											<label for="check2">도전목표</label>
+										</span>
+									</div>
+									<script>
+										$('#cal1').datepicker({
+											format: "yyyy.mm",
+											minViewMode: 1, //월력변환
+											language:'kr',
+											autoclose : true
+										})
+										.on('show', function(){$(this).addClass('active');})
+										.on('hide', function(){$(this).removeClass('active');})
+										;
+										$('#cal2').datepicker({
+											format: "yyyy.mm.dd",
+											language:'kr',
+											todayHighlight: true,
+											autoclose : true,
+											todayBtn : 'linked'
+										})
+										.on('show', function(){$(this).addClass('active');})
+										.on('hide', function(){$(this).removeClass('active');})
+										;
+									</script>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="tbl_type05">
+					<table class="tableData dataMiddle">
+						<colgroup>
+							<col width="140" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+							<col width="" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" rowspan="2" class="first w1">구분</th>
+								<th scope="col" rowspan="2">'13.11<br>실적</th>
+								<th scope="colgroup" colspan="4">2014.11</th>
+								<th scope="col" rowspan="2">'13.11<br>누계</th>
+								<th scope="colgroup" colspan="4">2014.01~2014.11</th>
+							</tr>
+							<tr>
+								<th scope="col">계획</th>
+								<th scope="col">실적</th>
+								<th scope="col">달성율</th>
+								<th scope="col">G/R</th>
+								<th scope="col">계획</th>
+								<th scope="col">실적</th>
+								<th scope="col">달성율</th>
+								<th scope="col">G/R</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="total">
+								<td class="textL"><span class="space1"></span>매출액</td>
+								<td>9,738</td>
+								<td>11,738</td>
+								<td>10,738</td>
+								<td>97%</td>
+								<td>97%</td>
+								<td>9,738</td>
+								<td>11,738</td>
+								<td>10,738</td>
+								<td>97%</td>
+								<td>97%</td>
+							</tr>
+							<tr>
+								<td class="textL">
+									<span class="addBtn"><span class="plus"><a href="#"><img src="../../images/common/plus.gif" alt="플러스"></a></span>매출원가</span>
+								</td>
+								<td>9,738</td>
+								<td>11,738</td>
+								<td>10,738</td>
+								<td>97%</td>
+								<td>97%</td>
+								<td>9,738</td>
+								<td>11,738</td>
+								<td>10,738</td>
+								<td>97%</td>
+								<td>97%</td>
+							</tr>
+							<tr>
+								<td class="textL">
+									<span class="addBtn">세리시이오</span>
+								</td>
+								<td>9,738</td>
+								<td>11,738</td>
+								<td>10,738</td>
+								<td>97%</td>
+								<td>97%</td>
+								<td>9,738</td>
+								<td>11,738</td>
+								<td>10,738</td>
+								<td>97%</td>
+								<td>97%</td>
+							</tr>
+							<tr>
+								<td class="textL">
+									<span class="addBtn"><span class="plus"><a href="#"><img src="../../images/common/plus.gif" alt="플러스"></a></span>판매비와 관리비</span>
+								</td>
+								<td>9,738</td>
+								<td>11,738</td>
+								<td>10,738</td>
+								<td>97%</td>
+								<td>97%</td>
+								<td>9,738</td>
+								<td>11,738</td>
+								<td>10,738</td>
+								<td>97%</td>
+								<td>97%</td>
+							</tr>
+							<tr>
+								<td class="textL">
+									<span class="addBtn">인건비</span>
+								</td>
+								<td>9,738</td>
+								<td>11,738</td>
+								<td>10,738</td>
+								<td>97%</td>
+								<td>97%</td>
+								<td>9,738</td>
+								<td>11,738</td>
+								<td>10,738</td>
+								<td>97%</td>
+								<td>97%</td>
+							</tr>
+							<tr>
+								<td class="textL">
+									<span class="addBtn">경비</span>
+								</td>
+								<td>9,738</td>
+								<td>11,738</td>
+								<td>10,738</td>
+								<td>97%</td>
+								<td>97%</td>
+								<td>9,738</td>
+								<td>11,738</td>
+								<td>10,738</td>
+								<td>97%</td>
+								<td>97%</td>
+							</tr>
+							<tr>
+								<td class="textL">
+									<span class="addBtn">인건비</span>
+								</td>
+								<td>77</td>
+								<td>0</td>
+								<td><span class="tc6">-364</span></td>
+								<td></td>
+								<td>576%</td>
+								<td>77</td>
+								<td>0</td>
+								<td><span class="tc6">-364</span></td>
+								<td></td>
+								<td>576%</td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+				<div class="txtBox txtBox1">
+					- 계획 : 1,400억
+					<span class="term">- 도전목표 : 1,500억</span>
+					<span class="term">- GR : 전년비 신장율</span>
+				</div>
+
+				<div class="txtBox txtBox1 fs12 fwn">
+					<div>
+						<ul class="list1 ffd">
+							<li>□ 조회조건구분</li>
+							<li> A : 마감월 년도의 1월</li>
+							<li> B : 마감월 년도의 12월</li>
+							<li> C : 마감월</li>
+							<li> S : 현재월</li>
+							<li> Z : 조회조건 없음</li>
+							<li>(ex) AB, AC, CC, CZ, SZ...</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="panel panel2">
+					<p class="head">영업이익율 8.4억으로 계획비 -4.4억 차질. 65%</p>
+					<ul class="list1">
+						<li>- 관계사 예산 삭감. 대기업입찰제안, 고객사 경영악화 영향으로 인한 매출 미달로 인한 이익 미달</li>
+						<li>- 진부화자산 내용연수 재층정으로 인한 조기인식 및 인력 증가에 따른 인건비 증가</li>
+					</ul>
+					<ul>
+						<li>M-Kiss 신규 및 교육부 재계약 수주 맞춤서비스 계획 초과(+0.9억)</li>
+						<li>프리미엄G - 재계약 및 신규고객사 발굴 지연 CEO 계획비 92% 달성</li>
+						<li>지식사업G - M-Kiss, 교육부 재계약 맞춤서비스 계획비 115% SERIPRO 101% 달성</li>
+					</ul>
+				</div>
+			</div>
+			<!--// cont -->
+
+		</div>
+	</div>
+	<!--// contents -->
+
+	<!-- footer -->
+	<div calss="footer_wrap"></div>
+	<!--// footer -->
+
+</div>
+</body>
+</html>

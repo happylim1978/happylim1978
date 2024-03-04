@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="ko" xml:lang="ko">
+<head>
+<title>:: 경상북도 교육연수원 ::</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta http-equiv="content-script-type" content="text/html"/>
+<meta http-equiv="content-style-type" content="text/css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+<link rel="icon" type="image/x-icon" href="https://next.sericeo.org/images/icon.ico?v=1"/>
+<link rel="shortcut_icon" type="image/x-icon" href="https://next.sericeo.org/images/icon.ico?v=1"/>
+<link rel="apple-touch-icon" href="https://next.sericeo.org/images/icon114.png"/>
+<link rel="apple-touch-icon-precomposed" href="https://next.sericeo.org/images/icon114.png"/>
+<link rel="stylesheet" href="https://next.sericeo.org/css/jquery.mobile-1.4.5.min.css"/>
+<script type="text/javascript" src="https://next.sericeo.org/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://next.sericeo.org/js/jquery.mobile-default.js"></script>
+<script type="text/javascript" src="https://next.sericeo.org/js/jquery.mobile-1.4.5.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://next.sericeo.org/css/common.css?ver=20190422"/>
+<link rel="stylesheet" type="text/css" href="./css/common_add.css"/>
+
+<script type="text/javascript" src="https://next.sericeo.org/js/jqueryFunc.js"></script>
+<script type="text/javascript" src="https://next.sericeo.org/js/common.js"></script>
+<script type="text/javascript" src="https://next.sericeo.org/js/jquery.flexslider.min.js"></script>
+<script type="text/javascript">
+var gisMoblie = "N";
+</script>
+
+<link rel="stylesheet" type="text/css" href="https://next.sericeo.org/css/owl.carousel.min.css"/>
+<script type="text/javascript" src="https://next.sericeo.org/js/owl.carousel.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://next.sericeo.org/css/idangerous.swiper.css"/>
+<script type="text/javascript" src="https://next.sericeo.org/js/idangerous.swiper.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://next.sericeo.org/css/sub.css"/>
+<link rel="stylesheet" type="text/css" href="./css/sub_add.css"/>
+
+</head>
+
+<body>
+<div class="wrapper">
+
+	<!-- header -->
+	<div class="header">
+		<div class="header-in">
+			<div class="logo-wrap">
+				<h1 class="logo">경상북도교육청연수원</h1>
+			</div>
+			<button class="menu" data-role="none" id="menu">메뉴</button>
+			<span class="dim"></span>
+			<div class="layer">
+				<ul class="layer-menu1">
+					<li><a href="#">전체 콘텐츠</a></li>
+					<li><a href="#">인기절정 콘텐츠</a></li>
+					<li><a href="#">나를 위한 추천</a></li>
+				</ul>
+				<ul class="layer-menu2">
+					<li><a class="login" href="javascript:login()">로그인</a></li>
+					<li><a href="#">회원가입</a></li>
+					<li><a href="#">Hotline</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function(){
+			$('#menu').on('click', function(){
+				var $header = $(this).closest('.header');
+				var $dim = $header.find('.dim');
+				var $layer = $header.find('.layer');
+				$dim.stop(true,true).fadeToggle('400');
+				$header.toggleClass('menu-on');
+			});
+		});
+	</script>
+	<!-- //header -->
+
+	<div class="sub-wrapper">
+		<div class="sub-visual1">
+			<h2 class="h2">인기절정 콘텐츠</h2>
+		</div>
+
+		<div class="sub-con-wrap">
+			<div class="h3-wrap">
+				<h3 class="h3">이번 달 가장 사랑받은 콘텐츠</h3>
+				<select id="" data-inline="true">
+					<option value="" selected="selected">2023년 3월</option>
+					<option value=""></option>
+				</select>
+			</div>
+			<ul class="sub-con-list">
+				<li>
+					<a href="#">
+						<p class="pic">
+							<img src="https://www.sericeo.org/vfile/2016/photo4/0476_201611290001.jpg" alt="">
+							<span class="eud-check">학습중</span>
+							<span class="num">1</span>
+						</p>
+						<div class="txts">
+							<p class="cate">[인문의 샘]</p>
+							<p class="tit">SERICEO 클래스 콘텐츠 제목 영역 입니다.</p>
+							<p class="date">2023.02.22</p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<p class="pic">
+							<img src="https://www.sericeo.org/vfile/2016/photo4/0476_201611290001.jpg" alt="">
+							<span class="eud-check"></span>
+							<span class="num">2</span>
+						</p>
+						<div class="txts">
+							<p class="cate">[인문의 샘]</p>
+							<p class="tit">SERICEO 클래스 콘텐츠 제목 영역 입니다.</p>
+							<p class="date">2023.02.22</p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<p class="pic">
+							<img src="https://www.sericeo.org/vfile/2016/photo4/0476_201611290001.jpg" alt="">
+							<span class="eud-check"></span>
+							<span class="num">3</span>
+						</p>
+						<div class="txts">
+							<p class="cate">[인문의 샘]</p>
+							<p class="tit">SERICEO 클래스 콘텐츠 제목 영역 입니다.</p>
+							<p class="date">2023.02.22</p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<p class="pic">
+							<img src="https://www.sericeo.org/vfile/2016/photo4/0476_201611290001.jpg" alt="">
+							<span class="eud-check"></span>
+							<span class="num">4</span>
+						</p>
+						<div class="txts">
+							<p class="cate">[인문의 샘]</p>
+							<p class="tit">SERICEO 클래스 콘텐츠 제목 영역 입니다.</p>
+							<p class="date">2023.02.22</p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<p class="pic">
+							<img src="https://www.sericeo.org/vfile/2016/photo4/0476_201611290001.jpg" alt="">
+							<span class="eud-check"></span>
+							<span class="num">5</span>
+						</p>
+						<div class="txts">
+							<p class="cate">[인문의 샘]</p>
+							<p class="tit">SERICEO 클래스 콘텐츠 제목 영역 입니다.</p>
+							<p class="date">2023.02.22</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+	<div class="footer-link">
+		<a href="/login/spLogout.html">로그아웃</a>
+		<a href="/msAbout.html">ABOUT</a>
+	</div>
+	<div class="footer-wrap">
+		<div class="footer-wrap-in">
+			<a href="javascript:windowPopup('/msUse.html')">이용약관</a>
+			<a href="javascript:windowPopup('/msCopyright.html')">저작권정책</a>
+			<a href="javascript:windowPopup('/msPrivate.html')" style="font-weight:bold;">개인정보처리방침</a>
+			<a href="javascript:windowPopup('/msErules.html')">이메일주소 무단수집거부</a>
+			<a href="/msHotLineN.html" class="contact">Contact us</a>
+			<span class="tel item">
+				<span>이용문의 <em>02-2143-8400</em></span>
+			</span>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>

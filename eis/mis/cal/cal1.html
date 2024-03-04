@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>팀별영업현황 현황 | MIS</title>
+	<link href="../../css/datepicker3.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/module.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/custom.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/popup.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="../../css/admin.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_mis.css" />
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+	<script src="../../js/bootstrap-datepicker.js"></script>
+	<script src="../../js/locales/bootstrap-datepicker.kr.js"></script>
+	<script src="../../js/jquery.slimscroll.min.js"></script>
+	<script src="../../js/admin_script.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../js/html5shiv.js"></script>
+		<script src="../../js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body><!-- 배경색 변경시 class="bg" -->
+<div id="wrap"><!-- 메인일 경우 class="main" -->
+
+	<!-- contents -->
+	<div class="content_wrap">
+		<a id="btn_folding_lnb" class="btn_folding_lnb" href="#">lnb control</a>
+		<div class="wrap_max">
+
+			<!-- EP title -->
+			<div class="cont_subtit fix">
+				<!-- 로케이션 -->
+				<ul class="breadcrumb">
+					<li>경영정보</li>     
+					<li>실적회의(매출)</li>      
+				</ul>
+				<!-- //로케이션 -->
+				<!-- 제목 -->
+				<div class="tit_area ">
+					<div class="sub_tit">
+						<span class="tit_list">
+							<span class="tit">매출정산 현황</span>
+						</span>
+					</div>
+				</div>
+				<!-- //제목 -->
+			</div>
+			<!--// EP title -->
+
+			<!-- cont -->
+			<div class="cont_wrap">
+
+				<div class="tbl_search">
+					<table>
+						<colgroup>
+							<col width="11%" />
+							<col />
+							<col width="12%" />
+							<col />
+							<col width="12%" />
+							<col />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="select1">연도</label></th>
+								<td>
+									<select id="select1" style="width:60%;">
+										<option value="" selected="selected">2015</option>
+										<option value=""></option>
+									</select>
+								</td>
+								<th scope="row"><label for="select2">월</label></th>
+								<td>
+									<select id="select2" style="width:60%;">
+										<option value="" selected="selected">2월</option>
+										<option value=""></option>
+									</select>
+								</td>
+								<th scope="row"><label for="select3">중요도</label></th>
+								<td>
+									<select id="select3">
+										<option value="" selected="selected">ALL</option>
+										<option value=""></option>
+									</select>
+								</td>
+
+							</tr>
+							<tr>
+								<th scope="row"><label for="select4">부서</label></th>
+								<td>
+									<select id="select4">
+										<option value="" selected="selected">SL사업2그룹</option>
+										<option value=""></option>
+									</select>
+								</td>
+								<th scope="row"><label for="select5">담당자</label></th>
+								<td>
+									<select id="select5">
+										<option value="" selected="selected">ALL</option>
+										<option value=""></option>
+									</select>
+								</td>
+								<th scope="row"><label for="select6">방문목적</label></th>
+								<td>
+									<select id="select6">
+										<option value="" selected="selected">ALL</option>
+										<option value=""></option>
+									</select>
+								</td>
+
+							</tr>
+
+						</tbody>
+					</table>
+					<div class="btn_area btnLine">
+						<div class="fR">
+							<a href="#" class="btn_default">Default</a>
+							<a href="#" class="btn_primary"><i class="icons i_search"></i> Search</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="calbox">
+					<table>
+						<colgroup>
+							<col width="14.28%" />
+							<col width="14.28%" />
+							<col width="14.28%" />
+							<col width="14.28%" />
+							<col width="14.28%" />
+							<col width="14.28%" />
+							<col width="" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="sun">SUN</th>
+								<th scope="col">MON</th>
+								<th scope="col">TUE</th>
+								<th scope="col">WED</th>
+								<th scope="col">THU</th>
+								<th scope="col">FRI</th>
+								<th scope="col" class="sat">SAT</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="sun highlight"><!-- highlight 클래스 추가로 파랑색변경-->
+									<div class="dayHead"><span class="date">1</span></div>
+									<div class="field">
+										[Y] [천성훈] 삼성카드<br />
+										[N] [전철한] 에스원<br />
+										[N] [현병호] 삼성생명<br />
+										[N] [현병호] 삼성증권<br />
+										[N] [이상혁] 호텔신라<br />
+										[N] [이상혁] 호텔신라<br />
+										[N] [이상혁] 호텔신라<br />
+										[N] [전철한] 에스원<br />
+										[N] [전철한] 에스원<br />
+										[N] [전철한] 에스원<br />
+										[N] [전철한] 에스원<br />
+									</div>
+								</td>
+								<td class="highlight">
+									<div class="dayHead"><span class="date">2</span></div>
+									<div class="field">
+										[Y] [천성훈] 삼성카드<br />
+										[N] [전철한] 에스원<br />
+										[N] [현병호] 삼성생명<br />
+										[N] [현병호] 삼성증권<br />
+									</div>
+								</td>
+								<td>
+									<div class="dayHead"><span class="date">3</span></div>
+									<div class="field">
+									</div>
+								</td>
+								<td>
+									<div class="dayHead"><span class="date">4</span></div>
+									<div class="field">
+									</div>
+								</td>
+								<td>
+									<div class="dayHead"><span class="date">5</span></div>
+									<div class="field">
+									</div>
+								</td>
+								<td>
+									<div class="dayHead"><span class="date">6</span></div>
+									<div class="field">
+									</div>
+								</td>
+								<td class="sat">
+									<div class="dayHead"><span class="date">7</span></div>
+									<div class="field">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="sun">
+									<div class="tdbox">
+										<div class="dayHead"><span class="date">8</span></div>
+										<div class="field">
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="tdbox">
+										<div class="dayHead"><span class="date">9</span></div>
+										<div class="field">
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="tdbox">
+										<div class="dayHead"><span class="date">10</span></div>
+										<div class="field">
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="tdbox">
+										<div class="dayHead"><span class="date">11</span></div>
+										<div class="field">
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="tdbox">
+										<div class="dayHead"><span class="date">12</span></div>
+										<div class="field">
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="tdbox">
+										<div class="dayHead"><span class="date">13</span></div>
+										<div class="field">
+										</div>
+									</div>
+								</td>
+								<td class="sat">
+									<div class="tdbox">
+										<div class="dayHead"><span class="date">14</span></div>
+										<div class="field">
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="sun">
+									<div class="dayHead"><span class="date">15</span></div>
+									<div class="field">
+									</div>
+								</td>
+								<td>
+									<div class="dayHead"><span class="date">16</span></div>
+									<div class="field">
+									</div>
+								</td>
+								<td>
+									<div class="dayHead"><span class="date">17</span></div>
+									<div class="field">
+									</div>
+								</td>
+								<td>
+									<div class="dayHead"><span class="date">18</span></div>
+									<div class="field">
+									</div>
+								</td>
+								<td>
+									<div class="dayHead"><span class="date">19</span></div>
+									<div class="field">
+									</div>
+								</td>
+								<td>
+									<div class="dayHead"><span class="date">20</span></div>
+									<div class="field">
+									</div>
+								</td>
+								<td class="sat">
+									<div class="dayHead"><span class="date">21</span></div>
+									<div class="field">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="sun">
+									<div class="dayHead"><span class="date">22</span></div>
+									<div class="field">
+									</div>
+								</td>
+								<td class="today"><!-- today 클래스 추가로 오늘 활성화 -->
+									<div class="dayHead"><span class="date">23</span></div>
+									<div class="field">
+									</div>
+								</td>
+								<td>
+									<div class="dayHead"><span class="date">24</span></div>
+									<div class="field">
+									</div>
+								</td>
+								<td>
+									<div class="dayHead"><span class="date">25</span></div>
+									<div class="field">
+									</div>
+								</td>
+								<td>
+									<div class="dayHead"><span class="date">26</span></div>
+									<div class="field">
+									</div>
+								</td>
+								<td>
+									<div class="dayHead"><span class="date">27</span></div>
+									<div class="field">
+									</div>
+								</td>
+								<td class="sat">
+									<div class="dayHead"><span class="date">28</span></div>
+									<div class="field">
+									</div>
+								</td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+			<!--// cont -->
+
+		</div>
+	</div>
+	<!--// contents -->
+
+	<!-- footer -->
+	<div calss="footer_wrap"></div>
+	<!--// footer -->
+
+</div>
+</body>
+</html>

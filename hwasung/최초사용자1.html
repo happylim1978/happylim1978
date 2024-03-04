@@ -1,0 +1,868 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="ko" xml:lang="ko">
+<head>
+<title>화성의과학대학교</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta http-equiv="content-script-type" content="text/html"/>
+<meta http-equiv="content-style-type" content="text/css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+<link rel="icon" type="image/x-icon" href="?v=1"/>
+<link rel="shortcut_icon" type="image/x-icon" href=""/>
+<link rel="apple-touch-icon" href=""/>
+<link rel="apple-touch-icon-precomposed" href=""/>
+<link rel="stylesheet" href="https://seri.ust.ac.kr/css/jquery.mobile-1.4.5.min.css"/>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.mobile-default.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.mobile-1.4.5.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/common.css?ver=20200513"/>
+<link rel="stylesheet" type="text/css" href="./css/common_add.css"/>
+
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jqueryFunc.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/common.js?ver=20200518"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.flexslider.min.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/ns.js?v=210506"></script>
+
+<script type="text/javascript">
+	var gisMoblie = "N";
+</script>
+
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/panel.js"></script>
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/jquery.mCustomScrollbar.min.css"/>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/panel.css"/>
+<script type="text/javascript">
+	$(document).ready(function() {
+		if ($('#panel-left').length > 0) $('#panel-left').panelCtrl();
+		if ($('#panel-right').length > 0) $('#panel-right').panelCtrl();
+		//$('div:jqmData(role="panel") .panel').addClass('customScroll');
+		$('div:jqmData(role="panel") .panel').addClass('customScroll');
+	});
+
+	function panel(pos, option, idx1, idx2) {
+		$('#panel-'+pos).panelCtrl(option, idx1, idx2);
+	}
+</script>
+
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/sub.css"/>
+<link rel="stylesheet" type="text/css" href="./css/sub_add.css"/>
+
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/contList.css"/>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+
+	});
+</script>
+</head>
+<body>
+<div data-role="page" id="main">
+
+	<div data-role="panel" id="panel-left" data-position="left" data-position-fixed="true" data-display="overlay" data-swipe-close="false" data-dismissible="true">
+		<div class="panel">
+			<div class="panel-scroller">
+				<div class="closeBtn">
+					<div class="panel-tit">
+						<h1 class="h1">MENU</h1>
+					</div>
+					<div class="panel-head">
+						<p class="panel-msg">
+							[홍길동] 님은 <strong>1월 0편 학습</strong>하셨습니다.
+							&nbsp; &nbsp;<a href="/msMyStudyL.html" class="ui-link">자세히 보기</a>
+						</p>
+					</div>
+					<a href="javascript:panel('left', 'close')" data-role="button" data-shadow="false" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-corner-all" role="button"><div class="btn">닫기</div></a>
+				</div>
+				<div class="panel-service">
+					<div class="panel-tab">
+						<a href="/msAbout.html" class="tab1">MSP 소개</a>
+						<a href="/msNoticeL.html" class="tab2">공지사항</a>
+					</div>
+					<div class="panel-tab2">
+						<a href="/msMdaL.html" class="tab1"><span>What's New</span><em>보러가기</em></a>
+						<a href="" class="tab3"><span>AI Recommendation</span><em>보러가기</em></a>
+						<a href="/msBestL.html?p_gbn=M" class="tab2"><span>Best Contents</span><em>보러가기</em></a>
+					</div>
+				</div>
+				<!-- <div class="closeBtn">
+					<a href="javascript:panel('left', 'close')" data-role="button" data-shadow="false" data-iconpos="notext" class="ui-btn-right"><div class="btn">닫기</div></a>
+				</div> -->
+				<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set1">
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="About"><div>About</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							<div class="coltype lv2">
+								<h2 title="서비스 소개" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msAbout.html" class="ui-btn " target=""><div>서비스 소개</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="공지사항" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msNoticeL.html" class="ui-btn " target=""><div>공지사항</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="핫라인" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msHotLineN.html" class="ui-btn " target=""><div>핫라인</div></a></h2>
+							</div>
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="My Page"><div>My Page</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							<div class="coltype lv2">
+								<h2 title="학습현황" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMyStudyL.html" class="ui-btn " target=""><div>학습현황</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="콘텐츠 공유 내역" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMyShareL.html" class="ui-btn " target=""><div>콘텐츠 공유 내역</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="즐겨찾기" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMyContL.html" class="ui-btn " target=""><div>즐겨찾기</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="개인정보수정" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMyMimL.html" class="ui-btn " target=""><div>개인정보수정</div></a></h2>
+							</div>
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Global Leadership"><div>Global Leadership</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							
+							<div data-role="collapsible" class="collapsible02">
+								<h2>영어</h2>
+								<ul class="collapsible03">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>중국어</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>베트남어</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>일본어</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Character Education"><div>Character Education</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+
+							<div data-role="collapsible" class="collapsible02">
+								<h2>과학과 기술</h2>
+								<ul class="collapsible03">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>역사의 이해</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>인문교양</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>철학적 사고</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Medi Science"><div>Medi Science</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+
+							<div data-role="collapsible" class="collapsible02">
+								<h2>의과학</h2>
+								<ul class="collapsible03">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>바이오과학</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>뇌과학</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Liberal 101"><div>Liberal 101</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							<div class="coltype lv2">
+								<h2 title="전체보기" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMdaL.html?p_gmenu=04" class="ui-btn " target=""><div>전체보기</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="CIS 리포트" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMdaL.html?p_gmenu=0401" class="ui-btn " target=""><div>CIS 리포트</div></a></h2>
+							</div>
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Essential Courses"><div>Essential Courses</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							<div class="coltype lv2">
+								<h2 title="전체보기" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMdaL.html?p_gmenu=05" class="ui-btn " target=""><div>전체보기</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="AI가 바꾸는 미래 비즈니스" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMdaL.html?p_gmenu=0510" class="ui-btn " target=""><div>AI가 바꾸는 미래 비즈니스</div></a></h2>
+							</div>
+						</div>
+					</div>
+					<div class="coltype lv1">
+						<h2 title="HSMU Contents" class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+							<a href="/msMdaL.html?p_gmenu=1001" class="ui-btn  ui-btn-icon-left ui-icon-eye" target=""><div>HSMU Contents</div></a>
+						</h2>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div data-role="panel" id="panel-right" data-position="right" data-position-fixed="true" data-display="overlay" data-swipe-close="false">
+		<div class="panel">
+			<div class="panel-scroller">
+				<div class="closeBtn">
+					<a href="javascript:panel('right', 'close')" data-role="button" data-shadow="false" data-iconpos="notext" class="ui-btn-right"><div class="btn">닫기</div></a>
+				</div>
+				<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set1">
+					<div class="coltype lv1">
+						<h2 title="로그아웃" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msLogout.html" class="ui-btn  ui-btn-icon-left ui-icon-power" target=""><div>로그아웃</div></a></h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="panel" id="panel-right" data-position="right" data-position-fixed="true" data-display="overlay" data-swipe-close="false">
+		<div class="panel">
+			<div class="panel-scroller">
+				<div class="closeBtn">
+					<a href="javascript:panel('right', 'close')" data-role="button" data-shadow="false" data-iconpos="notext" class="ui-btn-right"><div class="btn">닫기</div></a>
+				</div>
+				<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set1">
+
+
+					<div class="coltype lv1">
+						<h2 title="로그아웃" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msLogout.html" class="ui-btn  ui-btn-icon-left ui-icon-power" target=""><div>로그아웃</div></a></h2>
+					</div>
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div data-role="header" class="btn2type">
+		<h1 class="logo"><a href="/index.html">화성의과학대학교</a></h1>
+		<div class="btn left">
+			<a href="javascript:panel('left', 'open')" class="menu" title="메뉴열기">메뉴열기</a>
+		</div>
+		<div class="btn right">
+			<a href="/msLogout.html" class="logout">로그아웃</a>
+			<a href="#" class="search" title="검색" onClick="$('#p_kwd').focus();">검색</a>
+		</div>
+		<div class="searchBar">
+			<div class="searchArea">
+				<form method="post">
+					<input type="hidden" id="search_url" value="/msSearchL.html"/>
+					<div class="search-textbox">
+						<input type="search" id="p_kwd" name="p_kwd" value="" data-theme="d" title="검색어 입력"/>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="mpinfo">
+		<div class="after">
+			홍길동님은 <strong>1월 0편</strong> 학습하셨습니다.
+		</div>
+	</div>
+
+	<div class="header">
+		<div class="header-out">
+			<div class="head-in">
+				<h1 class="lg"><a href="/index.html">화성의과학대학교</a></h1>
+				<div class="head-con">
+					<div class="head-other">
+						<div class="search-input">
+							<input type="text" class="text" title="검색어" data-role="none" id="p_hkwd" placeholder="검색어를 입력해주세요." onkeypress="if(event.keyCode==13) {main_headerSearch();}"/>
+						</div>
+						<div class="search">
+							<a href="#" class="dosearch">검색</a>
+						</div>
+						<div class="other-link">
+							<a href="/msMyStudyL.html">마이페이지</a>
+							<a href="/msLogout.html">로그아웃</a>
+							<a href="/msAbout.html">이용가이드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="h-des2">
+				<p class="msg">Dream the Best, Be the First, Medi-Science Park</p>
+				<p class="p-info">홍길동님의 학습현황: <strong>1월 0편</strong> 학습하셨습니다. <a href="/msMyStudyL.html">학습현황 자세히 보기  &gt;</a></p>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function(){
+			$('.search').on('click', function(){
+				if( $(this).closest('.head-other').hasClass('search-input-on') ) {
+					$(this).closest('.head-other').removeClass('search-input-on');
+				} else {
+					$(this).closest('.head-other').addClass('search-input-on');
+					$('#p_hkwd').focus();
+				}
+				return false;
+			});
+		});
+	</script>
+
+	<div class="con-wrap">
+		<div class="web-lnb" id="web-lnb">
+			<div class="scroll">
+				<ul class="lnb-item-list">
+					<li class="lnb-item">
+						<a href="/msMdaL.html">What's NEW</a>
+					</li>
+					<li class="lnb-item">
+						<a href="#">AI Recommendation</a>
+					</li>
+					<li class="lnb-item">
+						<a href="/msBestL.html?p_gbn=M">Best Contents</a>
+					</li>
+					<li class="lnb-item">
+						<a href="#">About</a>
+						<ul>
+							<li><a href="/msAbout.html">서비스 소개</a></li>
+							<!--li><a href="/msAbout.html?p_tab=1">이용안내</a></li-->
+							<li><a href="/msNoticeL.html">공지사항</a></li>
+							<!--li><a href="/msAbout.html?p_tab=3">FAQ</a></li-->
+							<li><a href="/msHotLineN.html">핫라인</a></li>
+						</ul>
+					</li>
+					<li class="lnb-item">
+						<a href="#">My Page</a>
+						<ul>
+							<li><a href="/msMyStudyL.html">학습현황</a></li>
+							<li><a href="/msMyShareL.html">콘텐츠 공유 내역</a></li>
+							<li><a href="/msMyContL.html">즐겨찾기</a></li>
+							<li><a href="/msMyMimL.html">개인정보수정</a></li>
+						</ul>
+					</li>
+					<li class="lnb-item">
+						<a href="#">Global Leadership</a>
+						<ul>
+							<li><a href="#">영어</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">중국어</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">베트남어</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">일본어</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="lnb-item">
+						<a href="#">Character Education</a>
+						<ul>
+							<li><a href="#">과학과 기술</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">역사의 이해</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">인문교양</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">철학적 사고</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="lnb-item">
+						<a href="#">Medi-Science</a>
+						<ul>
+							<li><a href="#">의과학</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">바이오과학</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">뇌과학</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="lnb-item">
+						<a href="#">Liberal 101</a>
+					</li>
+					<li class="lnb-item">
+						<a href="#">Essential Courses</a>
+					</li>
+					<li class="lnb-item">
+						<a href="#">HSMU Contents</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- 서브콘텐츠 -->
+		<div class="sub-con side-con">
+			<div class="sub-con-in">
+			<!-- 콘텐츠 -->
+			<div class="issue-box issue-box2">
+				<div class="title-wrap">
+					<ul class="nav">
+						<li><a href=""></a></li>
+						<li><span>최초사용자 인증</span></li>
+					</ul>
+				</div>
+				<div class="sub-con-box">
+					<div class="user-first-join">
+						<div class="user-first-join-in">
+							<p class="p1">Medi-Science Park에 오신 것을 환영합니다.</p>
+							<p class="p2">Medi-Science Park 이용을 위해서는 이용약관, 개인정보 수집 및 정보제공 동의가 필요합니다.</p>
+
+							<div class="check-box">
+								<input type="checkbox" id="all-agree" data-role="none" />
+								<label for="all-agree">Medi-Science Park 이용약관, 개인정보 수집 및 이용, 개인정보 처리 위탁, 개인정보 제3자 제공에 모두 동의합니다.</label>
+							</div>
+							<p class="p-head">이용약관 동의 (필수)</p>
+							<div class="textarea">
+
+								<p class="t1">제 1 장 총칙</p>
+								<p class="t2">제 1 조 목적</p>
+								<p class="txt">
+									이 약관은 (주)멀티캠퍼스(이하 회사라 합니다)가 화성의과학대학교에 제공하는 웹사이트 서비스(이하 서비스라 함)의 이용조건 및 절차에 관한 사항과 기타 필요한 사항을 규정함을 목적으로 합니다.
+								</p>
+
+								<p class="t2">제 2 조 약관의 효력과 변경</p>
+								<ul class="lists1">
+									<li>1. 본 약관은 이용자에게 온라인을 통해 공시함으로써 효력을 발생합니다.</li>
+									<li>2. 회사는 사정 변경의 경우와 영업상 중요 사유가 있을 때 약관을 변경할 권한을 가지고 있으며, 변경된 약관은 전항과 같은 방법으로 효력을 발생합니다.</li>
+									<li>3. 회원은 변경된 약관에 동의하지 않으면 언제든지 서비스 이용을 중단하고 이용계약을 해지할 수 있습니다. 약관의 효력발생일 이후의 계속적인 서비스 이용은 약관의 변경 사항에 동의한 것으로 간주됩니다.</li>
+								</ul>
+
+								<p class="t2">제 3 조 약관 외 준칙</p>
+								<p class="txt">이 약관에 명시되지 않은 사항이 국내 관계법령에 규정되어 있을 경우에는 관련 법령 규정에 따릅니다.</p>
+
+								<p class="t2">제 4 조 용어의 정의</p>
+								<ul class="lists1">
+									<li>1. 이 약관에서 사용하는 용어의 정의는 다음과 같습니다.
+										<ul>
+											<li>- 회원 : 회사와 서비스 이용에 관한 계약을 체결하고 이용자 아이디를 부여받은 자</li>
+											<li>- 아이디(ID): 회원 식별과 회원의 서비스 이용을 위하여 회사가 승인 하는 문자, 숫자 또는 양자의 조합</li>
+											<li>- 비밀번호 : 회원의 본인 확인과 비밀 보호를 위해 회원 자신이 설정한 문자, 숫자 또는 양자의 조합</li>
+											<li>- 이용계약 : 서비스를 제공받기 위하여 이 약관으로 회사와 회원간에 체결하는 계약</li>
+											<li>- 서비스제공 제한중지: 공공의 이익 또는 회사의 규정에 위배되는 경우에 회사가 회원에게 제공하는 서비스의 전부 또는 일부를 제한하거나 중지하는 것</li>
+											<li>- 해지 : 회사 또는 회원이 서비스 시작 후 이용 계약을 해약하는 것</li>
+										</ul>
+									</li>
+									<li>2. 전항에서 정한 것을 제외하고는 거래관행 및 관계법령에 따릅니다.</li>
+								</ul>
+
+								<p class="t1">제 2 장 서비스 이용</p>
+								<p class="t2">제 1 조 이용계약의 성립</p>
+								<ul class="lists1">
+									<li>1. 이용 계약은 이용자의 이용 신청에 대한 회사 서비스 이용 승낙과 이용자의 약관 내용에 대한 동의로 성립됩니다.</li>
+									<li>2. 회사 회원에 가입하여 서비스를 이용하고자 하는 희망자는 회사에서 요청하는 개인정보를 제공해야 합니다. 이용자가 제공한 개인정보는 회사 개인정보보호정책에 따라 철저히 보호됩니다.</li>
+									<li>3. 서비스 이용권한은 1인 1PC에 제한합니다.</li>
+								</ul>
+
+								<p class="t2">제 2 조 서비스 이용 및 제한</p>
+								<ul class="lists1">
+									<li>1. 서비스 이용은 회사 서비스의 업무상 또는 기술상 특별한 지장이 없는 한 연중무휴, 1일 24시간을 원칙으로 합니다. 단, 회사는 정기 점검 등 업무상, 기술상의 이유로 서비스 이용의 전부 또는 일부를 제한할 수 있으며, 이 경우 회사는 사전 또는 사후에 이를 회사 웹사이트에 공지합니다.</li>
+									<li>2. 회사에서 제공하는 서비스는 회사 회원에 한해서, 회사에서 인정한 ID와 비밀번호를 통해서만 서비스를 받을 수 있습니다.</li>
+								</ul>
+
+								<p class="t2">제 3 조 게시물의 저작권</p>
+								<ul class="lists1">
+									<li>1. 서비스 내에 게재된 자료에 대한 권리와 책임은 게시자에게 있습니다. 회사는 게시자의 동의가 없는 한 이를 영리적인 목적으로 사용할 수 없습니다. 단, 비영리적인 경우에는 그러하지 아니합니다.</li>
+									<li>2. 회원은 서비스를 이용하여 얻은 정보를 가공·판매하는 행위 등 서비스 내에 게재된 자료를 상업적으로 사용할 수 없습니다.</li>
+								</ul>
+
+								<p class="t2">제 4 조 회원 아이디 부여</p>
+								<ul class="lists1">
+									<li>1. 회사는 화성의과학대학교를 통해 생성된 문자, 숫자 또는 양자의 조합을 회원 아이디로 부여하는 것을 원칙으로 합니다.</li>
+									<li>2. 다음 아래의 ①∼④항에 해당하는 경우에는 회사는 이용신청자 또는 회원에게, 신청하는 아이디나 부여된 회원 아이디의 변경을 요구할 수 있습니다. 단, 아래 항목에 해당하지 않는 경우에는 한 번 등록한 회원 아이디를 변경할 수 없습니다.
+										<ul class="num">
+											<li>① 기본의 회원 아이디와 동일한 아이디로 이용 신청하는 경우</li>
+											<li>② 회원 아이디가 전화번호로 등록되어 사생활 침해의 우려가 있는 경우</li>
+											<li>③ 타인에게 혐오감을 주거나 미풍양속을 해치는 경우</li>
+											<li>④ 기타 합리적인 사유가 있는 경우</li>
+										</ul>
+									</li>
+								</ul>
+
+								<p class="t1">제 3 장 권리와 의무</p>
+								<p class="t2">제 1 조 회사의 의무</p>
+								<ul class="lists1">
+									<li>1. 회사는 특별한 사정이 없는 한 회원이 신청한 서비스를 이용할 수 있도록 합니다.</li>
+									<li>2. 회사는 이 약관에서 정한 바에 따라 계속적, 안정적으로 서비스를 제공할 의무가 있습니다.</li>
+									<li>3. 회사는 회원으로부터 제기되는 의견이나 불만이 정당하다고 인정할 경우에는 즉시 처리 하여야 합니다.</li>
+									<li>4. 회사는 회원이 제공한 개인정보를 보호할 의무가 있습니다.
+										<ul class="num">
+											<li>① 회사는 이 약관이 정하는 바에 따라 지속적이고 안정적인 서비스를 제공하는 데 최선을 다해야 합니다.</li>
+											<li>② 회사는 회원의 신용정보를 포함한 개인신상정보의 보안에 대하여 기술적 안전 조치를 강구하고 관리에 만전을 기함으로써 회원의 개인정보 보안에 최선을 다해야 합니다.</li>
+											<li>③ 회사는 회원으로부터 제기되는 의견 및 불만사항이 정당하다고 판단되는 경우 그 사항을 신속히 처리하여야 합니다. 다만, 신속한 처리가 곤란한 경우에는 회원에게 그 사유와 처리일정을 통지하여야 합니다.</li>
+											<li>④ 회사는 이용계약의 체결, 계약사항의 변경 및 해지 등 회원과의 계약 관련 절차 및 내용 등에 있어 회원에게 편의를 제공하도록 노력합니다.</li>
+										</ul>
+									</li>
+									<li>5. 회원 개인정보의 보유기간 및 이용기간은 화성의과학대학교의 서비스 계약 시작일로부터 계약 종료일까지로 합니다. 상법 등 관련 법령의 규정에 의하여 보존할 필요성이 있는 경우에는 예외로 합니다.</li>
+									<li>6. 회사는 개인정보보호와 회원의 정보관리를 위하여 개인보호정책(Privacy)을 홈페이지에 따로 명시합니다.</li>
+								</ul>
+
+								<p class="t2">제 3 조 회원의 의무</p>
+								<ul class="lists1">
+									<li>1. ID와 비밀번호에 관한 모든 관리의 책임은 회원에게 있습니다.
+</li>
+									<li>2. 자신의 ID가 부정하게 사용된 경우, 회원은 반드시 회사에 그 사실을 전화 또는 전자우편으로 통보해야 합니다.
+</li>
+									<li>3. 회원은 이 약관 및 관계법령에서 규정한 사항을 준수하여야 합니다.
+</li>
+									<li>4. 회원은 서비스를 이용함에 있어 다음 각 호의 행위를 하여서는 안 됩니다.
+										<ul class="num">
+											<li>① 가명, 차명, 허무인 명의 기타 회원의 실제 성명과 다른 명의에 의해 이용 신청을 하는 행위</li>
+											<li>② 허위의 개인정보를 제공하여 가입하는 행위</li>
+											<li>③ 타인의 서비스 아이디 및 비밀번호를 도용하는 행위</li>
+											<li>④ 자신의 아이디 및 비밀번호를 유포하는 행위</li>
+											<li>⑤ 타인의 지적재산권을 침해하는 행위</li>
+											<li>⑥ 타인의 명예를 훼손하거나 사생활을 침해하는 행위</li>
+											<li>⑦ 게시판이나 대화실 등에서 욕설, 비방 또는 음란, 폭력적인 내용의 표현을 하는 행위</li>
+											<li>⑧ 과실 또는 고의로 허위의 정보를 공개 또는 유포하는 행위</li>
+											<li>⑨ 다량의 정보를 전송하거나 동일한 또는 유사한 내용의 정보를 반복적으로 게시하여 서비스의 안정적인 운영을 방해하는 행위</li>
+											<li>⑩ 광고성 정보를 수신자의 의사에 반하여 전자우편으로 일시에 다량으로 또는 지속적으로 전송하거나 게시판에 게시하여 다른 회원의 서비스 이용을 방해하는 행위</li>
+											<li>⑪ 정보통신설비의 오작동이나 정보 등의 파괴를 유발하는 컴퓨터 바이러스 등을 유포하는 행위</li>
+											<li>⑫ 회사의 서비스를 이용하여 얻은 정보를 회사의 사전 승낙 없이 복제 또는 유통시키거나 상업적으로 이용하는 행위</li>
+											<li>⑬ 회사의 정상적인 서비스의 운영을 방해하는 행위</li>
+											<li>⑭ 불법선거운동을 하는 행위</li>
+											<li>⑮ 기타 미풍양속을 해하거나 관련법령 및 이 약관을 포함하여 회사가 정한 이용 조건에 위반하는 행위</li>
+										</ul>
+									</li>
+									<li>5. 회원은 아이디 및 비밀번호의 관리에 상당한 주의를 기울여야 합니다. 아이디와 비밀번호에 관한 모든 관리 책임은 회원에게 있으며, 회원에게 부여된 아이디 및 비밀번호의 관리소홀, 부정사용에 의하여 발생하는 모든 결과에 대한 책임은 회원에게 있습니다. 회원은 자신의 아이디 또는 비밀번호가 부정하게 사용된 경우 반드시 회사에 그 사실을 통보하여야 합니다.</li>
+									<li>6. 회원은 회사의 사전 서면 동의 없이 서비스를 이용하여 영리적인 목적의 영업 행위를 하여서는 안 됩니다. 이를 위반한 영업 행위의 결과에 대하여 회사는 책임을 지지 않으며, 이와 같은 영업 행위의 결과로 회사에 손해가 발생한 경우, 회원은 회사에 대하여 손해배상의 의무를 집니다.</li>
+									<li>7. 회원은 명시적 동의가 없는 한 회사의 서비스의 이용 권한, 기타 이용계약상의 지위를 타인에게 양도, 증여할 수 없으며, 이를 담보로 제공하거나 기타 처분할 수 없습니다.</li>
+								</ul>
+
+								<p class="t2">제 4 조 지적재산권 등</p>
+								<ul class="lists1">
+									<li>1. 회사에서 제공하는 서비스에 관한 저작권 및 기타 지적재산권은 회사에 속합니다. 회원은 회사가 제공하는 서비스 및 콘텐츠를 사전동의 없이 영리 목적으로 복제, 전송, 출판,배포, 방송 기타 방법에 의하여 이용하거나 제3자에게 이용하게 하여서는 안됩니다.</li>
+									<li>2. 회원이 서비스에 게재한 게시물, 자료에 관한 권리와 책임은 게시한 회원에게 있습니다. 회사는 회원이 게재한 게시물, 자료에 대하여 서비스 내의 게재권을 가지며, 게재한 회원의 동의없이 이를 영리적인 목적으로 사용하지 아니합니다.</li>
+									<li>3. 회사는 제3조의 의무를 위반하는 내용을 담고 있는 게시물에 대하여 수정 또는 삭제할 권한을 갖습니다. 이에 대한 구체적인 기준과 절차는 별도의 규정에 따릅니다.</li>
+								</ul>
+
+								<p class="t1">제 4 장 계약 해지 및 서비스 이용 제한</p>
+								<p class="t2">제 1 조 계약 해지 및 이용 제한</p>
+								<ul class="lists1">
+									<li>1. 회원이 이용 계약을 해지하고자 하는 때에는 전화 또는 이메일로 회사와 화성의과학대학교의 회원관리 및 서비스 담당자에게 그 사실을 통보해야 합니다.</li>
+									<li>2. 회사 회원 가입 시점으로부터 7일이 경과한 후에는 계약을 해지할 수 없습니다.</li>
+									<li>3. 회사는 회원이 다음 사항에 해당하는 행위를 하였을 경우 사전 통지 없이 이용 계약을 해지하거나 또는 기간을 정하여 서비스 이용을 중지할 수 있습니다.
+										<ul class="ko">
+											<li>가. 공공 질서 및 미풍 양속에 반하는 경우</li>
+											<li>나. 범죄 행위에 관련되는 경우</li>
+											<li>다. 국익 또는 사회적 공익을 저해할 목적으로 서비스 이용을 계획 또는 실행할 경우</li>
+											<li>라. 타인의 ID및 비밀번호를 도용한 경우</li>
+											<li>마. 타인의 명예를 손상시키거나 불이익을 주는 경우</li>
+											<li>바. 같은 이용자가 다른 ID로 이중 등록을 한 경우</li>
+											<li>사. 서비스에 위해를 가하는 등 건전한 이용을 저해하는 경우</li>
+											<li>아. 기타 관련법령이나 회사가 정한 이용조건에 위배되는 경우</li>
+										</ul>
+									</li>
+								</ul>
+
+								<p class="t2">제 2 조 이용 제한 절차</p>
+								<ul class="lists1">
+									<li>1. 회사는 이용제한을 하고자 하는 경우에는 그 사유, 일시 및 기간을 정하여 이용자의 전자우편 또는 전화 등의 방법에 의하여 해당 이용자에게 통지합니다. 다만, 회사가 긴급하게 이용을 정지할 필요가 있다고 인정하는 경우에는 그러하지 아니할 수 있습니다.</li>
+								</ul>
+
+								<p class="t1">제 5 장 손해배상</p>
+								<p class="t2">제 1 조 손해배상</p>
+								<p class="txt">회사는 서비스 이용과 관련하여 고의가 없는 한 회원에게 발생한 손해를 배상하지 않습니다.</p>
+
+								<p class="t2">제 2 조 면책 사항</p>
+								<ul class="lists1">
+									<li>1. 회사 서비스에 포함된 모든 정보, 소프트웨어, 제품 및 기타 서비스에는 부정확함이나 인쇄상의 오류가 있을 수 있습니다. 그러한 정보에 대한 변경은 정기적으로 이루어집니다. 회사는 언제든지 본 회사 사이트를 개선하거나 변경할 수 있습니다.</li>
+									<li>2. 회사는 어떠한 목적으로든 본 회사 사이트에 있는 정보, 소프트웨어, 제품, 서비스 및 관련 그래픽의 적합성, 신빙성, 시의성 및 정확성에 관한 어떠한 보증도 하지 아니합니다. 정보의 사용은 전적으로 회원의 책임과 권한으로 수행됩니다.</li>
+									<li>3. 회사는 회원 상호간 또는 회원과 제 3자 간에 서비스와 관련하여 발생한 분쟁에 대해 개입할 의무도 이로 인한 손해를 배상할 책임도 없습니다.</li>
+								</ul>
+
+								<p class="t2">제 3 조 분쟁의 해결</p>
+								<ul class="lists1">
+									<li>1. 회사와 회원은 서비스와 관련하여 발생한 분쟁을 원만하게 해결하기 위하여 필요한 모든 노력을 하여야 합니다.</li>
+									<li>2. 제1항의 규정에도 불구하고 회사와 회원 사이에 소송이 제기될 경우, 소송은 회사의 본사 소재지를 관할하는 법원을 관할 법원으로 합니다.</li>
+								</ul>
+
+								<p class="t1">제 6장 개인정보 보호</p>
+								<p class="t2">제 1조 개인정보 보호 기본 방향</p>
+								<p class="txt">개인정보보호방침은 회사가 이용자의 개인 정보를 보호하기 위해 수집한 기본 지침을 말합니다. 회사는 개인정보 보호 관련 법령에 따라 개인정보를 관리하며 「개인정보보호지침」을 준수하고 있습니다.</p>
+
+								<p class="t2">제 2조 개인정보 수집 목적 및 이용</p>
+								<p class="txt">회사는 회원의 구분, 통계, 분석을 통해 회원 취향에 맞는 최적의 서비스를 제공하기 위한 목적으로 회원의 개인정보를 수집 이용합니다. 개인정보 항목별 수입, 이용 목적은 다음과 같습니다.</p>
+								<ul class="dot">
+									<li>ㆍ성명, 아이디, 비밀번호 : 회원제 서비스 이용에 따른 본인 식별절차에 이용</li>
+									<li>ㆍ이메일주소 : 컨텐츠 전달,고지사항 전달, 불만사항 처리 등을 위한 원활한 의사소통 경로의 확보,</li>
+									<li>ㆍ휴대전화번호 : 서비스 상담 및 문의, 임시 비밀번호 발급, 카카오 알림톡을 통한 모바일 알림/독려 서비스</li>
+									<li>ㆍ수강과목 : 과목별 수강 실적 관리, 학사관리</li>
+								</ul>
+
+								<p class="t2">제 3조 개인정보의 보유 및 폐기</p>
+								<p class="txt">회사 회원으로서 회사에서 제공하는 서비스를 받는 동안 회원의 개인정보는 회사가 지속적으로 보유하여 회원의 회사 서비스를 지원하기 위해 이용됩니다.</p>
+								<p class="txt">회원이 가입 해지를 화성의과학대학교에 요청하여 자격이 상실된 경우에는 개인정보는 재생하거나 이용할 수 없도록 처리 됩니다.</p>
+
+								<p class="t2">제 4조 목적 외 사용 및 제3자 제공 금지</p>
+								<p class="txt">회사는 회원의 동의가 있거나 법률의 규정에 의한 경우를 제외하고는 어떠한 경우에도 개인정보의 수집목적 및 이용목적에서 고지한 범위를 넘어 회원의 개인정보를 이용하거나 타인 또는 타기업, 기관에 제공하지 않습니다.</p>
+
+								<p class="t2">제 5조 개인정보의 열람 및 정정</p>
+								<p class="txt">회원은 언제든지 등록되어 있는 자신의 개인정보를 열람하거나 정정하실 수 있습니다. 회원의 개인정보에 대한 열람 및 정정을 하고자 할 경우에는 회사에 위치한 「회원정보수정」 메뉴를 클릭하여 본인 확인 절차를 거친 후 직접 열람, 또는 정정하거나, 개인정보관리책임자에게 서면, 전화, 이메일로 연락하시면 지체없이 조치하겠습니다.</p>
+
+								<p class="t2">제 6조 개인정보 관리 책임자</p>
+								<p class="txt">회원의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위해 회사는 개인정보관리 책임자를 두고 있습니다. 귀하의 개인 정보와 관련한 문의사항이 있으시면 아래의 개인정보관리책임자에게 연락주시기 바랍니다. 귀하의 문의사항에 신속하고 성실하게 답변해 드리겠습니다.</p>
+
+								<p class="t2">개인정보관리책임자</p>
+								<ul class="line">
+									<li>- 성명 : 임영관 이사</li>
+									<li>- 소속 : (주)멀티캠퍼스 플랫폼서비스팀</li>
+									<li>- 이메일 : help12@multicampus.co.kr</li>
+									<li>- Tel : 1544-9001</li>
+								</ul>
+
+								<p class="t2">고객서비스 담당자</p>
+								<ul class="line">
+									<li>- 성명 : 강원기 그룹장</li>
+									<li>- 소속 : (주)멀티캠퍼스 SERICEO사업그룹</li>
+									<li>- 이메일 : sericeo@sericeo.org</li>
+									<li>- Tel : 02-2143-8400</li>
+								</ul>
+								<p class="t2">(부칙)</p>
+								<ul class="lists1">
+									<li>1. (시행일) 이 약관은 2023년 2월 24일부터 시행합니다.</li>
+									<li>2. 본 약관은 시행 전에 이미 가입된 회원은 변경전의 약관이 적용됨을 원칙으로 합니다. 다만, 공지된 바에 따라 변경된 약관의 시행일 이후에도 본 약관에 따른 서비스를 계속 이용하는 경우에는 변경후의 약관에 대해 동의한 것으로 봅니다.</li>
+								</ul>
+							</div>
+							<div class="argee-check">
+								<input type="radio" name="agree1" id="agree1-y" data-role="none" checked="checked" />
+								<label for="agree1-y">동의</label>
+								<input type="radio" name="agree1" id="agree1-n" data-role="none" />
+								<label for="agree1-n">미동의</label>
+								<span class="msg">미동의 시 서비스 제공이 불가합니다.</span>
+							</div>
+
+							<p class="p-head">개인정보 수집 및 이용 동의 (필수)</p>
+							<div class="textarea">
+								<p class="t1">수집하는 개인정보의 항목 및 수집방법</p>
+								<p class="t2 t2-1">수집항목</p>
+								<ul class="ko">
+									<li>가. 필수정보
+										<ul class="line">
+											<li>- 성명, ID, 패스워드, 이메일, 휴대전화번호, 수강과목</li>
+										</ul>
+									</li>
+									<li>나. 서비스 이용과정이나 사업처리 과정에서 아래의 정보들이 생성되어 수집될 수 있습니다.
+										<ul class="line">
+											<li>- 서비스 이용기록, 접속로그, 크기, 접속 IP 정보, 수강신청정보, 결제수단, 결제기록</li>
+										</ul>
+									</li>
+								</ul>
+				
+								<p class="t2 t2-1">수집방법</p>
+								<p class="txt">회사는 다음과 같은 방법으로 개인정보를 수집합니다.</p>
+								<ul class="line">
+									<li>- 웹사이트에서 이용자 회원가입 시 직접 개인정보 입력/수정</li>
+									<li>- 이용자의 소속 기관에서 대상자(이용자) 정보를 회사에 전달</li>
+								</ul>
+
+								<p class="t2 t2-1">이용자는 동의를 거부할 권리가 있습니다. 동의를 거부할 경우 상기의 정보수집을 필요로 하는 교육서비스를 제공받으실 수 없습니다.</p>
+
+								<p class="t1">개인정보의 수집 및 이용목적</p>
+								<p class="t2 t2-1">회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.</p>
+								<ul class="line">
+									<li>- 회원 가입과 유료 서비스 제공을 위한 의사 확인 및 본인 인증, 이용자 식별, 회원탈퇴 의사의 확인 등 회원 관리</li>
+									<li>- 제공되는 콘텐츠 및 서비스 이용에 관한 인구통계학적 분석, 서비스 방문 및 이용기록 분석, 개인정보 및 관심사에 기반한 맞춤형 서비스나 커뮤니티 등의 서비스를 제공</li>
+									<li>- 이용약관을 위반하거나 서비스의 원활한 운영에 지장을 주는 행위에 대한 방지 및 제재, 분쟁조정을 위한 기록 보존과 민원처리 등 이용자 보호 및 서비스 운영</li>
+									<li>- 우수회원 및 이벤트를 위한 상품 배송 및 회원 요청사항 답변</li>
+									<li>- 보안, 프라이버시, 안전을 위한 서비스 환경 최적화</li>
+									<li>- 과목별 수강 실적 관리, 학사관리</li>
+								</ul>
+							</div>
+							<div class="argee-check">
+								<input type="radio" name="agree2" id="agree2-y" data-role="none" checked="checked" />
+								<label for="agree2-y">동의</label>
+								<input type="radio" name="agree2" id="agree2-n" data-role="none" />
+								<label for="agree2-n">미동의</label>
+								<span class="msg">미동의 시 서비스 제공이 불가합니다.</span>
+							</div>
+
+							<p class="p-head">개인정보 처리 위탁 동의 (필수)</p>
+							<div class="textarea">
+								<p class="t1">개인정보 처리위탁 미동의 시 회원가입 및 서비스 이용이 불가능합니다.</p>
+								<p class="t2">회사는 서비스 이행을 위해 아래와 같이 외부 전문업체에 위탁하여 운영하고 있습니다.</p>
+								<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center">
+									<thead>
+										<tr>
+											<th scope="col">개인정보를 제공받는 자</th>
+											<th scope="col">위탁업무 목적</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>KT, 슈어엠주식회사</td>
+											<td>SMS, LMS, MMS 발송</td>
+										</tr>
+										<tr>
+											<td>아이마켓코리아</td>
+											<td>카카오톡 메시지, SMS, LMS, MMS 발송</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="argee-check">
+								<input type="radio" name="agree2" id="agree2-y" data-role="none" checked="checked" />
+								<label for="agree2-y">동의</label>
+								<input type="radio" name="agree2" id="agree2-n" data-role="none" />
+								<label for="agree2-n">미동의</label>
+								<span class="msg">미동의 시 서비스 제공이 불가합니다.</span>
+							</div>
+
+							<p class="p-head">개인정보 제3자 제공 동의 (필수)</p>
+							<div class="textarea">
+								<p class="t1">개인정보 제3자 제공 미동의 시 회원가입 및 서비스 이용이 불가능합니다.</p>
+								<p class="t2">회사는 서비스 이행을 위해 아래와 같이 개인정보를 제공합니다.</p>
+								<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center">
+									<thead>
+										<tr>
+											<th scope="col">제공받는 기관</th>
+											<th scope="col">제공목적</th>
+											<th scope="col">제공하는 항목</th>
+											<th scope="col">보유기간</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>화성의과학대학교</td>
+											<td>학사관리</td>
+											<td>이름, 아이디, 수강과목, 수강실적</td>
+											<td>서비스 제공 기간</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="argee-check">
+								<input type="radio" name="agree2" id="agree2-y" data-role="none" checked="checked" />
+								<label for="agree2-y">동의</label>
+								<input type="radio" name="agree2" id="agree2-n" data-role="none" />
+								<label for="agree2-n">미동의</label>
+								<span class="msg">미동의 시 서비스 제공이 불가합니다.</span>
+							</div>
+
+							<div class="btns">
+								<a href="#" class="button">취소</a>
+								<a href="#" class="button define">확인</a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //콘텐츠 -->
+			</div>
+		</div>
+		<!-- //서브콘텐츠 -->
+	</div>
+	<div class="footer">
+		<div class="footer-in">
+			<ul class="link">
+				<li><a href="javascript:windowPopup('/msUse.html')">이용약관</a></li>
+				<li><a href="javascript:windowPopup('/msCopyright.html')">저작권정책</a></li>
+				<li><a href="javascript:windowPopup('/msPrivate.html')">개인정보처리방침</a></li>
+				<li><a href="javascript:windowPopup('/msErules.html','','400','200')">이메일주소 무단수집거부</a></li>
+			</ul>
+			<div class="contact">
+				<strong class="tit">이용문의</strong>
+				<span class="tel">02-2143-8507</span>
+			</div>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>기존사업 상세 | MSS</title>
+	<link href="../../css/datepicker3.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/module.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/custom.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/popup.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="../../css/admin.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_eis.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_mss.css" />
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+	<script src="../../js/bootstrap-datepicker.js"></script>
+	<script src="../../js/locales/bootstrap-datepicker.kr.js"></script>
+	<script src="../../js/jquery.slimscroll.min.js"></script>
+	<script src="../../js/admin_script.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../js/html5shiv.js"></script>
+		<script src="../../js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body class="body_popup">
+	<!-- system popup -->
+	<div id="" class="pop_wrap pop_fixed">
+		<!-- title -->
+		<div class="pHead">
+			<h1>프로젝트별 손익상세</h1>
+		</div>
+		<!-- //title -->
+		<!-- contents -->
+		<div class="pop_cont">
+			<!-- 소스 -->
+    <div class="tbl_type02">
+        <table class="tbl_type02_row blue blue-body-only"><!-- 클래스 blue blue-body-only 추가 -->
+            <colgroup>
+                <col width="14%">
+                <col width="36%">
+                <col width="14%">
+                <col width="36%">
+            </colgroup>
+            <tbody id="MainInfo">
+                <tr>
+                    <th scope="row">사업품의코드</th>
+                    <td>PJ0000000875
+                    </td>
+                    <th scope="row">사업품의명</th>
+                    <td>[세아상역] '21년 임원 외국어 BPO 운영의 건</td>
+                </tr>
+                <tr>
+                    <th scope="row">사업품의기간</th>
+                    <td>2021.03.01 ~ 2022.02.28</td>
+                    <th scope="row">영업대표명</th>
+                    <td>이재호</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="btnLine mt20">
+        <div class="fR">
+            <!-- 달력 -->
+            <span class="form2 ml5 fs13"><strong>기간실적 조회</strong></span>
+            <div class="date_wrap" style="display: inline-block;">
+                <div class="date_input date" id="cal1">
+                    <input id="s_sdate_tmp" type="text" style="width: 80px;" readonly="readonly">
+                    <a class="btn_calendar input-group-addon" href="#">
+                        <i class="icons i_calendar">calendar</i>
+                    </a>
+                </div>
+                <span id="dateDash">~</span>
+                <div class="date_input date" id="cal2"><!-- 선택시 active -->
+                    <input id="s_edate_tmp" type="text" style="width: 80px;" readonly="readonly">
+                    <a class="btn_calendar input-group-addon" href="#">
+                        <i class="icons i_calendar">calendar</i>
+                    </a>
+                </div>
+            </div>
+			<script>
+				$('#cal1').datepicker({
+					format: "yyyy.mm",
+					minViewMode: 1, //월력변환
+					language:'kr',
+					autoclose : true
+				})
+				.on('show', function(){$(this).addClass('active');})
+				.on('hide', function(){$(this).removeClass('active');})
+				;
+				$('#cal2').datepicker({
+					format: "yyyy.mm",
+					minViewMode: 1, //월력변환
+					language:'kr',
+					autoclose : true
+				})
+				.on('show', function(){$(this).addClass('active');})
+				.on('hide', function(){$(this).removeClass('active');})
+				;
+			</script>
+            <!-- //달력 -->
+			<span class="btn_area">
+	            <a class="btn_default small" href="#none;" onclick="javascript:fnPrdSearch();"><span>조회</span></a>
+			</span>
+        </div>
+    </div><br>
+    <div class="overH tc9">
+        <p class="fR grade">[단위 : 백만원]</p>
+    </div>
+
+    <div class="tbl_type02">
+        <table class="tbl_type02_row blue th-align-l"><!-- 클래스 blue th-align-l 추가 -->
+            <colgroup>
+                <col width="15%">
+                <col width="9%">
+                <col width="5%">
+                <col width="9%">
+                <col width="5%">
+                <col width="9%">
+                <col width="5%">
+                <col width="9%">
+                <col width="5%">
+                <col width="9%">
+                <col width="5%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col" style="text-align: center;" rowspan="3">구분</th>
+                    <th scope="col" style="text-align: center;" rowspan="2" colspan="2">사업품의<br>(총 예상)</th>
+                    <th scope="col" style="text-align: center;" colspan="6">누계 실적(사업시작~현재 누계실적)</th>
+                    <th scope="col" style="text-align: center;" rowspan="2" colspan="2">기간 실적</th>
+                </tr>
+                <tr>
+                    <th scope="col" style="text-align: center;" colspan="2">22년 이전</th>
+                    <th scope="col" style="text-align: center;" colspan="2">22년 이후</th>
+                    <th scope="col" style="text-align: center;border-right:solid 1px #cfd3d7  !important;" colspan="2">합계</th>
+                </tr>
+                <tr class="depth1-th">
+                    <th scope="col" style="text-align: center;">예상금액</th>
+                    <th scope="col" style="text-align: center;">%</th>
+                    <th scope="col" style="text-align: center;">금액</th>
+                    <th scope="col" style="text-align: center;">%</th>
+                    <th scope="col" style="text-align: center;">금액</th>
+                    <th scope="col" style="text-align: center;">%</th>
+                    <th scope="col" style="text-align: center;">금액</th>
+                    <th scope="col" style="text-align: center;">%</th>
+                    <th scope="col" style="text-align: center;">금액</th>
+                    <th scope="col" style="text-align: center;">%</th>
+                </tr>
+				</thead>
+				<tbody>
+                <tr class="total">
+                    <th scope="row">매출</th>
+                    <td style="text-align: right;">
+                        5
+                    </td>
+                    <td style="text-align: right;">
+                    </td>
+                    <td style="text-align: right;">
+                        4
+                    </td>
+                    <td style="text-align: right;">
+                    </td>
+                    <td style="text-align: right;">
+                        1
+                    </td>
+                    <td style="text-align: right;">
+                    </td>
+                    <td style="text-align: right;">
+                        4
+                    </td>
+                    <td style="text-align: right;">
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A00_ACTUL_AMT">
+                        0
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A00_ACTUL_RTO">
+                        
+                        </span>
+                    </td>
+                </tr>
+                <tr class="total">
+                    <th scope="row">직접원가</th>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        11
+                    </td>
+                    <td style="text-align: right;">
+                        284%
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        55%
+                    </td>
+                    <td style="text-align: right;">
+                        11
+                    </td>
+                    <td style="text-align: right;">
+                        252%
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A01_ACTUL_AMT">
+                        0
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A01_ACTUL_RTO">
+                        55%
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="depth1">CP료
+                    </th>
+					<td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        0%
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        0%
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A18_ACTUL_AMT">
+                        -
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A18_ACTUL_RTO">
+                        -
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="depth1">강사료
+                    </th>
+					<td style="text-align: right;">
+                        3
+                    </td>
+                    <td style="text-align: right;">
+                        57%
+                    </td>
+                    <td style="text-align: right;">
+                        1
+                    </td>
+                    <td style="text-align: right;">
+                        27%
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        55%
+                    </td>
+                    <td style="text-align: right;">
+                        1
+                    </td>
+                    <td style="text-align: right;">
+                        31%
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A19_ACTUL_AMT">
+                        0
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A19_ACTUL_RTO">
+                        55%
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="depth1">교재비
+                    </th>
+					<td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        0%
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        0%
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A20_ACTUL_AMT">
+                        -
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A20_ACTUL_RTO">
+                        -
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="depth1">평가수수료
+                    </th>
+					<td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A22_ACTUL_AMT">
+                        -
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A22_ACTUL_RTO">
+                        -
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="depth1">외주비
+                    </th>
+					<td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        2%
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        2%
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A23_ACTUL_AMT">
+                        -
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A23_ACTUL_RTO">
+                        -
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="depth1">선릉임차료
+                    </th>
+					<td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        3%
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        3%
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A24_ACTUL_AMT">
+                        -
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A24_ACTUL_RTO">
+                        -
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="depth1">역삼임차료
+                    </th>
+					<td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A25_ACTUL_AMT">
+                        -
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A25_ACTUL_RTO">
+                        -
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="depth1">외부강의장
+                    </th>
+					<td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        0%
+                    </td>
+                    
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        0%
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A26_ACTUL_AMT">
+                        -
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A26_ACTUL_RTO">
+                        -
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="depth1">교육장비사용료</th>
+					<td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        0%
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        0%
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A27_ACTUL_AMT">
+                        -
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A27_ACTUL_RTO">
+                        -
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="depth1">외부인건비
+                    </th>
+					<td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        1%
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        1%
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A28_ACTUL_AMT">
+                        -
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A28_ACTUL_RTO">
+                        -
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="depth1">과정개발용역
+                    </th>
+					<td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        0%
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        0%
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A29_ACTUL_AMT">
+                        -
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A29_ACTUL_RTO">
+                        -
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="depth1">시스템용역
+                    </th>
+					<td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        3%
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        0%
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        2%
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A30_ACTUL_AMT">
+                        0
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A30_ACTUL_RTO">
+                        0%
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="depth1">파견용역
+                    </th>
+					<td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        1%
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        0%
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        1%
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A31_ACTUL_AMT">
+                        0
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A31_ACTUL_RTO">
+                        0%
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="depth1">호스팅비
+                    </th>
+					<td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        3%
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        2%
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A32_ACTUL_AMT">
+                        -
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A32_ACTUL_RTO">
+                        -
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="depth1">광고판촉비
+                    </th>
+					<td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A33_ACTUL_AMT">
+                        -
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A33_ACTUL_RTO">
+                        -
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="depth1">기타경비
+                    </th>
+					<td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        3
+                    </td>
+                    <td style="text-align: right;">
+                        77%
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        0%
+                    </td>
+                    <td style="text-align: right;">
+                        3
+                    </td>
+                    <td style="text-align: right;">
+                        67%
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A34_ACTUL_AMT">
+                        0
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A34_ACTUL_RTO">
+                        0%
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="depth1">직접인건비경비
+                    </th>
+					<td style="text-align: right;">
+                        1
+                    </td>
+                    <td style="text-align: right;">
+                        22%
+                    </td>
+                    <td style="text-align: right;">
+                        6
+                    </td>
+                    <td style="text-align: right;">
+                        168%
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        6
+                    </td>
+                    <td style="text-align: right;">
+                        144%
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A35_ACTUL_AMT">
+                        -
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A35_ACTUL_RTO">
+                        -
+                        </span>
+                    </td>
+                </tr>
+                <tr class="total">
+                    <th scope="row">간접인건비경비</th>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        8%
+                    </td>
+                    <td style="text-align: right;">
+                        10
+                    </td>
+                    <td style="text-align: right;">
+                        258%
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        10
+                    </td>
+                    <td style="text-align: right;">
+                        222%
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A36_ACTUL_AMT">
+                        -
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="A36_ACTUL_RTO">
+                        -
+                        </span>
+                    </td>
+                </tr>
+                <tr class="total">
+                    <th scope="row">판매비</th>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        8%
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        8%
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        8%
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="B01_ACTUL_AMT">
+                        0
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="B01_ACTUL_RTO">
+                        7%
+                        </span>
+                    </td>
+                </tr>
+                <tr class="total">
+                    <th scope="row">일반비</th>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        3%
+                    </td>
+                    <td style="text-align: right;">
+                        3
+                    </td>
+                    <td style="text-align: right;">
+                        92%
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        -
+                    </td>
+                    <td style="text-align: right;">
+                        3
+                    </td>
+                    <td style="text-align: right;">
+                        79%
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="B02_ACTUL_AMT">
+                        -
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="B02_ACTUL_RTO">
+                        -
+                        </span>
+                    </td>
+                </tr>
+                <tr class="total">
+                    <th scope="row">영업이익</th>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        10%
+                    </td>
+                    <td style="text-align: right;">
+                        -20
+                    </td>
+                    <td style="text-align: right;">
+                        -542%
+                    </td>
+                    <td style="text-align: right;">
+                        0
+                    </td>
+                    <td style="text-align: right;">
+                        599,937%
+                    </td>
+                    <td style="text-align: right;">
+                        -20
+                    </td>
+                    <td style="text-align: right;">
+                        -462%
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="S99_ACTUL_AMT">
+                        0
+                        </span>
+                    </td>
+                    <td style="text-align: right;">
+                        <span id="S99_ACTUL_RTO">
+                        38%
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+			<!-- //소스 -->
+
+
+		</div>
+		<!--// contents -->
+
+		<!-- footer -->
+		<div class="pop_footer">
+			<a class="btn_close" href="#"><i class="icons i_close">Close</i>Close</a>
+		</div>
+		<!--// footer -->
+	</div>
+	<!--// popup -->
+
+</body>
+</html>

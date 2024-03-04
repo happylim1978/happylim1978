@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Data Scientist 인증시험 | 로그인</title>
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+	<script type="text/javascript" src="http://www.credu.com/landing/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/default.js"></script>
+</head>
+
+<body>
+	<div class="main">
+		<div class="header">
+			<div class="header-in">
+				<span class="name">홍길동</span> 님 안녕하세요!
+			</div>
+		</div>
+		<div class="main-con">
+			<h1 class="h1">Data Scientist<br />인증시험</h1>
+			<h2 class="h2">평가정보</h2>
+			<div class="section">
+				<div class="item level">
+					<h3>LEVEL</h3>
+					<p class="p1">DS 필기</p>
+				</div>
+				<div class="item q-type">
+					<h3>문제유형</h3>
+					<p class="p2">객관식/OX식</p>
+					<p class="p1">50 문항</p>
+				</div>
+				<div class="item time">
+					<h3>응시시간</h3>
+					<p class="p2">
+						2018.05.17 (목)<br />
+						14:00 ~ 15:30<br />
+						(90분)
+					</p>
+				</div>
+			</div>
+			<!-- 20180702 -->
+			<h3 class="h3type1">실기시험 평가 유의사항</h3>
+			<ul class="caution-list">
+				<li>- 평가 종료 전 [답안제출] 버튼을 클릭하셔야 시험 답안이 정상적으로 제출됩니다. <strong>[답안제출]</strong> 버튼을 클릭하지 않으실 경우 <strong>미응시 처리</strong>됩니다. </li>
+				<li>- 답안 작성 시 샘플답안을 참고하셔서 반드시 가이드 대로 작성하셔야 합니다.</li>
+				<li>- 답안 제출 시 통계분석툴의 분석파일을 별도 저장한 후 업로드하셔야 합니다.</li>
+				<li>- Brightics를 선택한 응시자는 시험화면의 Brightics 실행 버튼을 클릭하셔서 활용하시기 바랍니다.</li>
+			</ul>
+			<!-- //20180702 -->
+			<div class="btns">
+				<a href="#" class="button">
+					평가응시 <span class="icon"></span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<a href="#" onclick="layer_view('layer1'); return false;" style="font-size: 20px;">레이어 보기1</a><br />
+	<a href="#" onclick="layer_view('layer2'); return false;" style="font-size: 20px;">레이어 보기2</a>
+	<div class="layer" id="layer1">
+		<div class="layer-box">
+			<div class="layer-box-in">
+				<p class="msg">지금 평가에 응시하시겠습니까?</p>
+				<div class="btns">
+					<button onclick="layer_close();" type="button" class="button">응시</button>
+					<button onclick="layer_close();" type="button" class="button button2">취소</button>
+				</div>
+			</div>
+		</div>
+		<div class="dim"></div>
+	</div>
+	<div class="layer" id="layer2">
+		<div class="layer-box layer-box2"><!-- 클래스 layer-box2 추가 -->
+			<div class="layer-box-in">
+				<p class="msg">평가에 사용할 소프트웨어 선택 후<br />응시를 누르시면 평가가 시작됩니다.</p>
+				<div class="program-select radio-wrap">
+					<div class="item">
+						<p class="img"><img src="images/main/bg_icon4_1.gif" alt="Brightics" /></p>
+						<input type="radio" class="inputRadio" name="program-check" id="program-check1" /> <label class="label" for="program-check1">Brightics</label>
+					</div>
+					<div class="item">
+						<p class="img"><img src="images/main/bg_icon4_2.gif" alt="R" /></p>
+						<input type="radio" class="inputRadio" name="program-check" id="program-check2" /> <label class="label" for="program-check2">R</label>
+					</div>
+					<!-- 파이썬 추가 -->
+					<div class="item">
+						<p class="img"><img src="images/main/bg_icon4_3.gif" alt="python" /></p>
+						<input type="radio" class="inputRadio" name="program-check" id="program-check3" /> <label class="label" for="program-check3">python</label>
+					</div>
+					<!-- //파이썬 추가 -->
+				</div>
+				<div class="btns">
+					<button onclick="layer_close();" type="button" class="button">응시</button>
+					<button onclick="layer_close();" type="button" class="button button2">취소</button>
+				</div>
+				<p class="msg2">Brightics는 Chrome 브라우저에서 사용이 가능합니다. <br />Chrome으로 접속해 주세요.</p>
+			</div>
+		</div>
+		<div class="dim"></div>
+	</div>
+</body>
+</html>

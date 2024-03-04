@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>MULTICAMPUS DESIGN SYSTEM Learning Cloud</title>
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/gsap.min.js"></script>
+</head>
+
+<body>
+	<div class="wrap">
+		<div class="main-gnb">
+			<a href="./overview/overview.html">Service Overview</a>
+			<a href="./foundation/foundation-layout.html#2_1">Learing Cloud Guideline</a>
+			<a href="./resource/resource-ci.html#5_1">Resource</a>
+		</div>
+		<div class="main-lnb">
+			<a href="#" class="link1">learning cloud</a>
+			<a href="#" class="link2">data center</a>
+		</div>
+		<div class="txts-wrap">
+			<div class="txts">
+				<div class="ps">
+					<div class="t-wrap">
+						<p class="p1">MULTICAMPUS</p>
+					</div>
+					<div class="t-wrap">
+						<p class="p2">DESIGN</p>
+					</div>
+					<div class="t-wrap">
+						<p class="p3">SYSTEM</p>
+					</div>
+				</div>
+				<p class="p4">
+					<span>L</span><span>e</span><span>a</span><span>r</span><span>n</span><span>i</span><span>n</span><span>g</span>&nbsp;<span>C</span><span>l</span><span>o</span><span>u</span><span>d</span>
+				</p>
+			</div>
+		</div>
+		<div class="go-link">
+			<a href="#"><span></span></a>
+		</div>
+		<div class="shapes shapes3">
+			<div class="shape circle shape1"></div>
+			<div class="shape circle shape2"></div>
+			<div class="shape circle shape3"></div>
+			<div class="shape circle shape4"></div>
+			<div class="shape circle shape5"></div>
+			<div class="shape circle shape6"></div>
+			<div class="shape circle shape7"></div>
+			<div class="shape circle shape8"></div>
+			<div class="shape circle shape9"></div>
+			<div class="shape circle shape10"></div>
+		</div>
+	</div>
+	<script>
+		var tl = gsap.timeline();
+		/*
+		gsap.to('.shape1', {rotation: 383, x: 0.78125 + 'vw', y: -4.5833 + 'vw', duration: 1, borderRadius:'0', width:23.75 + 'vw', height:8.90625 + 'vw'})
+		gsap.to('.shape2', {rotation: -375, x: 13.9583 + 'vw', y: -13.5416 + 'vw', autoAlpha:1, duration: 1, delay: 0.2, borderRadius:'0', width:15.625 + 'vw', height:15.625 + 'vw'})
+		gsap.to('.shape3', {rotation: 27, x: 25.3125 + 'vw', duration: 1, delay: 0.4, width: 12.6042 +'vw', height: 12.6042 + 'vw'})
+		gsap.to('.shape4', {rotation: 27, x: 31.25 + 'vw', y:-11.1979 + 'vw', duration: 1, delay: 0.6, width: 12.6042 +'vw', height: 12.6042 + 'vw'})
+		gsap.to('.shape5', {rotation: 27, x: 43.0729 + 'vw', y:-4.375 + 'vw', autoAlpha:1, duration: 2.5, 'backgroundColor':'#FE6B00', width: 12.6042 +'vw', height: 12.6042 + 'vw', ease: 'bounce'})
+		gsap.to('.shape6', {rotation: 27, x: 50.4167 + 'vw', duration: 1, delay: 0.8, width: 12.6042 +'vw', height: 12.6042 + 'vw'})
+		gsap.to('.shape7', {rotation: 90, x: 34.0625 + 'vw', duration: 1, delay: 0.6, autoAlpha:1, borderRadius:'0', width:66.1458 + 'vw', height:8.90625 + 'vw'})
+		gsap.to('.shape8', {rotation: -390, x: 72.2917 + 'vw', y: -17.1875 + 'vw', duration: 1, delay: 0.4, autoAlpha:1, borderRadius:'0', width:23.2292 + 'vw', height:8.90625 + 'vw'})
+		gsap.to('.shape9', {rotation: 27, x: 72.8125 + 'vw', duration: 1, delay: 0.2, width: 12.6042 +'vw', height: 12.6042 + 'vw'})
+		gsap.to('.shape10', {rotation: 27, x: 83.5417 + 'vw', y: -6.25 + 'vw', duration: 1, width: 12.6042 +'vw', height: 12.6042 + 'vw'})
+		*/
+
+		gsap.to('.shape1', {rotation: 23, x: 0.78125 + 'vw', y: -4.5833 + 'vw', duration: 1.5, autoAlpha:1, height:8.90625 + 'vw'})
+		gsap.timeline()
+			.to('.shape2', {rotation: -15, x: 13.9583 + 'vw', y: -13.5416 + 'vw', autoAlpha:1, duration: 1.25, delay: 0.2, autoAlpha:1})
+			.to('.shape2', {borderRadius:'0', duration: 0.75})
+		gsap.to('.shape3', {x: 25.3125 + 'vw', y: 0 + 'vw', duration: 1, delay: 0.4, autoAlpha:1.5, width:12.6042 + 'vw', height:12.6042 + 'vw'})
+		gsap.to('.shape4', {x: 31.25 + 'vw', y:-11.1979 + 'vw', duration: 1, delay: 0.6, autoAlpha:1.5, width:12.6042 + 'vw', height:12.6042 + 'vw'})
+
+		gsap.timeline()
+			.to('.shape5', {duration: 0.5, autoAlpha:1, x:46.0729 + 'vw', ease: 'circ'})
+			.to('.shape5', {duration: 1.5, y: -4.375 + 'vw', 'backgroundColor':'#FE6B00',})
+		gsap.to('.shape6', {duration: 2, autoAlpha:1, ease: 'circ'})
+		gsap.to('.shape7', {duration: 1.5, autoAlpha:1, ease: 'circ'})
+		gsap.to('.shape8', {duration: 0.5, autoAlpha:1, ease: 'circ'})
+		gsap.to('.shape9', {duration: 1, autoAlpha:1, ease: 'circ'})
+		gsap.to('.shape10', {duration: 2, autoAlpha:1, ease: 'circ'})
+
+		gsap.timeline()
+		.from('.go-link > a', {x:-400, duration:1.5, ease: 'circ',
+			onStart: function(){
+				$('.go-link > a').addClass('change');
+			}
+		}).to('.go-link > a', {x:-30, duration:1, yoyo:true, repeat:-1, ease:'circ'})
+
+		/*
+		tl
+			.from('.ps', {x:100})
+			.from('.ps > p', {x:150, autoAlpha:0, fontSize:0, stagger: 0.5, ease: 'back'})
+			.set('.ps > p', {fontSize: 7.34375 + 'vw'})
+			.to('.ps > .p2', {x:-17.1875 + 'vw'})
+			.from('.p4>span', {y:20, autoAlpha:0, stagger: 0.1})
+		*/
+		
+		gsap.from('.p1', {y:100, autoAlpha:0, ease: 'circ'})
+		gsap.from('.p2', {y:100, delay:0.3, autoAlpha:0, ease: 'circ'})
+		gsap.from('.p3', {y:100, delay:0.6, autoAlpha:0, ease: 'circ'})
+		gsap.from('.p4>span', {y:20, autoAlpha:0, stagger: 0.1})
+	</script>
+</body>
+</html>

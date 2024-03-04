@@ -1,0 +1,621 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko" class="ui-mobile"><head>
+<style class="vjs-styles-defaults">
+	.video-js {
+		width: 300px;
+		height: 150px;
+	}
+
+	.vjs-fluid:not(.vjs-audio-only-mode) {
+		padding-top: 56.25%
+	}
+</style>
+<style class="vjs-styles-dimensions">
+	.video-container-dimensions {
+		width: 1920px;
+		height: 1080px;
+	}
+
+	.video-container-dimensions.vjs-fluid:not(.vjs-audio-only-mode) {
+		padding-top: 56.25%;
+	}
+</style>
+<title>우주 강국들의 달을 향한 골드러시 │ Leader’s Insight</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-script-type" content="text/html">
+<meta http-equiv="content-style-type" content="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="expires" content="0">
+<link rel="icon" type="image/x-icon" href="https://mpm.sericeo.org/images/favicon_48.ico?v=1">
+<link rel="shortcut_icon" type="image/x-icon" href="https://mpm.sericeo.org/images/favicon_48.ico">
+<link rel="apple-touch-icon" href="https://mpm.sericeo.org/images/favicon_64.jpg">
+<link rel="apple-touch-icon-precomposed" href="https://mpm.sericeo.org/images/favicon_64.jpg">
+<link rel="stylesheet" href="https://mpm.sericeo.org/css/jquery.mobile-1.4.5.min.css">
+<script type="text/javascript" src="https://mpm.sericeo.org/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://mpm.sericeo.org/js/jquery.mobile-default.js"></script>
+<script type="text/javascript" src="https://mpm.sericeo.org/js/jquery.mobile-1.4.5.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://mpm.sericeo.org/css/common.css?v=230309">
+<script type="text/javascript" src="https://mpm.sericeo.org/js/jqueryFunc.js"></script>
+<script type="text/javascript" src="https://mpm.sericeo.org/js/common.js?v=230106"></script>
+<script type="text/javascript" src="https://mpm.sericeo.org/js/jquery.flexslider.min.js"></script>
+<script type="text/javascript" src="https://mpm.sericeo.org/js/plugins.js"></script>
+<script type="text/javascript" src="https://mpm.sericeo.org/js/sly.min.js"></script>
+<script type="text/javascript">
+var gisMoblie = "N";
+</script>
+
+<script type="text/javascript" src="https://player.sericeo.org/newplayer/seriplayer_nuri_ver20.js"></script>
+<script type="text/javascript" src="https://player.sericeo.org/newplayer/nuriplayer_20.js"></script>
+<script type="text/javascript" src="https://player.sericeo.org/newplayer/TimeCircles.js"></script>
+<script type="text/javascript" src="https://player.sericeo.org/newplayer/seri_lmshandler.js"></script>
+<link rel="stylesheet" type="text/css" href="https://player.sericeo.org/newplayer/nuriplayer_20.css">
+<link rel="stylesheet" type="text/css" href="https://player.sericeo.org/newplayer/common-player-ver20.css">
+
+<link rel="stylesheet" type="text/css" href="https://mpm.sericeo.org/css/jquery.mCustomScrollbar.min.css">
+<script type="text/javascript" src="https://mpm.sericeo.org/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="https://mpm.sericeo.org/js/viewer.js?ver=230920"></script>
+<script type="text/javascript" src="https://mpm.sericeo.org/js/viewer_tabControl.js?v=201028"></script>
+<!--link rel="stylesheet" type="text/css" href="https://mpm.sericeo.org/css/sub.css"-->
+<link rel="stylesheet" type="text/css" href="https://mpm.sericeo.org/css/viewer.css?ver=230920">
+<link rel="stylesheet" type="text/css" href="./css/viewer_add.css">
+<style type="text/css">
+.ui-page,.ui-content{background:#ebebf1;}
+.ui-content {overflow: hidden;}
+.vjs-control-bar {display: none !important;}
+</style>
+<script type="text/javascript">
+var tabCtrl;
+
+$(document).ready(function() {
+tabCtrl = new ViewerTabController({
+	container:$('.menuArea .menu > dl'),
+	bridge:'/viewer/msViewerB.html'
+});
+
+cont = {"cseq":"148515","p_cont":{"p_cseq":"148515"},"gmenu":"0301","menucode":"0102","regseq":"202310130001","lmsyn":"Y"};
+setLmsSeq(cont.lmsseq);
+tabCtrl.setCont(cont);
+
+$('.menuArea .menu > dl').each(function() {
+	if ($(this).find('dd.con').hasClass('loading')) {
+		var proc = $(this).attr('id');
+		tabCtrl.load($(this), proc, tabCtrl.getCont('cseq'));
+	}
+});
+
+initControlButtons();
+initSendSMSPopup('#sendSMSPop', '/msContB.html');
+		initPlayer();
+		resize();
+
+	$('#gradePop').procPopupDialog({
+				closeDelay:600,
+				width:'280px',
+				load:false,
+				url:'/msContB.html',
+				procMsg:'평가를 저장 중입니다.',
+				successMsg:'평가가 완료되었습니다.',
+				failMsg:'평가 저장에 실패했습니다.',
+				beforeposition:function(event, ui) {
+						$('#gradePop').find('.star span').css('width', '0%');
+				}
+		});
+
+		$('#gradePop .btnConfirm').bind('click', function() {
+				var grade;
+				if ($('#gradePop .star span').width() < 0) grade = 0;
+				else grade = Math.round($('#gradePop .star span').width() * 5 / $('#gradePop .star').width());
+				grade = Math.max(Math.min(grade, 5), 0);
+				if (grade < 1) {
+						alert("별점을 선택해 주세요.");
+						return;
+				}
+
+				var data = {p_proc:'gradeN', p_grade:grade, p_cseq:tabCtrl.getCont('cseq')};
+				$('#gradePop').procPopupDialog('options', {
+						data:data,
+						success:function(data) {
+						}
+				});
+				$('#gradePop').procPopupDialog('load');
+		});
+
+		initGradeProcPopup($('#gradePop'));
+});
+
+function openGradePop() {
+		$('#gradePop').popupDialog('open');
+}
+
+function initPlayer() {
+		var controllerSet = {
+				fileDown: 'Y',
+				quality: 'Y',
+				speed:'Y',
+				fullMode: 'Y',
+	grade:'Y'
+		};
+
+		var setting  = {
+				playerId: '#player_container_in',  //필수
+				cseq: tabCtrl.getCont('cseq'),  //필수
+				gmenu: tabCtrl.getCont('gmenu'),//필수
+				viewerPath: '/viewer',  //필수
+				lmsYN: tabCtrl.getCont('lmsyn'),//lms 사용 여부
+				nextCseq: '',           //다음영상
+				prevCseq: '',           //이전영상
+				prevContFunc: prevContent,  // 이전 영상 클릭 시 이벤트
+				nextContFunc: nextContent,  // 다음 영상 클릭 시 이벤트
+	fileDownFunc: PPTUrl,
+	gradeFunc: openGradePop,
+				controllerSet: controllerSet
+		};
+
+		initSeriPlayer(setting);
+}
+
+function prevContent(){
+
+}
+
+function nextContent(){
+
+}
+
+function nextPlay(j_cseq) {
+mediaView('/viewer/msViewer.html?p_cseq=' + j_cseq);
+}
+
+$(window).load(function() {
+tabCtrl.selectTab(2);
+});
+
+function procOpi(proc, pseq) {
+if (proc == "toggle") {
+	$('#opiItem'+pseq).toggleClass('mod');
+} else if (proc == "opiL") {
+	tabCtrl.load($('.menuArea .menu > dl.opiL'), 'opiL', null, {p_page:pseq});
+} else if (proc == "opiN") {
+	tabCtrl.procOpi(proc, null, $('#p_contRep'));
+} else if (proc == "opiM") {
+	tabCtrl.procOpi(proc, pseq, $('#opiItem'+pseq).find('textarea'));
+} else if (proc == "opiD") {
+	tabCtrl.procOpi(proc, pseq);
+}
+}
+
+function initControlButtons() {
+if ($('.viewArea .controlsArea').length < 1) return;
+var fade_timer = null;
+var fade_flag = false;
+
+var ret = getPrevNextCont();
+
+if (ret.prev == null) $('.viewArea .controlsArea .btnArea.prev').remove();
+if (ret.next == null) $('.viewArea .controlsArea .btnArea.next').remove();
+
+$('.viewArea').bind({
+	'mousemove':function(e) {
+		if (!fade_flag) {
+			fade_flag = true;
+			$('.viewArea .controlsArea .btnArea').stop(true).fadeIn(250, function() {
+				fade_flag = false;
+			});
+		}
+		if (fade_timer != null) clearTimeout(fade_timer);
+		if (!$('.viewArea .controlsArea .btnArea').has(e.target).length) {
+			fade_timer = setTimeout(function() {
+				if (fade_timer != null) clearTimeout(fade_timer);
+				$('.viewArea .controlsArea .btnArea').stop(true).fadeOut(250);
+			}, 1250);
+		}
+	},
+	'mouseleave':function() {
+		fade_flag = false;
+		if (fade_timer != null) clearTimeout(fade_timer);
+		$('.viewArea .controlsArea .btnArea').stop(true).fadeOut(250);
+	}
+});
+
+$('.viewArea .controlsArea .btnArea').bind('mouseleave', function() {
+	fade_flag = true;
+	if (fade_timer != null) clearTimeout(fade_timer);
+	$('.viewArea .controlsArea .btnArea').stop(true).fadeOut(500, function() {
+		fade_flag = false;
+	});
+});
+}
+
+function shareSNS(proc) {
+var data = {p_proc:proc, p_cseq:tabCtrl.getCont('cseq')};
+
+if (proc == 'facebook' || proc == 'twitter'|| proc == 'kakao') {
+//			window.location.href = "/msContB.html?" + decodeURIComponent($.param(data));
+	window.open("/msContB.html?" + decodeURIComponent($.param(data)), "facebookShare", 'width=600,height=300,menubar=no,status=no,toolbar=no,scrollbars=yes,resizable=yes');
+} else if (proc == 'sms') {
+	$('#sendSMSPop').popupDialog('open');
+} else if (proc == 'email') {
+	window.open("/msGiftN.html?p_proc=" + proc + "&p_cseq=" + tabCtrl.getCont('cseq'), 'emailShare', 'width=600,height=300,menubar=no,status=no,toolbar=no,scrollbars=yes,resizable=yes');
+}
+}
+
+function initSendSMSPopup(id, bridge) {
+var ajax = null;
+setProcStatus(true, 'SMS를 발송 중입니다.');
+$(id).popupDialog({
+	popupbeforeposition:function(event, ui) {
+	},
+	popupafteropen:function(event, ui) {
+	},
+	popupafterclose:function(event, ui) {
+		$(id+' .sendSMSDiv').removeClass('load');
+		$(id+' .sendSMS input').val('');
+		$(id+' .sendSMS #p_message').val('');
+		setProcStatus(true, 'SMS를 발송 중입니다.');
+		if (ajax != null) {
+			ajax.abort();
+			ajax = null;
+		}
+	}
+});
+
+$(id+' .btnConfirm').bind('click', function() {
+	var mtelno1 = $(id+' #p_mtelno1').val();
+	var mtelno2 = $(id+' #p_mtelno2').val();
+	var mtelno3 = $(id+' #p_mtelno3').val();
+	if (mtelno1 == "") {
+		alert("휴대전화번호를 입력해 주세요.");
+		return;
+	} else if (!(/^[0-9]{2,3}$/.test(mtelno1))) {
+		alert("휴대전화번호가 올바르지 않습니다.");
+		return;
+	} else if (mtelno2 == "") {
+		alert("휴대전화번호를 입력해 주세요.");
+		return;
+	} else if (!(/^[0-9]{3,4}$/.test(mtelno2))) {
+		alert("휴대전화번호가 올바르지 않습니다.");
+		return;
+	} else if (mtelno3 == "") {
+		alert("휴대전화번호를 입력해 주세요.");
+		return;
+	} else if (!(/^[0-9]{4}$/.test(mtelno3))) {
+		alert("휴대전화번호가 올바르지 않습니다.");
+		return;
+	}
+
+	$(id+' .sendSMS #p_message').val($.trim($(id+' .sendSMS #p_message').val()));
+	var mtelno = mtelno1 + mtelno2 + mtelno3;
+	var message = $(id+' .sendSMS #p_message').val();
+	var data = {p_proc:'sms', p_mtelno:mtelno, p_message:message, p_cseq:tabCtrl.getCont('cseq')};
+
+	$(id+' .sendSMSDiv').addClass('load');
+	ajax = $.ajax({
+		type:'POST',
+		url:bridge,
+		data:data,
+		cache:false,
+		headers:{'cache-control':'no-cache'},
+		error:function() {
+			ajax = null;
+			setProcStatus(false, "SMS 발송에 실패했습니다.");
+			/*self.popupObj.removeClass('loading').addClass('result');
+			var isMultiLine = self.popupObj.find('.waitCommentDiv .comment').isMultiLine('SMS 발송에 실패했습니다.', true);
+			if (isMultiLine) self.popupObj.find('.waitCommentDiv .comment').addClass('errmultiline');
+			self.popupObj.find('.waitCommentDiv .close a').addClass('back');*/
+		},
+		success:function(data) {
+			ajax = null;
+			try {
+				eval("var data = " + data + ";");
+				if (data["result"] == "success") {
+					$(id+' .comment').addClass('oneline').html("SMS 발송이 완료 되었습니다.");
+					$(id+' .loading').hide();
+					$(id+' .close').hide();
+					setTimeout(function() {
+						$(id).popupDialog('close');
+					}, 600);
+				} else {
+					setProcStatus(false, data["msg"]);
+				}
+			} catch(e) {7
+				if(data["msg"]) setProcStatus(false, data["msg"]);
+				else setProcStatus(false, "SMS 발송에 실패했습니다.");
+			}
+		}
+	});
+});
+
+$(id+' .sendSMS input').bind('keypress', function(e) {
+	checkNumber(e);
+});
+
+function setProcStatus(isLoading, msg) {
+	$(id+' .comment').html(msg);
+	if (isLoading) {
+		$(id+' .loading').show();
+		$(id+' .close').hide();
+	} else {
+		$(id+' .loading').hide();
+		$(id+' .close').show();
+	}
+	setTimeout(function() {
+		$(id).popupDialog('close');
+	}, 600);
+}
+
+function checkNumber(event) {
+	var evt = event || window.event;
+	var key = evt.keyCode || evt.which;
+	key = String.fromCharCode(key);
+	var regex = /[0-9]|\./;
+	if (!regex.test(key)) {
+		evt.returnValue = false;
+		if(evt.preventDefault) evt.preventDefault();
+	}
+}
+}
+</script>
+</head>
+<body class="ui-mobile-viewport ui-overlay-a">
+<div data-role="page" data-url="/viewer/msViewer.html?p_cseq=148515" tabindex="0" class="ui-page ui-page-theme-a ui-page-active" style="min-height: 966px;">
+
+<div style="display: none;" id="procPop-placeholder"><!-- placeholder for procPop --></div>
+
+<div style="display: none;" id="sendSMSPop-placeholder"><!-- placeholder for sendSMSPop --></div>
+
+<div style="display: none;" id="gradePop-placeholder"><!-- placeholder for gradePop --></div>
+<div data-role="content" class="ui-content" role="main">
+<input type="hidden" id="p_autoplay" name="p_autoplay" value="N">
+<input type="hidden" id="p_reverse" name="p_reverse" value="">
+<div class="content web cFix" style="height: 964px;">
+	<div class="viewerArea">
+		<div id="viewer" class="viewer mCustomScrollbar _mCS_1 mCS-autoHide vertical"><div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" tabindex="0"><div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;" dir="ltr">
+			<div class="leftArea">
+				<div class="viewArea" id="viewArea" style="width: 100%; height: 100%;">
+					<div class="playerTitle">
+						<span class="menuName"> [산업전망대]</span>&nbsp;
+						<span class="title">우주 강국들의 달을 향한 골드러시</span>
+					</div>
+					<div id="player_container">
+						<div id="player_container_in"><div id="video-container-container" class="nrp-container player-hover-active color-none nrp-no-sub"><div class="video-js vjs-default-skin vjs-big-play-centered style-theme1 vjs-paused vjs-fill video-container-dimensions vjs-controls-enabled vjs-workinghover vjs-v7 vjs-user-active flowplayer vjs-has-started vjs-settings-menu" playsinline="true" id="video-container" tabindex="-1" role="region" lang="ko" translate="no" aria-label="Video Player" style="background: none; height: 642.667px; outline: none; min-height: 460px;"><img id="preLoading" src="https://player.sericeo.org/newplayer/images/player/sericeo.jpg" class="first mCS_img_loaded" style="height: 100%; width: 100%; inset: 0px; position: absolute; z-index: 1; display: block;"> <div class="common-loading" style="display:none"> <div class="ani-loading"> <img src="//player.sericeo.org/newplayer/images/player/loading_small.png" alt="loading-img" class="mCS_img_loaded"> </div> </div><video id="video-container_html5_api" playsinline="playsinline" class="vjs-tech" tabindex="-1" role="application" style="background: rgba(0, 0, 0, 0);" src="blob:https://mpm.sericeo.org/9d363538-458c-40b5-b9b3-a03953853d77"></video><div class="vjs-poster nrp-poster-fit-contain" tabindex="-1" aria-disabled="false" style="background: rgb(255, 255, 255);"></div><div class="vjs-text-track-display" translate="yes" aria-live="off" aria-atomic="true"><div style="position: absolute; inset: 0px; margin: 1.5%;"></div></div><div class="vjs-loading-spinner" dir="ltr"><span class="vjs-control-text">Video Player is loading.</span></div><button class="vjs-big-play-button" type="button" title="재생" aria-disabled="false" style="opacity:1!important; display:block"><span class="vjs-icon-placeholder" aria-hidden="true"></span><span class="vjs-control-text" aria-live="polite">재생</span></button><div class="vjs-control-bar" dir="ltr"><button class="vjs-prevPlay-button vjs-button vjs-control" title="이전" aria-disabled="false"><span class="vjs-icon-previous-item vjs-icon-placeholder"></span></button><button class="vjs-play-control vjs-control vjs-button" type="button" title="재생" aria-disabled="false"><span class="vjs-icon-placeholder" aria-hidden="true"></span><span class="vjs-control-text" aria-live="polite">재생</span></button><button class="vjs-nextPlay-button vjs-button vjs-control" title="다음" aria-disabled="false"><span class="vjs-icon-next-item vjs-icon-placeholder"></span></button><div class="vjs-volume-panel vjs-control vjs-volume-panel-vertical"><button class="vjs-mute-control vjs-control vjs-button vjs-vol-3" type="button" title="음소거" aria-disabled="false"><span class="vjs-icon-placeholder" aria-hidden="true"></span><span class="vjs-control-text" aria-live="polite">음소거</span></button><div class="vjs-volume-control vjs-control vjs-volume-vertical"><div tabindex="0" class="vjs-volume-bar vjs-slider-bar vjs-slider vjs-slider-vertical" role="slider" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="Volume Level" aria-live="polite" aria-valuetext="100%"><div class="vjs-mouse-display"><div class="vjs-volume-tooltip" aria-hidden="true"></div></div><div class="vjs-volume-level"><span class="vjs-control-text"></span></div></div></div></div><div class="vjs-chapters-selector vjs-button vjs-control" aria-disabled="false"><button class="vjs-chapters-button vjs-menu-button vjs-menu-button-popup vjs-button" title="목차"><span class="vjs-icon-chapters vjs-icon-placeholder"></span></button><div class="vjs-menu-chapters nrp-menu-chapters"><ul class="nrp-chapter-list-container"><li class="chpt-idx-li"><a class="chpt-index-item" data-time="3.7">달 남극 정복한 인류</a></li><li class="chpt-idx-li"><a class="chpt-index-item" data-time="83.83">우주 강국의 달 탐사 프로젝트</a></li><li class="chpt-idx-li"><a class="chpt-index-item" data-time="197.97">달이 품은 자원과 가치</a></li><li class="chpt-idx-li"><a class="chpt-index-item" data-time="386.97">탐사 가치 높은 달</a></li><li class="chpt-idx-li"><a class="chpt-index-item" data-time="413.5">달 독차지, 막을 수 있을까? </a></li><li class="chpt-idx-li"><a class="chpt-index-item" data-time="456.03">달을 둘러싼 분쟁 우려</a></li></ul></div></div><div class="vjs-current-time vjs-time-control vjs-control"><span class="vjs-control-text" role="presentation">현재 시간&nbsp;</span><span class="vjs-current-time-display" aria-live="off" role="presentation">0:00</span></div><div class="vjs-time-control vjs-time-divider" aria-hidden="true"><div><span>/</span></div></div><div class="vjs-duration vjs-time-control vjs-control"><span class="vjs-control-text" role="presentation">지정 기간&nbsp;</span><span class="vjs-duration-display" aria-live="off" role="presentation">8:31</span></div><div class="nrp-card-view-section vjs-button vjs-control" aria-disabled="false"><button class="vjs-card-view vjs-cardNone-button vjs-button selected" title="동영상">동영상</button><button class="vjs-card-view vjs-cardOn-button vjs-button" title="카드">카드</button><button class="vjs-card-view vjs-cardPrev-button vjs-control" title="카드보기 이전" style="display: none !important;"></button><div class="vjs-card-view vjs-card-cnt vjs-control" style="display: none !important;"><strong class="vjs-current-card-idx">1</strong><span class="time-slash">/</span><span>15</span></div><button class="vjs-card-view vjs-cardNext-button vjs-control" title="카드보기 다음" style="display: none !important;"></button></div><button class="vjs-repeat-button vjs-control vjs-button vjs-hidden" title="구간 반복" aria-disabled="false"></button><button class="vjs-grade-button vjs-control vjs-button" title="평점주기" aria-disabled="false"><span class="vjs-icon-placeholder"></span></button><button class="vjs-download-button vjs-control vjs-button" title="PPT 다운로드" aria-disabled="false"></button><div class="vjs-live-control vjs-control vjs-hidden"><div class="vjs-live-display" aria-live="off"><span class="vjs-control-text">스트리밍 유형&nbsp;</span>라이브</div></div><button class="vjs-seek-to-live-control vjs-control" type="button" title="Seek to live, currently behind live" aria-disabled="false"><span class="vjs-icon-placeholder" aria-hidden="true"></span><span class="vjs-control-text" aria-live="polite">Seek to live, currently behind live</span><span class="vjs-seek-to-live-text" aria-hidden="true">라이브</span></button><div class="vjs-remaining-time vjs-time-control vjs-control"><span class="vjs-control-text" role="presentation">남은 시간&nbsp;</span><span aria-hidden="true">-</span><span class="vjs-remaining-time-display" aria-live="off" role="presentation">8:31</span></div><div class="vjs-custom-control-spacer vjs-spacer ">&nbsp;</div><div class="vjs-playback-rate vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hide-settings-menu-item"><div class="vjs-playback-rate-value" id="vjs-playback-rate-value-label-video-container_component_254">1x</div><button class="vjs-playback-rate vjs-menu-button vjs-menu-button-popup vjs-button" type="button" aria-disabled="false" title="재생속도" aria-haspopup="true" aria-expanded="false" aria-describedby="vjs-playback-rate-value-label-video-container_component_254"><span class="vjs-icon-placeholder" aria-hidden="true"></span><span class="vjs-control-text" aria-live="polite">재생속도</span></button><div class="vjs-menu"></div></div><div class="vjs-chapters-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden"><button class="vjs-chapters-button vjs-menu-button vjs-menu-button-popup vjs-button" type="button" aria-disabled="false" title="Chapters" aria-haspopup="true" aria-expanded="false"><span class="vjs-icon-placeholder" aria-hidden="true"></span><span class="vjs-control-text" aria-live="polite">Chapters</span></button><div class="vjs-menu"><ul class="vjs-menu-content"><li class="vjs-menu-title" tabindex="-1">Chapters</li></ul></div></div><div class="vjs-descriptions-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden"><button class="vjs-descriptions-button vjs-menu-button vjs-menu-button-popup vjs-button" type="button" aria-disabled="false" title="Descriptions" aria-haspopup="true" aria-expanded="false"><span class="vjs-icon-placeholder" aria-hidden="true"></span><span class="vjs-control-text" aria-live="polite">Descriptions</span></button><div class="vjs-menu"><ul class="vjs-menu-content"><li class="vjs-menu-item vjs-selected" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="true"><span class="vjs-menu-item-text">descriptions off</span><span class="vjs-control-text" aria-live="polite">, selected</span></li></ul></div></div><div class="vjs-subs-caps-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden"><button class="vjs-subs-caps-button vjs-menu-button vjs-menu-button-popup vjs-button" type="button" aria-disabled="false" title="자막" aria-haspopup="true" aria-expanded="false"><span class="vjs-icon-placeholder" aria-hidden="true"></span><span class="vjs-control-text" aria-live="polite">자막</span></button><div class="vjs-menu"><ul class="vjs-menu-content"><li class="vjs-menu-item vjs-texttrack-settings" tabindex="-1" role="menuitem" aria-disabled="false"><span class="vjs-menu-item-text">자막 설정</span><span class="vjs-control-text" aria-live="polite">, opens subtitles settings dialog</span></li><li class="vjs-menu-item vjs-selected" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="true"><span class="vjs-menu-item-text">자막끄기</span><span class="vjs-control-text" aria-live="polite">, selected</span></li></ul></div></div><div class="vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-settings-menu"><button class="vjs-menu-button vjs-menu-button-popup vjs-button" type="button" aria-disabled="false" aria-haspopup="true" aria-expanded="false" title="설정"><span class="vjs-icon-placeholder" aria-hidden="true"></span><span class="vjs-control-text" aria-live="polite">설정</span></button><div class="vjs-menu"><ul class="vjs-menu-content vjs-sm-top-level" role="menu" id="video-container-vjs-settings-menu-default"><li class="vjs-sm-top-level-header">&lt;span&gt;설정&lt;/span&gt;</li><li data-component="qualityselector" class="vjs-sm-list-item">해상도<i class="setting-menu-list-arrow setting-menu-list-arrow-right"></i><span id="video-container-setting-menu-child-span-qualityselector">고화질</span></li><li data-component="playbackratemenubutton" class="vjs-sm-list-item">재생속도<i class="setting-menu-list-arrow setting-menu-list-arrow-right"></i><span id="video-container-setting-menu-child-span-playbackratemenubutton">1x</span></li></ul><ul class="vjs-menu-content vjs-hidden vjs-setting-menu-clear" role="menu" id="video-container-setting-menu-child-menu-qualityselector"><li class="setting-menu-header" data-component="qualityselector"><i class="setting-menu-list-arrow setting-menu-list-arrow-left"></i><span>해상도</span></li><li class="vjs-menu-item" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="false"><span class="vjs-menu-item-text">저화질</span><span class="vjs-control-text" aria-live="polite"></span></li><li class="vjs-menu-item" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="false"><span class="vjs-menu-item-text">일반화질</span><span class="vjs-control-text" aria-live="polite"></span></li><li class="vjs-menu-item vjs-selected" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="true"><span class="vjs-menu-item-text">고화질</span><span class="vjs-control-text" aria-live="polite">, selected</span></li></ul><ul class="vjs-menu-content vjs-hidden vjs-setting-menu-clear" role="menu" id="video-container-setting-menu-child-menu-playbackratemenubutton"><li class="setting-menu-header" data-component="playbackratemenubutton"><i class="setting-menu-list-arrow setting-menu-list-arrow-left"></i><span>재생속도</span></li><li class="vjs-menu-item" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="false"><span class="vjs-menu-item-text">0.5x</span><span class="vjs-control-text" aria-live="polite"></span></li><li class="vjs-menu-item" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="false"><span class="vjs-menu-item-text">0.75x</span><span class="vjs-control-text" aria-live="polite"></span></li><li class="vjs-menu-item vjs-selected" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="true"><span class="vjs-menu-item-text">1x</span><span class="vjs-control-text" aria-live="polite">, selected</span></li><li class="vjs-menu-item" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="false"><span class="vjs-menu-item-text">1.25x</span><span class="vjs-control-text" aria-live="polite"></span></li><li class="vjs-menu-item" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="false"><span class="vjs-menu-item-text">1.5x</span><span class="vjs-control-text" aria-live="polite"></span></li><li class="vjs-menu-item" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="false"><span class="vjs-menu-item-text">2x</span><span class="vjs-control-text" aria-live="polite"></span></li></ul></div></div><div class="vjs-audio-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden"><button class="vjs-audio-button vjs-menu-button vjs-menu-button-popup vjs-button" type="button" aria-disabled="false" title="Audio Track" aria-haspopup="true" aria-expanded="false"><span class="vjs-icon-placeholder" aria-hidden="true"></span><span class="vjs-control-text" aria-live="polite">Audio Track</span></button><div class="vjs-menu"><ul class="vjs-menu-content"><li class="vjs-menu-item vjs-selected vjs-main-menu-item" tabindex="-1" role="menuitemradio" aria-disabled="false" aria-checked="true"><span class="vjs-menu-item-text">default</span><span class="vjs-control-text" aria-live="polite">, selected</span></li></ul></div></div><div class="vjs-quality-selector vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hide-settings-menu-item"><button class="vjs-menu-button vjs-menu-button-popup vjs-button" type="button" aria-disabled="false" aria-haspopup="true" aria-expanded="false" title="Open quality selector menu"><span class="vjs-icon-placeholder" aria-hidden="true"></span><span class="vjs-control-text" aria-live="polite">Open quality selector menu</span></button><div class="vjs-menu"></div></div><button class="vjs-fullscreen-control vjs-control vjs-button" type="button" title="전체 화면" aria-disabled="false"><span class="vjs-icon-placeholder" aria-hidden="true"></span><span class="vjs-control-text" aria-live="polite">전체 화면</span></button><div class="vjs-progress-control vjs-control"><div tabindex="0" class="vjs-progress-holder vjs-slider vjs-slider-horizontal" role="slider" aria-valuenow="0.00" aria-valuemin="0" aria-valuemax="100" aria-label="Progress Bar" aria-valuetext="0:00 of 8:31"><div class="vjs-load-progress" style="width: 1.89%;"><span class="vjs-control-text"><span>로드됨</span>: <span class="vjs-control-text-loaded-percentage">1.89%</span></span><div data-start="0" data-end="9.682333" style="left: 0%; width: 100%;"></div></div><div class="vjs-mouse-display"><div class="vjs-time-tooltip" aria-hidden="true"></div></div><div class="vjs-play-progress vjs-slider-bar" aria-hidden="true" style="width: 0%;"><div class="vjs-time-tooltip" aria-hidden="true" style="right: 0px;">0:00</div></div></div></div></div><div class="vjs-error-display vjs-modal-dialog vjs-hidden " tabindex="-1" aria-describedby="video-container_component_599_description" aria-hidden="true" aria-label="Modal Window" role="dialog"><p class="vjs-modal-dialog-description vjs-control-text" id="video-container_component_599_description">This is a modal window.</p><div class="vjs-modal-dialog-content" role="document"></div></div><div class="vjs-modal-dialog vjs-hidden  vjs-text-track-settings" tabindex="-1" aria-describedby="video-container_component_605_description" aria-hidden="true" aria-label="Caption Settings Dialog" role="dialog"><p class="vjs-modal-dialog-description vjs-control-text" id="video-container_component_605_description">Beginning of dialog window. Escape will cancel and close the window.</p><div class="vjs-modal-dialog-content" role="document"><div class="vjs-track-settings-colors"><fieldset class="vjs-fg-color vjs-track-setting"><legend id="captions-text-legend-video-container_component_605">Text</legend><label id="captions-foreground-color-video-container_component_605" class="vjs-label">Color</label><select aria-labelledby="captions-text-legend-video-container_component_605 captions-foreground-color-video-container_component_605"><option id="captions-foreground-color-video-container_component_605-White" value="#FFF" aria-labelledby="captions-text-legend-video-container_component_605 captions-foreground-color-video-container_component_605 captions-foreground-color-video-container_component_605-White">White</option><option id="captions-foreground-color-video-container_component_605-Black" value="#000" aria-labelledby="captions-text-legend-video-container_component_605 captions-foreground-color-video-container_component_605 captions-foreground-color-video-container_component_605-Black">Black</option><option id="captions-foreground-color-video-container_component_605-Red" value="#F00" aria-labelledby="captions-text-legend-video-container_component_605 captions-foreground-color-video-container_component_605 captions-foreground-color-video-container_component_605-Red">Red</option><option id="captions-foreground-color-video-container_component_605-Green" value="#0F0" aria-labelledby="captions-text-legend-video-container_component_605 captions-foreground-color-video-container_component_605 captions-foreground-color-video-container_component_605-Green">Green</option><option id="captions-foreground-color-video-container_component_605-Blue" value="#00F" aria-labelledby="captions-text-legend-video-container_component_605 captions-foreground-color-video-container_component_605 captions-foreground-color-video-container_component_605-Blue">Blue</option><option id="captions-foreground-color-video-container_component_605-Yellow" value="#FF0" aria-labelledby="captions-text-legend-video-container_component_605 captions-foreground-color-video-container_component_605 captions-foreground-color-video-container_component_605-Yellow">Yellow</option><option id="captions-foreground-color-video-container_component_605-Magenta" value="#F0F" aria-labelledby="captions-text-legend-video-container_component_605 captions-foreground-color-video-container_component_605 captions-foreground-color-video-container_component_605-Magenta">Magenta</option><option id="captions-foreground-color-video-container_component_605-Cyan" value="#0FF" aria-labelledby="captions-text-legend-video-container_component_605 captions-foreground-color-video-container_component_605 captions-foreground-color-video-container_component_605-Cyan">Cyan</option></select><span class="vjs-text-opacity vjs-opacity"><label id="captions-foreground-opacity-video-container_component_605" class="vjs-label">Transparency</label><select aria-labelledby="captions-text-legend-video-container_component_605 captions-foreground-opacity-video-container_component_605"><option id="captions-foreground-opacity-video-container_component_605-Opaque" value="1" aria-labelledby="captions-text-legend-video-container_component_605 captions-foreground-opacity-video-container_component_605 captions-foreground-opacity-video-container_component_605-Opaque">Opaque</option><option id="captions-foreground-opacity-video-container_component_605-SemiTransparent" value="0.5" aria-labelledby="captions-text-legend-video-container_component_605 captions-foreground-opacity-video-container_component_605 captions-foreground-opacity-video-container_component_605-SemiTransparent">Semi-Transparent</option></select></span></fieldset><fieldset class="vjs-bg-color vjs-track-setting"><legend id="captions-background-video-container_component_605">Background</legend><label id="captions-background-color-video-container_component_605" class="vjs-label">Color</label><select aria-labelledby="captions-background-video-container_component_605 captions-background-color-video-container_component_605"><option id="captions-background-color-video-container_component_605-Black" value="#000" aria-labelledby="captions-background-video-container_component_605 captions-background-color-video-container_component_605 captions-background-color-video-container_component_605-Black">Black</option><option id="captions-background-color-video-container_component_605-White" value="#FFF" aria-labelledby="captions-background-video-container_component_605 captions-background-color-video-container_component_605 captions-background-color-video-container_component_605-White">White</option><option id="captions-background-color-video-container_component_605-Red" value="#F00" aria-labelledby="captions-background-video-container_component_605 captions-background-color-video-container_component_605 captions-background-color-video-container_component_605-Red">Red</option><option id="captions-background-color-video-container_component_605-Green" value="#0F0" aria-labelledby="captions-background-video-container_component_605 captions-background-color-video-container_component_605 captions-background-color-video-container_component_605-Green">Green</option><option id="captions-background-color-video-container_component_605-Blue" value="#00F" aria-labelledby="captions-background-video-container_component_605 captions-background-color-video-container_component_605 captions-background-color-video-container_component_605-Blue">Blue</option><option id="captions-background-color-video-container_component_605-Yellow" value="#FF0" aria-labelledby="captions-background-video-container_component_605 captions-background-color-video-container_component_605 captions-background-color-video-container_component_605-Yellow">Yellow</option><option id="captions-background-color-video-container_component_605-Magenta" value="#F0F" aria-labelledby="captions-background-video-container_component_605 captions-background-color-video-container_component_605 captions-background-color-video-container_component_605-Magenta">Magenta</option><option id="captions-background-color-video-container_component_605-Cyan" value="#0FF" aria-labelledby="captions-background-video-container_component_605 captions-background-color-video-container_component_605 captions-background-color-video-container_component_605-Cyan">Cyan</option></select><span class="vjs-bg-opacity vjs-opacity"><label id="captions-background-opacity-video-container_component_605" class="vjs-label">Transparency</label><select aria-labelledby="captions-background-video-container_component_605 captions-background-opacity-video-container_component_605"><option id="captions-background-opacity-video-container_component_605-Opaque" value="1" aria-labelledby="captions-background-video-container_component_605 captions-background-opacity-video-container_component_605 captions-background-opacity-video-container_component_605-Opaque">Opaque</option><option id="captions-background-opacity-video-container_component_605-SemiTransparent" value="0.5" aria-labelledby="captions-background-video-container_component_605 captions-background-opacity-video-container_component_605 captions-background-opacity-video-container_component_605-SemiTransparent">Semi-Transparent</option><option id="captions-background-opacity-video-container_component_605-Transparent" value="0" aria-labelledby="captions-background-video-container_component_605 captions-background-opacity-video-container_component_605 captions-background-opacity-video-container_component_605-Transparent">Transparent</option></select></span></fieldset><fieldset class="vjs-window-color vjs-track-setting"><legend id="captions-window-video-container_component_605">Window</legend><label id="captions-window-color-video-container_component_605" class="vjs-label">Color</label><select aria-labelledby="captions-window-video-container_component_605 captions-window-color-video-container_component_605"><option id="captions-window-color-video-container_component_605-Black" value="#000" aria-labelledby="captions-window-video-container_component_605 captions-window-color-video-container_component_605 captions-window-color-video-container_component_605-Black">Black</option><option id="captions-window-color-video-container_component_605-White" value="#FFF" aria-labelledby="captions-window-video-container_component_605 captions-window-color-video-container_component_605 captions-window-color-video-container_component_605-White">White</option><option id="captions-window-color-video-container_component_605-Red" value="#F00" aria-labelledby="captions-window-video-container_component_605 captions-window-color-video-container_component_605 captions-window-color-video-container_component_605-Red">Red</option><option id="captions-window-color-video-container_component_605-Green" value="#0F0" aria-labelledby="captions-window-video-container_component_605 captions-window-color-video-container_component_605 captions-window-color-video-container_component_605-Green">Green</option><option id="captions-window-color-video-container_component_605-Blue" value="#00F" aria-labelledby="captions-window-video-container_component_605 captions-window-color-video-container_component_605 captions-window-color-video-container_component_605-Blue">Blue</option><option id="captions-window-color-video-container_component_605-Yellow" value="#FF0" aria-labelledby="captions-window-video-container_component_605 captions-window-color-video-container_component_605 captions-window-color-video-container_component_605-Yellow">Yellow</option><option id="captions-window-color-video-container_component_605-Magenta" value="#F0F" aria-labelledby="captions-window-video-container_component_605 captions-window-color-video-container_component_605 captions-window-color-video-container_component_605-Magenta">Magenta</option><option id="captions-window-color-video-container_component_605-Cyan" value="#0FF" aria-labelledby="captions-window-video-container_component_605 captions-window-color-video-container_component_605 captions-window-color-video-container_component_605-Cyan">Cyan</option></select><span class="vjs-window-opacity vjs-opacity"><label id="captions-window-opacity-video-container_component_605" class="vjs-label">Transparency</label><select aria-labelledby="captions-window-video-container_component_605 captions-window-opacity-video-container_component_605"><option id="captions-window-opacity-video-container_component_605-Transparent" value="0" aria-labelledby="captions-window-video-container_component_605 captions-window-opacity-video-container_component_605 captions-window-opacity-video-container_component_605-Transparent">Transparent</option><option id="captions-window-opacity-video-container_component_605-SemiTransparent" value="0.5" aria-labelledby="captions-window-video-container_component_605 captions-window-opacity-video-container_component_605 captions-window-opacity-video-container_component_605-SemiTransparent">Semi-Transparent</option><option id="captions-window-opacity-video-container_component_605-Opaque" value="1" aria-labelledby="captions-window-video-container_component_605 captions-window-opacity-video-container_component_605 captions-window-opacity-video-container_component_605-Opaque">Opaque</option></select></span></fieldset></div><div class="vjs-track-settings-font"><fieldset class="vjs-font-percent vjs-track-setting"><legend id="captions-font-size-video-container_component_605" class="">Font Size</legend><select aria-labelledby="captions-font-size-video-container_component_605"><option id="captions-font-size-video-container_component_605-50" value="0.50" aria-labelledby="captions-font-size-video-container_component_605 captions-font-size-video-container_component_605-50">50%</option><option id="captions-font-size-video-container_component_605-75" value="0.75" aria-labelledby="captions-font-size-video-container_component_605 captions-font-size-video-container_component_605-75">75%</option><option id="captions-font-size-video-container_component_605-100" value="1.00" aria-labelledby="captions-font-size-video-container_component_605 captions-font-size-video-container_component_605-100">100%</option><option id="captions-font-size-video-container_component_605-125" value="1.25" aria-labelledby="captions-font-size-video-container_component_605 captions-font-size-video-container_component_605-125">125%</option><option id="captions-font-size-video-container_component_605-150" value="1.50" aria-labelledby="captions-font-size-video-container_component_605 captions-font-size-video-container_component_605-150">150%</option><option id="captions-font-size-video-container_component_605-175" value="1.75" aria-labelledby="captions-font-size-video-container_component_605 captions-font-size-video-container_component_605-175">175%</option><option id="captions-font-size-video-container_component_605-200" value="2.00" aria-labelledby="captions-font-size-video-container_component_605 captions-font-size-video-container_component_605-200">200%</option><option id="captions-font-size-video-container_component_605-300" value="3.00" aria-labelledby="captions-font-size-video-container_component_605 captions-font-size-video-container_component_605-300">300%</option><option id="captions-font-size-video-container_component_605-400" value="4.00" aria-labelledby="captions-font-size-video-container_component_605 captions-font-size-video-container_component_605-400">400%</option></select></fieldset><fieldset class="vjs-edge-style vjs-track-setting"><legend id="video-container_component_605" class="">Text Edge Style</legend><select aria-labelledby="video-container_component_605"><option id="video-container_component_605-None" value="none" aria-labelledby="video-container_component_605 video-container_component_605-None">None</option><option id="video-container_component_605-Raised" value="raised" aria-labelledby="video-container_component_605 video-container_component_605-Raised">Raised</option><option id="video-container_component_605-Depressed" value="depressed" aria-labelledby="video-container_component_605 video-container_component_605-Depressed">Depressed</option><option id="video-container_component_605-Uniform" value="uniform" aria-labelledby="video-container_component_605 video-container_component_605-Uniform">Uniform</option><option id="video-container_component_605-Dropshadow" value="dropshadow" aria-labelledby="video-container_component_605 video-container_component_605-Dropshadow">Dropshadow</option></select></fieldset><fieldset class="vjs-font-family vjs-track-setting"><legend id="captions-font-family-video-container_component_605" class="">Font Family</legend><select aria-labelledby="captions-font-family-video-container_component_605"><option id="captions-font-family-video-container_component_605-ProportionalSansSerif" value="proportionalSansSerif" aria-labelledby="captions-font-family-video-container_component_605 captions-font-family-video-container_component_605-ProportionalSansSerif">Proportional Sans-Serif</option><option id="captions-font-family-video-container_component_605-MonospaceSansSerif" value="monospaceSansSerif" aria-labelledby="captions-font-family-video-container_component_605 captions-font-family-video-container_component_605-MonospaceSansSerif">Monospace Sans-Serif</option><option id="captions-font-family-video-container_component_605-ProportionalSerif" value="proportionalSerif" aria-labelledby="captions-font-family-video-container_component_605 captions-font-family-video-container_component_605-ProportionalSerif">Proportional Serif</option><option id="captions-font-family-video-container_component_605-MonospaceSerif" value="monospaceSerif" aria-labelledby="captions-font-family-video-container_component_605 captions-font-family-video-container_component_605-MonospaceSerif">Monospace Serif</option><option id="captions-font-family-video-container_component_605-Casual" value="casual" aria-labelledby="captions-font-family-video-container_component_605 captions-font-family-video-container_component_605-Casual">Casual</option><option id="captions-font-family-video-container_component_605-Script" value="script" aria-labelledby="captions-font-family-video-container_component_605 captions-font-family-video-container_component_605-Script">Script</option><option id="captions-font-family-video-container_component_605-SmallCaps" value="small-caps" aria-labelledby="captions-font-family-video-container_component_605 captions-font-family-video-container_component_605-SmallCaps">Small Caps</option></select></fieldset></div><div class="vjs-track-settings-controls"><button type="button" class="vjs-default-button" title="restore all settings to the default values">Reset<span class="vjs-control-text"> restore all settings to the default values</span></button><button type="button" class="vjs-done-button">Done</button></div></div><button class="vjs-close-button vjs-control vjs-button" type="button" title="Close Modal Dialog" aria-disabled="false"><span class="vjs-icon-placeholder" aria-hidden="true"></span><span class="vjs-control-text" aria-live="polite">Close Modal Dialog</span></button><p class="vjs-control-text">End of dialog window.</p></div><button class="vjs-big-play-button vjs-big-pause-button" title="일시중지" type="button"><span class="vjs-icon-placeholder"></span></button><div class="vjs-card-view vjs-card-area active"><img src="https://img.sericeo.org/vfile/card/0102/0102_202310130001/0102_202310130001_0.jpg" class="mCS_img_loaded"></div></div><button class="nrp-float-close-btn vjs-hidden"></button></div></div>
+					</div>
+				</div>
+			</div>
+			<div class="rightArea">
+				<div class="menuArea">
+					<div class="overlay"><div class="line"></div></div>
+					<div class="menu">
+						<dl id="opiL" class="tab opiL">
+							<dt class="title"><a href="#" title="의견" class="ui-link"><div>의견</div></a></dt>
+							<dd class="con">
+								<div class="loadingProc">
+									<div class="proc">
+										<p>로딩 중입니다.</p>
+										<p>잠시만 기다려 주세요.<img src="/images/common/ajax-loader.gif" class="mCS_img_loaded"></p>
+									</div>
+									<div class="retry">
+										<p>로딩에 실패했습니다.</p>
+										<p class="retryBtn"><a href="#" data-role="button" data-corners="false" class="ui-link ui-btn ui-shadow" role="button">재시도</a></p>
+									</div>
+								</div>
+
+								<div class="result"><div class="textArea" style="opacity: 1;">
+<div class="area">
+	<div class="text"><textarea id="p_contRep" rows="1" cols="1" title="의견을 남겨주세요" class="ui-input-text ui-shadow-inset ui-body-inherit ui-corner-all ui-textinput-autogrow"></textarea></div>
+	<div class="btn"><a href="#" onclick="procOpi('opiN'); return false"><img src="/images/viewer/btn_confirm.gif" alt="확인" class="mCS_img_loaded"></a></div>
+</div>
+</div><div class="opiArea" style="opacity: 1;">
+<ul class="opiList">
+
+	<li class="noCont">
+		<span>등록된 의견이 없습니다.</span>
+	</li>
+	<li class="page">
+		<div>
+
+		</div>
+	</li>
+</ul>
+</div></div>
+							</dd>
+						</dl>
+						<dl id="script" class="tab script">
+							<dt class="title"><a href="#" title="원문" class="ui-link"><div>원문</div></a></dt>
+							<dd class="con">
+								<div class="loadingProc">
+									<div class="proc">
+										<p>로딩 중입니다.</p>
+										<p>잠시만 기다려 주세요.<img src="/images/common/ajax-loader.gif" class="mCS_img_loaded"></p>
+									</div>
+									<div class="retry">
+										<p>로딩에 실패했습니다.</p>
+										<p class="retryBtn"><a href="#" data-role="button" data-corners="false" class="ui-link ui-btn ui-shadow" role="button">재시도</a></p>
+									</div>
+								</div>
+
+								<div class="result"><div class="scriptArea" style="opacity: 1;">
+<div class="sc">1969년 7월 20일, 아폴로 11호가 달 착륙에 성공해 인류가 달에 첫발을 내디딘 지 약 54년 만인 2023년 8월 23일, 달에서 오랜만에 놀라운 소식이 전해졌습니다.<br>바로 인도의 무인 달 탐사선 찬드리얀 3호가 인류에게 미지의 영역으로 남겨져 있었던 달 남극 착륙에 최초로 성공했다는 소식이었는데요, 이로써 인도는 미국, 러시아, 중국에 이어 네 번째로 달 착륙에 성공한 국가가 되었습니다.<br>곧이어 9월 7일에는 일본이 다섯 번째로 무인 달 탐사선 '슬림(SLIM)' 발사에 성공했다는 소식이 전해졌습니다. 50여 년 전 냉전시대의 우주개발 전쟁을 방불케 하는 달 탐사 경쟁이 고조된듯한 양상인데요.<br>인도와 일본뿐 아니라 이미 달 착륙에 성공한바 있는 대표 우주 강국인 미국과 러시아, 중국도 달 탐사에 다시 집중하고 있습니다. 19세기 미국의 금광으로 몰려들었던 골드러시를 연상케 하는데요, 이번 시간에는 우주 강국들의 달을 향한 골드러시 현황을 확인해 보겠습니다.<br>미국은 아폴로 프로젝트 이후 첫 유인 달 탐사 계획인 ‘아르테미스 프로젝트’를 추진 중입니다. NASA는 2025년 우주 비행사의 달 착륙을 목표로, 2032년까지 달에서 토양을 채취, 가공하는 플랜트를 짓는다는 야심찬 계획을 갖고 있습니다.<br>이 계획의 일환으로 2022년 11월, 유인 우주선 '오리온'의 안전성과 성능을 검증하기 위해 우주 비행사 대신 마네킹을 실어 달에 보낸 후 무사 귀환시키는 임무에 성공했습니다. 이 우주선을 이용해 2025년 우주 비행사를 달에 착륙시킨다는 계획입니다.<br>러시아는 2023년 8월, 인도와 마찬가지로 달의 남극을 탐사하는 프로젝트를 추진했습니다. 그러나 달 표면에 착륙해야 했던 'Luna-25' 우주선이 착륙 직전 문제가 생기면서 달에 추락하고 말았는데요.<br>'Luna-25'는 러시아가 47년 만에 쏘아 올린 달 탐사선이었죠. 임무는 실패로 돌아갔지만, 러시아는 중국과의 공동 유인 달 탐사와 달 기지 건설 가능성을 모색할 것이라고 밝혔습니다.<br>중국은 2030년에 달 표면에 자국의 우주 비행사를 보내는 '창어 계획'을 추진하고 있는데요, 2040년까지는 러시아 등과 협력해 '국제 달 연구 기지(International Lunar Research Station, ILRS)'를 완공한다는 원대한 계획을 세웠습니다.<br>이를 위해 먼저 2024년 창어 6호를 발사해 달 표면의 샘플을 채취하고 2026년 창어 7호, 2028년 창어 8호를 발사해 달에서 자원을 직접 채굴, 가공하는 다양한 기술을 테스트할 예정입니다.<br>우주 강국들은 왜 다시 달에 우주 비행사를 보내고 기지를 만들려는 걸까요? 맞습니다. 바로 달의 천연자원이 무궁무진한 상업적 가치를 가졌기 때문입니다. 앞서 말씀드린 대로 달을 향한 '골드러시'가 시작된 것이죠.<br>특히 달의 남극이 탐사 대상으로 주목받는 것은 달의 극지방에 '물'이 있다는 증거 때문입니다. 2008년 인도의 달 탐사선 챤드리얀 1호는 달의 궤도를 돌며 극지방에서 ‘수산기 분자’를 발견했습니다.<br>산소와 수소 원자가 하나씩 결합해 만들어지는 수산기는 물 분자의 주요 성분으로 달에 물이 있다는 결정적인 증거입니다.<br>또한 달의 극지방은 다른 지역보다 반사율이 높은데 학계에서는 그 원인을 얼음으로 추정하고 있습니다. 달의 토양에서 얼음을 채취할 수 있다면, 이는 인간 거주지에 식수와 산소를 공급하는 자원이 될 수 있을 뿐만 아니라, 수소와 산소로 분해해 로켓의 연료로도 활용할 수 있습니다.<br>달에서 직접 연료를 공급해 지구로 귀환하거나 더 먼 우주를 탐사할 수 있게 된다면 달은 우주 탐사의 훌륭한 거점이 될 수 있는 것이죠.<br>달에는 또 지구에서 구하기 어려운 여러 핵심 자원이 존재합니다. 대표적인 자원이 ‘헬륨-3’인데요, NASA는, 지구에서는 희귀한 이 동위원소가 달에는 100만 톤 가량 존재하는 것으로 추산하고 있습니다.<br>헬륨-3는 핵융합에 사용될 수 있고 위험한 방사성 폐기물도 생성하지도 않아 미래의 에너지원으로 엄청난 가능성을 가지고 있는 것으로 알려졌죠.<br>현재는 삼중수소를 이용한 핵융합 연구가 주로 진행되고 있지만, 삼중수소 대신 헬륨-3을 사용하면 보다 효율성이 높은 청정에너지를 얻을 수 있습니다. 달에 존재할 것으로 추산되는 헬륨-3의 양은 인류가 수 세기에 걸쳐 사용할 만큼의 에너지를 만들 수 있는 규모입니다.<br>보잉 연구에 따르면, 달에는 희토류 금속도 다량 존재합니다. 희토류는 스칸듐, 이트륨 등 희귀한 17개 원소를 일컫는데요, 이들은 열과 전기를 잘 전달하는 성질이 있어 스마트폰, 자동차 등의 핵심 부품을 만드는데 꼭 필요한 소재입니다.<br>희토류는 지구상에 워낙 적은 양이 존재하기도 하지만 채굴, 가공, 정제 과정에서 유해 물질이 발생해 환경을 오염시킨다는 지적이 많습니다.<br>또한 전 세계 생산량의 60%를 차지하는 중국은 이 자원을 무기화하고 있는데요, 만약 달에서 희토류 금속을 채굴해올 수 있다면 환경 오염 없이, 특정 국가의 입김 없이, 주요 자원을 활용할 수 있는 것이죠.<br>2023년 8월 달의 남극으로 날아간 챤드리얀 3호는 물, 헬륨-3, 희토류뿐만 아니라 달 표면에서 황, 산소, 알루미늄, 칼슘, 철, 크롬, 티타늄, 망간, 실리콘의 존재도 확인했습니다.<br>이렇게 지구의 부족함을 채워줄 자원들이 달에 묻혀 있으니 우주 강국들이 달에 달려갈 만 한데요, 하지만 달의 자원을 몇몇 국가가 차지하는 것은 전 인류에게 그리 행복한 일이 아닐 겁니다.<br>이를 우려한 UN은 1967년 회원국 60개국의 서명을 받아 어느 나라도 달과 같은 천체의 일부 혹은 전부를 소유할 수 없다는 ‘UN 우주 조약(Space Treaty)’을 체결했습니다.<br>이후 1979년 UN은 달의 소유권 뿐만 아니라 자원의 상업적 활용도 제한하는 ‘달 조약(Moon Agreement)’도 발표했죠.<br>하지만 달 조약에 동의한 국가는 단 18개국으로 우주 강국인 미국, 러시아, 중국 등은 이 조약에 서명하지 않았습니다. 대신 미국은 2020년 아르테미스 프로젝트의 이름을 딴 아르테미스 협정(Artemis Accords)을 발표했습니다.<br>아르테미스 협정에는 ‘우주 조약을 위반하지 않는 범위 내에서 우주 자원의 활용, 즉 상업적 활동을 할 수 있다’는 내용이 담겨 있는데요, 한국을 포함한 많은 국가들이 아르테미스 협정에 서명했지만, 러시아와 중국은 동참하지 않았죠.<br>아직 달 자원의 상업적 활용에 대해서는 여러 논의가 이어지고 있어 특정 국가의 자원 독점을 예단할 수는 없지만, 분쟁 가능성은 간과할 수 없는데요, 달의 잠재적 가치를 발견해 선점하려는 우주 강국들의 '골드러시'가 인류의 미래에 어떤 결과를 가져올지 관심을 가지고 지켜봐야 할 것으로 보입니다.<br></div>
+</div></div>
+							</dd>
+						</dl>
+						<dl id="addMyCont" class="tab addMyCont">
+							<dt class="title"><a href="#" title="즐겨찾기" class="ui-link"><div>즐겨찾기</div></a></dt>
+							<dd class="con notLoad">
+								<div class="result">
+									<!-- add subClass -->
+									<div class="addMyContArea">
+										<div class="enable">
+											<input type="hidden" name="myContBridge" value="/msContB.html">
+											<input type="hidden" name="folderBridge" value="#page(myFolderB,link)">
+											<p class="title">이 콘텐츠를 <em>즐겨찾기에</em>담습니다.</p>
+											<div class="myContArea">
+												<div class="listArea">
+													<div class="infoArea">
+														<div class="info">
+															<div class="folderBox">
+																<label for="tab_folderList" class="text">폴더선택</label>
+																<div class="box">
+																	<div class="ui-select"><div id="tab_folderList-button" class="ui-btn ui-icon-carat-d ui-btn-icon-right ui-corner-all ui-shadow"><span class="folderList default">선택하세요</span><select title="저장할 폴더 선택" id="tab_folderList" class="folderList">
+																		<option value="" class="default">선택하세요</option>
+								<option value="437071" title="기본저장함">기본저장함</option>
+
+																	</select></div></div>
+																	<button type="button" class="btn create ui-btn ui-shadow ui-corner-all">폴더생성</button>
+																</div>
+															</div>
+															<div class="btnArea">
+																<button type="button" class="btn confirm ui-btn ui-shadow ui-corner-all">확인</button>
+															</div>
+														</div>
+														<div class="loadingArea">
+															<p>콘텐츠를 스크랩 중입니다.</p>
+															<p>잠시만 기다려 주세요.<img src="/images/common/ajax-loader.gif" class="mCS_img_loaded"></p>
+														</div>
+													</div>
+												</div>
+												<div class="createArea">
+													<div class="infoArea">
+														<div class="info">
+															<label for="folderList" class="text">폴더명 입력</label>
+															<div class="box"><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" name="p_foldername" maxlength="100"></div></div>
+															<div class="btnArea">
+																<button type="button" class="btn confirm ui-btn ui-shadow ui-corner-all">생 성</button>
+																<button type="button" class="btn reverse cancel ui-btn ui-shadow ui-corner-all">취 소</button>
+															</div>
+														</div>
+														<div class="loadingArea">
+															<p>폴더를 생성 중입니다.</p>
+															<p>잠시만 기다려 주세요.<img src="/images/common/ajax-loader.gif" class="mCS_img_loaded"></p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="disable">
+											<p class="title">이 콘텐츠는 스크랩을 지원하지 않습니다.</p>
+										</div>
+									</div>
+								</div>
+							</dd>
+						</dl>
+						<dl id="ppt" class="tab ppt">
+							<dt class="title"><a href="#" title="공유" class="ui-link"><div>공유</div></a></dt>
+							<dd class="con notLoad">
+								<div class="area">
+									<div class="shareBtn">
+										<ul id="item_share" class="cFix">
+											<!-- 수정 -->
+											<li>
+												<div class="share">
+													<a href="" data-role="button" data-corners="false" class="ui-link ui-btn ui-shadow" role="button">
+														<img src="./images/sub/icon-share-link.png" class="mCS_img_loaded">
+														링크 복사
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="share">
+													<a href="" data-role="button" data-corners="false" class="ui-link ui-btn ui-shadow" role="button">
+														<img src="./images/sub/icon-share-kakao-black.png" class="mCS_img_loaded">
+														카카오톡
+														<span>으로 공유</span>
+													</a>
+												</div>
+											</li>
+											<!-- //수정 -->
+										</ul>
+									</div>
+								</div>
+							</dd>
+						</dl>
+						<!-- <dl id="ppt" class="tab ppt">
+							<dt class="title"><a href="#" title="PPT 다운로드"><div>PPT</div></a></dt>
+							<dd class="con notLoad">
+								<div class="result">
+									<div class="pptArea">
+										<div class="enable">
+											<input type="hidden" name="pptBridge" value="/msContB.html"/>
+											<p class="title">이 콘텐츠의 <em>PPT문서</em>를 다운로드 합니다.</p>
+											<div class="btnArea">
+												<button type="button" class="btn confirm">확 인</button>
+											</div>
+											<iframe width="0" height="0" frameborder="0"></iframe>
+										</div>
+										<div class="disable">
+											<p class="title">이 콘텐츠는 PPT 다운로드를 지원하지 않습니다.</p>
+										</div>
+									</div>
+								</div>
+							</dd>
+						</dl> -->
+					</div>
+				</div>
+			</div>
+		</div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; height: 806px; top: 0px; display: block; max-height: 956px;" oncontextmenu="return false;"><div class="mCSB_dragger_bar" style="line-height: 30px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div></div>
+	</div>
+</div>
+</div>
+<div class="ui-screen-hidden ui-popup-screen ui-overlay-a" id="procPop-screen"></div><div class="ui-popup-container ui-popup-hidden ui-popup-truncate" id="procPop-popup"><div data-role="popup" id="procPop" class="procPopDiv ui-popup ui-body-d ui-overlay-shadow" title="" data-corners="false" data-overlay-theme="a" data-theme="d" data-tolerance="0,0">
+<div class="waitCommentDiv">
+	<p class="comment"></p>
+	<p class="loading">잠시만 기다려 주세요.<img src="/images/common/ajax-loader.gif"></p>
+	<p class="close"><a href="#" data-rel="back" data-role="button" data-corners="false" class="ui-link ui-btn ui-shadow" role="button">닫기</a></p>
+</div>
+</div></div><div class="ui-screen-hidden ui-popup-screen ui-overlay-a" id="sendSMSPop-screen"></div><div class="ui-popup-container ui-popup-hidden ui-popup-truncate" id="sendSMSPop-popup"><div data-role="popup" id="sendSMSPop" class="sendSMSPopDiv ui-popup ui-body-d ui-overlay-shadow" title="" data-corners="false" data-overlay-theme="a" data-theme="d" data-tolerance="0,0">
+<div class="sendSMSDiv">
+	<div class="waitCommentDiv">
+		<p class="comment">SMS를 발송 중입니다.</p>
+		<p class="loading">잠시만 기다려 주세요.<img src="/images/common/ajax-loader.gif"></p>
+		<p class="close" style="display: none;"><a href="#" data-rel="back" data-role="button" data-corners="false" class="ui-link ui-btn ui-shadow" role="button">닫기</a></p>
+	</div>
+	<div class="sendSMS">
+		<h1 class="title"><img src="/images/common/txt_con_sms.gif" alt="콘텐츠 담기"></h1>
+		<div class="telno">
+			<p>휴대전화번호</p>
+			<ul class="listPut">
+				<li><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="tel" maxlength="3" id="p_mtelno1"></div></li>
+				<li><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="tel" maxlength="4" id="p_mtelno2"></div></li>
+				<li><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="tel" maxlength="4" id="p_mtelno3"></div></li>
+			</ul>
+		</div>
+		<div class="message">
+			<p>보내실 메시지</p>
+			<div class="note">
+				<textarea cols="1" rows="1" title="내용을 입력해 주세요" id="p_message" class="ui-input-text ui-shadow-inset ui-body-inherit ui-corner-all ui-textinput-autogrow" style="height: 43px;"></textarea>
+			</div>
+		</div>
+		<div class="btnArea">
+			<a href="#" class="btnConfirm btnType ui-link">확인</a>
+			<a href="#" class="btnCancel btnType ui-link" data-rel="back">취소</a>
+		</div>
+	</div>
+</div>
+</div></div><div class="ui-screen-hidden ui-popup-screen ui-overlay-a" id="gradePop-screen"></div><div class="ui-popup-container ui-popup-hidden ui-popup-truncate" id="gradePop-popup"><div data-role="popup" id="gradePop" class="gradePopDiv ui-popup ui-body-d ui-overlay-shadow" title="" data-corners="false" data-overlay-theme="a" data-theme="d" data-tolerance="0,0" data-dismissible="false">
+		<a href="#" data-role="button" data-rel="back" data-theme="d" data-icon="delete" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-btn-right ui-link ui-btn ui-btn-d ui-icon-delete ui-btn-icon-notext ui-corner-all" role="button">닫기</a>
+		<div class="waitCommentDiv">
+				<p class="comment"></p>
+				<p class="loading">잠시만 기다려 주세요.<img src="/images/common/ajax-loader.gif"></p>
+				<p class="close"><a href="#" data-rel="back" data-role="button" data-corners="false" class="ui-link ui-btn ui-shadow" role="button">닫기</a></p>
+		</div>
+		<div class="gradePop">
+				<div class="grade">
+						<div class="rating">
+								<div class="star"><span style="width:0%"><em>해당 동영상 평가 하기</em></span></div>
+								<p>별 위를 클릭(터치)해 보세요.</p>
+						</div>
+						<div class="btnArea">
+								<a href="#" class="btnConfirm btnType ui-link" title="확인">확인</a>
+								<a href="#" class="btnCancel btnType ui-link" data-rel="back" title="취소">취소</a>
+						</div>
+				</div>
+		</div>
+</div></div></div>
+<form name="frm" method="post" action="">
+<iframe name="pptf" id="pptf" frameborder="0" width="0" height="0" title="ppt 다운로드 프레임"></iframe>
+</form>
+
+<div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon-loading"></span><h1>loading</h1></div></body></html>

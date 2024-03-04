@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> | EIS</title>
+	<link href="../../css/datepicker3.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/module.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/custom.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/popup.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="../../css/tip.css">
+	<link type="text/css" rel="stylesheet" href="../../css/admin.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_eis.css" />
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+	<script src="../../js/bootstrap-datepicker.js"></script>
+	<script src="../../js/locales/bootstrap-datepicker.kr.js"></script>
+	<script src="../../js/jquery.slimscroll.min.js"></script>
+	<script src="../../js/tip.js"></script>
+	<script src="../../js/admin_script.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../js/html5shiv.js"></script>
+		<script src="../../js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body><!-- 배경색 변경시 class="bg" -->
+<div id="wrap"><!-- 메인일 경우 class="main" -->
+
+	<!-- contents -->
+	<div class="content_wrap">
+		<a id="btn_folding_lnb" class="btn_folding_lnb" href="#">lnb control</a>
+		<div class="wrap_max">
+
+			<!-- EP title -->
+			<div class="cont_subtit fix">
+				<!-- 로케이션 -->
+				<ul class="breadcrumb">
+					<li>경영정보</li>
+					<li>실적회의(매출)</li>
+					<li><strong>메인</strong></li>
+				</ul>
+				<!-- //로케이션 -->
+				
+				<!-- 제목 -->
+				<div class="tit_area ">
+					<div class="sub_tit">
+						<span class="tit_list">
+							<span class="tit">메인</span>
+						</span>
+					</div>
+				</div>
+				<!-- //제목 -->
+
+			</div>
+			<!--// EP title -->
+
+
+			<!-- cont -->
+			<div class="cont_wrap">
+
+				<!-- 2015-03-17 -->
+				<div class="tbl_search tbl_search2">
+					<table>
+						<tbody>
+							<tr>
+								<td class="calTd">
+									<div class="date_wrap">
+										<div class="date_input date" id="cal1">
+											<input type="text" style="width:160px;">
+											<a class="btn_calendar input-group-addon" href="#">
+												<i class="icons i_calendar">calendar</i>
+											</a>
+										</div>
+										<span>~</span>
+										<div class="date_input date" id="cal2">
+											<input type="text" style="width:160px;">
+											<a class="btn_calendar input-group-addon" href="#">
+												<i class="icons i_calendar">calendar</i>
+											</a>
+										</div>
+									</div>
+									<span class="btn_area">
+										<a href="#" class="btn_primary small"><span>조회</span></a>
+										<a href="#" class="btn_primary btn_primary_line small tipbox" data-html='<div><ul class="list1"><li>ㆍMIS 기준MIS 기준MIS 기준MIS 기준MIS 기준MIS 기준MIS 기준MIS 기준MIS 기준MIS 기준MIS 기준</li><li>ㆍ인원기준 : 유료인원 기준, 턴키/무료인원 제외</li><li>ㆍ과정범위 : 이러닝/M러닝/우편통신/금융자격 포함</li></ul><span class="arrow"></span></div>'><span>도움말</span></a>
+										<a href="#" class="btn_default small"><span class="small">데이터다운로드</span></a>
+										<a href="#" class="btn_default btn_cWhite small"><span class="small">화이트</span></a>
+										<a href="#" class="btn_default btn_cSky small"><span class="small">하늘</span></a>
+										<a href="#" class="btn_default btn_cBlue small"><span class="small">파랑</span></a>
+										<a href="#" class="btn_default btn_cOrange small"><span class="small">상세자료 다운로드</span></a>
+										<a href="#" class="btn_default btn_cGray small"><span class="small">그레이색이야</span></a>
+									</span>
+
+									<script>
+										var flag = false;
+										//gravity 4줄이상일 때 n 미안일때 s
+										$('.tipbox').tipsy({html : true, gravity: 'n', opacity : '1', title : 'data-html', trigger : 'manual'})
+										.on('click', function(){
+											if( !flag ) {
+												$(this).tipsy('show');
+												flag = true;
+											}
+											else {
+												$(this).tipsy('hide');
+												flag = false;
+											}
+											return false;
+										});
+									</script>
+
+									<script>
+										$('#cal1').datepicker({
+											format: "yyyy.mm",
+											minViewMode: 1, //월력변환
+											language:'kr',
+											autoclose : true
+										})
+										.on('show', function(){$(this).addClass('active');})
+										.on('hide', function(){$(this).removeClass('active');})
+										;
+										$('#cal2').datepicker({
+											format: "yyyy.mm.dd",
+											language:'kr',
+											todayHighlight: true,
+											autoclose : true,
+											todayBtn : 'linked'
+										})
+										.on('show', function(){$(this).addClass('active');})
+										.on('hide', function(){$(this).removeClass('active');})
+										;
+									</script>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //2015-03-17 -->
+
+				<div class="tab_module" id="tab1">
+					<div class="tab_navi">
+						<ul>
+							<li><a href="#tab_item1">소유구분</a></li>
+							<li><a href="#tab_item2">과정분류</a></li>
+							<li><a href="#tab_item3">서비스유형</a></li>
+							<li><a href="#tab_item4">고용보험여부</a></li>
+						</ul>
+					</div>
+					<div class="tab_cons">
+						<!-- 소유구분 -->
+						<script type="text/javascript" src="http://docs.fusioncharts.com/charts/Charts/FusionCharts.js"></script>
+						<div class="tab_article" id="tab_item1">
+							<div class="loadWrap">
+								<div class="graph2" id="chartContainer" style="height:300px; position:relative;">
+								</div>
+								<div class="loading_wrap">
+									<img src="../../images/common/icon_loading.gif" alt="loading">
+									<strong>Loading</strong>
+									<span>Please, wait...</span>
+								</div>
+							</div>
+							<!--
+							<script type="text/javascript" src="http://docs.fusioncharts.com/charts/Code/MyFirstChart/LargeData.xml.js"></script>
+							-->
+							<script type="text/javascript">
+							<!--
+							 // var myChart = new FusionCharts("http://docs.fusioncharts.com/charts/Charts/Area2D.swf", "myChartId", "100%", "100%", "0", "0");
+							 // myChart.setXMLData( largeData );
+							 //myChart.render("chartContainer");
+							  // -->
+							</script>
+
+							<div class="tbl_type05 mt10">
+								<table class="tableData">
+									<thead>
+										<tr>
+											<th scope="col" rowspan="2" class="first w1">구분</th>
+											<th scope="colgroup" colspan="5">2013년 11월 ~ 11월</th>
+											<th scope="colgroup" colspan="5">2013년 11월 ~ 11월</th>
+											<th scope="col" rowspan="2">G/R</th>
+										</tr>
+										<tr>
+											<th>1일차수</th>
+											<th>10일차수</th>
+											<th>20일차수</th>
+											<th>기타차수</th>
+											<th>합계</th>
+											<th>1일차수</th>
+											<th>10일차수</th>
+											<th>20일차수</th>
+											<th>기타차수</th>
+											<th>합계</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="textC"><strong class="tc3">자체</strong></td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>97%</td>
+										</tr>
+										<tr class="even">
+											<td class="textC"><strong class="tc3">공동</strong></td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>97%</td>
+										</tr>
+										<tr>
+											<td class="textC"><strong class="tc3">도입</strong></td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>97%</td>
+										</tr>
+										<tr class="even">
+											<td class="textC"><strong class="tc3">기타</strong></td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>97%</td>
+										</tr>
+										<tr class="total">
+											<td class="textC">합계</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>9,738</td>
+											<td>97%</td>
+										</tr>
+
+									</tbody>
+								</table>
+							</div>
+
+						</div>
+						<!-- //소유구분 -->
+						<!-- 과정분류 -->
+						<div class="tab_article" id="tab_item2">
+							2
+						</div>
+						<!-- //과정분류 -->
+						<!-- 서비스유형 -->
+						<div class="tab_article" id="tab_item3">
+							3
+						</div>
+						<!-- //서비스유형 -->
+						<!-- 고용보험여부 -->
+						<div class="tab_article" id="tab_item4">
+							4
+						</div>
+						<!-- //고용보험여부 -->
+					</div>
+				</div>
+				<script type="text/javascript">
+					$('#tab1').tabsx();
+				</script>
+
+			</div>
+			<!--// cont -->
+
+		</div>
+	</div>
+	<!--// contents -->
+
+	<!-- footer -->
+	<div calss="footer_wrap"></div>
+	<!--// footer -->
+
+</div>
+</body>
+</html>

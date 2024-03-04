@@ -1,0 +1,700 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="ko" xml:lang="ko">
+	<head>
+		<title>i-나루</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta http-equiv="content-script-type" content="text/html"/>
+		<meta http-equiv="content-style-type" content="text/css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+		<link rel="icon" type="image/x-icon" href=""/>
+		<link rel="shortcut_icon" type="image/x-icon" href=""/>
+		<link rel="apple-touch-icon" href=""/>
+		<link rel="apple-touch-icon-precomposed" href=""/>
+		<link rel="stylesheet" href="https://inaru.sericeo.org/css/jquery.mobile-1.4.5.min.css"/>
+		<script type="text/javascript" src="https://inaru.sericeo.org/js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="https://inaru.sericeo.org/js/jquery.mobile-default.js"></script>
+		<script type="text/javascript" src="https://inaru.sericeo.org/js/jquery.mobile-1.4.5.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="https://inaru.sericeo.org/css/common.css"/>
+		<script type="text/javascript" src="https://inaru.sericeo.org/js/jqueryFunc.js"></script>
+		<script type="text/javascript" src="https://inaru.sericeo.org/js/common.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://inaru.sericeo.org/css/login.css"/>
+		<script type="text/javascript" src="https://inaru.sericeo.org/js/login.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="./css/common.css" />
+		<link rel="stylesheet" type="text/css" href="./css/sub.css" />
+		<link rel="stylesheet" type="text/css" href="./css/swiper-bundle.css" />
+		<script type="text/javascript" src="./js/swiper-bundle.min.js"></script>
+
+		<script type="text/javascript" src="./js/design.js"></script>
+	</head>
+	<body>
+		<div class="wrap">
+			<!-- pc header -->
+			<div class="header">
+				<div class="header-in">
+					<h1 class="logo">
+						<a href="">i-나루 SERICEO</a>
+					</h1>
+					<ul class="menu">
+						<li><a href="">특집</a></li>
+						<li><a href="">문화∙인문</a></li>
+						<li><a href="">기술∙트렌드</a></li>
+						<li><a href="">리더십∙소통</a></li>
+					</ul>
+					<div class="header-r">
+						<a href="" class="help">
+							<span>Help Desk</span>
+						</a>
+						<div class="search">
+							<input type="text" placeholder="인기검색어를 확인해보세요." data-role="none">
+							<button type="button" class="s-btn" data-role="none">검색</button>
+						</div>
+						<a href="" class="mypage"></a>
+					</div>
+				</div>
+			</div>
+			<!-- //pc header -->
+			<!-- mo header -->
+			<div class="header-wrap">
+				<div id="search-line" class="search-line">
+					<div class="search-line-in">
+						<input type="text" data-role="none">
+						<a href="" id="go-search" class="go-search">검색하기</a>
+					</div>
+				</div>
+				<div class="header">
+					<h1 class="logo"><a href="">i-나루 SERICEO</a></h1>
+					<div class="menu">
+						<a href="" class="search" id="search">검색</a>
+						<a href="" class="my">마이</a>
+					</div>
+				</div>
+				<script>
+					$(document).ready(function(){
+						$('#search').on('click', function(){
+							$('#search-line').addClass('search-line-on')
+							return false;
+						})
+						$('#go-search').on('click', function(){
+							$('#search-line').removeClass('search-line-on')
+							return false;
+						})
+					})
+
+				</script>
+				<div class="p-info">
+					<span class="name">홍길동</span> 님, 11월 <strong>30시간 30분 학습</strong>
+				</div>
+			</div>
+			<div id="gnb" class="gnb">
+				<a href="">홈</a>
+				<a href="">특집</a>
+				<a href="" class="current">문화∙인문</a>
+				<a href="">기술∙트렌드</a>
+				<a href="">리더십∙소통</a>
+			</div>
+			<!-- //mo header -->
+			<div class="content">
+				<div class="sub-head">
+					<div class="conbox">
+						<!-- sub-head -->
+						<div class="search-box">
+							<div class="copy">
+								<h2>문화∙인문</h2>
+							</div>
+							<div class="info-search">
+								<p class="p-info">홍길동 님, <strong>11월 <span>30시간 30분</span> 학습</strong></p>
+								<div class="search-line">
+									<input type="text" placeholder="인기검색어를 확인해보세요." data-role="none">
+									<button class="go-search" data-role="none">검색</button>
+								</div>
+							</div>
+						</div>
+						<!-- //sub-head -->
+						<!-- sub-tab -->
+						<div class="sub-menu">
+							<div class="sub-menu-in swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="item">
+											<a href="">전체</a>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="item">
+											<a href="">문화/예술</a>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="item">
+											<a href="">역사/철학</a>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="item">
+											<a href="">교양/라이프</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<script>
+								$(document).ready(function(){
+									setMenu(2)
+								})
+							</script>
+						</div>
+						<!-- //sub-tab -->
+					</div>
+				</div>
+
+				<div class="sub-con">
+					<div class="sub-box conbox">
+						<!--  -->
+						<link rel="stylesheet" type="text/css" href="https://mpm.sericeo.org/css/viewer.css">
+						<link rel="stylesheet" type="text/css" href="./css/viewer_add_m.css">
+						<script type="text/javascript" src="https://mpm.sericeo.org/js/viewer_tabControl.js"></script>
+
+						<script type="text/javascript">
+							var tabCtrl;
+							var playlist;
+							var seriVideo = null;
+						
+							$(document).ready(function() {
+								tabCtrl = new ViewerTabController({
+									container:$('.menuArea .menu > dl'),
+									bridge:'/viewer/msViewerB.html'
+								});
+						
+								playlist = [{"cseq":"148514","p_cont":{"p_cseq":"148514"},"gmenu":"0101","menucode":"0206","regseq":"202310130001","lmsyn":"Y"}];
+						
+								seriVideo = new SERIVideo({
+									videoContainer:$('.videoArea'),
+									posterContainer:$('.posterArea'),
+									poster:$('.posterArea .poster'),
+									infoBridge:'/viewer/viewer_bridge_df.html',
+									lmsBridge:'/viewer/default_lms.html',
+									playList:playlist
+								});
+						
+								// default poster setting
+								seriVideo.setPosterContainer({poster:'https://player.sericeo.org/usi2/0206/0206_202310130001/rhm3j3gj2aim/ls0206_202310130001_0.jpg', conttype:'fhd', runtime:''});
+						
+								$(seriVideo).bind('loadedContent', function(e, index) {
+									tabCtrl.setCont(playlist[index]);
+									tabCtrl.selectTab(0);
+						
+									if (seriVideo.playlist.length > 1 && $('.rightArea .controlsArea').length > 0) {
+										var obj = $('.rightArea .controlsArea .btnArea');
+											obj.show();
+						
+										if (index < 1){
+											obj.children('.prevBtn').hide();
+										}else{
+											obj.children('.prevBtn').show();
+										}
+						
+										if (index >= seriVideo.playlist.length - 1){
+											obj.children('.nextBtn').hide();
+										}else{
+											obj.children('.nextBtn').show();
+										}
+									}
+								});
+								seriVideo.loadContent(0);
+						
+								initSendSMSPopup('#sendSMSPop', '/msContB.html');
+							});
+						
+							function loadContent(index) {
+								if (index === "prev" || index === "next") {
+									reverse = $('input[type=hidden][name=p_reverse]');
+									if (reverse.length > 0 && reverse.val() == "Y") {
+										reverse = true;
+									} else reverse = false;
+						
+									if (index === "prev") reverse = !reverse;
+						
+									if (reverse) index = seriVideo.currIndex - 1;
+									else index = seriVideo.currIndex + 1;
+						
+									if (index >= 0 && index < seriVideo.playlist.length) {
+										window.location.href = replaceUrlParameter(window.location.href, "p_startidx", index);
+										return;
+									}
+								}
+							}
+						
+							function procOpi(proc, pseq) {
+								if (proc == "toggle") {
+									$('#opiItem'+pseq).toggleClass('mod');
+								} else if (proc == "opiL") {
+									tabCtrl.load($('.menuArea .menu > dl.opiL'), 'opiL', null, {p_page:pseq});
+								} else if (proc == "opiN") {
+									tabCtrl.procOpi(proc, null, $('#p_contRep'));
+								} else if (proc == "opiM") {
+									tabCtrl.procOpi(proc, pseq, $('#opiItem'+pseq).find('textarea'));
+								} else if (proc == "opiD") {
+									tabCtrl.procOpi(proc, pseq);
+								}
+							}
+						
+							function shareSNS(proc) {
+								var data = {p_proc:proc, p_cseq:tabCtrl.getCont('cseq')};
+						
+								if (proc == 'facebook' || proc == 'twitter' || proc == 'kakao') {
+									window.location.href = "/msContB.html?" + decodeURIComponent($.param(data));
+								} else if (proc == 'sms') {
+									$('#sendSMSPop').popupDialog('open');
+								} else if (proc == 'email') {
+									window.open("/msGiftN.html?p_proc=" + proc + "&p_cseq=" + tabCtrl.getCont('cseq'));
+								}
+							}
+						
+							function initSendSMSPopup(id, bridge) {
+								var ajax = null;
+								setProcStatus(true, 'SMS를 발송 중입니다.');
+								$(id).popupDialog({
+									popupbeforeposition:function(event, ui) {
+									},
+									popupafteropen:function(event, ui) {
+									},
+									popupafterclose:function(event, ui) {
+										$(id+' .sendSMSDiv').removeClass('load');
+										$(id+' .sendSMS input').val('');
+										$(id+' .sendSMS #p_message').val('');
+										setProcStatus(true, 'SMS를 발송 중입니다.');
+										if (ajax != null) {
+											ajax.abort();
+											ajax = null;
+										}
+									}
+								});
+						
+								$(id+' .btnConfirm').bind('click', function() {
+									var mtelno1 = $(id+' #p_mtelno1').val();
+									var mtelno2 = $(id+' #p_mtelno2').val();
+									var mtelno3 = $(id+' #p_mtelno3').val();
+									if (mtelno1 == "") {
+										alert("휴대전화번호를 입력해 주세요.");
+										return;
+									} else if (!(/^[0-9]{2,3}$/.test(mtelno1))) {
+										alert("휴대전화번호가 올바르지 않습니다.");
+										return;
+									} else if (mtelno2 == "") {
+										alert("휴대전화번호를 입력해 주세요.");
+										return;
+									} else if (!(/^[0-9]{3,4}$/.test(mtelno2))) {
+										alert("휴대전화번호가 올바르지 않습니다.");
+										return;
+									} else if (mtelno3 == "") {
+										alert("휴대전화번호를 입력해 주세요.");
+										return;
+									} else if (!(/^[0-9]{4}$/.test(mtelno3))) {
+										alert("휴대전화번호가 올바르지 않습니다.");
+										return;
+									}
+						
+									$(id+' .sendSMS #p_message').val($.trim($(id+' .sendSMS #p_message').val()));
+									var mtelno = mtelno1 + mtelno2 + mtelno3;
+									var message = $(id+' .sendSMS #p_message').val();
+									var data = {p_proc:'sms', p_mtelno:mtelno, p_message:message, p_cseq:tabCtrl.getCont('cseq')};
+						
+									$(id+' .sendSMSDiv').addClass('load');
+									ajax = $.ajax({
+										type:'POST',
+										url:bridge,
+										data:data,
+										cache:false,
+										headers:{'cache-control':'no-cache'},
+										error:function() {
+											ajax = null;
+											setProcStatus(false, "SMS 발송에 실패했습니다.");
+										},
+										success:function(data) {
+											ajax = null;
+											try {
+												eval("var data = " + data + ";");
+												if (data["result"] == "success") {
+													$(id+' .comment').addClass('oneline').html("SMS 발송이 완료 되었습니다.");
+													$(id+' .loading').hide();
+													$(id+' .close').hide();
+													setTimeout(function() {
+														$(id).popupDialog('close');
+													}, 600);
+												} else {
+													setProcStatus(false, data["msg"]);
+												}
+											} catch(e) {
+													setProcStatus(false, "SMS 발송에 실패했습니다.");
+											}
+										}
+									});
+								});
+						
+								$(id+' .sendSMS input').bind('keypress', function(e) {
+									checkNumber(e);
+								});
+						
+								function setProcStatus(isLoading, msg) {
+									$(id+' .comment').html(msg);
+									if (isLoading) {
+										$(id+' .loading').show();
+										$(id+' .close').hide();
+									} else {
+										$(id+' .loading').hide();
+										$(id+' .close').show();
+									}
+									setTimeout(function() {
+										$(id).popupDialog('close');
+									}, 600);
+								}
+						
+								function checkNumber(event) {
+									var evt = event || window.event;
+									var key = evt.keyCode || evt.which;
+									key = String.fromCharCode(key);
+									var regex = /[0-9]|\./;
+									if (!regex.test(key)) {
+										evt.returnValue = false;
+										if(evt.preventDefault) evt.preventDefault();
+									}
+								}
+							}
+						
+							function openGradePop() {
+								$('#gradePop').popupDialog('open');
+							}
+						
+							$(document).ready(function() {
+								$('#gradePop').procPopupDialog({
+									closeDelay:600,
+									width:'280px',
+									load:false,
+									url:'/msContB.html',
+									procMsg:'콘텐츠 평가를 저장 중입니다.',
+									successMsg:'콘텐츠 평가가 완료되었습니다.',
+									failMsg:'콘텐츠 평가 저장에 실패했습니다.',
+									beforeposition:function(event, ui) {
+										$('#gradePop').find('.star span').css('width', '0%');
+									}
+								});
+						
+								$('#gradePop .btnConfirm').bind('click', function() {
+									var grade;
+									if ($('#gradePop .star span').width() < 0) grade = 0;
+									else grade = Math.round($('#gradePop .star span').width() * 5 / $('#gradePop .star').width());
+									grade = Math.max(Math.min(grade, 5), 0);
+									if (grade < 1) {
+										alert("별점을 선택해 주세요.");
+										return;
+									}
+						
+									var data = {p_proc:'gradeN', p_grade:grade, p_cseq:tabCtrl.getCont('cseq')};
+									//data = $.extend(true, data, tabCtrl.getCont('cseq'));
+						
+									$('#gradePop').procPopupDialog('options', {
+										data:data,
+										success:function(data) {
+										}
+									});
+									$('#gradePop').procPopupDialog('load');
+								});
+						
+								initGradeProcPopup($('#gradePop'));
+						
+								function initGradeProcPopup(gradeObj) {
+									var touchstart, touchmove, touchend;
+									var isTouch = false, isEnableTouch;
+									if ("ontouchstart" in window) {
+										isEnableTouch = true;
+										touchstart = "touchstart";
+										touchmove = "touchmove";
+										touchend = "touchend";
+									} else {
+										isEnableTouch = false;
+										touchstart = "mousedown";
+										touchmove = "mousemove";
+										touchend = "mouseup";
+									}
+						
+									gradeObj.find('.star').bind(touchstart, touchend, function(e) {
+										e.preventDefault();
+										isTouch = true;
+										if (isEnableTouch) e = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+										calcRating(e.pageX - gradeObj.find('.star').offset().left);
+									});
+						
+									gradeObj.bind(touchmove, function(e) {
+										e.preventDefault();
+										if (!isTouch) return;
+										if (isEnableTouch) e = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+										calcRating(e.pageX - gradeObj.find('.star').offset().left);
+									});
+						
+									gradeObj.bind('mouseleave mouseup', function(e) {
+										isTouch = false;
+									});
+						
+									function calcRating(x) {
+										var percent;
+										if (x < 0) percent = 0;
+										else percent = (Math.floor(x * 5 / gradeObj.find('.star').width()) + 1) * 20;
+										gradeObj.find('.star span').css('width', percent+'%');
+									}
+								}
+						
+								$('video').contextmenu(function(){ return false; });
+								$('video').click(function(){ return false; });
+							});
+						</script>
+
+						<div class="content mobile cFix">
+							<div class="prev">
+								<a href="">이전</a>
+							</div>
+							<div class="viewerArea">
+								<div class="viewer vertical">
+									<div class="leftArea container">
+										<div class="viewArea" style="height: auto; margin-top: 0px; top: 0px;">
+											<div class="videoArea">
+												<video src="https://mobile-vod.seri.org/mgls/usi2/0206/0206_202310130001/rhm3j3gj2aim/lm0206_202310130001.mp4?key=MzE3MjMyMTAwNzIwNzYzMzg4MjE3MzExODAxOW1vYmlsZS12b2Quc2VyaS5vcmcwNzAvbWdscy91c2kyLzAyMDYvMDIwNl8yMDIzMTAxMzAwMDEvcmhtM2ozZ2oyYWltL2xtMDIwNl8yMDIzMTAxMzAwMDEubXA0MjE1MjY1MDA3MzM1OTI5NDMxNTYzMTkzc2VyaW0wMDAwMDAxMjAwMDU3MjI5" width="100%" poster="https://player.sericeo.org/usi2/0206/0206_202310130001/rhm3j3gj2aim/ls0206_202310130001_0.jpg" controlslist="nodownload" style="width: 100%; height: 191.25px; margin-top: 0px;"></video>
+												<div class="controls" style="display: none;">
+													<div class="playBtnArea"><a href="#" title="Play" class="ctrlBtn play ui-link">Play</a></div>
+													<div class="sliderArea" style="right: 84px;">
+														<div class="track">
+															<div class="slider-progress" style="width: 100%;"></div>
+															<div class="slider-current"></div>
+														</div>
+														<input type="range" data-role="none" class="slider" value="0" min="0" max="100" step="0.01">
+													</div>
+													<div class="videoTimeArea"><span class="videoTime">00:00</span></div>
+													<div class="fullscreenBtnArea"><a href="#" title="전체화면보기" class="ctrlBtn enterFullscreen ui-link">전체화면보기</a></div>
+												</div>
+											</div>
+											<div class="posterArea" style="width: 100%; height: auto;">
+												<img class="poster" src="https://player.sericeo.org/usi2/0206/0206_202310130001/rhm3j3gj2aim/ls0206_202310130001_0.jpg">
+												<div class="btnArea">
+													<a href="#" class="btnPlay ui-link"><img src="https://mpm.sericeo.org/images/viewer/btn_play.png" alt="Play"></a>
+												</div>
+												<div class="timeArea">06:57</div>
+												<div class="textArea loading">
+													<div class="comment">
+														<p class="txt1">로딩중입니다.</p>
+														<p class="txt2">잠시만 기다려 주세요.</p>
+													</div>
+												</div>
+												<div class="textArea retry">
+													<div class="comment">
+														<p class="txt1">로딩에 실패했습니다.</p>
+														<p class="txt2">재시도</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div>
+										<div id="trace" style="background:#000;color:#fff;"></div>
+									</div>
+									<div class="rightArea">
+				
+										<div class="controlsArea cFix">
+											<div class="prevarea">
+												<a class="fav-star ui-link" href="javascript:openGradePop()">콘텐츠 평가</a>
+											</div>
+										</div>
+										<div class="menuArea">
+											<div class="overlay"><div class="line"></div></div>
+											<div class="menu">
+												<dl id="opiL" class="tab opiL">
+													<dt class="title"><a href="#" title="의견" class="ui-link"><div>의견</div></a></dt>
+													<dd class="con">
+														<div class="loadingProc">
+															<div class="proc">
+																<p>로딩 중입니다.</p>
+																<p>잠시만 기다려 주세요.<img src="/images/common/ajax-loader.gif"></p>
+															</div>
+															<div class="retry">
+																<p>로딩에 실패했습니다.</p>
+																<p class="retryBtn"><a href="#" data-role="button" data-corners="false" class="ui-link ui-btn ui-shadow" role="button">재시도</a></p>
+															</div>
+														</div>
+				
+														<div class="result"><div class="textArea" style="opacity: 1;">
+						<div class="area">
+							<div class="text"><textarea id="p_contRep" rows="1" cols="1" title="의견을 남겨주세요" class="ui-input-text ui-shadow-inset ui-body-inherit ui-corner-all ui-textinput-autogrow"></textarea></div>
+							<div class="btn"><a href="#" onclick="procOpi('opiN'); return false"><img src="https://mpm.sericeo.org/images/viewer/btn_confirm.gif" alt="확인"></a></div>
+						</div>
+					</div><div class="opiArea" style="opacity: 1;">
+						<ul class="opiList">
+				
+							<li class="noCont">
+								<span>등록된 의견이 없습니다.</span>
+							</li>
+							<li class="page">
+								<div>
+				
+								</div>
+							</li>
+						</ul>
+					</div></div>
+													</dd>
+												</dl>
+												<dl id="script" class="tab script on">
+													<dt class="title"><a href="#" title="원문" class="ui-link"><div>원문</div></a></dt>
+													<dd class="con">
+														<div class="loadingProc">
+															<div class="proc">
+																<p>로딩 중입니다.</p>
+																<p>잠시만 기다려 주세요.<img src="/images/common/ajax-loader.gif"></p>
+															</div>
+															<div class="retry">
+																<p>로딩에 실패했습니다.</p>
+																<p class="retryBtn"><a href="#" data-role="button" data-corners="false" class="ui-link ui-btn ui-shadow" role="button">재시도</a></p>
+															</div>
+														</div>
+				
+														<div class="result"><div class="scriptArea" style="opacity: 1;">
+						<div class="sc">팬데믹 이후 최근 경영 환경은 더욱 예측하기 어려운 방향으로 빠르게 변화하고 있습니다.<br>‘불확실성’ 자체가 기업 경영의 새로운 규범이 되었다고 해도 과언이 아닐텐데요, 영국의 컨설팅 기업 EY는 이러한 경영 환경의 변화에 효과적으로 대비하고, 꾸준히 성장하는 기업으로 거듭나기 위한 조직관리를 위해 ‘4가지 리밸런싱’이 필요하다고 강조합니다.<br>기존과는 다른 조직관리의 ‘새로운 균형점’을 구축해야 한다는 것인데요, 어떤 점들을 고려해야 하는지, 그 구체적인 내용을 확인해 보겠습니다.<br>EY는 전 세계 20개국 25개 산업 분야 근로자 17,000명과 고용주 1,600명을 대상으로 ‘근무 인식’에 대한 설문조사를 실시했습니다.<br>그 결과 고용주와 직원 간에 상당한 인식 차이가 존재하는 것으로 드러났는데요.<br>이를테면, ‘지금 우리 회사가 재정적인 어려움을 겪고 있다’고 응답한 고용주는 전체 응답자의 61%에 달한 반면, 동일하게 응답한 직원은 절반이 채 되지 않는 것으로 나타났습니다.<br>당연한 결과처럼 보일 수도 있지만, EY는 이 간극을 최소화하려는 노력이 필요하다고 강조합니다.<br>기업과 직원 간의 인식 격차가 미래에는 기업이 직면하게 될 리스크 중 하나가 될 수 있기 때문입니다.<br>고용주와 직원 간 인식 격차가 큰 대표적인 부문 중 하나가 바로 인사제도일 텐데요.<br>최근 많은 기업이 급변하는 대외 환경에 발맞추기 위해 새로운 인사제도를 도입하고 있죠.<br>하지만, 업종의 특성이나 조직 구성을 고려하지 않은 제도 혁신은 오히려 역효과를 부를 수도 있습니다.<br>예를 들어, 글로벌 트렌드에 맞는 수평적인 조직문화를 구축한다는 명목으로 직원들에게 통일된 직급제도나 평가 기준을 일괄적으로 적용할 경우, 모든 직원을 만족시킬 수 없을 뿐 아니라, 이후 새로운 경영 환경의 변화를 맞이했을 때 직원들의 혼란과 불만만 가중시키는 결과를 초래할 수 있습니다.<br>EY는 “단순히 트렌드를 쫓거나, 경쟁사에 뒤처지지 않기 위한 목적으로 인사제도를 바꾸기 보다는, 새로운 제도가 회사와 직원들에게 미칠 영향을 종합적으로 고려한 새로운 균형점을 모색하는 과정이 선행되어야 한다”고 강조합니다.<br>이를테면, 새로운 인사제도가 ‘우리 기업이 추구하는 가치와 철학에 부합하는지’, ‘기존 제도와 충돌하는 부분은 없는지’ 등을 다방면으로 검증해야 한다는 것이죠.<br>두 번째는 근무 표준의 리밸런싱입니다.<br>EY는 고용주와 근로자 간 인식 차이를 설명하는 또 다른 사례로 ‘하이브리드 근무’를 들었는데요, 설문 결과에 따르면 근로자의 84%는 주 1회 이하의 오피스 근무를 희망했고, 이 중 절반에 가까운 응답자는 재택근무로 전면 전환하더라도 업무 생산성에 큰 문제가 없을 것이라고 답했습니다.<br>하지만 직원들의 완전 재택근무 방식에 동의하는 기업은 전체의 20%에 불과했죠.<br>EY는 외부 환경 변화만을 고려해 쉽게 달라지는 근무 방식에 대한 지침이 직원들의 혼란을 가중시킨다고 지적하면서, 이미 재택근무의 장점을 경험한 직원들의 높아진 눈높이와 달라진 니즈에 맞는 접근이 필요하다고 설명합니다.<br>기존에는 모든 근로자에게 획일적인 근무 기준이 일괄적으로 적용되었다면, 앞으로는 직무 특성이나 직원 개인의 출퇴근 거리에 따른 생산성 차이를 분석하는 등 다양한 변수를 고려해 ‘고도화된 새로운 근무 표준’이 수립되어야 한다는 것이지요.<br>EY는 세 번째로 생성형 AI 등 신기술을 보는 관점에 대한 리밸런싱이 필요하다고 설명합니다.<br>AI 기술의 잠재력은 누구도 부정할 수 없을 만큼 강력하지만, 이러한 기술이 세상을 바꿀 것이라는 막연한 낙관은 경계할 필요가 있다고 언급했는데요.<br>EY의 설문에 따르면 AI에 대한 직원들의 인식이 산업별로 큰 차이를 보이는 것으로 나타났습니다.<br>일례로, ‘AI가 나의 일하는 방식을 바꿀 것인가’라는 질문에 통신/미디어 산업 종사자의 50% 이상은 긍정적으로 응답했지만, 전통 산업에 속하는 방위산업 종사자의 경우에는 18%에 그쳤고, ‘AI가 업무 생산성을 높여줄 것인가’라는 질문에도 통신/미디어 산업 종사자의 42%가 그렇다고 응답한 반면, 사람의 손이 많이 필요한 의료서비스 분야 종사자들은 긍정 응답 비율이 10%에 불과했습니다.<br>이처럼 산업에 따라, 또 기업에 따라, AI의 도입 효과는 다르게 나타날 수밖에 없습니다.<br>EY는 “생성형 AI가 가져올 변화에 대한 외부의 기대감에 과도하게 의존하기 보다는 각 기업이 직면한 현실과 산업 특성 등을 고려해 AI 활용의 실효성을 냉정하게 평가하고 그 효과를 극대화할 수 있는 방안을 고민해야 한다”고 제안했습니다.<br>어떤 분야, 어떤 직무에 어떻게 활용할지를 면밀하게 검토하고 관련 직무를 담당하는 부서나 인력을 대상으로 별도의 사전 교육을 실시하는 것과 같은 프로세스를 통해 우리 회사에 맞는 적절한 균형점을 찾아나가는 것이 중요하다는 것이죠.<br>EY는 불확실성의 시대에 기업이 미래를 대비할 수 있는 가장 중요한 요인 중 하나로 신뢰와 공감을 바탕으로 한 ’조직 문화의 리밸런싱‘을 언급했습니다.<br>EY는 조직 문화가 재무성과에 주는 영향을 확인하기 위해, 설문에 참여한 기업들의 조직 문화를 배려/소통/연결/포용/미래 탐색/신뢰의 6가지 척도로 나누어 분석했는데요.<br>그 결과, 조직 문화 점수가 높은 기업은 일반 기업 대비 생산성은 평균 2배 이상, 우수 인력을 유지할 확률은 평균 1.5배 이상 높은 것으로 나타났습니다.<br>EY는 앞으로 조직은, 우리가 익히 잘 알고 있는 ‘외부 환경으로부터의 탄력성’뿐만 아니라, 조직 구성원들의 정서 변화에 민첩하게 대응할 수 있는 ‘내부 탄력성’까지 겸비해야 한다고 강조했는데요.<br>EY는 내부 탄력성을 갖춘 조직을 ‘피플센트릭’, 즉 ‘사람 중심적’인 조직이라고 명명하며, 내부 탄력성을 확보하기 위해서는 “조직 건강도 진단이나 직원 인터뷰를 지속적으로 운영하면서 직원들의 정서를 파악하고 점검해야 한다”고 조언했습니다.<br>지금까지 급변하는 경영 환경 속에서 미래를 대비하기 위한 기업의 조직관리 전략 포인트를 확인해 봤는데요.<br>기존의 조직관리 전략이 직원들에게 ‘어떻게 일해야 하는지’에 대해서만 초점을 맞춰왔다면, 앞으로는 직원들에게 ‘왜’ 일해야 하는지에 대한 근본적인 질문을 던지고, 그 해답을 찾도록 지원하는 방향으로 변화해야 할 것입니다.<br>이러한 변화야말로, 기업 뿐 아니라 조직 구성원까지 함께 지속적으로 성장할 수 있는 발판이 될 수 있기 때문입니다.<br>우리 조직에는 어떤 새로운 균형점, 리밸런싱 전략이 필요한지 고민해보시기 바랍니다.<br></div>
+					</div></div>
+													</dd>
+												</dl>
+												<dl id="addMyCont" class="tab addMyCont">
+													<dt class="title"><a href="#" title="즐겨찾기" class="ui-link"><div>즐겨찾기</div></a></dt>
+													<dd class="con notLoad">
+														<div class="result">
+															<!-- add subClass -->
+															<div class="addMyContArea">
+																<div class="enable">
+																	<input type="hidden" name="myContBridge" value="/msContB.html">
+																	<input type="hidden" name="folderBridge" value="#page(myFolderB,link)">
+																	<p class="title">이 콘텐츠를 <em>즐겨찾기</em>에 담습니다</p>
+																	<div class="myContArea">
+																		<div class="listArea">
+																			<div class="infoArea">
+																				<div class="info">
+																					<div class="folderBox">
+																						<label for="tab_folderList" class="text">폴더선택</label>
+																						<div class="box">
+																							<div class="ui-select"><div id="tab_folderList-button" class="ui-btn ui-icon-carat-d ui-btn-icon-right ui-corner-all ui-shadow"><span class="folderList default">선택하세요</span><select title="저장할 폴더 선택" id="tab_folderList" class="folderList">
+																								<option value="" class="default">선택하세요</option>
+																								<option value="437071" title="기본저장함">기본저장함</option>
+																							</select></div></div>
+																							<button type="button" class="btn create ui-btn ui-shadow ui-corner-all">폴더생성</button>
+																						</div>
+																					</div>
+																					<div class="btnArea">
+																						<button type="button" class="btn confirm ui-btn ui-shadow ui-corner-all">확 인</button>
+																					</div>
+																				</div>
+																				<div class="loadingArea">
+																					<p>콘텐츠를 스크랩 중입니다.</p>
+																					<p>잠시만 기다려 주세요.<img src="/images/common/ajax-loader.gif"></p>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="createArea">
+																			<div class="infoArea">
+																				<div class="info">
+																					<label for="folderList" class="text">폴더명 입력</label>
+																					<div class="box"><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input type="text" name="p_foldername" maxlength="100"></div></div>
+																					<div class="btnArea">
+																						<button type="button" class="btn confirm ui-btn ui-shadow ui-corner-all">생 성</button>
+																						<button type="button" class="btn reverse cancel ui-btn ui-shadow ui-corner-all">취 소</button>
+																					</div>
+																				</div>
+																				<div class="loadingArea">
+																					<p>폴더를 생성 중입니다.</p>
+																					<p>잠시만 기다려 주세요.<img src="/images/common/ajax-loader.gif"></p>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="disable">
+																	<p class="title">이 콘텐츠는 스크랩을 지원하지 않습니다.</p>
+																</div>
+															</div>
+														</div>
+													</dd>
+												</dl>
+												<dl id="ppt" class="tab ppt">
+													<dt class="title"><a href="#" title="공유" class="ui-link"><div>공유</div></a></dt>
+													<dd class="con notLoad">
+														<div class="area">
+															<div class="shareBtn">
+																<ul id="item_share" class="cFix">
+																	<!-- 공유 -->
+																	<li>
+																		<div class="share">
+																			<a href="" data-role="button" data-corners="false" class="btnFacebook ui-link ui-btn ui-shadow" role="button">
+																				<img src="./images/sub/icon-share-link.png">링크 복사
+																			</a>
+																		</div>
+																	</li>
+																	<li>
+																		<div class="share">
+																			<a href="" data-role="button" data-corners="false" class="btnTwitter ui-link ui-btn ui-shadow" role="button">
+																				<img src="./images/sub/icon-share-kakao-black.png">카카오톡<span>으로 공유</span>
+																			</a>
+																		</div>
+																	</li>
+																	<!-- //공유 -->
+																</ul>
+															</div>
+														</div>
+													</dd>
+												</dl>
+												<!-- <dl id="ppt" class="tab ppt">
+													<dt class="title"><a href="#" title="PPT 다운로드"><div>PPT</div></a></dt>
+													<dd class="con notLoad">
+														<div class="result">
+															<div class="pptArea">
+																<div class="enable">
+																	<input type="hidden" name="pptBridge" value="/msContB.html"/>
+																	<p class="title">이 콘텐츠의 <em>PPT문서</em>를 다운로드 합니다.</p>
+																	<div class="btnArea">
+																		<button type="button" class="btn confirm">확 인</button>
+																	</div>
+																</div>
+																<div class="disable">
+																	<p class="title">이 콘텐츠는 PPT 다운로드를 지원하지 않습니다.</p>
+																</div>
+															</div>
+														</div>
+													</dd>
+												</dl> -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--  -->
+					</div>
+				</div>
+				<button type="button" id="go-top" class="go-top" data-role="none">go top</button>
+			</div>
+			<div class="footer">
+				<div class="footer-in">
+					<div class="footer-logo"><a href="">i-나루 SERICEO</a></div>
+					<ul class="footer-menu">
+						<li><a href="">이용약관</a></li>
+						<li><a href="">저작권정책</a></li>
+						<li><a href=""><strong>개인정보처리방침</strong></a></li>
+						<li><a href="">이메일무단수집거부</a></li>
+					</ul>
+					<div class="tel">
+						<p class="tel-num">
+							고객지원 <strong>02-2143-8507</strong>
+						</p>
+						<p class="tel-info">
+							고객 정보 보호를 위해 통화내용은 녹음될 수 있습니다.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

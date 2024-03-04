@@ -1,0 +1,311 @@
+<!DOCTYPE HTML>
+<!--[if IE 7]><html class="ie7" lang="ko"><![endif]-->
+<!--[if IE 8]><html class="ie8" lang="ko"><![endif]-->
+<!--[if gte IE 9]><!--><html lang="ko"><!--<![endif]-->
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>관리자 통계</title>
+	<link rel="stylesheet" href="../css/admin_edu.css">
+	<link rel="stylesheet" href="../css/chart.css">
+	<link rel="stylesheet" href="../css/admin_edu_add.css">
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="../js/respond.min.js"></script>
+	<![endif]-->
+	<!--[if lte IE 8]><script src="../js/excanvas.min.js"></script><![endif]-->
+	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script src="../js/jquery.flot.js"></script>
+	<script src="../js/jquery.flot.resize.min.js"></script>
+	<script src="../js/edu_admin_default.js"></script>
+</head>
+<body class="themeC">
+	<div class="wrap">
+		<header>
+			<h1>크래듀 교육관리 시스템</h1>
+			<a href="#" class="backBtn"><span>이전</span></a>
+			<a href="#" class="menuBtn"><span>메뉴</span></a>
+		</header>
+		<section class="content">
+			<!-- 탭메뉴 -->
+			<div class="tabmenu">
+				<a href="#" class="on"><span class="step1">학습현황</span></a>
+				<a href="#"><span class="step2">운영보고서</span></a>
+			</div>
+			<!-- 학습현황 시작 -->
+			<div class="monStatus">
+				<!-- 학습현황 상단 2016-02-04 디자인변경 -->
+				<div class="monHead">
+					<div class="copy">
+						<p class="copy1">크레듀 스마트러닝 아카데미</p>
+						<p class="copy2">2014.09 전체 학습현황</p>
+					</div>
+					<div class="statusTabWrap">
+						<ul class="statusTab">
+							<li><a href="#" class="on">이러닝</a></li>
+							<li><a href="#">집합</a></li>
+						</ul>
+					</div>
+					<div class="monBar">
+						<div class="logo"><span>K-Space M-Learning Center</span></div>
+						<div class="monInfo">
+							<a href="#" class="monPrev"><span>이전</span></a>
+							<p><span>9</span>월</p>
+							<a href="#" class="monNext"><span>다음</span></a>
+						</div>
+						<div class="monSelect">
+							<p>교육차수선택</p>
+							<span class="select">
+								<select id="">
+									<option value="" selected="selected">2014.09</option>
+									<option value="">2014.08</option>
+								</select>
+							</span>
+						</div>
+					</div>
+				</div>
+				<!-- 학습자 인원 현황 -->
+				<div class="peopleCount">
+					<p class="tit">학습자 <span>인원현황</span></p>
+					<ul>
+						<li>
+							<p class="count">
+								<span class="num">70.8</span>
+								<span class="unit">개</span>
+							</p>
+							<span class="bar"></span>
+							<p class="info">개설과정수</p>
+						</li>
+						<li>
+							<p class="count">
+								<span class="num">683</span>
+								<span class="unit">명</span>
+							</p>
+							<span class="bar"></span>
+							<p class="info">신청인원</p>
+						</li>
+						<li>
+							<p class="count">
+								<span class="num">249</span>
+								<span class="unit">명</span>
+							</p>
+							<span class="bar"></span>
+							<p class="info">입과인원</p>
+						</li>
+					</ul>
+				</div>
+				<!-- 학습자 진도율 -->
+				<div class="progressRate">
+					<p class="tit">학습자 <span>진도율</span></p>
+					<ul>
+						<li>
+							<p class="number">
+								<span class="num">4</span><span class="unit">명</span>
+							</p>
+							<p class="info">수료 인원</p>
+						</li>
+						<li>
+							<p class="number">
+								<span class="num">44</span><span class="unit">명</span>
+							</p>
+							<p class="info">미수료 인원</p>
+						</li>
+						<li>
+							<p class="number">
+								<span class="num">8.3</span><span class="unit">%</span>
+							</p>
+							<p class="info">수료율</p>
+						</li>
+						<li>
+							<p class="number">
+								<span class="num">48</span><span class="unit">명</span>
+							</p>
+							<p class="info">총인원</p>
+						</li>
+					</ul>
+					<div class="chartWrap"><div class="chart1" id="chart1"></div></div>
+				</div>
+				<!-- 학습자 분포도 -->
+				<div class="gradeView">
+					<p class="tit">학습자 <span>성적분포도</span></p>
+					<div class="chart2" id="chart2"></div>
+				</div>
+				<!-- 학습자 교육비 -->
+				<div class="eduPrice">
+					<p class="tit">학습자 <span>교육비</span></p>
+					<dl>
+						<dt>총 교육비</dt>
+						<dd>: 35,502,800원</dd>
+						<dt>환급금(예상)</dt>
+						<dd>: 7,355,700원</dd>
+						<dt>실 교육비</dt>
+						<dd>: 28,147,100원</dd>
+						<dt>1인당 교육비</dt>
+						<dd>: 48,363원</dd>
+					</dl>
+				</div>
+			</div>
+		</section>
+		<footer class="footer">
+			<div class="person">
+				<div class="number1">
+					<a href="tel:0262629128">
+						<span class="name">교육컨설팅 문의 : 최승운 과장</span>
+						<span class="num">02-6262-9128</span>
+					</a>
+				</div>
+				<div class="number2">
+					<a href="tel:0262629018">
+						<span class="name">교육 운영 문의 : 김보민 사원</span>
+						<span class="num">02-6262-9018</span>
+					</a>
+				</div>
+				<p class="copy">
+					COPYRIGHT ⓒ 2014 CREDU. ALL RIGHT RESERVED.
+					<button type="button"><img src="../images/com/bg_logout.png" alt="로그아웃" /></button>
+				</p>
+			</div>
+		</footer>
+	</div>
+	<script type="text/javascript">
+	var colors1 = [], colors2 = [];
+
+	if($('body').is('.themeA')) {
+		colors1 = ['#f06eaa','#f09dc3', '#a3a3a3', '#4ed1f4', '#00aeef'];
+		colors2 = ['#00aeef', '#00aeef', '#8d3dd8', '#00aeef']
+	}
+	if($('body').is('.themeB')) {
+		colors1 = ['#f06eaa','#f09dc3', '#a3a3a3', '#52be7f', '#208c4d']
+		colors2 = ['#52be7f', '#52be7f', '#8d3dd8', '#52be7f']
+	}
+	if($('body').is('.themeC')) {
+		colors1 = ['#f06eaa','#f09dc3', '#a3a3a3', '#ffaf8c', '#fe634e'];
+		colors2 = ['#fe634e', '#fe634e', '#8d3dd8', '#fe634e']
+	}
+		
+	//차트1
+	var data = [
+					{data:[[26,10]], bars:{fillColor:colors1[0]}},
+					{data:[[19,30]], bars:{fillColor:colors1[1]}},
+					{data:[[0,50]], bars:{fillColor:colors1[2]}},
+					{data:[[1,70]], bars:{fillColor:colors1[3]}},
+					{data:[[3,90]], bars:{fillColor:colors1[4]}}
+				];
+
+	var p = $.plot("#chart1", data,  {
+		bars: {
+			show: true,
+			align:'center',
+			barWidth: 5,
+			lineWidth : 0,
+			horizontal : true
+		},
+		xaxis : {
+			color:'#dcdcdc',
+			autoscaleMargin : 0.1,
+			tickSize : 5
+		},
+		yaxis: {
+			min:0,
+			max:100,
+			ticks: [[10,'0%'],[30,'1~49%'],[50,'59~79%'],[70,'80~99%'],[90,'100%']],
+			autoscaleMargin : 0.1,
+			tickLength: 0,
+		},
+		grid:{
+			borderWidth: {
+				top:0,
+				left:2,
+				bottom:2,
+				right:0
+			},
+			borderColor : '#dcdcdc'
+		},
+		shadowSize : 0
+	});
+
+	var data2 = [
+					{data:[[13, 100]], bars:{fillColor:colors2[0]}},
+					{data:[[38, 30.8]], bars:{fillColor:colors2[1]}},
+					{data:[[63, 23]], bars:{fillColor:colors2[2]}},
+					{data:[[88, 3]], bars:{fillColor:colors2[3]}},
+				]
+
+	var p2 = $.plot("#chart2", data2,  {
+		bars: {
+			show: true,
+			align:'center',
+			barWidth: 3,
+			lineWidth : 0
+		},
+		xaxis: {
+			min : 0,
+			max : 100,
+			ticks: [[13, '80미만'], [38, '80~89점'], [63, '90~94점'], [88, '95점 이상']],
+			tickLength: 0
+		},
+		yaxis : {
+			min : 0,
+			max : 100,
+			autoscaleMargin : 0.2,
+			tickSize : 20
+		},
+		grid:{
+			borderWidth: {
+				top:0,
+				left:0,
+				bottom:2,
+				right:0
+			},
+			borderColor : '#dcdcdc'
+		},
+		shadowSize : 0
+	});
+
+
+	function graphLabel() {
+		$('.data-point-label').remove();
+		for(var j=0; j<data.length; j++)
+		{
+			$.each(p.getData()[j].data, function(i, el){
+			  var o = p.pointOffset({x: el[0], y: el[1]});
+			  $('<div class="data-point-label count'+(j+1)+'">' + el[0] + '명</div>').css( {
+				position: 'absolute',
+				left: o.left + 5,
+				top: o.top - 11
+			  }).appendTo(p.getPlaceholder());
+			});
+		}
+	}
+
+	function graphLabel2() {
+		$('.data-point-label2').remove();
+		for(var j=0; j<data2.length; j++)
+		{
+			$.each(p2.getData()[j].data, function(i, el){
+				var o = p2.pointOffset({x: el[0], y: el[1]});
+				var o2 = p2.pointOffset({x:0, y: 10});
+				var t_height = (el[1] >= 10 ) ? o.top - 5 : o2.top - 5; 
+				//alert( o2.top );
+			  $('<div class="data-point-label2 count'+(j+1)+'">' + el[1] + '%</div>').css( {
+				position: 'absolute',
+				left: o.left + 12,
+				top: t_height
+			  }).appendTo(p2.getPlaceholder());
+			});
+		}
+	}
+
+	graphLabel();
+	graphLabel2();
+	$(window).on('resize', function(){
+		graphLabel();
+		graphLabel2();
+	});
+
+	</script>
+<div class="goTop" id="go_top"><a href="#"><span>페이지상단으로 이동</span></a></div>
+</body>
+</html>

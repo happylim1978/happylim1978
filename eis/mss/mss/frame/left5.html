@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>매출정산 현황 | MSS</title>
+	<link href="../../css/datepicker3.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/module.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/custom.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/popup.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="../../css/admin.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_eis.css" />
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+	<script src="../../js/bootstrap-datepicker.js"></script>
+	<script src="../../js/locales/bootstrap-datepicker.kr.js"></script>
+	<script src="../../js/jquery.slimscroll.min.js"></script>
+	<script src="../../js/admin_script.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../js/html5shiv.js"></script>
+		<script src="../../js/respond.min.js"></script>
+	<![endif]-->
+	<style type="text/css">
+		body {background:url('../../images/common/bg_lnb.gif') 0 0 repeat-y;}
+		.wrap_max {min-width:1px;}
+		.content_wrap .lnb_wrap {position:static; width:auto; float:none;}
+	</style>
+</head>
+<body><!-- 배경색 변경시 class="bg" -->
+<div id="wrap"><!-- 메인일 경우 class="main" -->
+
+	<!-- contents -->
+	<div class="content_wrap lnb_open"><!-- 레프트 메뉴 여닫힘 : lnb_open / lnb_close -->
+		<div class="wrap_max">
+
+			<!--  General lnb -->
+			<div class="lnb_wrap">	
+				<!-- menu -->
+				<div class="menu_wrap">
+					<dl>
+						<!-- lnb 타이틀 -->
+						<dt>
+							<strong>MSS System</strong>
+							<!--
+							<a href="#" onclick="all_check('all'); return false;">· 전체열기</a><br />
+							<a href="#" onclick="all_check('open'); return false;">· 열기</a><br />
+							<a href="#" onclick="all_check('close'); return false;">· 닫기</a>
+							-->
+						</dt>
+						<!--// lnb 타이틀 -->	
+					</dl>
+					<div class="menu_list" id="menu_list"><!-- 스크롤 위치 -->
+						<dl>
+							<dt>General</dt>
+							<!-- lnb 메뉴 리스트 -->
+							<dd class="menu_1depth open"><!-- open / close -->
+								<a class="menu_1depth_tit" href="#">
+									<strong>경영정보</strong>
+								</a>
+								<ul class="menu_2depth">
+									<li class="close"><!-- open / close -->
+										<div class="menu_2depth_tit">
+											<a class="tit" href="#">
+												<strong>경영현황</strong>
+											</a>
+										</div>
+										<ul class="menu_3depth">
+											<li>
+												<div class="depth3_area">
+													<a class="tit" href="../main/main_frame.html" target="_parent">
+														<strong>전사 / 사업부별</strong>
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="depth3_area">
+													<a class="tit" href="../page/mss1_frame.html" target="_parent">
+														<strong>경영현황 분석자료 업로드</strong>
+													</a>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="close"><!-- open / close -->
+										<div class="menu_2depth_tit">
+											<a class="tit" href="#">
+												<strong>대외사업 현황</strong>
+											</a>
+										</div>
+										<ul class="menu_3depth">
+											<li>
+												<div class="depth3_area">
+													<a class="tit" href="../page/mss2_frame.html" target="_parent">
+														<strong>전사 / 부서별 / 사업별</strong>
+													</a>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="close"><!-- open / close -->
+										<div class="menu_2depth_tit">
+											<a class="tit" href="#">
+												<strong>사업별 현황</strong>
+											</a>
+										</div>
+										<ul class="menu_3depth">
+											<li>
+												<div class="depth3_area">
+													<a class="tit" href="../page/mss3_frame.html" target="_parent">
+														<strong>전사 / 부서별(상세)</strong>
+													</a>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="open"><!-- open / close -->
+										<div class="menu_2depth_tit">
+											<a class="tit" href="#">
+												<strong>원가혁신</strong>
+											</a>
+										</div>
+										<ul class="menu_3depth">
+											<li class="on">
+												<div class="depth3_area">
+													<a class="tit" href="../page/mss4_frame.html" target="_parent">
+														<strong>원가혁신</strong>
+													</a>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="close"><!-- open / close -->
+										<div class="menu_2depth_tit">
+											<a class="tit" href="#">
+												<strong>사업기회</strong>
+											</a>
+										</div>
+										<ul class="menu_3depth">
+											<li>
+												<div class="depth3_area">
+													<a class="tit" href="../page/mss5_frame.html" target="_parent">
+														<strong>사업기회</strong>
+													</a>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="close"><!-- open / close -->
+										<div class="menu_2depth_tit">
+											<a class="tit" href="#">
+												<strong>프로젝트별 손익 현황</strong>
+											</a>
+										</div>
+										<ul class="menu_3depth">
+											<li>
+												<div class="depth3_area">
+													<a class="tit" href="../page/mss6_frame.html" target="_parent">
+														<strong>프로젝트별 손익 현황</strong>
+													</a>
+												</div>
+											</li>
+										</ul>
+									</li>
+
+								</ul>
+							</dd>
+							<!-- lnb 메뉴 리스트 -->
+						</dl>
+					</div>
+
+					<script>
+						function all_check(elea){
+							var
+								$menu_list_box = $('#menu_list'),
+								$menu_list_box_length = $menu_list_box.find('.open').length
+							;
+
+							if( elea == 'close' ){
+								$menu_list_box
+									.find('.open').removeClass('open').addClass('close')
+										.end().find('.on').removeClass('on')
+								.end().find('.menu_2depth, .menu_3depth').hide()
+								;
+							}
+							else if( elea == 'open') {
+								$menu_list_box
+									.find('.open').removeClass('open')
+										.end().find('.on').removeClass('on')
+								.end().find('.menu_3depth').slideUp('fast')
+								;
+
+								$menu_list_box.find('.menu_1depth').addClass('open')
+								.end().find('.menu_2depth').show()
+								;
+							}
+							else {
+								$menu_list_box
+									.find('.close').removeClass('close').addClass('open')
+								.end().find('.menu_2depth').show()
+									.find('>li').removeClass('open').addClass('open')
+								.end().end().find('.menu_3depth').show()
+								;
+
+							}
+						}
+
+					</script>
+
+				</div>
+				<!--// menu -->
+			</div>
+			<!--// General lnb -->
+
+
+		</div>
+	</div>
+	<!--// contents -->
+
+
+
+</div>
+</body>
+</html>

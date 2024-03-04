@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>매출정산 현황 | MIS</title>
+	<link href="../../css/datepicker3.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="../../css/common.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/module.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/custom.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/popup.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="../../css/admin.css" />
+	<link type="text/css" rel="stylesheet" href="../../css/admin_eis.css" />
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+	<script src="../../js/bootstrap-datepicker.js"></script>
+	<script src="../../js/locales/bootstrap-datepicker.kr.js"></script>
+	<script src="../../js/jquery.slimscroll.min.js"></script>
+	<script src="../../js/admin_script.js"></script>
+	<!--[if lt IE 9]>
+		<script src="../../js/html5shiv.js"></script>
+		<script src="../../js/respond.min.js"></script>
+	<![endif]-->
+	<style type="text/css">
+		body {background:url('../../images/common/bg_lnb.gif') 0 0 repeat-y;}
+		.wrap_max {min-width:1px;}
+		.content_wrap .lnb_wrap {position:static; width:auto; float:none;}
+	</style>
+</head>
+<body><!-- 배경색 변경시 class="bg" -->
+<div id="wrap"><!-- 메인일 경우 class="main" -->
+
+	<!-- contents -->
+	<div class="content_wrap lnb_open"><!-- 레프트 메뉴 여닫힘 : lnb_open / lnb_close -->
+		<div class="wrap_max">
+
+			<!--  General lnb -->
+			<div class="lnb_wrap">	
+				<!-- menu -->
+				<div class="menu_wrap">
+					<dl>
+						<!-- lnb 타이틀 -->
+						<dt>
+							<strong>EIS System</strong>
+							<a href="#" onclick="all_check('all'); return false;">· 전체열기</a><br />
+							<a href="#" onclick="all_check('open'); return false;">· 열기</a><br />
+							<a href="#" onclick="all_check('close'); return false;">· 닫기</a>
+						</dt>
+						<!--// lnb 타이틀 -->	
+					</dl>
+					<div class="menu_list" id="menu_list"><!-- 스크롤 위치 -->
+						<dl>
+							<dt>General</dt>
+							<!-- lnb 메뉴 리스트 -->
+							<dd class="menu_1depth open"><!-- open / close -->
+								<a class="menu_1depth_tit" href="#">
+									<strong>경영정보</strong>
+								</a>
+								<ul class="menu_2depth">
+									<li class="open"><!-- open / close -->
+										<div class="menu_2depth_tit">
+											<a class="tit" href="#">
+												<strong>실적회의</strong>
+											</a>
+										</div>
+										<ul class="menu_3depth">
+											<li class="on" id="TC1-1-1">
+												<div class="depth3_area">
+													<a class="tit" href="#">
+														<strong>메인</strong>
+													</a>
+												</div>
+											</li>
+											<li id="TC1-1-2">
+												<div class="depth3_area">
+													<a class="tit" href="#">
+														<strong>부서별매출(시너지)</strong>
+													</a>
+												</div>
+											</li>
+											<li id="TC1-1-3">
+												<div class="depth3_area">
+													<a class="tit" href="#">
+														<strong>사업유형별매출</strong>
+													</a>
+												</div>
+											</li>
+											<li id="TC1-1-4">
+												<div class="depth3_area">
+													<a class="tit" href="#">
+														<strong>부서별/서비스매출</strong>
+													</a>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="close"><!-- open / close -->
+										<div class="menu_2depth_tit">
+											<a class="tit" href="#">
+												<strong>실적회의(손익)</strong>
+											</a>
+										</div>
+										<ul class="menu_3depth">
+											<li id="TD1-1-1">
+												<div class="depth3_area">
+													<a class="tit" href="#">
+														<strong>실적회의(손익) 1</strong>
+													</a>
+												</div>
+											</li>
+											<li id="TD1-1-2">
+												<div class="depth3_area">
+													<a class="tit" href="#">
+														<strong>실적회의(손익) 2</strong>
+													</a>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="close"><!-- open / close -->
+										<div class="menu_2depth_tit">
+											<a class="tit" href="#">
+												<strong>손익분석</strong>
+											</a>
+										</div>
+										<ul class="menu_3depth">
+											<li>
+												<div class="depth3_area">
+													<a class="tit" href="#">
+														<strong>손익분석 1</strong>
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="depth3_area">
+													<a class="tit" href="#">
+														<strong>손익분석 2</strong>
+													</a>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="close"><!-- open / close -->
+										<div class="menu_2depth_tit">
+											<a class="tit" href="#">
+												<strong>OPIc</strong>
+											</a>
+										</div>
+										<ul class="menu_3depth">
+											<li>
+												<div class="depth3_area">
+													<a class="tit" href="#">
+														<strong>OPIc 1</strong>
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="depth3_area">
+													<a class="tit" href="#">
+														<strong>OPIc 2</strong>
+													</a>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="close"><!-- open / close -->
+										<div class="menu_2depth_tit">
+											<a class="tit" href="#">
+												<strong>인사</strong>
+											</a>
+										</div>
+										<ul class="menu_3depth">
+											<li>
+												<div class="depth3_area">
+													<a class="tit" href="#">
+														<strong>인사 1</strong>
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="depth3_area">
+													<a class="tit" href="#">
+														<strong>인사 2</strong>
+													</a>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="close"><!-- open / close -->
+										<div class="menu_2depth_tit">
+											<a class="tit" href="#">
+												<strong>신규</strong>
+											</a>
+										</div>
+										<ul class="menu_3depth">
+											<li>
+												<div class="depth3_area">
+													<a class="tit" href="#">
+														<strong>신규 1</strong>
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="depth3_area">
+													<a class="tit" href="#">
+														<strong>신규 2</strong>
+													</a>
+												</div>
+											</li>
+										</ul>
+									</li>
+
+								</ul>
+							</dd>
+							<dd class="menu_1depth close"><!-- open / close -->
+								<a class="menu_1depth_tit" href="#">
+									<strong>1depth menu</strong>
+								</a>
+								<ul class="menu_2depth">
+									<li class="close"><!-- open / close -->
+										<div class="menu_2depth_tit">
+											<a class="tit" href="#">
+												<strong>2depth menu</strong>
+											</a>
+										</div>
+										<ul class="menu_3depth">
+											<li>
+												<div class="depth3_area">
+													<a class="tit" href="#">
+														<strong>인사 1</strong>
+													</a>
+												</div>
+											</li>
+											<li>
+												<div class="depth3_area">
+													<a class="tit" href="#">
+														<strong>인사 2</strong>
+													</a>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="close"><!-- open / close -->
+										<div class="menu_2depth_tit">
+											<a class="tit" href="#">
+												<strong>2depth menu</strong>
+											</a>
+										</div>
+									</li>
+								</ul>
+							</dd>
+							<dd class="menu_1depth close"><!-- open / close -->
+								<a class="menu_1depth_tit" href="#">
+									<strong>1depth menu</strong>
+								</a>
+							</dd>
+							<!-- lnb 메뉴 리스트 -->
+						</dl>
+					</div>
+
+					<script>
+						function all_check(elea){
+							var
+								$menu_list_box = $('#menu_list'),
+								$menu_list_box_length = $menu_list_box.find('.open').length
+							;
+
+							if( elea == 'close' ){
+								$menu_list_box
+									.find('.open').removeClass('open').addClass('close')
+										.end().find('.on').removeClass('on')
+								.end().find('.menu_2depth, .menu_3depth').hide()
+								;
+							}
+							else if( elea == 'open') {
+								$menu_list_box
+									.find('.open').removeClass('open')
+										.end().find('.on').removeClass('on')
+								.end().find('.menu_3depth').slideUp('fast')
+								;
+
+								$menu_list_box.find('.menu_1depth').addClass('open')
+								.end().find('.menu_2depth').show()
+								;
+							}
+							else {
+								$menu_list_box
+									.find('.close').removeClass('close').addClass('open')
+								.end().find('.menu_2depth').show()
+									.find('>li').removeClass('open').addClass('open')
+								.end().end().find('.menu_3depth').show()
+								;
+
+							}
+						}
+
+					</script>
+
+				</div>
+				<!--// menu -->
+			</div>
+			<!--// General lnb -->
+
+
+		</div>
+	</div>
+	<!--// contents -->
+
+
+
+</div>
+</body>
+</html>

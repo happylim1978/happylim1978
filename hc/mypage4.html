@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="ko" xml:lang="ko">
+	<head>
+		<title>i-나루</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta http-equiv="content-script-type" content="text/html"/>
+		<meta http-equiv="content-style-type" content="text/css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+		<link rel="icon" type="image/x-icon" href=""/>
+		<link rel="shortcut_icon" type="image/x-icon" href=""/>
+		<link rel="apple-touch-icon" href=""/>
+		<link rel="apple-touch-icon-precomposed" href=""/>
+		<link rel="stylesheet" href="https://inaru.sericeo.org/css/jquery.mobile-1.4.5.min.css"/>
+		<script type="text/javascript" src="https://inaru.sericeo.org/js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="https://inaru.sericeo.org/js/jquery.mobile-default.js"></script>
+		<script type="text/javascript" src="https://inaru.sericeo.org/js/jquery.mobile-1.4.5.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="https://inaru.sericeo.org/css/common.css"/>
+		<script type="text/javascript" src="https://inaru.sericeo.org/js/jqueryFunc.js"></script>
+		<script type="text/javascript" src="https://inaru.sericeo.org/js/common.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://inaru.sericeo.org/css/login.css"/>
+		<script type="text/javascript" src="https://inaru.sericeo.org/js/login.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="./css/common.css" />
+		<link rel="stylesheet" type="text/css" href="./css/sub.css" />
+		<link rel="stylesheet" type="text/css" href="./css/swiper-bundle.css" />
+		<script type="text/javascript" src="./js/swiper-bundle.min.js"></script>
+
+		<script type="text/javascript" src="./js/design.js"></script>
+	</head>
+	<body>
+		<div class="wrap">
+			<!-- pc header -->
+			<div class="header">
+				<div class="header-in">
+					<h1 class="logo">
+						<a href="">i-나루 SERICEO</a>
+					</h1>
+					<ul class="menu">
+						<li><a href="">특집</a></li>
+						<li><a href="">문화∙인문</a></li>
+						<li><a href="">기술∙트렌드</a></li>
+						<li><a href="">리더십∙소통</a></li>
+					</ul>
+					<div class="header-r">
+						<a href="" class="help">
+							<span>Help Desk</span>
+						</a>
+						<div class="search">
+							<input type="text" placeholder="인기검색어를 확인해보세요." data-role="none">
+							<button type="button" class="s-btn" data-role="none">검색</button>
+						</div>
+						<a href="" class="mypage"></a>
+					</div>
+				</div>
+			</div>
+			<!-- //pc header -->
+			<!-- mo header -->
+			<div class="header-wrap">
+				<div id="search-line" class="search-line">
+					<div class="search-line-in">
+						<input type="text" data-role="none">
+						<a href="" id="go-search" class="go-search">검색하기</a>
+					</div>
+				</div>
+				<div class="header">
+					<h1 class="logo"><a href="">i-나루 SERICEO</a></h1>
+					<div class="menu">
+						<a href="" class="search" id="search">검색</a>
+						<a href="" class="my">마이</a>
+					</div>
+				</div>
+				<script>
+					$(document).ready(function(){
+						$('#search').on('click', function(){
+							$('#search-line').addClass('search-line-on')
+							return false;
+						})
+						$('#go-search').on('click', function(){
+							$('#search-line').removeClass('search-line-on')
+							return false;
+						})
+					})
+		
+				</script>
+				<div class="p-info">
+					<span class="name">홍길동</span> 님, 11월 <strong>30시간 30분 학습</strong>
+				</div>
+			</div>
+			<div id="gnb" class="gnb">
+				<a href="">홈</a>
+				<a href="">특집</a>
+				<a href="">문화∙인문</a>
+				<a href="">기술∙트렌드</a>
+				<a href="">리더십∙소통</a>
+			</div>
+			<!-- //mo header -->
+			<div class="content">
+				<div class="sub-head">
+					<div class="conbox">
+						<!-- sub-head -->
+						<div class="search-box">
+							<div class="copy">
+								<h2>My page</h2>
+							</div>
+							<div class="info-search">
+								<p class="p-info">홍길동 님, <strong>11월 <span>30시간 30분</span> 학습</strong></p>
+								<div class="search-line">
+									<input type="text" placeholder="인기검색어를 확인해보세요." data-role="none">
+									<button class="go-search" data-role="none">검색</button>
+								</div>
+							</div>
+						</div>
+						<!-- //sub-head -->
+						<!-- sub-tab -->
+						<div class="sub-menu">
+							<div class="sub-menu-in swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="item">
+											<a href="">이용현황</a>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="item">
+											<a href="">콘텐츠 공유내역</a>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="item">
+											<a href="">즐겨찾기</a>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="item">
+											<a href="">개인정보수정</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<script>
+								$(document).ready(function(){
+									setMenu(4)
+								})
+							</script>
+						</div>
+						<!-- //sub-tab -->
+					</div>
+				</div>
+				<div class="sub-con-box">
+					<div class="conbox infomation">
+
+						<div class="table2 table2-large">
+							<table cellspacing="0">
+								<caption>구분 학습시간 학습편수</caption>
+								<colgroup>
+									<col style="width:170px;">
+									<col style="width:auto;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">ID</th>
+										<td>
+											hongildong
+											<!--
+											<input class="input input-size1" type="text" placeholder="ID를 입력하세요." data-role="none">
+											-->
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">이름</th>
+										<td>
+											홍길동
+											<!--
+											<input class="input input-size1" type="text" placeholder="이름을 입력하세요." data-role="none">
+											-->
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">부서</th>
+										<td>
+											<input class="input input-size1" type="text" placeholder="부서를 입력하세요." data-role="none">
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">이메일</th>
+										<td>
+											<input class="input input-size1" type="text" placeholder="이메일을 입력하세요." data-role="none">
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">이메일 수신 여부</th>
+										<td class="td-check">
+											<span class="check-s">
+												<input type="radio" id="mail-ok" name="mail-check" data-role="none"><label for="mail-ok">수신</label>
+											</span>
+											<span class="check-s">
+												<input type="radio" id="mail-no" name="mail-check" data-role="none"><label for="mail-no">미수신</label>
+											</span>
+											<p class="caution3">※ 이메일을 수신하시면 i-나루 SERICEO 업데이트 소식을 이메일로 전해드립니다.</p>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="agree">
+							<p class="p">개인정보 수집 및 이용동의</p>
+							<ul class="level1">
+								<li>
+									1. 개인정보 수집 및 이용 목적
+									<ul class="level2">
+										<li>· 서비스 및 콘텐츠 안내 메일 발송</li>
+										<li>· 회원 문의 및 요청사항 답변</li>
+									</ul>
+								</li>
+								<li>2. 수집하려는 개인정보의 항목
+									<ul class="level2">
+										<li>· 선택항목 : 이메일</li>
+									</ul>
+								</li>
+								<li>3. 개인정보 보유 및 이용기간
+									<ul class="level2">
+										<li>· 보유근거 : 정보주체의 동의</li>
+										<li>· 보유 및 이용기간 : 정보주체의 파기 요청일 까지</li>
+									</ul>
+								</li>
+								<li>4. 선택항목 수집에 대한 거부 시 불이익
+									<ul class="level2">
+										<li>· 별도의 불이익은 없으며, 서비스 및 콘텐츠 안내 메일을 받을 수 없습니다. </li>
+										<li>· 또한, 필수항목의 연락처로 연락이 불가할 경우 개별 연락이 어려울 수 있습니다.</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="agree-line">
+							<span class="pp">(선택) 개인정보 수집 및 이용에 관한 내용을 확인하였으며 이에 동의합니다.</span>
+							<span class="check-s">
+								<input type="radio" id="agree-ok" name="agree-ok-check" data-role="none"><label for="agree-ok">수신</label>
+							</span>
+							<span class="check-s">
+								<input type="radio" id="agree-no" name="agree-ok-check" data-role="none"><label for="agree-no">미수신</label>
+							</span>
+						</div>
+						<div class="btn-line">
+							<button class="btn1" data-role="none">확인</button>
+						</div>
+					</div>
+				</div>
+				<button type="button" id="go-top" class="go-top" data-role="none">go top</button>
+			</div>
+			<div class="footer">
+				<div class="footer-in">
+					<div class="footer-logo"><a href="">i-나루 SERICEO</a></div>
+					<ul class="footer-menu">
+						<li><a href="">이용약관</a></li>
+						<li><a href="">저작권정책</a></li>
+						<li><a href=""><strong>개인정보처리방침</strong></a></li>
+						<li><a href="">이메일무단수집거부</a></li>
+					</ul>
+					<div class="tel">
+						<p class="tel-num">
+							고객지원 <strong>02-2143-8507</strong>
+						</p>
+						<p class="tel-info">
+							고객 정보 보호를 위해 통화내용은 녹음될 수 있습니다.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

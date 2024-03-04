@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Data Scientist 인증시험 | 로그인</title>
+	<link rel="stylesheet" type="text/css" href="css/default.css" />
+	<script type="text/javascript" src="http://www.credu.com/landing/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/default.js"></script>
+</head>
+
+<body class="level2"><!-- 클래스 추가 -->
+	<div class="sub">
+		<div class="header">
+			<div class="header-in">
+				<span class="icon">평가명 : 2018년 5월 17일 DS 인증시험 필기형</span>
+				<span class="applicant">응시자 : <em>홍길동</em> 님</span>
+			</div>
+		</div>
+		<div class="sub-con">
+			<p class="time-area">평가 종료까지 <strong><span>00</span>시간 <span>30</span>분 <span>00</span>초</strong> 남았습니다.</p>
+			<div class="send"><a href="#" class="button"><span class="icon2"></span><span class="t">답안제출</span></a></div>
+
+
+			<div class="question-box">
+				<div class="q">
+					<!-- 20180706 -->
+					<div class="scroll2"><!-- 전체 스크롤 -->
+						<div><!-- 클래스 scroll 제거 -->
+							<div class="question-con">
+								<div class="item">
+									<div class="number">
+										<span class="num">01</span> 배점 : 10점
+									</div>
+									<p class="question-text">
+										date의 범위가 언제부터 언제인가?<br />
+										( 예시 : 2016년 1월 1일 ~ 2017년 1월 31일 )
+									</p>
+									<div class="answer-box">
+										<div class="answer-textarea">
+											<p>답안</p>
+											<div class="textarea-wrap">
+												<textarea id="" rows="" cols=""></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 20181227 -->
+						<div class="b-fix b-fix-none">
+							<div class="multi-file">
+								<div class="file2" id="file2">
+									<span class="txt">분석파일1</span>
+									<label for="upload">파일 업로드</label>
+									<input type="file" class="input-file" id="upload" />
+									<input type="text" class="text" title="파일명" />
+									<button type="button" class="button">삭제</button>
+								</div>
+								<div class="file2" id="file3">
+									<span class="txt">분석파일2</span>
+									<label for="upload2">파일 업로드</label>
+									<input type="file" class="input-file" id="upload2" />
+									<input type="text" class="text" title="파일명" />
+									<button type="button" class="button">삭제</button>
+								</div>
+							</div>
+							<script type="text/javascript">
+
+							var agent_check = navigator.userAgent.toLowerCase();
+							$.fn.inputFile = function()
+							{
+								return this.each(function(){
+								//return start
+									var $file2 = $(this);
+
+									$file2.find('> .input-file').on('change', function(){
+										$file2.find('> .text').show();
+										$file2.find('> .button').show();
+										if(window.FileReader){
+											var filename = $(this)[0].files[0].name; }
+										else {
+											var filename = $(this).val().split('/').pop().split('\\').pop();
+										}
+										$(this).next('.text').val( filename );
+										$file2.find('> label').hide();
+									});
+									$file2.find('> .button').on('click', function(){
+										if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent_check.indexOf("msie") != -1) ){
+											// ie 일때 input[type=file] init.
+											$file2.find('.input-file').replaceWith( $file2.find('.input-file').clone(true) );
+											$file2.find('.text').val('');
+										} else {
+											//other browser 일때 input[type=file] init.
+											$file2.find('.input-file').val('');
+											$file2.find('.text').val('');
+										}
+										$file2.find('> .text').hide();
+										$file2.find('> .button').hide();
+										$file2.find('> label').show();
+									});
+								//rerurn end
+								});
+							};
+							$('#file2').inputFile();
+							$('#file3').inputFile();
+							</script>
+						</div>
+						<!-- //20181227 -->
+
+						<div class="b-fix">
+							<div class="next">
+								<a href="#">다음 문제로 이동 <span class="icon"></span></a>
+							</div>
+						</div>
+					</div>
+					<!-- //20180706 -->
+				</div>
+				<div class="a add-btn"><!-- 클래스 주의 -->
+					<div class="count-line">
+						<span class="num">3</span>
+						/ <span class="total">50</span>
+					</div>
+					<div class="table-wrap">
+						<div class="table">
+							<table cellspacing="0">
+								<tbody>
+									<tr>
+										<td class="num"><a href="#">1</a></td>
+										<td><img src="images/common/bg_icon9.png" alt="확인" /></td>
+										<td class="num"><a href="#">5</a></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="num"><a href="#">2</a></td>
+										<td><img src="images/common/bg_icon9.png" alt="확인" /></td>
+										<td class="num"><a href="#">6</a></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="num"><a href="#">3</a></td>
+										<td><img src="images/common/bg_icon9.png" alt="확인" /></td>
+										<td class="num"><a href="#">7</a></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="num"><a href="#">4</a></td>
+										<td><img src="images/common/bg_icon9.png" alt="확인" /></td>
+										<td class="num"><a href="#">8</a></td>
+										<td></td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="btns">
+						<a href="#">Brightics 실행</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a href="#" onclick="layer_view(); return false;" style="font-size: 20px;">레이어 보기</a>
+	<div class="layer">
+		<div class="layer-box">
+			<div class="layer-box-in">
+				<p class="msg">제출을 누르시면 평가가 종료됩니다.<br />답안을 제출하시겠습니까?</p>
+				<div class="btns">
+					<button onclick="layer_close();" type="button" class="button">제출</button>
+					<button onclick="layer_close();" type="button" class="button button2">취소</button>
+				</div>
+			</div>
+		</div>
+		<div class="dim"></div>
+	</div>
+</body>
+</html>

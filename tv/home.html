@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>SERICEO - TV</title>
+		<link rel="stylesheet" type="text/css" href="./css/common.css" />
+		<link rel="stylesheet" type="text/css" href="./css/main.css" />
+		<script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('.gnb .m1 .home > a').focus();
+			});
+		</script>
+	</head>
+	<body>
+		<div class="main">
+			<!-- gnb -->
+			<div class="gnb">
+				<div class="gnb-in">
+					<h1 class="logo"><img src="./images/common/logo.png" alt="SERICEO" /></h1>
+					<div class="m1">
+						<ul>
+							<li class="home"><a href="#" class="on">홈</a></li>
+							<li class="special"><a href="#">특집</a></li>
+							<li class="program"><a href="#">프로그램</a></li>
+							<li class="my"><a href="#">MY</a></li>
+						</ul>
+					</div>
+					<div class="m2">
+						<ul>
+							<li><a href="#" class="search">검색</a></li>
+							<li><a href="#" class="setting">셋팅</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- //gnb -->
+			<!-- 메인 콘텐츠 -->
+			<div class="main-con">
+				<div class="main-con-in">
+					<!-- 선택된 비주얼 -->
+					<p class="visual">
+						<span style="background-image: url('https://www.sericeo.org/vfile/2020/photo5/04B9_202001280001.jpg');"></span>
+					</p>
+					<!-- //선택된 비주얼 -->
+					<div class="main-con-wrap">
+						<!-- 현재 선택된 콘텐츠 -->
+						<div class="current-con">
+							<div class="this-con-in">
+								<p class="cate">[착각하는 CEO]</p>
+								<p class="title">회의에서 좋은 성과를 내는 법</p>
+								<p class="des">자신이 창업한 애플에서 쫓겨났던 스티브 잡스. 그는 어떻게 인생 최대의 시련 앞에서 우뚝 설</p>
+								<p class="auth">홍길동 교수</p>
+							</div>
+						</div>
+						<!-- //현재 선택된 콘텐츠 -->
+						<!-- 우측 4개 목록 -->
+						<div class="main-con-list">
+							<div class="main-con-list-in">
+								<!-- 이전, 다음, 일자 -->
+								<div class="datebox">
+									<a href="#" class="arrow prev">이전</a>
+									<span class="date">11/16(금)</span>
+									<a href="#" class="arrow next">다음</a>
+								</div>
+								<!-- //이전, 다음, 일자 -->
+								<!-- 4편 연속재생 버튼 -->
+								<div class="play-btn">
+									<a href="#" class="plays">4편 연속재생</a>
+								</div>
+								<!-- //4편 연속재생 버튼 -->
+								<!-- 목록 -->
+								<div class="list-box">
+									<ul class="list-box-in">
+										<li class="item" data-img="https://www.sericeo.org/vfile/2020/photo5/04B9_202001280001.jpg">
+											<a href="#" class="link current">
+												<div class="data-info">
+													<p class="cate">[착각하는 CEO]</p>
+													<p class="tit">회의에서 좋은 성과를 내는 법</p>
+													<p class="des">자신이 창업한 애플에서 쫓겨났던 스티브 잡스. 그는 어떻게 인생 최대의 시련 앞에서 우뚝 설 수 있었을까?</p>
+													<p class="auth">홍길동 교수1</p>
+												</div>
+												<p class="photo"><img src="https://www.sericeo.org/vfile/2020/photo4/04B9_202001280001.jpg" alt=""></p>
+											</a>
+										</li>
+										<li class="item" data-img="https://www.sericeo.org/vfile/2020/photo5/07E8_202003020001.jpg">
+											<a href="#" class="link">
+												<div class="data-info">
+													<p class="cate">[cate2]</p>
+													<p class="tit">제목2</p>
+													<p class="des">설명2</p>
+													<p class="auth">홍길동 교수2</p>
+												</div>
+												<p class="photo"><img src="https://www.sericeo.org/vfile/2020/photo4/07E8_202003020001.jpg" alt=""></p>
+											</a>
+										</li>
+										<li class="item" data-img="https://www.sericeo.org/vfile/2020/photo5/0202_202002030001.jpg">
+											<a href="#" class="link">
+												<div class="data-info">
+													<p class="cate">[cate3]</p>
+													<p class="tit">제목3</p>
+													<p class="des">설명3</p>
+													<p class="auth">홍길동 교수3</p>
+												</div>
+												<p class="photo"><img src="https://www.sericeo.org/vfile/2020/photo4/0202_202002030001.jpg" alt=""></p>
+											</a>
+										</li>
+										<li class="item" data-img="https://www.sericeo.org/vfile/2020/photo5/07B8_202005220001.jpg">
+											<a href="#" class="link">
+												<div class="data-info">
+													<p class="cate">[cate4]</p>
+													<p class="tit">제목4</p>
+													<p class="des">설명4</p>
+													<p class="auth">홍길동 교수4</p>
+												</div>
+												<p class="photo"><img src="https://www.sericeo.org/vfile/2020/photo4/07B8_202005220001.jpg" alt=""></p>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<!-- //목록 -->
+							</div>
+						</div>
+						<!-- //우측 4개 목록 -->
+					</div>
+				</div>
+			</div>
+			<!-- //메인 콘텐츠 -->
+			<!-- 하단배너 -->
+			<div class="banner">
+				<ul>
+					<li><a href="#"><img src="images/main/banner1.png" alt="" /></a></li>
+					<li><a href="#"><img src="images/main/banner2.png" alt="" /></a></li>
+					<li><a href="#"><img src="images/main/banner3.png" alt="" /></a></li>
+				</ul>
+			</div>
+			<!-- //하단배너 -->
+		</div>
+		<script>
+			$(document).ready(function(){
+				$('.main-con-list a.link').on('focusin', function(){
+					if( !$(this).hasClass('current') ) {
+						$('.this-con-in .cate').text($(this).find('.cate').text());
+						$('.this-con-in .title').text($(this).find('.tit').text());
+						$('.this-con-in .des').text($(this).find('.des').text());
+						$('.this-con-in .auth').text($(this).find('.auth').text());
+						var $largeImg = $(this).closest('li').data('img').toString();
+						$('.visual span').css({
+							'background-image':'url('+$largeImg+')'
+						});
+						$(this).closest('ul').find('.current').removeClass('current').end().end().addClass('currernt');
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

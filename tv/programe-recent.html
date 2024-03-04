@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>SERICEO - TV</title>
+		<link rel="stylesheet" type="text/css" href="./css/common.css" />
+		<link rel="stylesheet" type="text/css" href="./css/sub.css" />
+		<link rel="stylesheet" type="text/css" href="./css/special.css" />
+		<script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="./css/swiper.min.css" />
+		<script type="text/javascript" src="./js/swiper.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('#side1 .sidelist > li:eq(0) > a').focus();
+			});
+		</script>
+	</head>
+	<body>
+		<div class="sub special-wrap">
+			<!-- sub lnb 타입 -->
+			<div class="sub-box side-menu"><!-- 클래스 side-menu 추가 -->
+				<!-- lnb -->
+				<div class="side-bar">
+					<!-- 메뉴 1단 -->
+					<div class="side1" id="side1">
+						<p class="cate">특집</p>
+						<ul class="sidelist">
+							<li><a href="#">최신</a></li>
+							<li><a href="#">전략</a></li>
+							<li><a href="#">인사/조직</a></li>
+							<li><a href="#">영업/마케팅</a></li>
+							<li><a href="#">법률/제도</a></li>
+							<li><a href="#">리더십(일반)</a></li>
+							<li><a href="#">리더십(인물)</a></li>
+						</ul>
+					</div>
+					<!-- //메뉴 1단 -->
+					<!-- 메뉴 2단 -->
+					<div class="side2" id="side2">
+						<a href="#" class="back">back</a>
+						<div class="side2-in">
+							<p class="cate2"></p>
+							<ul class="sidelist"></ul>
+						</div>
+					</div>
+					<!-- //메뉴 2단 -->
+				</div>
+				<!-- lnb -->
+				<script>
+					var data1 =
+						'<li><a href="#">최신</a></li>' +
+						'<li><a href="#">세미나</a></li>'
+					;
+					var data2 =
+						'<li><a href="#">日 중소기업 진화생존기</a></li>' +
+						'<li><a href="#">경영전략</a></li>' +
+						'<li><a href="#">디지털 트랜스포메이션 디지털 트랜스포메이션</a></li>' +
+						'<li><a href="#">산업혁명의 주역들</a></li>' +
+						'<li><a href="#">상식타파 경영학</a></li>' +
+						'<li><a href="#">유럽의 숨은 강자들</a></li>' +
+						'<li><a href="#">정글의 법치</a></li>'
+					;
+					var data3 =
+						'<li><a href="#">인사/조식서브</a></li>'
+					;
+					var data4 =
+						'<li><a href="#">영업/마케팅서브</a></li>'
+					;
+					var data5 =
+						'<li><a href="#">법률/제도서브</a></li>'
+					;
+					var data6 =
+						'<li><a href="#">리더십(일반)서브</a></li>'
+					;
+					var data7=
+						'<li><a href="#">리디섭(인물)서브</a></li>'
+					;
+					var $side1 = $('#side1');
+					var $side2 = $('#side2');
+					$side1.find('.sidelist > li > a').on('focusin', function(){
+						$side2.find('.cate2').text($(this).text());
+						if( $side1.find('.sidelist > li > a').index(this) ) {
+							var _data = eval('data' + $side1.find('.sidelist > li > a').index(this))
+							$(this).closest('.side-menu').addClass('side-menu-sub');
+							$side2.find('.sidelist').html(_data);
+						} else {
+							$(this).closest('.side-menu').removeClass('side-menu-sub');
+						}
+					});
+					$('#side2').on('click', '.sidelist > li > a', function(){
+						$(this).closest('.side-menu').addClass('one-depth-hide');
+					});
+					$('#side2 .back').on('click', function(){
+						$(this).closest('.sub-box').removeClass('one-depth-hide');
+					});
+
+				</script>
+				<!-- 해당 콘텐츠 -->
+				<div class="list-con-wrap">
+					<!-- 타이틀 -->
+					<h2 class="h2">최신 업데이트</h2>
+					<!-- //타이틀 -->
+					<!-- 설명 -->
+					<p class="description">최신 콘텐츠가 등록되어 있습니다.</p>
+					<!-- //설명 -->
+					<!-- path -->
+					<p class="path">특집 <span>&gt;</span> 최신</p>
+					<!-- //path -->
+					<!-- 해당콘텐츠 목록 -->
+					<div class="list-con-item-box">
+						<div class="swiper-container list-only">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a href="#" class="link">
+										<p class="pic">
+											<img src="https://www.sericeo.org/vfile/2020/photo4/04B9_202001280001.jpg" alt="">
+											<span class="ing">
+												<span class="complete">시청완료</span>
+											</span>
+										</p>
+										<span class="txt">1. 한국 사회 고령화, 얼마나 심각한가?</span>
+									</a>
+								</div>
+								<div class="swiper-slide">
+									<a href="#" class="link">
+										<p class="pic"><img src="https://www.sericeo.org/vfile/2020/photo4/07E8_202003020001.jpg" alt=""></p>
+										<span class="txt">2. 한국 사회 고령화, 얼마나 심각한가?</span>
+									</a>
+								</div>
+								<div class="swiper-slide">
+									<a href="#" class="link">
+										<p class="pic"><img src="https://www.sericeo.org/vfile/2020/photo4/0202_202002030001.jpg" alt=""></p>
+										<span class="txt">3. 한국 사회 고령화, 얼마나 심각한가?</span>
+									</a>
+								</div>
+								<div class="swiper-slide">
+									<a href="#" class="link">
+										<p class="pic"><img src="https://www.sericeo.org/vfile/2020/photo4/07B8_202005220001.jpg" alt=""></p>
+										<span class="txt">4. 한국 사회 고령화, 얼마나 심각한가?</span>
+									</a>
+								</div>
+
+								<div class="swiper-slide">
+									<a href="#" class="link">
+										<p class="pic"><img src="https://www.sericeo.org/vfile/2020/photo4/07B8_202005220001.jpg" alt=""></p>
+										<span class="txt">4. 한국 사회 고령화, 얼마나 심각한가?</span>
+									</a>
+								</div>
+								<div class="swiper-slide">
+									<a href="#" class="link">
+										<p class="pic"><img src="https://www.sericeo.org/vfile/2020/photo4/07B8_202005220001.jpg" alt=""></p>
+										<span class="txt">4. 한국 사회 고령화, 얼마나 심각한가?</span>
+									</a>
+								</div>
+								<div class="swiper-slide">
+									<a href="#" class="link">
+										<p class="pic"><img src="https://www.sericeo.org/vfile/2020/photo4/07B8_202005220001.jpg" alt=""></p>
+										<span class="txt">4. 한국 사회 고령화, 얼마나 심각한가?</span>
+									</a>
+								</div>
+								<div class="swiper-slide">
+									<a href="#" class="link">
+										<p class="pic"><img src="https://www.sericeo.org/vfile/2020/photo4/07B8_202005220001.jpg" alt=""></p>
+										<span class="txt">4. 한국 사회 고령화, 얼마나 심각한가?</span>
+									</a>
+								</div>
+								<div class="swiper-slide">
+									<a href="#" class="link">
+										<p class="pic"><img src="https://www.sericeo.org/vfile/2020/photo4/07B8_202005220001.jpg" alt=""></p>
+										<span class="txt">4. 한국 사회 고령화, 얼마나 심각한가?</span>
+									</a>
+								</div>
+								<div class="swiper-slide">
+									<a href="#" class="link">
+										<p class="pic"><img src="https://www.sericeo.org/vfile/2020/photo4/07B8_202005220001.jpg" alt=""></p>
+										<span class="txt">4. 한국 사회 고령화, 얼마나 심각한가?</span>
+									</a>
+								</div>
+								<div class="swiper-slide">
+									<a href="#" class="link">
+										<p class="pic"><img src="https://www.sericeo.org/vfile/2020/photo4/07B8_202005220001.jpg" alt=""></p>
+										<span class="txt">4. 한국 사회 고령화, 얼마나 심각한가?</span>
+									</a>
+								</div>
+								<div class="swiper-slide">
+									<a href="#" class="link">
+										<p class="pic"><img src="https://www.sericeo.org/vfile/2020/photo4/07B8_202005220001.jpg" alt=""></p>
+										<span class="txt">4. 한국 사회 고령화, 얼마나 심각한가?</span>
+									</a>
+								</div>
+								<div class="swiper-slide">
+									<a href="#" class="link">
+										<p class="pic"><img src="https://www.sericeo.org/vfile/2020/photo4/07B8_202005220001.jpg" alt=""></p>
+										<span class="txt">4. 한국 사회 고령화, 얼마나 심각한가?</span>
+									</a>
+								</div>
+								<div class="swiper-slide">
+									<a href="#" class="link">
+										<p class="pic"><img src="https://www.sericeo.org/vfile/2020/photo4/07B8_202005220001.jpg" alt=""></p>
+										<span class="txt">4. 한국 사회 고령화, 얼마나 심각한가?</span>
+									</a>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+					<!-- //해당콘텐츠 목록 -->
+				</div>
+				<!-- //해당 콘텐츠 -->
+			</div>
+		</div>
+	</body>
+</html>

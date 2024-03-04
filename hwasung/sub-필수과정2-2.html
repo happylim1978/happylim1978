@@ -1,0 +1,826 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="ko" xml:lang="ko">
+<head>
+<title>화성의과학대학교</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta http-equiv="content-script-type" content="text/html"/>
+<meta http-equiv="content-style-type" content="text/css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+<link rel="icon" type="image/x-icon" href="?v=1"/>
+<link rel="shortcut_icon" type="image/x-icon" href=""/>
+<link rel="apple-touch-icon" href=""/>
+<link rel="apple-touch-icon-precomposed" href=""/>
+<link rel="stylesheet" href="https://seri.ust.ac.kr/css/jquery.mobile-1.4.5.min.css"/>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.mobile-default.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.mobile-1.4.5.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/common.css?ver=20200513"/>
+<link rel="stylesheet" type="text/css" href="./css/common_add.css"/>
+
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jqueryFunc.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/common.js?ver=20200518"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.flexslider.min.js"></script>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/ns.js?v=210506"></script>
+
+
+<script type="text/javascript">
+	var gisMoblie = "N";
+</script>
+
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/panel.js"></script>
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/jquery.mCustomScrollbar.min.css"/>
+<script type="text/javascript" src="https://seri.ust.ac.kr/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/panel.css"/>
+<script type="text/javascript">
+	$(document).ready(function() {
+		if ($('#panel-left').length > 0) $('#panel-left').panelCtrl();
+		if ($('#panel-right').length > 0) $('#panel-right').panelCtrl();
+		//$('div:jqmData(role="panel") .panel').addClass('customScroll');
+		$('div:jqmData(role="panel") .panel').addClass('customScroll');
+	});
+
+	function panel(pos, option, idx1, idx2) {
+		$('#panel-'+pos).panelCtrl(option, idx1, idx2);
+	}
+</script>
+
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/sub.css"/>
+<link rel="stylesheet" type="text/css" href="./css/sub_add.css"/>
+
+<link rel="stylesheet" type="text/css" href="https://seri.ust.ac.kr/css/contList.css"/>
+<link rel="stylesheet" type="text/css" href="./css/contList_add.css"/>
+
+<script type="text/javascript" src="./js/cont_controlbar.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		controller = initContController({
+			form:$('#form_playlist'),
+			controller:$('#controlBar'),
+			bridge:'/msContB.html',
+			folderBridge:'#page(myFolderB,link)'
+		});
+	});
+</script>
+</head>
+<body>
+<div data-role="page" id="main">
+
+	<div data-role="panel" id="panel-left" data-position="left" data-position-fixed="true" data-display="overlay" data-swipe-close="false" data-dismissible="true">
+		<div class="panel">
+			<div class="panel-scroller">
+				<div class="closeBtn">
+					<div class="panel-tit">
+						<h1 class="h1">MENU</h1>
+					</div>
+					<div class="panel-head">
+						<p class="panel-msg">
+							[홍길동] 님은 <strong>1월 0편 학습</strong>하셨습니다.
+							&nbsp; &nbsp;<a href="/msMyStudyL.html" class="ui-link">자세히 보기</a>
+						</p>
+					</div>
+					<a href="javascript:panel('left', 'close')" data-role="button" data-shadow="false" data-iconpos="notext" class="ui-btn-right ui-link ui-btn ui-corner-all" role="button"><div class="btn">닫기</div></a>
+				</div>
+				<div class="panel-service">
+					<div class="panel-tab">
+						<a href="/msAbout.html" class="tab1">MSP 소개</a>
+						<a href="/msNoticeL.html" class="tab2">공지사항</a>
+					</div>
+					<div class="panel-tab2">
+						<a href="/msMdaL.html" class="tab1"><span>What's New</span><em>보러가기</em></a>
+						<a href="" class="tab3"><span>AI Recommendation</span><em>보러가기</em></a>
+						<a href="/msBestL.html?p_gbn=M" class="tab2"><span>Best Contents</span><em>보러가기</em></a>
+					</div>
+				</div>
+				<!-- <div class="closeBtn">
+					<a href="javascript:panel('left', 'close')" data-role="button" data-shadow="false" data-iconpos="notext" class="ui-btn-right"><div class="btn">닫기</div></a>
+				</div> -->
+				<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set1">
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="About"><div>About</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							<div class="coltype lv2">
+								<h2 title="서비스 소개" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msAbout.html" class="ui-btn " target=""><div>서비스 소개</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="공지사항" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msNoticeL.html" class="ui-btn " target=""><div>공지사항</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="핫라인" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msHotLineN.html" class="ui-btn " target=""><div>핫라인</div></a></h2>
+							</div>
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="My Page"><div>My Page</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							<div class="coltype lv2">
+								<h2 title="학습현황" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMyStudyL.html" class="ui-btn " target=""><div>학습현황</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="콘텐츠 공유 내역" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMyShareL.html" class="ui-btn " target=""><div>콘텐츠 공유 내역</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="즐겨찾기" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMyContL.html" class="ui-btn " target=""><div>즐겨찾기</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="개인정보수정" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMyMimL.html" class="ui-btn " target=""><div>개인정보수정</div></a></h2>
+							</div>
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Global Leadership"><div>Global Leadership</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							
+							<div data-role="collapsible" class="collapsible02">
+								<h2>영어</h2>
+								<ul class="collapsible03">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>중국어</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>베트남어</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>일본어</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Character Education"><div>Character Education</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+
+							<div data-role="collapsible" class="collapsible02">
+								<h2>과학과 기술</h2>
+								<ul class="collapsible03">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>역사의 이해</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>인문교양</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>철학적 사고</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Medi Science"><div>Medi Science</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+
+							<div data-role="collapsible" class="collapsible02">
+								<h2>의과학</h2>
+								<ul class="collapsible03">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>바이오과학</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+							<div data-role="collapsible" class="collapsible02">
+								<h2>뇌과학</h2>
+								<ul data-role="listview" data-theme="d" data-divider-theme="d" data-inset="true">
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+									<li class=""><a href="#" title="$프로그램$"><div>$프로그램$</div></a></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Liberal 101"><div>Liberal 101</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							<div class="coltype lv2">
+								<h2 title="전체보기" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMdaL.html?p_gmenu=04" class="ui-btn " target=""><div>전체보기</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="CIS 리포트" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMdaL.html?p_gmenu=0401" class="ui-btn " target=""><div>CIS 리포트</div></a></h2>
+							</div>
+						</div>
+					</div>
+
+					<div data-role="collapsible" class="lv1">
+						<h2 title="Essential Courses"><div>Essential Courses</div></h2>
+						<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set2">
+							<div class="coltype lv2">
+								<h2 title="전체보기" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMdaL.html?p_gmenu=05" class="ui-btn " target=""><div>전체보기</div></a></h2>
+							</div>
+							<div class="coltype lv2">
+								<h2 title="AI가 바꾸는 미래 비즈니스" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msMdaL.html?p_gmenu=0510" class="ui-btn " target=""><div>AI가 바꾸는 미래 비즈니스</div></a></h2>
+							</div>
+						</div>
+					</div>
+					<div class="coltype lv1">
+						<h2 title="HSMU Contents" class="ui-collapsible-heading ui-collapsible-heading-collapsed">
+							<a href="/msMdaL.html?p_gmenu=1001" class="ui-btn  ui-btn-icon-left ui-icon-eye" target=""><div>HSMU Contents</div></a>
+						</h2>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div data-role="panel" id="panel-right" data-position="right" data-position-fixed="true" data-display="overlay" data-swipe-close="false">
+		<div class="panel">
+			<div class="panel-scroller">
+				<div class="closeBtn">
+					<a href="javascript:panel('right', 'close')" data-role="button" data-shadow="false" data-iconpos="notext" class="ui-btn-right"><div class="btn">닫기</div></a>
+				</div>
+				<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set1">
+					<div class="coltype lv1">
+						<h2 title="로그아웃" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msLogout.html" class="ui-btn  ui-btn-icon-left ui-icon-power" target=""><div>로그아웃</div></a></h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div data-role="panel" id="panel-right" data-position="right" data-position-fixed="true" data-display="overlay" data-swipe-close="false">
+		<div class="panel">
+			<div class="panel-scroller">
+				<div class="closeBtn">
+					<a href="javascript:panel('right', 'close')" data-role="button" data-shadow="false" data-iconpos="notext" class="ui-btn-right"><div class="btn">닫기</div></a>
+				</div>
+				<div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-inset="true" data-corners="false" class="col-set1">
+
+
+					<div class="coltype lv1">
+						<h2 title="로그아웃" class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="/msLogout.html" class="ui-btn  ui-btn-icon-left ui-icon-power" target=""><div>로그아웃</div></a></h2>
+					</div>
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div data-role="header" class="btn2type">
+		<h1 class="logo"><a href="/index.html">화성의과학대학교</a></h1>
+		<div class="btn left">
+			<a href="javascript:panel('left', 'open')" class="menu" title="메뉴열기">메뉴열기</a>
+		</div>
+		<div class="btn right">
+			<a href="/msLogout.html" class="logout">로그아웃</a>
+			<a href="#" class="search" title="검색" onClick="$('#p_kwd').focus();">검색</a>
+		</div>
+		<div class="searchBar">
+			<div class="searchArea">
+				<form method="post">
+					<input type="hidden" id="search_url" value="/msSearchL.html"/>
+					<div class="search-textbox">
+						<input type="search" id="p_kwd" name="p_kwd" value="" data-theme="d" title="검색어 입력"/>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="mpinfo">
+		<div class="after">
+			홍길동님은 <strong>1월 0편</strong> 학습하셨습니다.
+		</div>
+	</div>
+
+	<div class="header">
+		<div class="header-out">
+			<div class="head-in">
+				<h1 class="lg"><a href="/index.html">화성의과학대학교</a></h1>
+				<div class="head-con">
+					<div class="head-other">
+						<div class="search-input">
+							<input type="text" class="text" title="검색어" data-role="none" id="p_hkwd" placeholder="검색어를 입력해주세요." onkeypress="if(event.keyCode==13) {main_headerSearch();}"/>
+						</div>
+						<div class="search">
+							<a href="#" class="dosearch">검색</a>
+						</div>
+						<div class="other-link">
+							<a href="/msMyStudyL.html">마이페이지</a>
+							<a href="/msLogout.html">로그아웃</a>
+							<a href="/msAbout.html">이용가이드</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="h-des2">
+				<p class="msg">Dream the Best, Be the First, Medi-Science Park</p>
+				<p class="p-info">홍길동님의 학습현황: <strong>1월 0편</strong> 학습하셨습니다. <a href="/msMyStudyL.html">학습현황 자세히 보기  &gt;</a></p>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function(){
+			$('.search').on('click', function(){
+				if( $(this).closest('.head-other').hasClass('search-input-on') ) {
+					$(this).closest('.head-other').removeClass('search-input-on');
+				} else {
+					$(this).closest('.head-other').addClass('search-input-on');
+					$('#p_hkwd').focus();
+				}
+				return false;
+			});
+		});
+	</script>
+
+
+	<div data-role="popup" id="viewOptionPop" class="viewOptionPopDiv" title="보기설정" data-corners="false" data-overlay-theme="a" data-theme="d" data-transition="flow" data-tolerance="0,0">
+		<div class="titleArea">
+			<div class="maintitle"><h2>보기설정</h2></div>
+			<div class="closeBtn">
+				<a href="#" data-rel="back" data-role="button" data-shadow="false" data-iconpos="notext" class="ui-btn-right btnType"><div class="btn">닫기</div></a>
+			</div>
+		</div>
+		<div class="optionArea">
+			<ul class="cFix">
+				<li>
+					<select title="시청여부 선택하기" id="sort_viewyn" name="sort_viewyn" data-corners="false">
+						<option value="">전체</option>
+						<option value="Y">시청</option>
+						<option value="N">미시청</option>
+						<option value="CY">완청</option>
+						<option value="CN">미완청</option>
+					</select>
+				</li>
+				<li>
+					<select title="정렬 기준 선택하기" id="sort_cnt" name="sort_cnt" data-corners="false">
+						<option value="new">최신순</option>
+						<option value="view">조회수순</option>
+						<option value="rep">서평순</option>
+					</select>
+				</li>
+			</ul>
+			<div class="checkBox cFix">
+				<input type="radio" id="viewOption_thumb" name="sort_type" title="썸네일" value="thumb"/><label for="viewOption_thumb" title="썸네일">썸네일</label>
+				<input type="radio" id="viewOption_text" name="sort_type" title="텍스트" value="text"/><label for="viewOption_text" title="텍스트">텍스트</label>
+			</div>
+		</div>
+		<div class="btnOk">
+			<a href="#" data-role="button" class="btnColor">설정완료</a>
+		</div>
+	</div>
+	<div data-role="popup" id="viewOptionProcPop" class="procPopDiv" title="" data-corners="false" data-overlay-theme="a" data-theme="d" data-tolerance="0,0">
+		<div class="waitCommentDiv">
+			<p class="comment"></p>
+			<p class="loading">잠시만 기다려 주세요.<img src="/images/common/ajax-loader.gif"/></p>
+			<p class="close"><a href="#" data-rel="back" data-role="button" data-corners="false">닫기</a></p>
+		</div>
+	</div>
+
+	<div data-role="popup" id="detailViewPop" class="detailViewPopDiv type02" title="" data-corners="false" data-overlay-theme="a" data-theme="d" data-tolerance="0,0">
+		<a href="#" data-role="button" data-theme="d" data-icon="delete" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-btn-right btn close">닫기</a>
+		<div class="detailView" style="display: block;"><!--  style="display: block;" 은 임시용이므로 작업시 삭제 -->
+			<div class="detailViewArea">
+				<dl>
+					<dt><a href="#" class="cont_link"><img class="photo" src="http://img.sericeo.org/vfile/2022/photo2/30R7_202112300001.jpg" alt=""/></a></dt>
+					<dd class="info">
+						<em>[<span class="gmenuname">테스트</span>]</em>
+						<span class="title">테스트</span>
+						<a href="#" class="card_link">
+							<button type="button" class="btn card"><img src="./images/sub/pil/btn_card.png" alt="card"/></button>
+						</a>
+						<a href="#" class="cont_link">
+							<button type="button" class="btn play"><img src="./images/sub/pil/btn_play_layer.png" alt="Play"/></button>
+						</a>
+					</dd>
+					<dd class="info02">
+						<p class="summary">
+							테스트 테스트 테스트
+						</p>
+						<div class="btnArea">
+						</div>
+						<button type="button" class="btn reverse close">닫기</button>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<div class="waitCommentDiv">
+			<p class="comment">콘텐츠 정보를 로딩 중입니다.</p>
+			<p class="loading">잠시만 기다려 주세요.<img src="./images/common/ajax-loader.gif"/></p>
+			<p class="close"><a href="#" data-rel="back" data-role="button" data-corners="false">닫기</a></p>
+		</div>
+	</div>
+
+	<div class="con-wrap">
+		<div class="web-lnb" id="web-lnb">
+			<div class="scroll">
+				<ul class="lnb-item-list">
+					<li class="lnb-item">
+						<a href="/msMdaL.html">What's NEW</a>
+					</li>
+					<li class="lnb-item">
+						<a href="#">AI Recommendation</a>
+					</li>
+					<li class="lnb-item">
+						<a href="/msBestL.html?p_gbn=M">Best Contents</a>
+					</li>
+					<li class="lnb-item">
+						<a href="#">About</a>
+						<ul>
+							<li><a href="/msAbout.html">서비스 소개</a></li>
+							<!--li><a href="/msAbout.html?p_tab=1">이용안내</a></li-->
+							<li><a href="/msNoticeL.html">공지사항</a></li>
+							<!--li><a href="/msAbout.html?p_tab=3">FAQ</a></li-->
+							<li><a href="/msHotLineN.html">핫라인</a></li>
+						</ul>
+					</li>
+					<li class="lnb-item">
+						<a href="#">My Page</a>
+						<ul>
+							<li><a href="/msMyStudyL.html">학습현황</a></li>
+							<li><a href="/msMyShareL.html">콘텐츠 공유 내역</a></li>
+							<li><a href="/msMyContL.html">즐겨찾기</a></li>
+							<li><a href="/msMyMimL.html">개인정보수정</a></li>
+						</ul>
+					</li>
+					<li class="lnb-item">
+						<a href="#">Global Leadership</a>
+						<ul>
+							<li><a href="#">영어</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">중국어</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">베트남어</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">일본어</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="lnb-item">
+						<a href="#">Character Education</a>
+						<ul>
+							<li><a href="#">과학과 기술</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">역사의 이해</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">인문교양</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">철학적 사고</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="lnb-item">
+						<a href="#">Medi-Science</a>
+						<ul>
+							<li><a href="#">의과학</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">바이오과학</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+							<li><a href="#">뇌과학</a>
+								<ul>
+									<li><a href="#">$프로그램명$</a></li>
+									<li><a href="#">$프로그램명$</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="lnb-item">
+						<a href="#">Liberal 101</a>
+					</li>
+					<li class="lnb-item">
+						<a href="#">Essential Courses</a>
+					</li>
+					<li class="lnb-item">
+						<a href="#">HSMU Contents</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- 서브콘텐츠 -->
+		<div class="sub-con side-con">
+			<div class="sub-con-in">
+			<!-- 콘텐츠 -->
+			<div class="issue-box issue-box2">
+				<div class="title-wrap">
+					<ul class="nav">
+						<li><a href=""></a></li>
+						<li><span>Essuntial Courses</span></li>
+						<li><i>&gt;</i><span>$프로그램$</span></li>
+					</ul>
+				</div>
+				<div class="sub-con-box">
+					<div class="sub-tab sub-tab-type1">
+						<div class="sub-tab-in">
+							<h2 class="h2">인사이트인문학</h2>
+							<input type="hidden" name="p_page" id="p_page" value="1"/>
+							<input type="hidden" name="p_ord" id="p_ord" value="A">
+							<input type="hidden" name="p_cid" id="p_cid" value="01"/>
+							<div class="sub-tab-wrap">
+								<!-- 탭영역 -->
+								<div class="sub-tab-list2">
+									<a href="/msCourseL.html?p_cid=01">콘텐츠 수강하기</a>
+									<a href="/msCourseInfoL.html?p_cid=01" class="on">과정소개 확인하기</a>
+									<a href="/msCourseStudyL.html?p_cid=01">학습현황 관리</a>
+								</div>
+								<!-- //탭영역 -->
+								<!-- 담당교수 영역 -->
+								<div data-role="popup" id="popupArrow" data-arrow="true" class="arrow-layer">
+									<p class="name">홍길동</p>
+									<p class="tel">010-0000-0000</p>
+									<p class="email">test@test.com</p>
+								</div>
+								<span class="au">담당교수 : <a href="#" id="open-popupArrow" class="ui-btn ui-btn-inline ui-corner-all ui-icon-info ui-btn-icon-notext">a</a></span>
+								<script>
+									$(document).on('click', '#open-popupArrow', function(evt){
+										$( '#popupArrow' ).popup( 'open', {x:evt.pageX, y: evt.pageY});
+										evt.preventDefault();
+									});
+								</script>
+								<!-- //담당교수 영역 -->
+							</div>
+						</div>
+					</div>
+
+					<div class="pil-sub">
+						<p class="pil-sub-head">
+							나의 경쟁력을 높이는 지식! 나의 미래를 바꾸는 지혜!
+						</p>
+						<p class="pil-des">
+							사회생활과 비즈니스 현장의 生生 지식들을 통해 취·창업 경쟁력을 높이고 남들보다 한 발 앞서 미래를 준비하는 학생으로 CHANGE 하세요!<br />
+							우석 體人智는 ‘비즈니스 현장감각‘, ‘리더십 및 기업가 정신‘, ‘커뮤니케이션 능력’ 등을 향상시킬 수 있는 산업현장의 최신 멀티미디어 지식 콘텐츠들과 각 분야 전문가들의 알찬 특강으로 구성됩니다.
+						</p>
+
+						<div class="info-list">
+							<table cellspacing="0" summary="수강과정 상세">
+								<tbody>
+									<tr>
+										<th scope="row" class="w1">수강학과 / 학년</th>
+										<td class="w2">교양학부 / 1학년</td>
+									</tr>
+									<tr>
+										<th scope="row">수강인원</th>
+										<td>200명</td>
+									</tr>
+									<tr>
+										<th scope="row">학점</th>
+										<td>3학점</td>
+									</tr>
+									<tr>
+										<th scope="row">기간</th>
+										<td>2022.03.02 ~ 2022.06.14</td>
+									</tr>
+									<tr>
+										<th scope="row">수료 기준</th>
+										<td>총 3370점 중 2696점 획득 (80%)</td>
+									</tr>
+									<tr>
+										<th scope="row">내 점수</th>
+										<td><span class="fc1">0점(0%)[미수료]</span></td>
+									</tr>
+									<tr>
+										<th scope="row">내용</th>
+										<td colspan="3"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<p class="pil-sub-head pil-sub-head2">
+							오프라인 특강
+						</p>
+						<div class="info-list">
+							<table cellspacing="0" summary="수강과정 상세">
+								<colgroup>
+									<col width="25">
+									<col width="*">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">NO.</th>
+										<th scope="col">강의</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">1</th>
+										<td>내용</td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+
+					<div data-role="popup" id="addMyContPop" class="addMyContPopDiv" title="" data-corners="false" data-overlay-theme="a" data-theme="d" data-tolerance="0,0">
+						<div class="addMyCont">
+							<p class="infoConPut">선택하신 콘텐츠 <em class="selectCnt"></em>편을 담습니다.</p>
+							<div class="myContArea">
+								<input type="hidden" name="folderBridge" value="#page(myFolderB,link)"/>
+								<div class="listArea">
+									<div class="infoArea loading">
+										<div class="info">
+											<label for="pop_folderList" class="text">폴더선택</label>
+											<div class="box">
+												<select title="저장할 폴더 선택" id="pop_folderList" class="folderList">
+													<option value="" class="default">선택하세요</option>
+												</select>
+												<button type="button" class="btn create">폴더생성</button>
+											</div>
+										</div>
+										<div class="loadingArea">
+											<p>폴더 정보를 로딩 중입니다.</p>
+											<p>잠시만 기다려 주세요.<img src="/images/common/ajax-loader.gif"/></p>
+										</div>
+									</div>
+									<div class="btnArea">
+										<button type="button" class="btn confirm btnConfirm">확 인</button>
+										<button type="button" class="btn reverse cancel btnCancel" data-rel="back">취 소</button>
+									</div>
+								</div>
+								<div class="createArea">
+									<div class="infoArea">
+										<div class="info">
+											<label for="pop_foldername" class="text">폴더명 입력</label>
+											<div class="box"><input type="text" id="pop_foldername" name="p_foldername" maxlength="100"/></div>
+											<div class="btnArea">
+												<button type="button" class="btn confirm">생 성</button>
+												<button type="button" class="btn reverse cancel">취 소</button>
+											</div>
+										</div>
+										<div class="loadingArea">
+											<p>폴더를 생성 중입니다.</p>
+											<p>잠시만 기다려 주세요.<img src="/images/common/ajax-loader.gif"/></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="waitCommentDiv">
+							<p class="comment"></p>
+							<p class="loading">잠시만 기다려 주세요.<img src="/images/common/ajax-loader.gif"/></p>
+							<p class="close"><a href="#" data-rel="back" data-role="button" data-corners="false">닫기</a></p>
+						</div>
+					</div>
+
+					<div data-role="popup" id="sendSMSPop" class="sendSMSPopDiv" title="" data-corners="false" data-overlay-theme="a" data-theme="d" data-tolerance="0,0">
+						<div class="sendSMSDiv">
+							<div class="waitCommentDiv">
+								<p class="comment"></p>
+								<p class="loading">잠시만 기다려 주세요.<img src="/images/common/ajax-loader.gif"/></p>
+								<p class="close"><a href="#" data-rel="back" data-role="button" data-corners="false">닫기</a></p>
+							</div>
+							<div class="sendSMS">
+								<h1 class="title"><img src="/images/common/txt_con_sms.gif" alt="콘텐츠 담기"/></h1>
+								<div class="telno">
+									<p>휴대전화번호</p>
+									<ul class="listPut">
+										<li><input type="tel" maxlength="3" id="p_mtelno1"/></li>
+										<li><input type="tel" maxlength="4" id="p_mtelno2"/></li>
+										<li><input type="tel" maxlength="4" id="p_mtelno3"/></li>
+									</ul>
+								</div>
+								<div class="message">
+									<p>보내실 메시지</p>
+									<div class="note">
+										<textarea cols="1" rows="1" title="내용을 입력해 주세요" id="p_message"></textarea>
+									</div>
+								</div>
+								<div class="btnArea">
+									<a href="javascript:initSendSMSPopup('#sendSMSPop','/msContB.html')" class="btnConfirm btnType"><img src="/images/common/btn_confirm.png" style="width:102px; height:41px;" /></a>
+									<a href="#" class="btnCancel btnType" data-rel="back"><img src="/images/common/btn_cancel.png" style="width:102px; height:41px;" /></a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div data-role="popup" id="linkPop" class="linkPopDiv" title="" data-corners="false" data-overlay-theme="a" data-theme="d" data-tolerance="0,0">
+						<div class="linkDiv">
+							<div class="linkPop">
+								<h1 class="title"><img src="/images/common/txt_con_link.gif" alt="공유하기"/></h1>
+								<div class="telno">
+									<p>* 공유를 원하시는 곳에 해당 링크를 복사하여 붙여 넣으시면 됩니다.</br>* 링크를 클릭하면 콘텐츠가 재생됩니다.</p>
+								</div>
+								<div class="message">
+									<div class="note">
+										<textarea cols="1" rows="1" readonly id="p_link"></textarea>
+									</div>
+								</div>
+								<div class="btnArea">
+									<a href="#" class="btnConfirm btnType">확인</a>
+								</div>
+							</div>
+						</div>
+						<div class="waitCommentDiv">
+							<p class="comment"></p>
+							<p class="loading">잠시만 기다려 주세요.<img src="/images/common/ajax-loader.gif"/></p>
+							<p class="close"><a href="#" data-rel="back" data-role="button" data-corners="false">닫기</a></p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- //콘텐츠 -->
+			</div>
+		</div>
+		<!-- //서브콘텐츠 -->
+
+	</div>
+
+	<!-- footer -->
+	<div class="footer">
+		<div class="footer-in">
+			<ul class="link">
+				<li><a href="javascript:windowPopup('/msUse.html')">이용약관</a></li>
+				<li><a href="javascript:windowPopup('/msCopyright.html')">저작권정책</a></li>
+				<li><a href="javascript:windowPopup('/msPrivate.html')">개인정보처리방침</a></li>
+				<li><a href="javascript:windowPopup('/msErules.html','','400','200')">이메일주소 무단수집거부</a></li>
+			</ul>
+			<div class="contact">
+				<strong class="tit">이용문의</strong>
+				<span class="tel">02-2143-8507</span>
+			</div>
+		</div>
+	</div>
+	<!-- //footer -->
+
+</div>
+</body>
+</html>

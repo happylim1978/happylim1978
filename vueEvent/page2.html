@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>EBR 과정 리스트</title>
+	<link rel="stylesheet" type="text/css" href="common.css?ver20220110v1" />
+	<style>
+		.wrapper .cons {display: block;}
+	</style>
+	<script src="vue.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div id="app">
+			<!-- header -->
+			<div class="header" id="header">
+				<a href="#" :class="{current : isActive === index}" v-for="(tab, index) in tabTitles" :key="tab.index" @click="tabClick(index, $event)">{{ tab }}</a>
+			</div>
+			<div class="tab-con">
+				<div class="cons" v-if="isActive === index" v-for="(con, index) in tabTitles" :key="con.index">
+					<ul class="list">
+						<li v-for="item in curremtItems" :key="item.index">
+							<div class="item">
+								<p class="img"><img :src="item.src" alt="" /></p>
+								<div class="item-in">
+									<p class="marks"><span class="mark">{{ item.mark }}</span></p>
+									<p class="tit" v-html="item.tit"></p>
+									<p class="tag">{{ item.tag }}</p>
+									<p class="des" v-html="item.des"></p>
+								</div>
+								<div class="btns">
+									<a :href="'https://www.multicampus.com/em/enrolment/courseInfo?corsCd=' + item.linkCode" target="_blank">상세보기</a>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="data/data2/data1.js"></script>
+	<script type="text/javascript" src="data/data2/data2.js"></script>
+	<script type="text/javascript" src="data/data2/data3.js"></script>
+	<script type="text/javascript" src="data/data2/data4.js"></script>
+	<script type="text/javascript" src="data/data2/data5.js"></script>
+	<script type="text/javascript" src="data/data2/data6.js"></script>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				tabTitles: [
+					'경영전략', '경영혁신', '인사/조직', '마케팅', '인문/교양', '자기계발'
+				],
+				dataItems: {
+					dataItem0: data1,
+					dataItem1: data2,
+					dataItem2: data3,
+					dataItem3: data4,
+					dataItem4: data5,
+					dataItem5: data6
+				},
+				isActive: 0
+			},
+			computed: {
+				curremtItems: function () {
+					return this.dataItems['dataItem' + this.isActive]
+				}
+			},
+			methods: {
+				tabClick: function (idx, e) {
+					this.isActive = idx
+					e.preventDefault()
+				}
+			}
+		})
+	</script>
+</body>
+</html>
