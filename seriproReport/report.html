@@ -1601,6 +1601,7 @@ $(document).ready(function() {
 							})
 							var tl = gsap.timeline({
 								scrollTrigger: {
+									markers: true,
 									trigger: '.report-section-in .section-boxs-wrap',
 									start: '-120px top',
 									end: '+=400%',
@@ -1609,7 +1610,7 @@ $(document).ready(function() {
 									invalidateOnResize: true
 								}
 							});
-
+							
 							tl
 								.fromTo('.section-boxs .box1',
 									{yPercent: 200, opacity:0},

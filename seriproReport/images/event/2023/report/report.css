@@ -202,7 +202,7 @@
 .report-2023-chart .msg3 {text-align: center; font-size: 26px; line-height: 38px;}
 .report-2023-chart .msg3 + .msg3 {margin-top: 20px;}
 .report-2023-chart .msg3-1 {margin-top: 15px; text-align: center; font-size: 20px; line-height: 29px;}
-.report-2023-chart .chart-wrap {margin:70px auto 0; padding: 60px 80px; width: 998px; border: 1px solid #6F75C7; background-color: #2F3470;
+.report-2023-chart .chart-wrap {margin:70px auto 0; padding: 60px 80px; width: 998px; height: 565px; border: 1px solid #6F75C7; background-color: #2F3470;
   box-sizing: border-box;
   border-radius: 28px;
 }

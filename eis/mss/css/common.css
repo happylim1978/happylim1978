@@ -170,6 +170,7 @@ body.bg_sub{background-color:#f0f3f6;}
 .content_wrap .lnb_wrap .btn_folding_lnb{display:block; position:absolute; top:0; right:0; width:14px; height:52px; border:solid 1px #c1cbd8; border-left:0; border-radius:0 8px 8px 0;background:#e3edf8 url('../images/set_gnb.png') no-repeat 5px -18px; overflow:hidden; text-indent:-9999999em; }
 .content_wrap .lnb_wrap .btn_folding_lnb:hover{background-color:#f1f6fc;}
 .content_wrap .menu_wrap{width:309px; padding-left:10px; background-color:#e3edf8; border-right:solid 1px #c1cbd8;}
+.content_wrap .menu_wrap .slimScrollDiv {width: 100% !important;}
 .content_wrap .cont_wrap{padding:0 40px 40px;}
 .content_wrap.lnb_close .lnb_wrap{width:14px;}
 .content_wrap.lnb_close .lnb_wrap .btn_folding_lnb{background-position:-35px -18px;}

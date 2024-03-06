@@ -36,11 +36,12 @@ a:focus {
 .site-list > .list > li .list-box {border: 1px solid #ccc; padding: 10px;
 	border-radius: 10px;
 }
-.site-list > .list > li .list-box .img {overflow: hidden; padding-top: 50%; background-repeat: no-repeat; background-position: center center;
+.site-list > .list > li .list-box .img {position: relative; overflow: hidden; padding-top: 50%; background-repeat: no-repeat; background-position: center center;
 	background-size: 100% auto;
 	border-radius: 10px;
 	transition: background 0.4s;
 }
+.site-list > .list > li .list-box .img > a {position: absolute; inset:0 0 0 0; font-size: 0;}
 .site-list > .list > li:hover .list-box .img {
 	background-size: 110% auto;
 }
