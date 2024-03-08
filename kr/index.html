@@ -502,51 +502,6 @@
 			setTimeout(firstDo, 10);
 			setTimeout(secondDo, 500);
 		});
-		/*
-		window.onload = function () {
-			// slide start 
-			var time = 5000;
-			var $slider = $('#slider-for');
-			var $timeline = $('#timeline');
-			$slider.append(visualData);
-			$slider.on('init',function(){
-				$timeline.addClass('timelineOn');
-			});
-			$slider.slick({
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				dots: true,
-				arrows: false,
-				fade: true,
-				autoplay:true,
-				autoplaySpeed: time,
-				appendDots: $('#dots-wrap'),
-				pauseOnHover: false,
-				customPaging: function(slide, i) {
-					return '<button class="slide-banner">' + '0' + (i+1) + '</button>'
-				}
-			});
-			$slider.on('beforeChange',function(){
-				$timeline.removeClass('timelineOn');
-			});
-			$slider.on('afterChange',function(){
-				$timeline.addClass('timelineOn');
-			});
-			$('#slide-stop').on('click', function() {
-				$slider.slick('slickPause');
-				$timeline.removeClass('timelineOn');
-				$(this).hide();
-				$('#slide-play').show();
-			});
-			$('#slide-play').on('click', function() {
-				$slider.slick('slickPlay');
-				$timeline.addClass('timelineOn');
-				$(this).hide();
-				$('#slide-stop').show();
-			});
-			// slide end //
-		}
-		*/
 	</script>
 </body>
 </html>
