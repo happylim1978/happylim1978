@@ -8,7 +8,12 @@ if(document.getElementById('cssBefore')) {
 }
 
 $(document).ready(function() {
-
+	var _skip =
+		'<div class="skipNavi">' +
+			'<a href="#maincon" class="sknavi">본문 바로가기</a>' +
+		'</div>'
+	$('body').prepend(_skip)
+	$('.sub-contents').attr('id', 'maincon')
 	//동영상레이어
 	var _movieLayer =
 		'<!-- 샘플 링크 href, data-movietitle' +
@@ -88,7 +93,7 @@ $(document).ready(function() {
 	var _quick =
 		'<div class="quick-in">' +
 			'<a href="/om/about/sub/requestPopup" class="quick1"><span><em>기업<i>교육</i><i>문의</i></em></span></a>' +
-			'<a target="_blank" href="/main" class="quick2" data-mlink="https://event.multicampus.com/"><span><em>교육<i>과정</i><i>신청</i></em></span></a>' +
+			'<a target="_blank" href="https://www.multicampus.com/main" class="quick2" data-mlink="https://event.multicampus.com/"><span><em>교육<i>과정</i><i>신청</i></em></span></a>' +
 			'<a class="gotop" href="#visual"><span>go</span></a>' +
 		'</div>'
 

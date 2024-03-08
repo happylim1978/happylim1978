@@ -90,6 +90,25 @@ body{font-family:'Noto Sans KR', '돋움',Dotum,Arial, sans-serif; font-size: 16
 .mt0 {margin-top: 0 !important;}
 .tal {text-align: left !important;}
 
+.skipNavi {}
+.skipNavi .sknavi {position: absolute; top: 0; left: 0; width: 1px; height: 1px; overflow: hidden; opacity: 0;}
+.sknavi:focus, .sknavi:active {
+	display:block;
+	width:120px;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 10px;
+	text-align:center;
+	font-size:12px;
+	font-weight:bold;
+	background-color:#eee;
+	border: 1px solid #135;
+	text-decoration:none;
+	color:#333;
+	z-index:9999;
+	opacity: 1;
+}
+
 .section {}
 .box,
 .intro {padding-top: 94px; margin: 0 auto; width: 1200px;}

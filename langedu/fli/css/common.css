@@ -37,7 +37,7 @@ html, body, h1, h2, h3, h4, input, button, textarea{font-family: 'NotoSans', 'Ma
 body {word-wrap:break-word; word-break:keep-all; color: #000;}
 
 .sknavi {position:absolute;top:0; width: 1px; height: 1px; overflow: hidden; opacity: 0;}
-.sknavi:focus, .sknavi:active {display:block; width:120px; height:18px;  padding:3px; text-align:center; font-size:12px; font-weight:bold; background-color:#eee; border: 1px solid #135; text-decoration:none; color:#333; z-index:9999;}
+.sknavi:focus, .sknavi:active {display:block; width:120px; height:18px;  padding:3px; text-align:center; font-size:12px; font-weight:bold; background-color:#eee; border: 1px solid #135; text-decoration:none; color:#333; z-index:9999; opacity: 1;}
 
 
 .btn-fixed-up {display: none; background: url('../images/main/main.png') -160px -450px no-repeat; width:45px; height:45px; font-size: 0; position:fixed; bottom: 222px; left: 50%; margin-left: 510px;}
