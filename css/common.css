@@ -52,3 +52,11 @@ a:focus {
 .site-list > .list > li .list-box .links {display: flex; margin-top: 0.5rem; margin-top:auto;}
 .site-list > .list > li .list-box .links a {flex:1; color: #fff; font-size: 1.4rem; padding: 0.5rem; text-align: center; background-color: var(--color1);}
 .site-list > .list > li .list-box .links a + a {margin-left: 10px;}
+
+@media(max-width:800px) {
+	.site-list > .list {justify-content: space-between;}
+	.site-list > .list > li {width: 49%; margin-left: 0;}
+	.site-list > .list > li .list-box .links a,
+	.site-list > .list > li .list-box .tit {font-size: 1.2rem;}
+	.site-list > .list > li .list-box .des {font-size: 1.4rem;}
+}
